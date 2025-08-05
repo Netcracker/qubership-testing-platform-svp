@@ -1,0 +1,69 @@
+@startuml
+box "BE" #caeaff
+    participant PotSessionParameterServiceImpl
+    entity SshResponseDisplayTypeServiceImpl
+    entity ExecutionVariablesServiceImpl
+    entity SshRepository
+
+end box
+
+box "SSH Server" #D2E9C3
+    entity SSH
+end box
+
+PotSessionParameterServiceImpl -> SshResponseDisplayTypeServiceImpl : getValueFromSource
+activate SshResponseDisplayTypeServiceImpl
+SshResponseDisplayTypeServiceImpl -> ExecutionVariablesServiceImpl : getSourceWithExecutionVariables
+activate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl -> ExecutionVariablesServiceImpl : substituteVariable
+activate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl --> ExecutionVariablesServiceImpl
+deactivate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl --> SshResponseDisplayTypeServiceImpl
+deactivate ExecutionVariablesServiceImpl
+SshResponseDisplayTypeServiceImpl -> SshRepository : executeCommandSsh
+activate SshRepository
+SshRepository -> SshRepository : createSession
+activate SshRepository
+SshRepository -> SshRepository : createSessionProperties
+activate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository -> SshRepository : runCommand
+activate SshRepository
+SshRepository -> SshRepository : useChannel
+activate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository -> SSH : runExecCommand
+activate SshRepository
+SshRepository -> SshRepository : interruptExecutionOnTimeout
+activate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository -> SshRepository : readingResponse
+activate SshRepository
+SSH --> SshRepository: readingResponse
+deactivate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository -> SSH : runShellCommand
+activate SshRepository
+SshRepository -> SshRepository : interruptExecutionOnTimeout
+activate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository -> SshRepository : readingResponse
+activate SshRepository
+SSH --> SshRepository: readingResponse
+deactivate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository --> SshRepository
+deactivate SshRepository
+SshRepository --> SshResponseDisplayTypeServiceImpl
+deactivate SshRepository
+return
+@enduml

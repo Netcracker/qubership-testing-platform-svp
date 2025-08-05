@@ -1,0 +1,40 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+
+    entity HTTP_Rest
+    entity ExportCandidatesController
+    entity CandidatesService
+    entity FolderServiceJpa
+    entity FolderRepository
+
+end box
+box "External libraries" #E3E3D9
+    entity DB
+
+end box
+
+HTTP_Rest -> ExportCandidatesController : Rest get(projectId)
+activate ExportCandidatesController
+    ExportCandidatesController ->  CandidatesService : getCandidates(UUID projectId)
+    activate CandidatesService
+        CandidatesService -> FolderServiceJpa : getFoldersByProjectId(UUID projectId)
+            activate FolderServiceJpa
+                FolderServiceJpa -> FolderRepository : getFoldersByProjectId(UUID projectId)
+                activate FolderRepository
+                    FolderRepository -> DB : findByProjectProjectId(UUID projectId)
+                    activate DB
+                        DB -> FolderRepository : List<FolderEntity>
+                    deactivate DB
+                    FolderRepository -> FolderServiceJpa : List<FolderEntity>
+                deactivate FolderRepository
+                FolderServiceJpa -> CandidatesService : List<FolderEntity>
+            deactivate FolderServiceJpa
+        CandidatesService -> ExportCandidatesController : List<ExportFolderCandidateDto>
+    deactivate CandidatesService
+    ExportCandidatesController -> HTTP_Rest : List<ExportFolderCandidateDto>
+deactivate ExportCandidatesController
+
+@enduml

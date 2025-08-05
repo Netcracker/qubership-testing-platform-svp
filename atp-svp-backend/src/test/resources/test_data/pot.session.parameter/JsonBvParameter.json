@@ -1,0 +1,143 @@
+{
+  "parameterId": "c65cad5c-eae9-4e20-9341-e746b53f9ad9",
+  "page": "page",
+  "tab": "tab",
+  "group": "group",
+  "isSynchronousLoading": false,
+  "er": null,
+  "arValues": [],
+  "validationInfo": {
+    "type": "ValidationInfo",
+    "status": "IN_PROGRESS",
+    "errorDescription": null
+  },
+  "parameterConfig": {
+    "parameterId": null,
+    "name": "test_Json",
+    "displayType": "JSON",
+    "source": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "",
+      "settings": [
+        {
+          "className": "HttpSettings",
+          "query": "",
+          "queryParams": {},
+          "requestType": "GET",
+          "body": "",
+          "urlEncodedBody": {},
+          "headers": {}
+        },
+        {
+          "className": "JsonParseSettings",
+          "jsonViewType": "RAW",
+          "jsonPath": "$",
+          "groupNameDivider": "||",
+          "mockJsonScript": "",
+          "isMockJsonSwitcher": false,
+          "columnsData": [
+            {
+              "header": "",
+              "jsonPath": "",
+              "groupingJsonPaths": []
+            }
+          ],
+          "hierarchyNodeNames": {
+            "id": "",
+            "rootId": "",
+            "parentId": ""
+          },
+          "hierarchyTreeObjectNodeNames": [],
+          "isJoinConditionSwitcher": false,
+          "jsonJoinConditionSettings": null
+        }
+      ]
+    },
+    "component": null,
+    "additionalSources": [],
+    "erConfig": {
+      "type": "BV_LINK",
+      "value": null,
+      "tableValidations": [],
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": "",
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": {},
+            "headers": {}
+          },
+          {
+            "className": "JsonParseSettings",
+            "jsonViewType": "RAW",
+            "jsonPath": "",
+            "groupNameDivider": "||",
+            "mockJsonScript": "",
+            "isMockJsonSwitcher": false,
+            "columnsData": [
+              {
+                "header": "",
+                "jsonPath": "",
+                "groupingJsonPaths": []
+              }
+            ],
+            "hierarchyNodeNames": {
+              "id": "",
+              "rootId": "",
+              "parentId": ""
+            },
+            "hierarchyTreeObjectNodeNames": [],
+            "isJoinConditionSwitcher": false,
+            "jsonJoinConditionSettings": null
+          }
+        ]
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": "json message"
+          }
+        ],
+        "testCaseIds": [
+          "61abd5ac-efbe-49cc-b7f5-925a7f543481"
+        ]
+      },
+      "bulkValidatorJsonValidation": {
+        "validationObjectName": "%1$s",
+        "testCaseId": "%2$s"
+      }
+    },
+    "groupEntity": {
+      "groupId": null,
+      "name": null,
+      "tabEntity": null,
+      "isSynchronousLoading": false,
+      "isHide": false,
+      "lastUpdateDateTime": null,
+      "groupOrder": 0,
+      "sutParameterEntities": null
+    },
+    "lastUpdateDateTime": null,
+    "commonParameterEntity": null,
+    "parameterOrder": 0,
+    "preconfigured": false
+  },
+  "potSessionTabEntity": null,
+  "potSessionEntity": null,
+  "errors": ""
+}

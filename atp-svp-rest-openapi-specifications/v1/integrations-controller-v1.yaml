@@ -1,0 +1,328 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.1
+info:
+  title: Api Documentation
+  description: Api Documentation
+  version: '1.0'
+servers:
+  - url: //localhost:8080/
+tags:
+  - name: integrations-controller
+    description: Integrations Controller
+paths:
+  /api/svp/integrations/environments/environments/{environmentId}/systems:
+    get:
+      tags:
+        - integrations-controller
+      summary: getSystemsByEnvironmentIdFromEnvironments
+      operationId: getSystemsByEnvironmentIdFromEnvironments
+      parameters:
+        - name: environmentId
+          in: path
+          description: environmentId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/System'
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+  /api/svp/integrations/environments/projects:
+    get:
+      tags:
+        - integrations-controller
+      summary: getProjectsFromEnvironments
+      operationId: getProjectsFromEnvironments
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+  /api/svp/integrations/environments/projects/{projectId}/connections-names:
+    get:
+      tags:
+        - integrations-controller
+      summary: getConnectionsNamesFromEnvironments
+      operationId: getConnectionsNamesFromEnvironments
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+  /api/svp/integrations/environments/projects/{projectId}/environments:
+    get:
+      tags:
+        - integrations-controller
+      summary: getEnvironmentsByProjectIdFromEnvironments
+      operationId: getEnvironmentsByProjectIdFromEnvironments
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LazyEnvironment'
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+  /api/svp/integrations/environments/projects/{projectId}/systems-names:
+    get:
+      tags:
+        - integrations-controller
+      summary: getSystemsNamesFromEnvironments
+      operationId: getSystemsNamesFromEnvironments
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+  /api/svp/integrations/log-collector/projects/{projectId}/configurations:
+    get:
+      tags:
+        - integrations-controller
+      summary: getConfigurationsFromLogCollector
+      operationId: getConfigurationsFromLogCollector
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LogCollectorConfiguration'
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+components:
+  schemas:
+    Connection:
+      title: Connection
+      type: object
+      properties:
+        connectionType:
+          type: string
+        created:
+          type: string
+        createdBy:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+          format: uuid
+        modified:
+          type: string
+        modifiedBy:
+          type: string
+        name:
+          type: string
+        parameters:
+          type: object
+          additionalProperties:
+            type: string
+        sourceTemplateId:
+          type: string
+        systemId:
+          type: string
+    LazyEnvironment:
+      title: LazyEnvironment
+      type: object
+      properties:
+        created:
+          type: string
+        createdBy:
+          type: string
+        description:
+          type: string
+        graylogName:
+          type: string
+        id:
+          type: string
+        modified:
+          type: string
+        modifiedBy:
+          type: string
+        name:
+          type: string
+        projectId:
+          type: string
+        systems:
+          type: array
+          items:
+            type: string
+    LogCollectorConfiguration:
+      title: LogCollectorConfiguration
+      type: object
+      properties:
+        active:
+          type: boolean
+        created:
+          type: string
+        createdBy:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+          format: uuid
+        modified:
+          type: string
+        modifiedBy:
+          type: string
+        name:
+          type: string
+        parameters:
+          type: object
+          properties: {}
+        projectId:
+          type: string
+        type:
+          type: string
+    Project:
+      title: Project
+      type: object
+      properties:
+        created:
+          type: string
+        createdBy:
+          type: string
+        description:
+          type: string
+        environments:
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          type: string
+          format: uuid
+        modified:
+          type: string
+        modifiedBy:
+          type: string
+        name:
+          type: string
+        shortName:
+          type: string
+    System:
+      title: System
+      type: object
+      properties:
+        connections:
+          type: array
+          items:
+            $ref: '#/components/schemas/Connection'
+        created:
+          type: string
+        createdBy:
+          type: string
+        description:
+          type: string
+        environmentId:
+          type: string
+        id:
+          type: string
+          format: uuid
+        modified:
+          type: string
+        modifiedBy:
+          type: string
+        name:
+          type: string

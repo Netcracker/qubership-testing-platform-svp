@@ -1,0 +1,287 @@
+{
+  "sessionId": "4a2b2a37-c9b7-43e1-8c64-4d83dd74ecb9",
+  "started": null,
+  "executionConfiguration": {
+    "environment": {
+      "id": null,
+      "name": null,
+      "description": null,
+      "created": null,
+      "createdBy": null,
+      "modified": null,
+      "modifiedBy": null,
+      "projectId": "5404905d-620d-48fe-b094-bd8a9f3f2aeb",
+      "systems": [
+        {
+          "id": null,
+          "name": "Business Solution",
+          "description": null,
+          "created": null,
+          "createdBy": null,
+          "modified": null,
+          "modifiedBy": null,
+          "environmentId": null,
+          "connections": [
+            {
+              "id": null,
+              "name": "HTTP",
+              "description": null,
+              "created": null,
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": null,
+              "parameters": {
+                "url": "http://127.0.0.1:8082"
+              },
+              "sourceTemplateId": null,
+              "connectionType": null,
+              "services": null
+            }
+          ],
+          "systemCategoryId": null,
+          "status": null,
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": null,
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        }
+      ],
+      "graylogName": null
+    },
+    "pagesName": [],
+    "logCollectorSearchPeriod": null,
+    "bulkValidatorSettings": null,
+    "logCollectorConfigurations": [],
+    "shouldHighlightDiffs": false,
+    "shouldSendSessionResults": false,
+    "isFullInfoNeededInPot": false,
+    "onlyForPreconfiguredParams": false,
+    "isPotGenerationMode": false,
+    "onlyCommonParametersExecuted": false,
+    "forcedLoadingCommonParameters": false,
+    "folder": null
+  },
+  "executionVariables": {},
+  "keyParameters": {},
+  "potSessionPageEntities": [
+    {
+      "id": null,
+      "name": "ConfigPageTableLinks",
+      "validationStatus": "NONE",
+      "potSessionTabs": [
+        {
+          "id": null,
+          "name": "SimpleTableWithLinks",
+          "validationStatus": "NONE",
+          "potSessionParameterEntities": [
+            {
+              "parameterId": null,
+              "page": "ConfigPageTableLinks",
+              "tab": "SimpleTableWithLinks",
+              "group": "SimpleTableWithLinks",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [
+                {
+                  "type": "TableValueObject",
+                  "table": {
+                    "type": ".Table",
+                    "name": "Business Solution",
+                    "headers": [
+                      "A",
+                      "B",
+                      "C"
+                    ],
+                    "rows": [
+                      {
+                        "A": "qqq https://stackoverflow.com",
+                        "B": "eee <a href=\"/dog.html\">testLink1</a>",
+                        "C": "rrrrr <a href=\"/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>"
+                      },
+                      {
+                        "A": "rrr https://stackoverflow.com",
+                        "B": "tttt <a href=\"/dog.html\">testLink1</a>",
+                        "C": "yyyy <a href=\"/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "validationInfo": {
+                "type": "ValidationInfo",
+                "status": "NONE",
+                "errorDescription": null
+              },
+              "parameterConfig": {
+                "parameterId": null,
+                "name": "SimpleTableWithLinks",
+                "displayType": "TABLE",
+                "source": {
+                  "system": "Business Solution",
+                  "connection": "DB",
+                  "engineType": "SQL",
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "TableSettings",
+                      "tableName": ""
+                    }
+                  ]
+                },
+                "component": null,
+                "additionalSources": [],
+                "erConfig": {
+                  "type": "NONE",
+                  "value": null,
+                  "tableValidations": [],
+                  "dataSource": {
+                    "system": "",
+                    "connection": "",
+                    "engineType": null,
+                    "script": "",
+                    "settings": [
+                      {
+                        "className": "TableSettings",
+                        "tableName": ""
+                      }
+                    ]
+                  },
+                  "tableValidationSettings": {
+                    "keyColumns": [],
+                    "groupingColumns": []
+                  },
+                  "bulkValidatorValidation": {
+                    "isManualValidation": false,
+                    "validationItem": [
+                      {
+                        "validationColumn": "",
+                        "validationObjectName": ""
+                      }
+                    ],
+                    "testCaseIds": []
+                  },
+                  "bulkValidatorJsonValidation": {
+                    "validationObjectName": "",
+                    "testCaseId": ""
+                  }
+                },
+                "groupEntity": null,
+                "lastUpdateDateTime": null,
+                "commonParameterEntity": null,
+                "parameterOrder": 0,
+                "preconfigured": false
+              },
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            }
+          ],
+          "potSessionPageEntity": null,
+          "synchronousLoading": false,
+          "alreadyValidated": false
+        }
+      ],
+      "potSessionEntity": null,
+      "pageConfiguration": {
+        "pageId": null,
+        "name": "ConfigPageTableLinks",
+        "isSynchronousLoading": false,
+        "folder": null,
+        "lastUpdateDateTime": null,
+        "tabEntities": [
+          {
+            "tabId": null,
+            "name": "SimpleTableWithLinks",
+            "pageConfiguration": null,
+            "isSynchronousLoading": false,
+            "lastUpdateDateTime": null,
+            "tabOrder": 0,
+            "groupEntities": [
+              {
+                "groupId": null,
+                "name": "SimpleTableWithLinks",
+                "tabEntity": null,
+                "isSynchronousLoading": false,
+                "isHide": false,
+                "lastUpdateDateTime": null,
+                "groupOrder": 0,
+                "sutParameterEntities": [
+                  {
+                    "parameterId": null,
+                    "name": "SimpleTableWithLinks",
+                    "displayType": "TABLE",
+                    "source": {
+                      "system": "Business Solution",
+                      "connection": "DB",
+                      "engineType": "SQL",
+                      "script": "select 'qqq https://stackoverflow.com' as a, 'eee <a href=\"/dog.html\">testLink1</a>' as b, 'rrrrr <a href=\"/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>' as c from dual\nunion\nselect 'rrr https://stackoverflow.com' as a, 'tttt <a href=\"/dog.html\">testLink1</a>' as b, 'yyyy <a href=\"/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>' as c from dual",
+                      "settings": [
+                        {
+                          "className": "TableSettings",
+                          "tableName": ""
+                        }
+                      ]
+                    },
+                    "component": null,
+                    "additionalSources": [],
+                    "erConfig": {
+                      "type": "NONE",
+                      "value": null,
+                      "tableValidations": [],
+                      "dataSource": {
+                        "system": "",
+                        "connection": "",
+                        "engineType": null,
+                        "script": "",
+                        "settings": [
+                          {
+                            "className": "TableSettings",
+                            "tableName": ""
+                          }
+                        ]
+                      },
+                      "tableValidationSettings": {
+                        "keyColumns": [],
+                        "groupingColumns": []
+                      },
+                      "bulkValidatorValidation": {
+                        "isManualValidation": false,
+                        "validationItem": [
+                          {
+                            "validationColumn": "",
+                            "validationObjectName": ""
+                          }
+                        ],
+                        "testCaseIds": []
+                      },
+                      "bulkValidatorJsonValidation": {
+                        "validationObjectName": "",
+                        "testCaseId": ""
+                      }
+                    },
+                    "groupEntity": null,
+                    "lastUpdateDateTime": null,
+                    "commonParameterEntity": null,
+                    "parameterOrder": 0,
+                    "preconfigured": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "alreadyValidated": false,
+      "tabsLoadingAlreadyStarted": false
+    }
+  ],
+  "commonParameters": [],
+  "alreadyValidated": false,
+  "sessionPagesLoadingAlreadyStarted": false
+}

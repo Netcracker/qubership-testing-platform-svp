@@ -1,0 +1,149 @@
+{
+    "arValues": [],
+    "componentName": null,
+    "er": null,
+    "errors": "",
+    "group": "jsonTableLinks",
+    "isSynchronousLoading": false,
+    "name": "jsonTableLinks",
+    "page": "ConfigPageJsonTableLinks",
+    "parameterConfig": {
+        "additionalSources": [
+        ],
+        "component": null,
+        "dataSource": {
+            "connection": "DB",
+            "engineType": "SQL",
+            "script": "",
+            "settings": [
+                {
+                    "body": "",
+                    "className": "HttpSettings",
+                    "headers": {
+                    },
+                    "query": "",
+                    "queryParams": {
+                    },
+                    "requestType": "GET",
+                    "urlEncodedBody": {
+                    }
+                },
+                {
+                    "className": "JsonParseSettings",
+                    "columnsData": [
+                        {
+                            "groupingJsonPaths": [
+                            ],
+                            "header": "name_Link",
+                            "jsonPath": "$.name"
+                        },
+                        {
+                            "groupingJsonPaths": [
+                            ],
+                            "header": "id",
+                            "jsonPath": "$.id"
+                        }
+                    ],
+                    "groupNameDivider": "||",
+                    "hierarchyNodeNames": {
+                        "id": "",
+                        "parentId": "",
+                        "rootId": ""
+                    },
+                    "hierarchyTreeObjectNodeNames": [
+                    ],
+                    "isJoinConditionSwitcher": false,
+                    "isMockJsonSwitcher": false,
+                    "jsonJoinConditionSettings": null,
+                    "jsonPath": "$.product.characteristic",
+                    "jsonViewType": "TABLE",
+                    "mockJsonScript": ""
+                }
+            ],
+            "system": "Business Solution"
+        },
+        "displayType": "JSON",
+        "er": {
+            "bulkValidatorJsonValidation": {
+                "testCaseId": "",
+                "validationObjectName": ""
+            },
+            "bulkValidatorValidation": {
+                "isManualValidation": false,
+                "testCaseIds": [
+                ],
+                "validationItem": [
+                    {
+                        "validationColumn": "",
+                        "validationObjectName": ""
+                    }
+                ]
+            },
+            "dataSource": {
+                "connection": "",
+                "engineType": null,
+                "script": "",
+                "settings": [
+                    {
+                        "body": "",
+                        "className": "HttpSettings",
+                        "headers": {
+                        },
+                        "query": "",
+                        "queryParams": {
+                        },
+                        "requestType": "GET",
+                        "urlEncodedBody": {
+                        }
+                    },
+                    {
+                        "className": "JsonParseSettings",
+                        "columnsData": [
+                            {
+                                "groupingJsonPaths": [
+                                ],
+                                "header": "",
+                                "jsonPath": ""
+                            }
+                        ],
+                        "groupNameDivider": "||",
+                        "hierarchyNodeNames": {
+                            "id": "",
+                            "parentId": "",
+                            "rootId": ""
+                        },
+                        "hierarchyTreeObjectNodeNames": [
+                        ],
+                        "isJoinConditionSwitcher": false,
+                        "isMockJsonSwitcher": false,
+                        "jsonJoinConditionSettings": [
+                        ],
+                        "jsonPath": "",
+                        "jsonViewType": "RAW",
+                        "mockJsonScript": ""
+                    }
+                ],
+                "system": ""
+            },
+            "tableValidations": [
+            ],
+            "tableValidationSettings": {
+                "groupingColumns": [
+                ],
+                "keyColumns": [
+                ]
+            },
+            "type": "NONE",
+            "value": null
+        },
+        "isPreconfigured": false,
+        "name": "jsonTableLinks"
+    },
+    "path": "ConfigPageJsonTableLinks_jsonTableLinks_jsonTableLinks_jsonTableLinks",
+    "tab": "jsonTableLinks",
+    "validationInfo": {
+        "errorDescription": null,
+        "status": "NONE",
+        "type": "ValidationInfo"
+    }
+}

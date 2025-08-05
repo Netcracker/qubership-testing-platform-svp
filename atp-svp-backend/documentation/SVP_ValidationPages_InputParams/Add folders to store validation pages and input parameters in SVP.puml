@@ -1,0 +1,56 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity FolderService
+    entity AbstractRepositoryConfigService
+    entity PageConfigurationRepository
+
+end box
+box "External libraries" #E3E3D9
+    entity FILES
+    entity FileUtils
+
+end box
+
+activate FolderService
+
+FolderService -> AbstractRepositoryConfigService : getProjectConfig(projectId)
+    activate AbstractRepositoryConfigService
+        AbstractRepositoryConfigService -> FolderService : ProjectConfiguration config
+    deactivate AbstractRepositoryConfigService
+FolderService -> AbstractRepositoryConfigService : getRepoForConfig(config)
+    activate AbstractRepositoryConfigService
+        AbstractRepositoryConfigService -> FolderService : PageConfigurationRepository
+    deactivate AbstractRepositoryConfigService
+    == Create folder ==
+FolderService -> PageConfigurationRepository : createFolder(config, folderName)
+    activate PageConfigurationRepository
+        PageConfigurationRepository -> FILES: createDirectories(path)
+        PageConfigurationRepository -> FILES: createFile("common_parameters.json")
+        PageConfigurationRepository -> FILES: createFile("key_parameters.json")
+    deactivate PageConfigurationRepository
+== Get folder ==
+FolderService -> PageConfigurationRepository : getFolders(config)
+    activate PageConfigurationRepository
+        PageConfigurationRepository -> FILES: walk(projectFolder)
+        PageConfigurationRepository -> FolderService: List<String> folders
+    deactivate PageConfigurationRepository
+== Delete folder ==
+FolderService -> PageConfigurationRepository : deleteFolder(config, folder)
+activate PageConfigurationRepository
+        PageConfigurationRepository -> FileUtils :deleteDirectory(new File(folderPath))
+        deactivate PageConfigurationRepository
+== Edit folder ==
+FolderService -> PageConfigurationRepository : editFolder(config, folder, newName)
+    activate PageConfigurationRepository
+        PageConfigurationRepository -> FILES: move(folderPath, folderPathWithNewName)
+    deactivate PageConfigurationRepository
+
+
+
+
+deactivate FolderService
+
+@enduml

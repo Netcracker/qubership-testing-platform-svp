@@ -1,0 +1,232 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.1
+info:
+    title: Log Collector API
+    description: Log Collector API
+    version: '1.1'
+servers:
+    - url: /
+tags:
+    - name: configuration-controller
+      description: Configuration Controller
+paths:
+    /api/configurations:
+        put:
+            tags:
+                - configuration-controller
+            summary: updateConfiguration
+            operationId: updateConfiguration
+            requestBody:
+                description: configuration
+                content:
+                    application/json:
+                        schema:
+                                $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Configuration'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                    $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Configuration'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+            x-codegen-request-body-name: configuration
+        post:
+            tags:
+                - configuration-controller
+            summary: addConfiguration
+            operationId: addConfiguration
+            requestBody:
+                description: configuration
+                content:
+                    application/json:
+                        schema:
+                                $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Configuration'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                    $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Configuration'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+            x-codegen-request-body-name: configuration
+    /api/configurations/project/{projectId}:
+        get:
+            tags:
+                - configuration-controller
+            summary: getConfigurationsByProjectId
+            operationId: getConfigurationsByProjectId
+            parameters:
+                - name: projectId
+                  in: path
+                  description: projectId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                        $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Configuration'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/configurations/project/{projectId}/{environmentId}:
+        get:
+            tags:
+                - configuration-controller
+            summary: getActiveConfigurationsForEnvironmentByProjectId
+            operationId: getActiveConfigurationsForEnvironmentByProjectId
+            parameters:
+                - name: environmentId
+                  in: path
+                  description: environmentId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+                - name: projectId
+                  in: path
+                  description: projectId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                        $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Configuration'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/configurations/{id}:
+        get:
+            tags:
+                - configuration-controller
+            summary: getConfigurationById
+            operationId: getConfigurationById
+            parameters:
+                - name: id
+                  in: path
+                  description: id
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                    $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Configuration'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/configurations/{projectId}/{id}:
+        delete:
+            tags:
+                - configuration-controller
+            summary: deleteConfiguration
+            operationId: deleteConfiguration
+            parameters:
+                - name: projectId
+                  in: path
+                  description: projectId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+                - name: id
+                  in: path
+                  description: id
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content: {}
+                204:
+                    description: No Content
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+            deprecated: false
+

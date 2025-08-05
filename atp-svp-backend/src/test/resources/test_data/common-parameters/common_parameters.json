@@ -1,0 +1,227 @@
+[
+  {
+    "parameterId": "80debe2b-67b2-4127-b26a-36711b8fb9ec",
+    "name": "Test Completed",
+    "displayType": "LINK",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select '<a href=/ncobject.jsp?id=657567567>657567567</a>' aa from dual",
+      "settings": {
+        "className": "HttpSettings",
+        "requestType": "GET",
+        "body": "",
+        "headers": {}
+      }
+    },
+    "logsSource": {
+      "component": "",
+      "searchText": ""
+    },
+    "er": {
+      "type": "PLAIN",
+      "value": "1",
+      "columnName": "",
+      "condition": "EQUALS",
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": {
+          "className": "HttpSettings",
+          "requestType": "GET",
+          "body": "",
+          "headers": {}
+        }
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false
+  },
+  {
+    "parameterId": "f58a4205-081c-448f-a4ce-fe8cdcd8c132",
+    "name": "Test Error",
+    "displayType": "PARAM",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select 1 from dual",
+      "settings": {
+        "className": "HttpSettings",
+        "requestType": "GET",
+        "body": "",
+        "headers": {}
+      }
+    },
+    "logsSource": {
+      "component": "",
+      "searchText": ""
+    },
+    "er": {
+      "type": "PLAIN",
+      "value": "2",
+      "columnName": "",
+      "condition": "EQUALS",
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": {
+          "className": "HttpSettings",
+          "requestType": "GET",
+          "body": "",
+          "headers": {}
+        }
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false
+  },
+  {
+    "parameterId": "6a124004-77d5-4197-b064-4f7c94c6781a",
+    "name": "Test none",
+    "displayType": "PARAM",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select 1 from dual",
+      "settings": {
+        "className": "HttpSettings",
+        "requestType": "GET",
+        "body": "",
+        "headers": {}
+      }
+    },
+    "logsSource": {
+      "component": "",
+      "searchText": ""
+    },
+    "er": {
+      "type": "NONE",
+      "value": "",
+      "columnName": "",
+      "condition": "EQUALS",
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": {
+          "className": "HttpSettings",
+          "requestType": "GET",
+          "body": "",
+          "headers": {}
+        }
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false
+  },
+  {
+    "parameterId": "f01348ad-e9b5-4ce7-888a-ae1968b8a92b",
+    "name": "Test additional1",
+    "displayType": "LINK",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select 345345345 from dual",
+      "settings": {
+        "className": "HttpSettings",
+        "requestType": "GET",
+        "body": "",
+        "headers": null
+      }
+    },
+    "logsSource": {
+      "component": "",
+      "searchText": ""
+    },
+    "er": {
+      "type": "NONE",
+      "value": null,
+      "columnName": null,
+      "condition": null,
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": {
+          "className": "HttpSettings",
+          "requestType": "GET",
+          "body": "",
+          "headers": null
+        }
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false
+  },
+  {
+    "parameterId": "f7ea9e56-6190-4a54-a58f-746d9359fdce",
+    "name": "Test additional2",
+    "displayType": "PARAM",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select 345345345 from dualgfhgfrh",
+      "settings": {
+        "className": "HttpSettings",
+        "requestType": "GET",
+        "body": "",
+        "headers": null
+      }
+    },
+    "logsSource": {
+      "component": "",
+      "searchText": ""
+    },
+    "er": {
+      "type": "NONE",
+      "value": null,
+      "columnName": null,
+      "condition": null,
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": {
+          "className": "HttpSettings",
+          "requestType": "GET",
+          "body": "",
+          "headers": null
+        }
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false
+  }
+]

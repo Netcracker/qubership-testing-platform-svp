@@ -1,0 +1,109 @@
+{
+  "parameterId": "b6c9aa84-2120-4e7c-a275-ff7f354bb928",
+  "page": "test",
+  "tab": "tab",
+  "group": "group",
+  "isSynchronousLoading": false,
+  "er": null,
+  "arValues": [
+    {
+      "type": "SimpleValueObject",
+      "value": "test",
+      "highlightedEr": null,
+      "highlightedAr": null
+    }
+  ],
+  "validationInfo": {
+    "type": "ValidationInfo",
+    "status": "NONE",
+    "errorDescription": null
+  },
+  "parameterConfig": {
+    "parameterId": "87de34c9-43dc-4770-93ea-5ff3bbea6d2d",
+    "name": "param",
+    "displayType": "PARAM",
+    "source": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "",
+      "settings": [
+        {
+          "className": "LogCollectorSettings",
+          "configurations": [],
+          "parameters": {
+            "searchText": null,
+            "graylogSearchText": null,
+            "lines": 0,
+            "minutes": 0,
+            "query": null,
+            "readOnlyMode": false,
+            "searchPerOneDay": false,
+            "searchStrategy": null,
+            "previewParameters": null,
+            "isLogMessageColumnShowed": true,
+            "regexp": false
+          }
+        }
+      ]
+    },
+    "component": null,
+    "additionalSources": [],
+    "erConfig": {
+      "type": "NONE",
+      "value": null,
+      "tableValidations": [],
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": [
+          {
+            "className": "LogCollectorSettings",
+            "configurations": [],
+            "parameters": {
+              "searchText": null,
+              "graylogSearchText": null,
+              "lines": 0,
+              "minutes": 0,
+              "query": null,
+              "readOnlyMode": false,
+              "searchPerOneDay": false,
+              "searchStrategy": null,
+              "previewParameters": null,
+              "isLogMessageColumnShowed": true,
+              "regexp": false
+            }
+          }
+        ]
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": ""
+          }
+        ],
+        "testCaseIds": []
+      },
+      "bulkValidatorJsonValidation": {
+        "validationObjectName": "",
+        "testCaseId": ""
+      }
+    },
+    "groupEntity": null,
+    "lastUpdateDateTime": null,
+    "commonParameterEntity": null,
+    "parameterOrder": 0,
+    "preconfigured": false
+  },
+  "potSessionTabEntity": null,
+  "potSessionEntity": null,
+  "errors": ""
+}

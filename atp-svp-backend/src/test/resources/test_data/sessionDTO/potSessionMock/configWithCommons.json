@@ -1,0 +1,1138 @@
+{
+  "sessionId": "2353e157-aeed-4433-a881-95f38e9093b6",
+  "started": null,
+  "alreadyValidated": false,
+  "sessionPagesLoadingAlreadyStarted": false,
+  "executionConfiguration": {
+    "environment": {
+      "id": "fd2bb135-4e76-4dbb-9ad0-c377b2cba8aa",
+      "name": "localhost",
+      "description": null,
+      "created": "1608738312423",
+      "createdBy": null,
+      "modified": "1666010361739",
+      "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+      "projectId": "1183662d-51ae-438a-92be-0a4bb71620d9",
+      "systems": [
+        {
+          "id": "5b64ad0f-3ee2-47bd-8c1f-45ad166ec9b7",
+          "name": "AMM",
+          "description": null,
+          "created": "1666010361739",
+          "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "modified": "1666010867870",
+          "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "81580b0b-b2d9-4744-80db-71d3d4b302e3",
+              "name": "SSH",
+              "description": null,
+              "created": "1666010398418",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1666010867870",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "5b64ad0f-3ee2-47bd-8c1f-45ad166ec9b7",
+              "parameters": {
+                "MZ_HOME": "/u02/qubership/ammdev/mz/bin",
+                "ssh_host": "localhost",
+                "ssh_key": "",
+                "passphrase": "",
+                "ssh_password": "qubership-password",
+                "ssh_login": "qubership-user"
+              },
+              "sourceTemplateId": "24136d83-5ffb-487f-9bb4-e73be3a89aa2",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "71ce56bd-9dbd-4e7d-afcd-3e6f4f6cc949",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": null,
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "bcfeec7c-0c49-40dc-b9cf-8bc420e77f86",
+          "name": "CUBE",
+          "description": null,
+          "created": "1666001441487",
+          "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "modified": "1666001549969",
+          "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "c1e3805f-969b-448a-8912-e9f135c95a43",
+              "name": "SSH",
+              "description": null,
+              "created": "1666001549969",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1666001549969",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "bcfeec7c-0c49-40dc-b9cf-8bc420e77f86",
+              "parameters": {
+                "kafkaUimPath": "/u02/qubership/cube/kafka/bin",
+                "ssh_host": "localhost",
+                "ssh_key": "",
+                "passphrase": "",
+                "ssh_password": "cubevd1",
+                "ssh_login": "cubevd1"
+              },
+              "sourceTemplateId": "24136d83-5ffb-487f-9bb4-e73be3a89aa2",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "71ce56bd-9dbd-4e7d-afcd-3e6f4f6cc949",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": {
+            "type": "BY_SHELL_SCRIPT",
+            "parameters": "cat /u02/qubership/build_version.txt",
+            "headers": null,
+            "parsingValue": null,
+            "parsingType": "NONE"
+          },
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "c3a4b016-498c-4b23-ab41-e7d6159d28b1",
+          "name": "GRAYLOG",
+          "description": null,
+          "created": "1608738312458",
+          "createdBy": null,
+          "modified": "1608738312462",
+          "modifiedBy": null,
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "a64ae8f1-ad46-47b8-a027-5ef38fa2d980",
+              "name": "HTTP",
+              "description": null,
+              "created": "1608738312462",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "c3a4b016-498c-4b23-ab41-e7d6159d28b1",
+              "parameters": {
+                "password": "EJQyvz",
+                "stream": "5f296e893ed0b81a82148d99",
+                "login": "TA_user",
+                "url": "https://logcollector.somedomain.com"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": null,
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": null,
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "0a3f7cd6-95b9-4abf-8afb-45936bde0e96",
+          "name": "ITF",
+          "description": null,
+          "created": "1608738312483",
+          "createdBy": null,
+          "modified": "1608738312488",
+          "modifiedBy": null,
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "d8e74778-b07e-4f05-a16b-03014ed1c08b",
+              "name": "HTTP",
+              "description": null,
+              "created": "1608738312488",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "0a3f7cd6-95b9-4abf-8afb-45936bde0e96",
+              "parameters": {
+                "password": "",
+                "login": "",
+                "url": "http://atp-itf-project.dev.somedomain.com/mbEngineService"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "0238773d-c83f-4483-82d1-b1ebd240af82",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": null,
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "18613a15-d9f6-482d-a480-7d812aae13fb",
+          "name": "MIA",
+          "description": null,
+          "created": "1608738312502",
+          "createdBy": null,
+          "modified": "1608738312505",
+          "modifiedBy": null,
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "e26963c5-186e-4967-97ce-d45502dbb379",
+              "name": "HTTP",
+              "description": null,
+              "created": "1608738312505",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "18613a15-d9f6-482d-a480-7d812aae13fb",
+              "parameters": {
+                "password": "",
+                "Enable Ping": "no",
+                "login": "",
+                "url": "http://mia.dev.somedomain.com"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "89252951-b248-4e80-a91d-42eb915ab54a",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": null,
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "a62d4920-8372-4d66-acf9-2ea8c81f6696",
+          "name": "Public_Gateway",
+          "description": null,
+          "created": "1631709890159",
+          "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "modified": "1652884007974",
+          "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "edaf9cc6-47f8-47b4-ac09-78dc13fa36fa",
+              "name": "HTTP",
+              "description": null,
+              "created": "1631710080070",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1652884007974",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "a62d4920-8372-4d66-acf9-2ea8c81f6696",
+              "parameters": {
+                "password": "",
+                "login": "",
+                "url": "http://atp-ocs-diagnostic-tool:8080"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "71ce56bd-9dbd-4e7d-afcd-3e6f4f6cc949",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": {
+            "type": "BY_KUBERNETES_CONFIGMAP",
+            "parameters": "",
+            "headers": null,
+            "parsingValue": "((cloud-core-ext.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){5}\\w+.(\\w+-){2}\\w+)(?!.*cloud-core-ext))|((cloud-core.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){4}\\w+.(\\w+-){2}\\w+)(?!.*cloud-core))|((cloudcs.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloudcs))|((cloud-cim.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-cim))|((cloud-cpqbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-cpqbe))|((cloud-mcbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-mcbe))|((cloud-user-task-manager.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-user-task-manager))|((cloud-om.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-om))|((cloud-order-capture.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-order-capture))|((cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud))|((cloud-poq-app.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-poq-app))|((cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud))|((cloud-shopping-cart.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-shopping-cart))|((cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud))|((cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud))",
+            "parsingType": "REGEXP"
+          },
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "80f3ab83-bf37-40e6-9553-84777a2c1b8e",
+          "name": "Billing System",
+          "description": null,
+          "created": "1608738312509",
+          "createdBy": null,
+          "modified": "1608738312514",
+          "modifiedBy": null,
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "5ea07910-1cb8-4e11-a9a1-509a8e431fe6",
+              "name": "DB",
+              "description": null,
+              "created": "1608738312512",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "80f3ab83-bf37-40e6-9553-84777a2c1b8e",
+              "parameters": {
+                "db_type": "oracle",
+                "db_login": "geneva_admin",
+                "db_name": "Billing System BE",
+                "db_port": "1526",
+                "db_host": "localhost",
+                "jdbc_url": "jdbc:oracle:thin:@localhost:1526/Billing System BE",
+                "db_password": "geneva_admin"
+              },
+              "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "92035dc9-dd9b-4158-9458-45a49b962a8e",
+              "name": "SSH",
+              "description": null,
+              "created": "1608738312514",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "80f3ab83-bf37-40e6-9553-84777a2c1b8e",
+              "parameters": {
+                "infinys_root": "/u02/qubership/billing_system/Billing_System_BE/infinys_root",
+                "ssh_host": "127.0.0.1:22",
+                "ssh_key": "",
+                "passphrase": "",
+                "ssh_password": "qubership-password",
+                "ssh_login": "qubership-user"
+              },
+              "sourceTemplateId": "24136d83-5ffb-487f-9bb4-e73be3a89aa2",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "39790c1e-db81-46d5-bf75-713801c3ca6b",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": {
+            "type": "BY_SQL_QUERY",
+            "parameters": "WITH\n    tmp AS (select * from (select to_char(install_date,'YYYY-MM-DD') ||' '||component_id||' '|| version||'  '||\n                      integration_version line, install_date from components_versions  order by install_date\n                      desc)\nwhere rownum <6)\nSELECT LISTAGG(line, chr(10))  WITHIN GROUP (ORDER BY install_date) result from tmp",
+            "headers": null,
+            "parsingValue": null,
+            "parsingType": "NONE"
+          },
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "af15aea3-f3aa-4ac2-bae2-742be8d6b79a",
+          "name": "Billing System BE",
+          "description": null,
+          "created": "1650970898746",
+          "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "modified": "1652861894668",
+          "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "1d0a461e-eee6-45d7-b0b3-52714603d46e",
+              "name": "HTTP",
+              "description": null,
+              "created": "1650970924751",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1652861894668",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "af15aea3-f3aa-4ac2-bae2-742be8d6b79a",
+              "parameters": {
+                "password": "",
+                "login": "",
+                "url": "http://localhost:8010"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "39790c1e-db81-46d5-bf75-713801c3ca6b",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": {
+            "type": "BY_SQL_QUERY",
+            "parameters": "WITH\n    tmp AS (select * from (select component_id||':  '|| version||''||\n                      case when integration_version IS NULL then ';    ' else ';   integration_version: '|| integration_version||' ' end line , install_date from components_versions  order by install_date\n                      desc)\nwhere rownum <10)\nSELECT LISTAGG(line, chr(10))  WITHIN GROUP (ORDER BY install_date) result from tmp",
+            "headers": null,
+            "parsingValue": null,
+            "parsingType": "NONE"
+          },
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "19d53db6-6b7c-454b-ab5e-c3273c6a7a28",
+          "name": "TA Engines Provider",
+          "description": null,
+          "created": "1608738312549",
+          "createdBy": null,
+          "modified": "1608738312552",
+          "modifiedBy": null,
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "19005655-d16e-47dd-8aa6-ce6ed27f9fd4",
+              "name": "TA Engines Provider",
+              "description": null,
+              "created": "1608738312552",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "19d53db6-6b7c-454b-ab5e-c3273c6a7a28",
+              "parameters": {
+                "Acquire_Create_Tool_HTTP_Method": "Post",
+                "Provider_URL": "http://dealer.somedomain.com ",
+                "Acquire_Content_Type": "application/json",
+                "Acquire_Create_Tool_Request_Body": " {\n   \"image\":\"artifactorycn.somedomain.com:17014/product/atp-executor:1.4.67\",\n   \"args\":[\n      \"-nexus=https://artifactorycn.somedomain.com/ta.atp.mvn.snapshots/com/qubership/automation/project/actions/ProjectCustomActions/1.0-SNAPSHOT/ProjectCustomActions-LATEST.zip+*+./\",       \n      \"-nexus=https://artifactorycn.somedomain.com/ta.atp.mvn.snapshots/com/qubership/automation/project/elements/ProjectElements/1.0-SNAPSHOT/ProjectElements-LATEST.zip+*+./\",       \n      \"-svn=https://svn.somedomain.com/TestAutomation/projects/VodafoneOman/iter6/files/+*+files\",\n \"-svn=https://svn.somedomain.com/TestAutomation/projects/VodafoneOman/iter6/tools/+E2EValidation2.jsp+files\",     \n \"-svn=https://svn.somedomain.com/TestAutomation/projects/VodafoneOman/iter6/tools/+E2EValidation.jsp+files\", \n      \"-svn=https://svn.somedomain.com/TestAutomation/projects/VodafoneOman/iter6/config/+*+config\", \n\"-svn=https://svn.somedomain.com/TestAutomation/projects/VodafoneOman/iter6/scripts/+*+scripts\" ,    \n      \"--argline=-maxPoolSize=50 -log=info -lifetimeout=14 webdriver.capabilities.version=71.0 webdriver.hub.url=http://ggr.selenoid.svc:5555/wd/hub webdriver.capabilities.name=project-05c1r webdriver.capabilities.sessionTimeout=40m chrome.option.1=--no-sandbox chrome.option.2=--disable-notifications\",\n      \"-jvm=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005\"\n   ],\n   \"name\":\"project\",\n   \"env\":[\n      {\n         \"name\":\"MAX_RAM\",\n         \"value\":\"3072m\"\n      },\n      {\n         \"name\":\"GRAYLOG_HOST\",\n         \"value\":\"tcp:graylog01cn.somedomain.com\"\n      },\n      {\n         \"name\":\"GRAYLOG_PORT\",\n         \"value\":\"12201\"\n      }\n   ]\n} ",
+                "Provider_Engine_Type": "NTT",
+                "Acquire_Create_Tool_Path": "/ntt",
+                "Release_Tool_HTTP_Method": "Delete",
+                "Engine_Service_URL_JSON_Path": "$.url",
+                "Release_Tool_Path": "/${$.id}"
+              },
+              "sourceTemplateId": "a03d3884-36d5-40ad-947a-7e2c3f0febcb",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "b1f78c5d-e9a0-47f5-afc1-1cc72b497bff",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": null,
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "4418b4ef-3997-42ce-b473-ca3891c83b6b",
+          "name": "SERVER",
+          "description": null,
+          "created": "1608738312555",
+          "createdBy": null,
+          "modified": "1652886000422",
+          "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "dd3670b8-7cb5-40c7-92c8-8a205bcfdfa5",
+              "name": "HTTP",
+              "description": null,
+              "created": "1608738312559",
+              "createdBy": null,
+              "modified": "1652886000422",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "4418b4ef-3997-42ce-b473-ca3891c83b6b",
+              "parameters": {
+                "password": "",
+                "login": "",
+                "url": "http://atp-environments:8080"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "31ae53aa-42d7-4921-8562-32215428d009",
+              "name": "SSH",
+              "description": null,
+              "created": "1608738312560",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "4418b4ef-3997-42ce-b473-ca3891c83b6b",
+              "parameters": {
+                "ssh_host": "localhost:22",
+                "ssh_key": "",
+                "passphrase": "",
+                "ssh_password": "qubership-password",
+                "ssh_login": "qubership-user"
+              },
+              "sourceTemplateId": "24136d83-5ffb-487f-9bb4-e73be3a89aa2",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "71ce56bd-9dbd-4e7d-afcd-3e6f4f6cc949",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": {
+            "type": "BY_SHELL_SCRIPT",
+            "parameters": "cd /u02/qubership/server/business-api\ncat version_server.txt",
+            "headers": null,
+            "parsingValue": null,
+            "parsingType": "NONE"
+          },
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        },
+        {
+          "id": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+          "name": "Business Solution",
+          "description": null,
+          "created": "1608738312564",
+          "createdBy": null,
+          "modified": "1683903026606",
+          "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+          "environmentId": null,
+          "connections": [
+            {
+              "id": "689d7e90-63ea-48eb-bb99-2bdf6da189fb",
+              "name": "DB",
+              "description": null,
+              "created": "1608738312566",
+              "createdBy": null,
+              "modified": "1648727736278",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+              "parameters": {
+                "db_type": "oracle",
+                "db_login": "U285_INT_6900",
+                "db_name": "DBG195",
+                "db_port": "1526",
+                "db_host": "localhost",
+                "jdbc_url": "jdbc:oracle:thin:@localhost:1526/DBG195",
+                "db_password": "U285_INT_6900"
+              },
+              "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "bf1ba8a1-f2c5-4768-b5b9-74b7b2201a64",
+              "name": "DB 1",
+              "description": null,
+              "created": "1648625714770",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1648824337358",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+              "parameters": {
+                "db_type": "cassandra",
+                "db_login": "ocs_superuser",
+                "db_name": "quotacache_l",
+                "db_port": "9042",
+                "db_host": "localhost",
+                "jdbc_url": "jdbc:c*:datastax://localhost:9042/quotacache_l",
+                "db_password": "password"
+              },
+              "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "1aad30be-ffa0-4fc7-b362-fc8550f5dbc1",
+              "name": "DB 2",
+              "description": null,
+              "created": "1653981171265",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1653983632865",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+              "parameters": {
+                "db_type": "cassandra",
+                "db_login": "ocs_superuser",
+                "db_name": "smart",
+                "db_port": "9042",
+                "db_host": "localhost",
+                "jdbc_url": "",
+                "db_password": "password"
+              },
+              "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "2f63a845-3c1e-4185-81ce-342c24de8381",
+              "name": "DB 3",
+              "description": null,
+              "created": "1683903026606",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1683903026606",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+              "parameters": {
+                "db_type": "cassandra",
+                "db_login": "ocs_superuser",
+                "db_name": "quotacache_l",
+                "db_port": "9042",
+                "db_host": "localhost",
+                "jdbc_url": "jdbc:cassandra://localhost:9042/quotacache_l",
+                "db_password": "ocs_superuser"
+              },
+              "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "a3ae3d41-9eae-4127-b7f0-aa8818d90da6",
+              "name": "HTTP",
+              "description": null,
+              "created": "1608738312582",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+              "parameters": {
+                "password": "qubership",
+                "Client_Secret": "17f5bd53-a4a9-4f87-bc5a-ade052f6aa8e",
+                "RabbitMQ_Queue": "ha.payment.success.requestor_28.53",
+                "Client_ID": "business_solution_user_client_id_53",
+                "login": "sysadm",
+                "url": "http://localhost:6900"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "7a235b7c-06ba-4bb1-bc65-c32bb753baa3",
+              "name": "HTTP 1",
+              "description": null,
+              "created": "1652771814924",
+              "createdBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "modified": "1666611116444",
+              "modifiedBy": "1c0167c9-1bea-4587-8f32-d637ff341d31",
+              "systemId": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+              "parameters": {
+                "password": "",
+                "login": "",
+                "url": "http://127.0.0.1:8082"
+              },
+              "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            },
+            {
+              "id": "ad2931f1-dc20-446c-a06e-c0a5ecb6f604",
+              "name": "SSH",
+              "description": null,
+              "created": "1608738312584",
+              "createdBy": null,
+              "modified": null,
+              "modifiedBy": null,
+              "systemId": "d33d6622-c5dc-42c7-9da0-d6324a467281",
+              "parameters": {
+                "ssh_host": "localhost:22",
+                "ssh_key": "",
+                "passphrase": "",
+                "ssh_password": "qubership-password",
+                "ssh_login": "qubership-user"
+              },
+              "sourceTemplateId": "24136d83-5ffb-487f-9bb4-e73be3a89aa2",
+              "connectionType": null,
+              "services": [
+                "HealthCheck",
+                "LogCollector",
+                "MIA",
+                "TDM"
+              ]
+            }
+          ],
+          "systemCategoryId": "89252951-b248-4e80-a91d-42eb915ab54a",
+          "status": "NOTHING",
+          "dateOfLastCheck": null,
+          "version": null,
+          "dateOfCheckVersion": null,
+          "parametersGettingVersion": {
+            "type": "BY_SQL_QUERY",
+            "parameters": "WITH\n    tmp AS (select * from (select regexp_substr(version, '(\\S*)') as package,\n       regexp_substr(version, '\\((\\S+)*\\)', 1, 1, null,  1)  as version,\n       (case substr(data, 6, 1) when ':' then to_date(data, 'hh24:mi:ss mm/dd/yyyy')\n            else to_date(data, 'hh24:mi mm/dd/yyyy') end) as dd\nfrom (select substr(value, 1, instr(value, ' Date: ') - 1) version,\n             substr(value, instr(value, ' Date: ') + 7) data\n      from nc_directory\n      where key = 'nc.database.version.history')\nwhere version not like '%Test.Configuration%')order by dd desc)\nSELECT LISTAGG(version, chr(10))  WITHIN GROUP (ORDER BY dd desc) result from tmp where rownum <3",
+            "headers": null,
+            "parsingValue": null,
+            "parsingType": "NONE"
+          },
+          "parentSystemId": null,
+          "mergeByName": null,
+          "linkToSystemId": null,
+          "externalId": null,
+          "serverITF": null
+        }
+      ],
+      "graylogName": ""
+    },
+    "pagesName": [
+      "[ADTL] UI_UX Improvements"
+    ],
+    "logCollectorSearchPeriod": {
+      "searchType": "RELATIVE",
+      "dateStart": null,
+      "dateEnd": null,
+      "timeRange": 86400
+    },
+    "bulkValidatorSettings": null,
+    "logCollectorConfigurations": [],
+    "shouldHighlightDiffs": false,
+    "shouldSendSessionResults": true,
+    "isFullInfoNeededInPot": true,
+    "onlyForPreconfiguredParams": false,
+    "isPotGenerationMode": false,
+    "onlyCommonParametersExecuted": false,
+    "forcedLoadingCommonParameters": false,
+    "folder": "711df55f-a11e-4411-a8d3-a63d52de3866"
+  },
+  "executionVariables":{},
+  "keyParameters": {
+    "test": "321"
+  },
+  "potSessionPageEntities": null,
+  "commonParameters": [
+    {
+      "parameterId": "be43e736-0a8b-491e-b35e-7f29e2d78420",
+      "page": null,
+      "tab": null,
+      "group": null,
+      "synchronousLoading": false,
+      "er": null,
+      "arValues": [
+        {
+          "errorMessage": "Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]",
+          "sqlMessage": "DB script error",
+          "type": "ErrorValueObject"
+        }
+      ],
+      "validationInfo": {
+        "type": "ValidationInfo",
+        "status": "WARNING",
+        "errorDescription": null
+      },
+      "parameterConfig": {
+        "parameterId": "bd54f995-a0cd-40fa-8d59-29b72471d06d",
+        "name": "second",
+        "displayType": "PARAM",
+        "source": {
+          "system": "Business Solution",
+          "connection": "DB",
+          "engineType": "SQL",
+          "script": "",
+          "settings": [
+            {
+              "className": "LogCollectorSettings",
+              "configurations": [],
+              "parameters": {
+                "searchText": null,
+                "graylogSearchText": null,
+                "lines": 0,
+                "minutes": 0,
+                "query": null,
+                "readOnlyMode": false,
+                "searchPerOneDay": false,
+                "searchStrategy": null,
+                "previewParameters": null,
+                "isLogMessageColumnShowed": true,
+                "regexp": false
+              }
+            }
+          ]
+        },
+        "component": null,
+        "additionalSources": [],
+        "erConfig": {
+          "type": "NONE",
+          "value": null,
+          "tableValidations": [],
+          "dataSource": {
+            "system": "",
+            "connection": "",
+            "engineType": null,
+            "script": "",
+            "settings": [
+              {
+                "className": "LogCollectorSettings",
+                "configurations": [],
+                "parameters": {
+                  "searchText": null,
+                  "graylogSearchText": null,
+                  "lines": 0,
+                  "minutes": 0,
+                  "query": null,
+                  "readOnlyMode": false,
+                  "searchPerOneDay": false,
+                  "searchStrategy": null,
+                  "previewParameters": null,
+                  "isLogMessageColumnShowed": true,
+                  "regexp": false
+                }
+              }
+            ]
+          },
+          "tableValidationSettings": {
+            "keyColumns": [],
+            "groupingColumns": []
+          },
+          "bulkValidatorValidation": {
+            "isManualValidation": false,
+            "validationItem": [
+              {
+                "validationColumn": "",
+                "validationObjectName": ""
+              }
+            ],
+            "testCaseIds": []
+          },
+          "bulkValidatorJsonValidation": {
+            "validationObjectName": "",
+            "testCaseId": ""
+          }
+        },
+        "preconfigured": false,
+        "groupEntity": null,
+        "lastUpdateDateTime": null,
+        "parameterOrder": 1
+      },
+      "potSessionTabEntity": null,
+      "potSessionEntity": null,
+      "errors": "AR1: Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]\n"
+    },
+    {
+      "parameterId": "37f58cc9-afd3-4390-bf7a-65408d755399",
+      "page": null,
+      "tab": null,
+      "group": null,
+      "synchronousLoading": false,
+      "er": null,
+      "arValues": [
+        {
+          "errorMessage": "Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]",
+          "sqlMessage": "DB script error",
+          "type": "ErrorValueObject"
+        }
+      ],
+      "validationInfo": {
+        "type": "ValidationInfo",
+        "status": "WARNING",
+        "errorDescription": null
+      },
+      "parameterConfig": {
+        "parameterId": "d84b11e1-496c-4b2f-bb51-1f5c8179eeee",
+        "name": "third",
+        "displayType": "PARAM",
+        "source": {
+          "system": "Business Solution",
+          "connection": "DB",
+          "engineType": "SQL",
+          "script": "",
+          "settings": [
+            {
+              "className": "LogCollectorSettings",
+              "configurations": [],
+              "parameters": {
+                "searchText": null,
+                "graylogSearchText": null,
+                "lines": 0,
+                "minutes": 0,
+                "query": null,
+                "readOnlyMode": false,
+                "searchPerOneDay": false,
+                "searchStrategy": null,
+                "previewParameters": null,
+                "isLogMessageColumnShowed": true,
+                "regexp": false
+              }
+            }
+          ]
+        },
+        "component": null,
+        "additionalSources": [],
+        "erConfig": {
+          "type": "NONE",
+          "value": null,
+          "tableValidations": [],
+          "dataSource": {
+            "system": "",
+            "connection": "",
+            "engineType": null,
+            "script": "",
+            "settings": [
+              {
+                "className": "LogCollectorSettings",
+                "configurations": [],
+                "parameters": {
+                  "searchText": null,
+                  "graylogSearchText": null,
+                  "lines": 0,
+                  "minutes": 0,
+                  "query": null,
+                  "readOnlyMode": false,
+                  "searchPerOneDay": false,
+                  "searchStrategy": null,
+                  "previewParameters": null,
+                  "isLogMessageColumnShowed": true,
+                  "regexp": false
+                }
+              }
+            ]
+          },
+          "tableValidationSettings": {
+            "keyColumns": [],
+            "groupingColumns": []
+          },
+          "bulkValidatorValidation": {
+            "isManualValidation": false,
+            "validationItem": [
+              {
+                "validationColumn": "",
+                "validationObjectName": ""
+              }
+            ],
+            "testCaseIds": []
+          },
+          "bulkValidatorJsonValidation": {
+            "validationObjectName": "",
+            "testCaseId": ""
+          }
+        },
+        "preconfigured": false,
+        "groupEntity": null,
+        "lastUpdateDateTime": null,
+        "parameterOrder": 2
+      },
+      "potSessionTabEntity": null,
+      "potSessionEntity": null,
+      "errors": "AR1: Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]\n"
+    },
+    {
+      "parameterId": "08863bf4-96c4-4b04-9c29-1dd1e7484cbd",
+      "page": null,
+      "tab": null,
+      "group": null,
+      "synchronousLoading": false,
+      "er": null,
+      "arValues": [
+        {
+          "errorMessage": "Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]",
+          "sqlMessage": "DB script error",
+          "type": "ErrorValueObject"
+        }
+      ],
+      "validationInfo": {
+        "type": "ValidationInfo",
+        "status": "WARNING",
+        "errorDescription": null
+      },
+      "parameterConfig": {
+        "parameterId": "29e16751-8dc0-411f-97c8-bbe0e87bf8a9",
+        "name": "first",
+        "displayType": "PARAM",
+        "source": {
+          "system": "Business Solution",
+          "connection": "DB",
+          "engineType": "SQL",
+          "script": "",
+          "settings": [
+            {
+              "className": "LogCollectorSettings",
+              "configurations": [],
+              "parameters": {
+                "searchText": null,
+                "graylogSearchText": null,
+                "lines": 0,
+                "minutes": 0,
+                "query": null,
+                "readOnlyMode": false,
+                "searchPerOneDay": false,
+                "searchStrategy": null,
+                "previewParameters": null,
+                "isLogMessageColumnShowed": true,
+                "regexp": false
+              }
+            }
+          ]
+        },
+        "component": null,
+        "additionalSources": [],
+        "erConfig": {
+          "type": "NONE",
+          "value": null,
+          "tableValidations": [],
+          "dataSource": {
+            "system": "",
+            "connection": "",
+            "engineType": null,
+            "script": "",
+            "settings": [
+              {
+                "className": "LogCollectorSettings",
+                "configurations": [],
+                "parameters": {
+                  "searchText": null,
+                  "graylogSearchText": null,
+                  "lines": 0,
+                  "minutes": 0,
+                  "query": null,
+                  "readOnlyMode": false,
+                  "searchPerOneDay": false,
+                  "searchStrategy": null,
+                  "previewParameters": null,
+                  "isLogMessageColumnShowed": true,
+                  "regexp": false
+                }
+              }
+            ]
+          },
+          "tableValidationSettings": {
+            "keyColumns": [],
+            "groupingColumns": []
+          },
+          "bulkValidatorValidation": {
+            "isManualValidation": false,
+            "validationItem": [
+              {
+                "validationColumn": "",
+                "validationObjectName": ""
+              }
+            ],
+            "testCaseIds": []
+          },
+          "bulkValidatorJsonValidation": {
+            "validationObjectName": "",
+            "testCaseId": ""
+          }
+        },
+        "preconfigured": false,
+        "groupEntity": null,
+        "lastUpdateDateTime": null,
+        "parameterOrder": 0
+      },
+      "potSessionTabEntity": null,
+      "potSessionEntity": null,
+      "errors": "AR1: Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]\n"
+    }
+  ]
+}

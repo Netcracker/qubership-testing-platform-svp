@@ -1,0 +1,64 @@
+{
+  "parameterId": null,
+  "page": "page",
+  "tab": "tab",
+  "group": "group",
+  "isSynchronousLoading": false,
+  "er": {
+    "type": "SimpleValueObject",
+    "value": "{\n   \"to\": \"Person2\",\n   \"from\": \"Person1\",\n   \"body\": \"Message\"\n}",
+    "highlightedEr": null,
+    "highlightedAr": null
+  },
+  "arValues": [],
+  "validationInfo": {
+    "type": "ValidationInfo",
+    "status": null,
+    "errorDescription": null
+  },
+  "parameterConfig": {
+    "parameterId": null,
+    "name": null,
+    "displayType": null,
+    "source": {
+      "system": null,
+      "connection": null,
+      "engineType": null,
+      "script": null,
+      "settings": [
+        {
+          "className": "JsonParseSettings",
+          "jsonViewType": "RAW",
+          "jsonPath": null,
+          "groupNameDivider": null,
+          "mockJsonScript": null,
+          "isMockJsonSwitcher": false,
+          "columnsData": null,
+          "hierarchyNodeNames": null,
+          "hierarchyTreeObjectNodeNames": null,
+          "isJoinConditionSwitcher": false,
+          "jsonJoinConditionSettings": null
+        }
+      ]
+    },
+    "component": null,
+    "additionalSources": null,
+    "erConfig": {
+      "type": "%1$s",
+      "value": "{\n   \"to\": \"Person2\",\n   \"from\": \"Person1\",\n   \"body\": \"Message\"\n}",
+      "tableValidations": [],
+      "dataSource": null,
+      "tableValidationSettings": null,
+      "bulkValidatorValidation": null,
+      "bulkValidatorJsonValidation": null
+    },
+    "groupEntity": null,
+    "lastUpdateDateTime": null,
+    "commonParameterEntity": null,
+    "parameterOrder": 0,
+    "preconfigured": false
+  },
+  "potSessionTabEntity": null,
+  "potSessionEntity": null,
+  "errors": ""
+}

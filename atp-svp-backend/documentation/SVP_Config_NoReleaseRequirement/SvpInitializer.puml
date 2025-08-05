@@ -1,0 +1,34 @@
+@startuml
+participant Actor
+Actor -> SvpContextInitializer : onStartup
+activate SvpContextInitializer
+SvpContextInitializer -> GitProjectService : reloadAllGitProjects
+activate GitProjectService
+GitProjectService -> GitProjectServiceImpl : reloadAllGitProjects
+activate GitProjectServiceImpl
+GitProjectServiceImpl -> GitProjectServiceImpl : λ→
+activate GitProjectServiceImpl
+GitProjectServiceImpl -> GitProjectServiceImpl : λ→
+activate GitProjectServiceImpl
+GitProjectServiceImpl -> GitProjectServiceImpl : reloadGitProject
+activate GitProjectServiceImpl
+GitProjectServiceImpl -> GitRepositoryImpl : gitClone
+activate GitRepositoryImpl
+GitRepositoryImpl -> GitOperationException : new
+activate GitOperationException
+GitOperationException --> GitRepositoryImpl
+deactivate GitOperationException
+GitRepositoryImpl --> GitProjectServiceImpl
+deactivate GitRepositoryImpl
+GitProjectServiceImpl --> GitProjectServiceImpl
+deactivate GitProjectServiceImpl
+GitProjectServiceImpl --> GitProjectServiceImpl
+deactivate GitProjectServiceImpl
+GitProjectServiceImpl --> GitProjectServiceImpl
+deactivate GitProjectServiceImpl
+GitProjectServiceImpl --> GitProjectService
+deactivate GitProjectServiceImpl
+GitProjectService --> SvpContextInitializer
+deactivate GitProjectService
+return
+@enduml

@@ -1,0 +1,1243 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.1
+paths: {}
+info:
+    title: Log Collector API
+    description: Log Collector API
+    version: '1.1'
+
+components:
+    schemas:
+        Configuration:
+            allOf:
+                - $ref: "#/components/schemas/AbstractCompareEntity"
+            title: Configuration
+            type: object
+            properties:
+                active:
+                    type: boolean
+                created:
+                    type: string
+                createdBy:
+                    type: string
+                id:
+                    type: string
+                    format: uuid
+                modified:
+                    type: string
+                modifiedBy:
+                    type: string
+                name:
+                    type: string
+                parameters:
+                    type: object
+                    additionalProperties:
+                        type: object
+                        properties: {}
+                projectId:
+                    type: string
+                    format: uuid
+                type:
+                    type: string
+        Connection:
+            title: Connection
+            type: object
+            properties:
+                created:
+                    type: integer
+                    format: int64
+                createdBy:
+                    type: string
+                id:
+                    type: string
+                    format: uuid
+                modified:
+                    type: integer
+                    format: int64
+                modifiedBy:
+                    type: string
+                name:
+                    type: string
+                parameters:
+                    type: object
+                    additionalProperties:
+                        type: string
+                services:
+                    type: array
+                    items:
+                        type: string
+                sourceTemplateId:
+                    type: string
+                systemId:
+                    type: string
+        DateFormat:
+            title: DateFormat
+            type: object
+            properties:
+                checkExamples:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/DateFormatCheckExample'
+                dateFormat:
+                    type: string
+                id:
+                    type: string
+                    format: uuid
+                linePattern:
+                    type: string
+        DateFormatCheckExample:
+            title: DateFormatCheckExample
+            type: object
+            properties:
+                expectedDateTime:
+                    type: string
+                id:
+                    type: string
+                    format: uuid
+                logLine:
+                    type: string
+        DateFormatValidationResult:
+            title: DateFormatValidationResult
+            type: object
+            properties:
+                valid:
+                    type: boolean
+                violations:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/ValidationViolation'
+        ResetCacheResult:
+            title: ResetCacheResult
+            type: object
+            properties:
+                message:
+                    type: string
+        Environment:
+            title: Environment
+            type: object
+            properties:
+                created:
+                    type: integer
+                    format: int64
+                createdBy:
+                    type: string
+                id:
+                    type: string
+                    format: uuid
+                modified:
+                    type: integer
+                    format: int64
+                modifiedBy:
+                    type: string
+                name:
+                    type: string
+                graylogName:
+                    type: string
+                systems:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/System'
+        File:
+            title: File
+            type: object
+            properties:
+                absolute:
+                    type: boolean
+                absoluteFile:
+                    $ref: '#/components/schemas/File'
+                absolutePath:
+                    type: string
+                canonicalFile:
+                    $ref: '#/components/schemas/File'
+                canonicalPath:
+                    type: string
+                directory:
+                    type: boolean
+                file:
+                    type: boolean
+                freeSpace:
+                    type: integer
+                    format: int64
+                hidden:
+                    type: boolean
+                name:
+                    type: string
+                parent:
+                    type: string
+                parentFile:
+                    $ref: '#/components/schemas/File'
+                path:
+                    type: string
+                totalSpace:
+                    type: integer
+                    format: int64
+                usableSpace:
+                    type: integer
+                    format: int64
+        SearchResults:
+            title: SearchResults
+            type: object
+            properties:
+                errorCode:
+                    type: string
+                    description: errorCode
+                    example: null
+                errorDetails:
+                    type: string
+                    description: errorDetails
+                    example: null
+                errors:
+                    type: array
+                    description: Errors
+                    items:
+                        $ref: '#/components/schemas/Errors'
+                logsLink:
+                    type: string
+                    description: logsLink
+                    example: api/logs/download/3797295a-83ed-11ea-bc55-0242ac130003
+                searchId:
+                    type: string
+                    description: searchId
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                projectId:
+                    type: string
+                    description: projectId
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                environmentId:
+                    type: string
+                    description: environmentId
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                startDate:
+                    type: string
+                    description: minimum date to search logs for
+                    example: 2020-04-28T07:08:00Z
+                endDate:
+                    type: string
+                    description: maximum date to search logs for
+                    example: 2020-04-28T07:08:00Z
+                startedAt:
+                    type: string
+                    description: when system search was started
+                    example: 2020-04-28T07:08:00Z
+                finishedAt:
+                    type: string
+                    description: when system search was finished
+                    example: 2020-04-28T07:08:00Z
+                skipArchivation:
+                    type: boolean
+                    description: whether to provide only suitable logs inside JSON
+                status:
+                    type: string
+                    description: status
+                    example: COMPLETED
+                componentSearchResults:
+                    type: array
+                    description: ComponentSearchResults
+                    items:
+                        $ref: '#/components/schemas/ComponentSearchResults'
+                notFoundTemplates:
+                    type: array
+                    items:
+                        type: string
+                        format: uuid
+                    description: an array of templates that are in the request, but not in the database
+                    example: ["cc90871e-8bb3-4670-a3c9-2a9eadfd2280", "06e265e0-813f-4e8b-87b4-b0fd6a84e973"]
+        ComponentSearchResults:
+            title: SearchResultsResponse
+            type: object
+            properties:
+                errorCode:
+                    type: string
+                    description: errorCode
+                    example: null
+                errorDetails:
+                    type: string
+                    description: errorDetails
+                    example: null
+                searchId:
+                    type: string
+                    description: searchId
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                errors:
+                    type: array
+                    description: Errors
+                    items:
+                        $ref: '#/components/schemas/Errors'
+                logsLink:
+                    type: string
+                    description: logsLink
+                    example: api/logs/download/3797295a-83ed-11ea-bc55-0242ac130003/1237295a-83ed-11ea-bc55-0242ac130321
+                componentSearchId:
+                    type: string
+                    description: componentSearchId
+                    format: uuid
+                    example: 1237295a-83ed-11ea-bc55-0242ac130321
+                componentId:
+                    type: string
+                    description: componentId
+                    format: uuid
+                    example: 1234234b-83ed-11ea-bc55-0242ac130321
+                componentName:
+                    type: string
+                    description: componentName
+                    example: CBM component
+                componentType:
+                    type: string
+                    description: Type of component
+                    example: GRAYLOG
+                templateIds:
+                    type: array
+                    description: Templates related to this component search
+                    items:
+                        type: string
+                        format: uuid
+                status:
+                    type: string
+                    description: status
+                    example: COMPLETED
+                startedAt:
+                    type: string
+                    description: when system search was started
+                    example: 2020-04-28T07:08:00Z
+                finishedAt:
+                    type: string
+                    description: when system search was finished
+                    example: 2020-04-28T07:08:00Z
+                searchPatternType:
+                    type: string
+                    description: search_pattern_type
+                    example: QUERY
+                searchPattern:
+                    type: string
+                    description: search_pattern
+                    example: ERROR|WARNING
+                caseSensitive:
+                    type: boolean
+                    description: is seach pattern mast be case sensitive
+                skipEndDate:
+                    type: boolean
+                    description: whether to skip end date during last modified date analysis
+                filterText:
+                    type: string
+                    description: filter_text
+                    example: ERROR|WARNING
+                searchStrategy:
+                    type: string
+                    description: search strategy
+                    example: SURROUNDING_LINES
+                surroundingMessagesBefore:
+                    type: integer
+                    description: surroundingMessagesBefore
+                    format: int32
+                    example: 100
+                surroundingMessagesAfter:
+                    type: integer
+                    description: surroundingMessagesAfter
+                    format: int32
+                    example: 100
+                surroundingLinesQuantity:
+                    type: integer
+                    description: surrounding_lines_quantity
+                    format: int32
+                    example: 100
+                surroundingMinutesQuantity:
+                    type: integer
+                    description: surrounding_minutes_quantity
+                    format: int32
+                    example: 100
+                fileTrimmingStrategy:
+                    type: string
+                    description: file trimming strategy
+                    example: TRIM_BY_SEARCHING_TIME
+                systemSearchResults:
+                    type: array
+                    description: SystemSearchResults
+                    items:
+                        $ref: '#/components/schemas/SystemSearchResults'
+                c:
+                    type: boolean
+                    description: filter out not matched messages
+                    example: false
+                    default: false
+        SystemSearchResults:
+            title: SystemSearchResults
+            type: object
+            properties:
+                errorCode:
+                    type: string
+                    description: errorCode
+                    example: null
+                errorDetails:
+                    type: string
+                    description: errorDetails
+                    example: null
+                errors:
+                    type: array
+                    description: Errors
+                    items:
+                        $ref: '#/components/schemas/Errors'
+                logsLink:
+                    type: string
+                    description: logsLink
+                    example: api/logs/download/3797295a-83ed-11ea-bc55-0242ac130003/1237295a-83ed-11ea-bc55-0242ac130321/9997295a-83ed-11ea-bc55-0242ac130888
+                systemSearchId:
+                    type: string
+                    description: componentSearchId
+                    format: uuid
+                    example: 9997295a-83ed-11ea-bc55-0242ac130888
+                systemName:
+                    type: string
+                    description: systemName
+                    example: CBM
+                startedAt:
+                    type: string
+                    description: when system search was started
+                    example: 2020-04-28T07:08:00Z
+                finishedAt:
+                    type: string
+                    description: when system search was finished
+                    example: 2020-04-28T07:08:00Z
+                searchPerOneDay:
+                    type: boolean
+                    description: ignore date (consider only time) while analyzing files
+                findsFound:
+                    type: integer
+                    description: number of logs with necessary text and timestamp that were found for the system
+                    format: int32
+                    example: 100
+                status:
+                    type: string
+                    description: status
+                    example: COMPLETED
+                searchThreadResult:
+                    type: array
+                    description: SearchThreadResult
+                    items:
+                        $ref: '#/components/schemas/SearchThreadFindResult'
+        GrayLogFieldTerms:
+            title: GrayLogFieldTerms
+            type: object
+            properties:
+                fieldName:
+                    type: string
+                terms:
+                    type: object
+                    additionalProperties:
+                        type: integer
+                        format: int32
+        FileResponse:
+            title: File
+            type: string
+            format: binary
+        ObjectNode:
+            title: ObjectNode
+            type: object
+            properties:
+                type:
+                    type: string
+                status:
+                    type: string
+        Project:
+            title: Project
+            type: object
+            properties:
+                created:
+                    type: integer
+                    format: int64
+                createdBy:
+                    type: string
+                description:
+                    type: string
+                environments:
+                    type: array
+                    items:
+                        type: string
+                        format: uuid
+                id:
+                    type: string
+                    format: uuid
+                modified:
+                    type: integer
+                    format: int64
+                modifiedBy:
+                    type: string
+                name:
+                    type: string
+                shortName:
+                    type: string
+        SearchParameters:
+            title: SearchParameters
+            type: object
+            properties:
+                graylogParameters:
+                    $ref: '#/components/schemas/GraylogParameters'
+                filebasedParameters:
+                    $ref: '#/components/schemas/FilebasedParameters'
+                kuberParameters:
+                    $ref: '#/components/schemas/KuberParameters'
+                endDate:
+                    type: string
+                    description: endDate
+                    format: date-time
+                    example: 2020-04-28T07:08:00Z
+                fileTrimmingStrategy:
+                    type: string
+                    description: fileTrimmingStrategy
+                    example: TRIM_BY_SEARCHING_TIME
+                rangeType:
+                    type: string
+                    description: rangeType
+                    example: ABSOLUTE
+                    default: ABSOLUTE
+                searchPattern:
+                    type: string
+                    description: searchPattern
+                    example: ERROR
+                searchPatternType:
+                    type: string
+                    description: searchPatternType
+                    example: TEXT
+                searchPatternQuery:
+                    type: string
+                    description: searchPatternQuery
+                    example: ERROR
+                filterText:
+                    type: string
+                    description: filterText
+                    example: ERROR
+                searchStrategy:
+                    type: string
+                    description: searchStrategy
+                    example: STACK_TRACE
+                startDate:
+                    type: string
+                    description: startDate
+                    format: date-time
+                    example: 2020-04-27T07:08:04.89Z
+                surroundingMessagesBefore:
+                    type: integer
+                    description: surroundingMessagesBefore
+                    format: int32
+                    example: 10
+                surroundingMessagesAfter:
+                    type: integer
+                    description: surroundingMessagesAfter
+                    format: int32
+                    example: 10
+                surroundingLinesQuantity:
+                    type: integer
+                    description: surroundingLinesQuantity
+                    format: int32
+                    example: 10
+                surroundingMinutesQuantity:
+                    type: integer
+                    description: surroundingMinutesQuantity
+                    format: int32
+                    example: 10
+                    default: 0
+                timeRange:
+                    type: integer
+                    description: timeRange
+                    format: int64
+                    example: 300
+                searchPerOneDay:
+                    type: boolean
+                    description: If this params is true search should be executed by one day
+                        parsing only time of log line. This is necessary for log files where only
+                        time of the day is set
+                    example: false
+                    default: false
+                isRegexpGraylog:
+                    type: boolean
+                    description: Whether filter text for graylog messages is a regexp
+                    example: false
+                    default: false
+                skipArchivation:
+                    type: boolean
+                    description: Whether to provide only logs (found by search conditions) without
+                        whole log files and archives
+                    example: false
+                    default: false
+                isCaseSensitiveFilebased:
+                    type: boolean
+                    description: If true, there will be provided logs matching search pattern
+                        by both content and case
+                    example: false
+                    default: false
+                isCaseSensitiveGraylog:
+                    type: boolean
+                    description: If true, a filter text will be applied considering case
+                    example: false
+                    default: false
+        GetPartialSearchResultsByIdsRequestMessage:
+            title: GetPartialSearchResultsByIdsRequestMessage
+            type: object
+            properties:
+                searches:
+                    type: array
+                    description: searches
+                    items:
+                        $ref: '#/components/schemas/PartialSearchRequest'
+        PartialSearchRequest:
+            title: PartialSearchRequest
+            type: object
+            properties:
+                searchId:
+                    type: string
+                    description: searchId for whole search process
+                    format: uuid
+                componentSearches:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/PartialComponentSearch'
+        PartialComponentSearch:
+            title: PartialComponentSearch
+            type: object
+            properties:
+                componentSearchId:
+                    type: string
+                    description: ID of search for component
+                    format: uuid
+                systemSearches:
+                    type: array
+                    items:
+                        type: string
+                        format: uuid
+            description: Requst for partial search for component
+        SearchRequest:
+            title: SearchRequest
+            type: object
+            properties:
+                configurations:
+                    type: array
+                    description: configurations
+                    items:
+                        type: string
+                        format: uuid
+                templates:
+                    type: array
+                    description: templates
+                    items:
+                        type: string
+                        format: uuid
+                environmentId:
+                    type: string
+                    description: environmentId
+                    format: uuid
+                    example: 640a31e4-891f-11ea-bc55-0242ac130003
+                parameters:
+                    $ref: '#/components/schemas/SearchParameters'
+                projectId:
+                    type: string
+                    description: projectId
+                    format: uuid
+                    example: 5a6ba1c2-891f-11ea-bc55-0242ac130003
+                context:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/ContextParameter'
+                    description: context variables with their value
+                requestId:
+                    type: string
+                    description: requestId
+                    format: uuid
+                    example: 777ba1c2-891f-11ea-bc55-0242ac130011
+                requestTool:
+                    type: string
+                    description: requestTool
+                    example: SVP
+            description: Parameters for search request.
+        SearchThreadFindResult:
+            title: SearchThreadFindResult
+            type: object
+            properties:
+                foundInDirectory:
+                    type: string
+                    description: foundInDirectory
+                    example: /u02/qubership/business_solution/u32_c5_6400/logs
+                logFileName:
+                    type: string
+                    description: logFileName
+                    example: vf-cbm_clust1_853.log
+                logsLink:
+                    type: string
+                    description: logsLink
+                    example: api/logs/download/3797295a-83ed-11ea-bc55-0242ac130003/businessSolution/44198d12-83ed-11ea-bc55-0242ac130003/vf-cbm_clust1_853.log.zip
+                messages:
+                    type: array
+                    description: messages
+                    example:
+                        - - '22.04.2020 08:12:20.661 <ERROR><cbm.controller.BillingAccountControllerImpl>
+        - Exception in BillingAccountControllerImpl#setSubscriptionAttrs: '
+                        - - 'org.qubership.solutions.vf.shared.api.integration.common.IntegrationException:
+        Internal error on the remote server'
+                    items:
+                        type: array
+                        items:
+                            type: string
+                parameters:
+                    type: object
+                    additionalProperties:
+                        type: string
+                    description: parameters
+                timestamp:
+                    type: string
+                    description: timestamp
+                    example: null
+        ShortEnvironment:
+            title: ShortEnvironment
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uuid
+                name:
+                    type: string
+        ShortSystem:
+            title: ShortSystem
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uuid
+                name:
+                    type: string
+        System:
+            title: System
+            type: object
+            properties:
+                connections:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Connection'
+                created:
+                    type: integer
+                    format: int64
+                createdBy:
+                    type: string
+                description:
+                    type: string
+                environmentId:
+                    type: string
+                    format: uuid
+                id:
+                    type: string
+                    format: uuid
+                modified:
+                    type: integer
+                    format: int64
+                modifiedBy:
+                    type: string
+                name:
+                    type: string
+                systemCategoryId:
+                    type: string
+                    format: uuid
+                linkToSystemId:
+                    type: string
+                    format: uuid
+        Template:
+            allOf:
+                - $ref: "#/components/schemas/AbstractCompareEntity"
+            title: Template
+            type: object
+            properties:
+                configurations:
+                    type: array
+                    items:
+                        type: string
+                        format: uuid
+                created:
+                    type: string
+                createdBy:
+                    type: string
+                environmentId:
+                    type: string
+                    format: uuid
+                id:
+                    type: string
+                    format: uuid
+                modified:
+                    type: string
+                modifiedBy:
+                    type: string
+                name:
+                    type: string
+                parameters:
+                    type: object
+                    additionalProperties:
+                        type: object
+                        properties: {}
+                projectId:
+                    type: string
+                    format: uuid
+                temporary:
+                    type: boolean
+                    default: false
+                contextParameters:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/ContextParameter'
+        ShortTemplate:
+            title: ShortTemplate
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uuid
+                name:
+                    type: string
+        ContextParameter:
+            title: ContextParameter
+            type: object
+            properties:
+                type:
+                    $ref: '#/components/schemas/ContextType'
+                key:
+                    type: string
+                value:
+                    type: string
+                miaType:
+                    $ref: '#/components/schemas/MiaType'
+        ContextType:
+            title: ContextType
+            description: Context type (MIA or Text)
+            type: string
+            enum:
+                - TEXT
+                - MIA
+        MiaType:
+            title: MiaType
+            type: string
+            enum:
+                - PROCESS
+                - COMPOUND
+        TopValuesOfFields:
+            title: TopValuesOfFields
+            type: object
+            properties:
+                configurationId:
+                    type: string
+                    format: uuid
+                fieldsTerms:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/GrayLogFieldTerms'
+                lastUpdate:
+                    type: string
+        TopValuesOfFieldsRequest:
+            type: object
+            properties:
+                environmentId:
+                    type: string
+                    format: uuid
+                    example: 89f5a58d-1859-4c5c-b09d-d07d76ea0503
+                systemName:
+                    type: string
+                    example: GRAYLOG
+                configurationId:
+                    type: string
+                    format: uuid
+                    example: 549feec2-aa6d-480f-89ae-56b1ffc33e54
+                startDate:
+                    type: string
+                    description: startDate
+                    format: date-time
+                    example: 2020-04-27T07:08:04.89Z
+                endDate:
+                    type: string
+                    description: endDate
+                    format: date-time
+                    example: 2020-04-28T07:08:04.89Z
+        ValidationViolation:
+            title: ValidationViolation
+            type: object
+            properties:
+                message:
+                    type: string
+        SearchTextTemplate:
+            title: SearchTextTemplate
+            type: object
+            properties:
+                id:
+                    type: string
+                    format: uuid
+                    example: 105366aa-3d48-49b0-b0a6-50326bbb4805
+                searchText:
+                    type: string
+                    example: Error
+                isRegexp:
+                    type: boolean
+                    example: false
+                    default: false
+                isCaseSensitive:
+                    type: boolean
+                    example: false
+                    default: false
+        GraylogParameters:
+            title: GraylogParameters
+            type: object
+            properties:
+                searchPatternQuery:
+                    type: string
+                    description: searchPatternQuery
+                    example: ERROR
+                filterText:
+                    type: string
+                    description: filterText
+                    example: ERROR
+                isRegexp:
+                    type: boolean
+                    description: Whether filter text for graylog messages is a regexp
+                    example: false
+                    default: false
+                caseSensitive:
+                    type: boolean
+                    description: If true, a filter text will be applied considering case
+                    example: false
+                    default: false
+                filterOutNotMatched:
+                    type: boolean
+                    description: filter out not matched messages
+                    example: false
+                    default: false
+        FilebasedParameters:
+            title: FilebasedParameters
+            type: object
+            properties:
+                fileTrimmingStrategy:
+                    type: string
+                    description: fileTrimmingStrategy
+                    example: TRIM_BY_SEARCHING_TIME
+                searchPattern:
+                    type: string
+                    description: searchPattern
+                    example: ERROR
+                searchStrategy:
+                    type: string
+                    description: searchStrategy
+                    example: STACK_TRACE
+                surroundingMessagesBefore:
+                    type: integer
+                    description: surroundingMessagesBefore
+                    format: int32
+                    example: 100
+                surroundingMessagesAfter:
+                    type: integer
+                    description: surroundingMessagesAfter
+                    format: int32
+                    example: 100
+                surroundingLinesQuantity:
+                    type: integer
+                    description: surroundingLinesQuantity
+                    format: int32
+                    example: 10
+                surroundingMinutesQuantity:
+                    type: integer
+                    description: surroundingMinutesQuantity
+                    format: int32
+                    example: 10
+                    default: 0
+                searchPerOneDay:
+                    type: boolean
+                    description: If this params is true search should be executed by one day
+                        parsing only time of log line. This is necessary for log files where only
+                        time of the day is set
+                    example: false
+                    default: false
+                caseSensitive:
+                    type: boolean
+                    description: If true, there will be provided logs matching search pattern
+                        by both content and case
+                    example: false
+                    default: false
+                isRegexp:
+                    type: boolean
+                    description: Whether search pattern is a regexp
+                    example: false
+                    default: false
+                skipEndDate:
+                    type: boolean
+                    description: Skip end date or not
+                    example: false
+                    default: false
+                filterOutNotMatched:
+                    type: boolean
+                    description: filter out not matched messages
+                    example: false
+                    default: false
+        KuberParameters:
+            title: KuberParameters
+            type: object
+            properties:
+                namespace:
+                    type: string
+                    description: namespace
+                deployment:
+                    type: string
+                    description: deployment
+                searchPattern:
+                    type: string
+                    description: searchPattern
+                    example: ERROR
+                searchStrategy:
+                    type: string
+                    description: searchStrategy
+                    example: STACK_TRACE
+                surroundingMessagesBefore:
+                    type: integer
+                    description: surroundingMessagesBefore
+                    format: int32
+                    example: 100
+                surroundingMessagesAfter:
+                    type: integer
+                    description: surroundingMessagesAfter
+                    format: int32
+                    example: 100
+                surroundingLinesQuantity:
+                    type: integer
+                    description: surroundingLinesQuantity
+                    format: int32
+                    example: 10
+                surroundingMinutesQuantity:
+                    type: integer
+                    description: surroundingMinutesQuantity
+                    format: int32
+                    example: 10
+                    default: 0
+                caseSensitive:
+                    type: boolean
+                    description: If true, there will be provided logs matching search pattern
+                        by both content and case
+                    example: false
+                    default: false
+                isRegexp:
+                    type: boolean
+                    description: Whether search pattern is a regexp
+                    example: false
+                    default: false
+                skipEndDate:
+                    type: boolean
+                    description: Skip end date or not
+                    example: false
+                    default: false
+                searchPerOneDay:
+                    type: boolean
+                    description: If this params is true search should be executed by one day
+                        parsing only time of log line. This is necessary for log files where only
+                        time of the day is set
+                    example: false
+                    default: false
+                filterOutNotMatched:
+                    type: boolean
+                    description: filter out not matched messages
+                    example: false
+                    default: false
+        Errors:
+            title: Errors
+            type: object
+            properties:
+                id:
+                    type: string
+                    description: error id
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                searchId:
+                    type: string
+                    description: search id
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                componentSearchId:
+                    type: string
+                    description: component search id
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                searchThreadId:
+                    type: string
+                    description: search thread id
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                code:
+                    type: string
+                    description: error code
+                    example: LC-1114
+                message:
+                    type: string
+                    description: error details
+                connectionName:
+                    type: string
+                    description: connection name the error occurred under
+                    example: SSH
+                priority:
+                    type: integer
+                    description: priority rank (1 is the highest)
+                    format: int32
+                    example: 1
+                registeredAt:
+                    type: string
+                    description: time when error was caught
+                    format: date-time
+                    example: 2021-04-27T07:08:04.89Z
+        SearchHistoryParameters:
+            title: SearchHistoryParameters
+            type: object
+            properties:
+                projectId:
+                    type: string
+                    description: projectId
+                    format: uuid
+                    example: 79c85e8e-891f-11ea-bc55-0242ac130003
+                endDate:
+                    type: string
+                    description: endDate
+                    format: date-time
+                    example: 2020-04-28T07:08:00Z
+                rangeType:
+                    type: string
+                    description: rangeType
+                    example: ABSOLUTE
+                    default: ABSOLUTE
+                startDate:
+                    type: string
+                    description: startDate
+                    format: date-time
+                    example: 2020-04-27T07:08:04.89Z
+                timeRange:
+                    type: integer
+                    description: timeRange
+                    format: int64
+                    example: 300
+        ThreadPool:
+            title: ThreadPool
+            type: object
+            properties:
+                id:
+                    type: string
+                    description: lc instance
+                load:
+                    type: string
+                    description: number of engaged threads/thread pool capacity
+
+        AbstractEntityVersioning:
+            title: AbstractEntityVersioning
+            type: object
+            properties:
+                description:
+                    type: string
+                modifiedBy:
+                    type: string
+                modifiedWhen:
+                    type: string
+                name:
+                    type: string
+
+        AbstractCompareEntity:
+            type: object
+            properties:
+                'entityType':
+                    type: string
+                    enum: [ 'CONFIGURATION', 'TEMPLATE' ]
+            discriminator:
+                propertyName: entityType
+                mapping:
+                    'CONFIGURATION': '#/components/schemas/Configuration'
+                    'TEMPLATE': '#/components/schemas/Template'
+
+        CompareEntityResponse:
+            title: CompareEntityResponse
+            type: object
+            properties:
+                entity:
+                    $ref: '#/components/schemas/AbstractCompareEntity'
+                revision:
+                    type: string
+
+        PageInfo:
+            type: object
+            properties:
+                offset:
+                    type: integer
+                limit:
+                    type: integer
+                itemsTotalCount:
+                    type: integer
+
+        MiaExecutions:
+            type: object
+            properties:
+                processes:
+                    type: array
+                    items:
+                        type: string
+                        example: 'SQL'
+                compounds:
+                    type: array
+                    items:
+                        type: string
+                        example: 'Full_compound'
+
+        HistoryItemResponse:
+            type: object
+            properties:
+                pageInfo:
+                    $ref: '#/components/schemas/PageInfo'
+                historyItems:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/HistoryItem'
+
+        HistoryItemType:
+            type: string
+            enum:
+                - component
+                - template
+            example: 'component'
+
+        HistoryItem:
+            type: object
+            properties:
+                type:
+                    $ref: '#/components/schemas/HistoryItemType'
+                version:
+                    type: integer
+                    minimum: 1
+                    description: commit nubmer of current schanges
+                modifiedWhen:
+                    type: string
+                    example: '2019-11-17T10:10:05.698Z'
+                modifiedBy:
+                    type: string
+                    example: 'Administrator'
+                added:
+                    type: array
+                    items:
+                        type: string
+                        example: 'System'
+                deleted:
+                    type: array
+                    items:
+                        type: string
+                        example: 'Search text'
+                changed:
+                    type: array
+                    items:
+                        type: string
+                        example: 'Query'
+

@@ -1,0 +1,80 @@
+{
+  "name": "Customer Info",
+  "keyParameters": [
+    {
+      "name": "Customer Account",
+      "value": ""
+    }
+  ],
+  "tabs": [
+    {
+      "name": "Customer Details",
+      "groups": [
+        {
+          "name": "CA",
+          "sutParameters": [
+            {
+              "name": "Billing Account",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Billing System",
+                "connection": "DB",
+                "script": "select '1234567890' from dual"
+              },
+              "er": {
+                "type": "PLAIN",
+                "value": "1234567890"
+              }
+            },
+            {
+              "name": "Bill Summary",
+              "displayType": "TABLE",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "script": "select * from nc_objects"
+              },
+              "logsSource": {
+                "system": "OM",
+                "connection": "DB",
+                "script": "search text"
+              },
+              "er": {
+                "type": "BV_LINK",
+                "value": "1acb-6587dfdf-fdfc-sdwewe"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SO Details",
+      "groups": [
+        {
+          "name": "SO",
+          "sutParameters": [
+            {
+              "name": "SIM",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "script": "select * from nc_objects"
+              },
+              "logsSource": {
+                "system": "OM",
+                "connection": "DB",
+                "script": "search text"
+              },
+              "er": {
+                "type": "PLAIN",
+                "value": "1acb-6587dfdf-fdfc-sdwewe"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

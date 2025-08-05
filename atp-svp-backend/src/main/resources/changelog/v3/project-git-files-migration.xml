@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="Project_git_and_local_migration" author="atp-svp-dev-v3">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT CASE WHEN COUNT(*) >= 1 THEN 1 ELSE 0 END from DATABASECHANGELOG WHERE id = 'Project_git_and_local_migration' or id = 'Project_git_and_local_migration_v2'
+            </sqlCheck>
+        </preConditions>
+        <comment>Project git and local migration.</comment>
+        <customChange class="org.qubership.atp.svp.migration.v3.GitProjectsConfigMigrationCustomChange">
+        </customChange>
+    </changeSet>
+
+</databaseChangeLog>

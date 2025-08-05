@@ -1,0 +1,81 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity IntegrationLogDisplayTypeServiceImpl
+    entity LogCollectorBasedDisplayTypeService
+    entity PotSessionServiceImpl
+
+    entity LogCollectorRepository
+    entity LogCollectorFeignClient
+    entity DeferredSearchServiceImpl
+end box
+
+box "LogCollector service" #E3E3D9
+    entity ApiSearchLogsController
+end box
+
+IntegrationLogDisplayTypeServiceImpl -> LogCollectorBasedDisplayTypeService : getLogCollectorValueObject(logCollectorRepository, deferredSearchService, context, source)
+activate IntegrationLogDisplayTypeServiceImpl
+    activate LogCollectorBasedDisplayTypeService
+        LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : prepareLogCollectorSettings(executionVariablesService, source, executionVariables)
+
+        LogCollectorBasedDisplayTypeService -> PotSessionServiceImpl: getLogCollectorConfigurations(sessionId)
+        activate PotSessionServiceImpl
+            LogCollectorBasedDisplayTypeService <-- PotSessionServiceImpl : List<UUID>
+        deactivate PotSessionServiceImpl
+
+        alt IF context.isDeferredSearchResult()
+            == Start search from LogCollector ==
+            LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : getLogCollectorValueObjectRegisterSearch(logCollectorRepository, deferredSearchService, context, settings)
+            activate LogCollectorBasedDisplayTypeService #lightGreen
+                LogCollectorBasedDisplayTypeService -> DeferredSearchServiceImpl : storeContextByLogCollectorSearchId(lcValue.getSearchId(), context)
+                LogCollectorBasedDisplayTypeService -> LogCollectorRepository : startSearch(projectId, environmentId, settings, List<LogCollectorConfiguration>)
+                activate LogCollectorRepository
+                    LogCollectorRepository -> LogCollectorRepository : getLogCollectorConfigurationIds(logCollectorConfig, settings)
+                    LogCollectorRepository -> LogCollectorRepository : registerSearchInLogCollector(LogCollectorSearchRequest request)
+                    activate LogCollectorRepository #lightGreen
+                        LogCollectorRepository -> LogCollectorFeignClient : registerSearch(LogCollectorSearchRequest)
+                        activate LogCollectorFeignClient
+                            LogCollectorFeignClient -> ApiSearchLogsController : POST\n/api/logs/registerSearch
+                            activate ApiSearchLogsController
+                                LogCollectorFeignClient <-- ApiSearchLogsController : SearchResult
+                            deactivate ApiSearchLogsController
+                            LogCollectorRepository <-- LogCollectorFeignClient : SearchResult
+                        deactivate LogCollectorFeignClient
+                        LogCollectorBasedDisplayTypeService <-- LogCollectorRepository : new LogCollectorValueObject(searchResult)
+                    deactivate LogCollectorRepository
+                deactivate LogCollectorRepository
+                LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : checkErrorRegisterSearchResponse(deferredSearch, context, UUID requestSearchId, lcValue)
+            deactivate LogCollectorBasedDisplayTypeService
+
+        else ELSE - !context.isDeferredSearchResult()
+            == Get search results from LogCollector ==
+            LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : getLogCollectorValueObjectForSearch(logCollectorRepository, context)
+            activate LogCollectorBasedDisplayTypeService #lightGreen
+                LogCollectorBasedDisplayTypeService -> LogCollectorRepository : getLogCollectorValueObjectFromSearchResult(responseSearchId)
+                activate LogCollectorRepository
+                    LogCollectorRepository -> LogCollectorRepository : getSearchResultsFromLogCollector(responseSearchId)
+                    activate LogCollectorRepository #lightGreen
+                        LogCollectorRepository -> LogCollectorFeignClient : getSearchResults(responseSearchId)
+                        activate LogCollectorFeignClient
+                            LogCollectorFeignClient -> ApiSearchLogsController : GET\n/api/logs/getSearchResults/{searchId}/fastResponse
+                            activate ApiSearchLogsController
+                                LogCollectorFeignClient <-- ApiSearchLogsController : SearchResult
+                            deactivate ApiSearchLogsController
+                            LogCollectorRepository <-- LogCollectorFeignClient : SearchResult
+                        deactivate LogCollectorFeignClient
+                    LogCollectorBasedDisplayTypeService <-- LogCollectorRepository : new LogCollectorValueObject(searchResult)
+                    deactivate LogCollectorRepository
+                deactivate LogCollectorRepository
+            deactivate LogCollectorBasedDisplayTypeService
+
+        end
+
+        IntegrationLogDisplayTypeServiceImpl <-- LogCollectorBasedDisplayTypeService : LogCollectorValueObject(searchResult)
+    deactivate LogCollectorBasedDisplayTypeService
+    <- IntegrationLogDisplayTypeServiceImpl : LogCollectorValueObject(searchResult)
+deactivate IntegrationLogDisplayTypeServiceImpl
+
+@enduml

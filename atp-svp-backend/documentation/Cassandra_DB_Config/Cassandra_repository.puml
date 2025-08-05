@@ -1,0 +1,37 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #D2F9F6
+    entity DisplayTypeService
+    entity CassandraRepository
+end box
+
+box "Cassandra source" #D2E9C3
+    entity CassandraDB
+end box
+
+activate DisplayTypeService
+        == DisplayType == Json, Param, XML, Link ==
+        DisplayTypeService -> CassandraRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+        activate CassandraRepository
+            CassandraRepository -> CassandraRepository : createCluster(server)
+            activate CassandraRepository #LightGreen
+                CassandraRepository <--> CassandraDB : execute (get ResultSet)
+            deactivate CassandraRepository
+            CassandraRepository -> CassandraRepository : get first ROW
+            CassandraRepository -> CassandraRepository : get first column value in first ROW
+            DisplayTypeService <-- CassandraRepository : String response (First cell from first row value)
+            deactivate CassandraRepository
+   == DisplayType == Table ==
+               DisplayTypeService -> CassandraRepository : executeQuery(new DBServer(server), script)
+               activate CassandraRepository
+                   CassandraRepository -> CassandraRepository : createCluster(server)
+                   activate CassandraRepository #LightGreen
+                       CassandraRepository <--> CassandraDB : execute (get ResultSet)
+                   deactivate CassandraRepository
+                   CassandraRepository -> CassandraRepository : resultAsTable(resultSet)
+                   DisplayTypeService <-- CassandraRepository : Table(List<String> headers, List<Map<String, String>> rows)
+                                   deactivate CassandraRepository
+deactivate DisplayTypeService
+@enduml

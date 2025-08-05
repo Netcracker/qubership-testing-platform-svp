@@ -1,0 +1,58 @@
+@startuml
+participant Actor
+Actor -> AdminController : reloadGitRepo
+activate AdminController
+AdminController -> GitProjectService : reloadGitProject
+activate GitProjectService
+GitProjectService -> GitProjectServiceImpl : reloadGitProject
+activate GitProjectServiceImpl
+GitProjectServiceImpl -> ProjectConfigService : getProjectConfig
+activate ProjectConfigService
+ProjectConfigService -> ProjectConfigService : getProjectConfigEntity
+activate ProjectConfigService
+ProjectConfigService -> ProjectConfigurationServiceJpa : findProjectConfigById
+activate ProjectConfigurationServiceJpa
+ProjectConfigurationServiceJpa --> ProjectConfigService
+deactivate ProjectConfigurationServiceJpa
+ProjectConfigService --> ProjectConfigService
+deactivate ProjectConfigService
+ProjectConfigService -> ProjectConfigNotFoundException : new
+activate ProjectConfigNotFoundException
+ProjectConfigNotFoundException --> ProjectConfigService
+deactivate ProjectConfigNotFoundException
+ProjectConfigService -> ProjectConfigService : getFullPathToProjectFolder
+activate ProjectConfigService
+ProjectConfigService --> ProjectConfigService
+deactivate ProjectConfigService
+ProjectConfigService -> ProjectConfiguration : new
+activate ProjectConfiguration
+ProjectConfiguration -> ProjectRepositoryConfig : new
+activate ProjectRepositoryConfig
+ProjectRepositoryConfig --> ProjectConfiguration
+deactivate ProjectRepositoryConfig
+ProjectConfiguration --> ProjectConfigService
+deactivate ProjectConfiguration
+ProjectConfigService -> ProjectConfigNotFoundException : new
+activate ProjectConfigNotFoundException
+ProjectConfigNotFoundException --> ProjectConfigService
+deactivate ProjectConfigNotFoundException
+ProjectConfigService --> GitProjectServiceImpl
+deactivate ProjectConfigService
+GitProjectServiceImpl -> GitProjectServiceImpl : reloadGitProject
+activate GitProjectServiceImpl
+GitProjectServiceImpl -> GitRepositoryImpl : gitClone
+activate GitRepositoryImpl
+GitRepositoryImpl -> GitOperationException : new
+activate GitOperationException
+GitOperationException --> GitRepositoryImpl
+deactivate GitOperationException
+GitRepositoryImpl --> GitProjectServiceImpl
+deactivate GitRepositoryImpl
+GitProjectServiceImpl --> GitProjectServiceImpl
+deactivate GitProjectServiceImpl
+GitProjectServiceImpl --> GitProjectService
+deactivate GitProjectServiceImpl
+GitProjectService --> AdminController
+deactivate GitProjectService
+return
+@enduml

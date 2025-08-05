@@ -1,0 +1,217 @@
+PAAS_PLATFORM: "KUBERNETES"
+ATP_NET: ""
+# Additional Java options
+ADDITIONAL_JAVA_OPTIONS: ""
+# Placeholder for Public key for ENCRYPT
+ATP_CRYPTO_KEY: ""
+# Placeholder for Private key for ENCRYPT
+ATP_CRYPTO_PRIVATE_KEY: ""
+ATP_INTEGRATION_ENABLED: "false"
+ATP_INTERNAL_GATEWAY_ENABLED: "false"
+# Api url for routing by eureka
+ATP_SERVICE_PATH: "/api/atp-svp/v1/**"
+# Register to public gateway in eureka
+ATP_SERVICE_PUBLIC: "true"
+# Endpoint of service Catalogue for get project info
+PROJECT_INFO_ENDPOINT: "/api/v1/users/projects"
+# Url of service Catalogue
+CATALOGUE_URL: "" # TO_BE_REPLACED
+# CPU core limit
+CPU_LIMIT: "1"
+# CPU core request
+CPU_REQUEST: "0.05"
+# Which docker image should be used to deploy
+DOCKER_TAG: "artifactory-service-address/path-to-image"
+# Encyption option. One of - dev (default, encrypt inside app); - secrets (encrypt keys in Openshift secrets); - vault (encrypt keys in Openshift secrets)
+ENCRYPT: "dev"
+# Eureka client enabled
+EUREKA_CLIENT_ENABLED: "false"
+# Default connect timeout for feign client
+FEIGN_CONNECT_TIMEOUT: "300000"
+# Default read timeout for feign client
+FEIGN_READ_TIMEOUT: "300000"
+FEIGN_ATP_USERS_NAME: "ATP-USERS-BACKEND"
+FEIGN_ATP_USERS_ROUTE: "api/atp-users-backend/v1"
+FEIGN_ATP_USERS_URL: "" # TO_BE_REPLACED
+FEIGN_ATP_ENVIRONMENTS_NAME: "ATP-ENVIRONMENTS"
+FEIGN_ATP_ENVIRONMENTS_ROUTE: "api/atp-environments/v1"
+FEIGN_ATP_ENVIRONMENTS_URL: "" # TO_BE_REPLACED
+FEIGN_ATP_INTERNAL_GATEWAY_NAME: "atp-internal-gateway"
+FEIGN_ATP_LOGCOLLECTOR_NAME: "ATP-LOGCOLLECTOR"
+FEIGN_ATP_LOGCOLLECTOR_ROUTE: "api/atp-logcollector/v1"
+FEIGN_ATP_LOGCOLLECTOR_URL: "" # TO_BE_REPLACED
+FEIGN_ATP_BULKVALIDATOR_NAME: "ATP-BV"
+FEIGN_ATP_BULKVALIDATOR_ROUTE: "api/bvtool/v1"
+FEIGN_ATP_BULKVALIDATOR_URL: "" # TO_BE_REPLACED
+# Graylog host
+GRAYLOG_HOST: "tcp:graylog.somedomain.com"
+# Graylog toggle
+GRAYLOG_ON: "true"
+# Graylog port
+GRAYLOG_PORT: "12201"
+# Security Context properties
+# enabled is a flag to enable Security Context
+SECURITY_CONTEXT_ENABLED: false
+# runAsUser is the user ID used to run the container
+podSecurityContext:
+  runAsUser: 1000
+  fsGroup: 1000
+containerSecurityContext: {}
+KAFKA_ENABLE: "true"
+KAFKA_PROJECT_EVENT_ENABLE: "false"
+KAFKA_TOPIC: ""
+KAFKA_LOGCOLLECTOR_EVENT_ENABLE: "false"
+KAFKA_TOPIC_END_LOGCOLLECTOR: ""
+KAFKA_SERVERS: "kafka:9092"
+KAFKA_SERVICE_ENTITIES_TOPIC: ""
+KAFKA_SERVICE_ENTITIES_TOPIC_PARTITIONS: "1"
+KAFKA_SERVICE_ENTITIES_TOPIC_REPLICATION_FACTOR: ""
+SERVICE_ENTITIES_MIGRATION_ENABLED: "true"
+KAFKA_SVP_GET_INFO_TOPIC: ""
+KAFKA_SVP_GET_INFO_TOPIC_PARTITIONS: "1"
+KAFKA_SVP_GET_INFO_TOPIC_REPLICATION: ""
+KAFKA_SVP_EVENT_ENABLE: "true"
+# Url of authorisation Keycloak
+KEYCLOAK_AUTH_URL: "https://atp-keycloak-service-address/auth"
+# Enabled/Disabled of Keycloak
+KEYCLOAK_ENABLED: "true"
+# Realm name in Keycloak
+KEYCLOAK_REALM: "atp2"
+# Client name in Keycloak
+KEYCLOAK_CLIENT_NAME: "atp-svp"
+# Logging level
+LOG_LEVEL: "INFO"
+# locale resolver
+LOCALE_RESOLVER: "en"
+# Maximum RAM for Java
+MAX_RAM: "2048m"
+# Memory limit
+MEMORY_LIMIT: "2356Mi"
+# Memory request
+MEMORY_REQUEST: "512Mi"
+PRE_POST_CPU_REQUEST: "0.05"
+PRE_POST_CPU_LIMIT: "0.5"
+PRE_POST_MEMORY_REQUEST: "50Mi"
+PRE_POST_MEMORY_LIMIT: "500Mi"
+# Projects repositories raw configurations
+PROJECTS_CONFIG: "[]"
+# Path to Projects configurations
+PROJECTS_CONFIG_PATH: "./config/project"
+# Projects configurations file name
+PROJECTS_CONFIG_NAME: "projects_configs.json"
+# enabling profiler option
+PROFILER_ENABLED: "false"
+# Rest end point for projects
+REMOTE_DUMP_HOST: "esc-collector-service.profiler.svc"
+# port of profiler collector
+REMOTE_DUMP_PORT: "1710"
+# Deployment Config/Service name.
+SERVICE_NAME: "atp-svp"
+# Host of Eureka server
+SERVICE_REGISTRY_URL: "http://atp-registry-service:8761/eureka"
+# Session lifespan
+SESSION_LIFESPAN: "1800"
+# Lifespan of the deferred search results (parameters related to LogCollector)
+DEFERRED_SEARCH_RESULTS_LIFESPAN_SEC: "600"
+# Security profile: default or disable-security
+SPRING_PROFILES: "default"
+# Project configurations are initialized for release in l2ci
+USE_RELEASE_PROJECTS: "false"
+VAULT_ENABLE: "false"
+VAULT_URI: ""
+VAULT_ROLE_ID: ""
+ZIPKIN_ENABLE: "false"
+ZIPKIN_PROBABILITY: "1.0"
+ZIPKIN_URL: "http://zipkin.zipkin.svc:9411"
+# Consul
+CONSUL_PREFIX: "devci"
+CONSUL_ENABLED: "false"
+CONSUL_URL: ""
+CONSUL_PORT: 8500
+CONSUL_TOKEN: ""
+# Minimal size of JVM heap. Do not use big values!
+HEAP_XMS: "256m"
+# Maximum size of JVM heap
+HEAP_XMX: "1600m"
+# Prometheus monitoring
+SERVICE_TYPE: "ATP2"
+JMX_ENABLE: "true"
+JMX_PORT: "3000"
+JMX_RMI_PORT: "3001"
+# Rest configuration
+REST_TIMEOUT_SEC: "300"
+# Common logging
+ATP_HTTP_LOGGING: "true"
+ATP_HTTP_LOGGING_HEADERS: "true"
+ATP_HTTP_LOGGING_HEADERS_IGNORE: "Authorization"
+ATP_HTTP_LOGGING_URI_IGNORE: "/rest/deployment/readiness /rest/deployment/liveness"
+ATP_BVT_URL: "" # TO_BE_REPLACED
+# database
+PG_DB_ADDR: "pg-common.postgrescluster.svc"
+PG_DB_PORT: "5432"
+SVP_DB: ""
+SVP_DB_USER: ""
+SVP_DB_PASSWORD: ""
+# Liquibase
+LIQUIBASE_MIGRATION_ENABLE: "true"
+# Swagger
+SWAGGER_ENABLED: "false"
+# insecure Edge Termination Policy.
+TERMINATION_POLICY: "Redirect"
+# Nodes count in Streaming Platform cluster.
+NODES_COUNT: "1"
+# Audit Logging topic
+AUDIT_LOGGING_ENABLE: "false"
+AUDIT_LOGGING_TOPIC_NAME: ""
+AUDIT_LOGGING_TOPIC_PARTITIONS: "1"
+AUDIT_LOGGING_TOPIC_REPLICAS: ""
+KAFKA_REPORTING_SERVERS: "kafka:9092"
+# Websocket settings
+WEBSOCKET_BUFFER_SIZE_LIMIT_MB: "20"
+WEBSOCKET_TIMOUT_LIMIT_SEC: "10"
+#Enabling installation of external link for service
+EXTERNAL_LINK_ENABLED: false
+SVP_GETTING_INFO_THREAD_POOL_CORE_SIZE: 20
+SVP_GETTING_INFO_THREAD_POOL_MAX_SIZE: 200
+SVP_GETTING_INFO_THREAD_POOL_QUEUE_CAPACITY: 0
+SVP_VALIDATION_THREAD_POOL_CORE_SIZE: 20
+SVP_VALIDATION_THREAD_POOL_MAX_SIZE: 200
+SVP_VALIDATION_THREAD_POOL_QUEUE_CAPACITY: 0
+## ==============export-import==============
+GRIDFS_DB_ADDR: "mongos.mongocluster.svc"
+GRIDFS_DB_PORT: "27017"
+EI_GRIDFS_DB: ""
+EI_GRIDFS_USER: ""
+EI_GRIDFS_PASSWORD: ""
+
+FEIGN_ATP_EI_URL:
+FEIGN_ATP_EI_NAME: "ATP-EXPORT-IMPORT"
+FEIGN_ATP_EI_ROUTE: "api/atp-export-import/v1"
+
+# EI Clean Job
+EI_CLEAN_JOB_ENABLED: "true"
+EI_CLEAN_JOB_WORKDIR: "exportimport/node"
+EI_CLEAN_SCHEDULED_JOB_PERIOD_MS: "86400000"
+EI_CLEAN_JOB_FILE_DELETE_AFTER_MS: "172800000"
+#Undertow
+UNDERTOW_THREADS_WORKER: "144"
+UNDERTOW_THREADS_IO: "18"
+#Hikari
+HIKARI_MIN_POOL_SIZE: "10"
+HIKARI_MAX_POOL_SIZE: "100"
+#  kubernetes.io/hostname: worker1-atpkub
+#Example:  "nodeSelector": {"kubernetes.io/hostname": "worker16-atp2k8"}
+nodeSelector: {}
+#Example: "extraEnvs": [
+#    {
+#      "name": "DISABLE_INSTALL_DEMO_CONFIG",
+#      "value": "true"
+#    },
+#    {
+#      "name": "DISABLE_SECURITY_PLUGIN",
+#      "value": "true"
+#    }
+#  ]
+extraEnvs: []
+keepHookLogs: false
+HELPER_IMAGE: "artifactory-service-address/path-to-image"

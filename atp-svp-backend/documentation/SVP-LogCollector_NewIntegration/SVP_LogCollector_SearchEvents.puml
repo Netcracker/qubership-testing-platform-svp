@@ -1,0 +1,98 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+actor User
+
+box "FE"
+    entity ValidationPage
+    entity WebSocket
+end box
+
+box "BE" #D2F9F6
+    entity ExecutorController
+    entity PotSessionServiceImpl
+    entity ExecutorServiceImpl
+    entity PageEventLister
+'    entity PageExecutor
+    entity SutParameterEventLister
+'    entity SutParameterExecutor
+'    entity IntegrationLogDisplayTypeServiceImpl
+'    entity LogCollectorBasedDisplayTypeService
+    entity DisplayTypeServiceEventListener
+    entity LoadDataEventListener
+    entity LogCollectorRepository
+
+    entity PageServiceImpl
+    entity CommonParametersServiceImpl
+end box
+
+box "LogCollector service" #E3E3D9
+'    entity ConfigurationController
+    entity ApiSearchLogsController
+end box
+
+box "Expected Data service" #E3E3D9
+'    entity ConfigurationController
+    entity SomeController
+end box
+
+box "Validation service" #E3E3D9
+'    entity ConfigurationController
+    entity SomeValidationController
+end box
+
+User -> ValidationPage : Click on 'Reload' button
+group Start socket session\n or get session
+    ValidationPage -> ExecutorController : POST\n/project/{projectId}/executor/start-session\nBody: GetInfoRequest
+    ExecutorController -> ExecutorServiceImpl : getOrCreateSession(getInfoRequest)
+    ExecutorServiceImpl -> ExecutorServiceImpl : <color red> Some Magic
+    ExecutorController <-- ExecutorServiceImpl : UUID\nsession id
+    ValidationPage <-- ExecutorController : UUID\nsession id
+end
+
+ValidationPage -> ExecutorController : POST\n/project/{projectId}/executor/get-info/{pageName}\nBody: GetInfoRequest
+activate ExecutorController
+    ExecutorController -> ExecutorServiceImpl : getInfoForPage(getInfoRequest, pageName)
+    activate ExecutorServiceImpl
+        ExecutorServiceImpl -> ExecutorServiceImpl : UUID getOrCreateSession(getInfoRequest)\nget socket session id
+
+        ExecutorServiceImpl <--> PageServiceImpl : PageConfiguration getPageByFileName(pageName)\nget config from disk/git
+
+        group potSessionService.findSessionById(sessionId).getCommonParameters().isEmpty()
+            ExecutorServiceImpl <--> CommonParametersServiceImpl : List<SutParameter> getCommonParameters()\nget config from disk/git
+            ExecutorServiceImpl -> ExecutorServiceImpl : CountDownLatch getInfoForCommonParameters(sessionId, commonParameters)
+            ExecutorServiceImpl -> ExecutorServiceImpl : <color red> Lots of Magic with ThreadPoolExecutor
+            ExecutorServiceImpl -> ExecutorServiceImpl : commonParametersCdl.await()
+        end
+        ExecutorServiceImpl -> ExecutorServiceImpl : getInfo(sessionId, List<PageConfiguration> pages)
+        activate ExecutorServiceImpl  #LightGreen
+            note right ExecutorServiceImpl
+                @Async
+            end note
+            ExecutorServiceImpl --> PageEventLister : ApplicationEventPublisher.startLoadPageDateEvent()
+activate PageEventLister #Red
+            ExecutorController <-- ExecutorServiceImpl : OK
+        deactivate ExecutorServiceImpl
+ValidationPage <-- ExecutorController : OK
+deactivate ExecutorController
+
+    note right PageEventLister
+        @Async
+    end note
+    PageEventLister --> SutParameterEventLister : ApplicationEventPublisher.startLoadSutParameterDateEvent()
+deactivate PageEventLister
+
+activate SutParameterEventLister #Red
+    SutParameterEventLister --> DisplayTypeServiceEventListener : ApplicationEventPublisher.loadDateEvent()
+deactivate SutParameterEventLister
+
+DisplayTypeServiceEventListener --> LoadDataEventListener : ApplicationEventPublisher.loadActualDateEvent()
+LoadDataEventListener --> LoadDataEventListener : ApplicationEventPublisher.loadExpectedDateEvent()
+LoadDataEventListener --> LoadDataEventListener : ApplicationEventPublisher.validationDateEvent()
+LoadDataEventListener --> SutParameterEventLister : ApplicationEventPublisher.validationSutParameterEvent()
+PageEventLister <-- SutParameterEventLister : ApplicationEventPublisher.validationPageEvent()
+ExecutorServiceImpl <-- PageEventLister : ApplicationEventPublisher.validationSessionEvent()
+
+
+@enduml

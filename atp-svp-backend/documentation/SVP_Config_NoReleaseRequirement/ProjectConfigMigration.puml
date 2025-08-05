@@ -1,0 +1,30 @@
+@startuml
+participant Actor
+Actor -> ProjectConfigurationMigrationCustomChange : execute
+activate ProjectConfigurationMigrationCustomChange
+ProjectConfigurationMigrationCustomChange -> BeanAwareSpringLiquibase : getBean
+activate BeanAwareSpringLiquibase
+BeanAwareSpringLiquibase --> ProjectConfigurationMigrationCustomChange
+deactivate BeanAwareSpringLiquibase
+ProjectConfigurationMigrationCustomChange -> ProjectConfigService : getAllProjectConfigsFromJsonFile
+activate ProjectConfigService
+ProjectConfigService -> ProjectConfigService : λ→
+activate ProjectConfigService
+ProjectConfigService -> ProjectConfigsEntity : new
+activate ProjectConfigsEntity
+ProjectConfigsEntity --> ProjectConfigService
+deactivate ProjectConfigsEntity
+ProjectConfigService --> ProjectConfigService
+deactivate ProjectConfigService
+ProjectConfigService -> ProjectConfigurationServiceJpa : saveAllProjectsConfigs
+activate ProjectConfigurationServiceJpa
+ProjectConfigurationServiceJpa --> ProjectConfigService
+deactivate ProjectConfigurationServiceJpa
+ProjectConfigService -> ProjectConfigNotFoundException : new
+activate ProjectConfigNotFoundException
+ProjectConfigNotFoundException --> ProjectConfigService
+deactivate ProjectConfigNotFoundException
+ProjectConfigService --> ProjectConfigurationMigrationCustomChange
+deactivate ProjectConfigService
+return
+@enduml

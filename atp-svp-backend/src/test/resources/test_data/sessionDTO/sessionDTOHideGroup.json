@@ -1,0 +1,36 @@
+{
+  "commonParameters": [
+  ],
+  "pages": [
+    {
+      "name": "ConfigPageHideGroup",
+      "status": "NONE",
+      "tabs": [
+        {
+          "groups": [
+            {
+              "name": "Not hide group",
+              "sutParameters": [
+                {
+                  "arValues": [
+                  ],
+                  "er": null,
+                  "groupName": "Not hide group",
+                  "name": "param1",
+                  "status": "IN_PROGRESS",
+                  "validationInfo": {
+                    "errorDescription": null,
+                    "status": "IN_PROGRESS",
+                    "type": "ValidationInfo"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "tab1",
+          "status": "NONE"
+        }
+      ]
+    }
+  ]
+}

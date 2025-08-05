@@ -1,0 +1,163 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+actor User
+
+box "FE"
+    entity ValidationPage
+end box
+
+box "BE" #D2F9F6
+    entity ExecutorController
+    entity ExecutorServiceImpl
+    entity LogCollectorRepository
+    entity LogCollectorFeignClient
+    entity DeferredSearchServiceImpl
+    entity PageExecutor
+    entity SutParameterExecutor
+    entity LogCollectorEventKafkaListener
+    entity DeferredSearchServiceImpl
+    entity ApplicationEventPublisher
+    entity SutParameterListener
+
+    entity PageServiceImpl
+    entity CommonParametersServiceImpl
+    entity PotSessionServiceImpl
+
+end box
+
+box "LogCollector service" #E3E3D9
+        entity ConfigurationController
+    end box
+
+User -> ValidationPage : Click on 'Reload' button
+group Start session if not exists\n or get session
+    ValidationPage -> ExecutorController : POST\n/project/{projectId}/executor/start-session\nBody: GetInfoRequest
+    activate ExecutorController
+        ExecutorController -> ExecutorServiceImpl : getOrCreateSession(getInfoRequest)
+        activate ExecutorServiceImpl
+            ExecutorServiceImpl -> PotSessionServiceImpl : startSession(...sessionSettings)
+            activate PotSessionServiceImpl
+                PotSessionServiceImpl -> PotSessionServiceImpl : store session to POT sessions cache
+                PotSessionServiceImpl --> ExecutorServiceImpl : UUID\nsession id
+            deactivate PotSessionServiceImpl
+            ExecutorController <-- ExecutorServiceImpl : UUID\nsession id
+        deactivate ExecutorServiceImpl
+    ValidationPage <-- ExecutorController : UUID\nsession id
+    deactivate ExecutorController
+end
+
+ValidationPage -> ExecutorController : POST\n/project/{projectId}/executor/get-info/{pageName}\nBody: GetInfoRequest
+activate ExecutorController
+    ExecutorController -> ExecutorServiceImpl : getInfoForPage(getInfoRequest, pageName)
+    activate ExecutorServiceImpl
+        ExecutorServiceImpl -> ExecutorServiceImpl : UUID getOrCreateSession(getInfoRequest)\nget session id
+
+        group If common parameters was not stored to session
+            ExecutorServiceImpl <--> CommonParametersServiceImpl : List<SutParameter> getCommonParameters()\nget common parameters config from local storage/git
+            ExecutorServiceImpl -> ExecutorServiceImpl : CountDownLatch getInfoForCommonParameters(sessionId, commonParameters)
+            ExecutorServiceImpl -> ExecutorServiceImpl : commonParametersCdl.await()
+            note right
+                Waiting until all of the common parameters are loaded
+            end note
+        end
+
+        ExecutorServiceImpl <--> PageServiceImpl : PageConfiguration getPageByFileName(pageName)\nget config from disk/git
+
+        ExecutorServiceImpl -> ExecutorServiceImpl : CountDownLatch getInfo(sessionId, List<PageConfiguration> pages)
+        ExecutorServiceImpl -> ExecutorServiceImpl : Created new ThreadPoolExecutor
+        activate ExecutorServiceImpl  #LightGreen
+            ExecutorServiceImpl -> ExecutorServiceImpl : pageCdl = new CountDownLatch(pages.size())
+
+
+
+
+           ExecutorServiceImpl -> ExecutorServiceImpl: ExecutorServiceImpl downloadLogCollectorConfigInPotSession (pages, sessionId)
+
+
+activate ExecutorServiceImpl #FFBBBB
+group If pages have configType IntegrationLog
+ExecutorServiceImpl-> LogCollectorRepository: getConfigurations(projectId)
+            activate LogCollectorRepository
+                LogCollectorRepository -> LogCollectorFeignClient : getConfigurations(projectId)
+                    activate LogCollectorFeignClient
+                    LogCollectorFeignClient -> ConfigurationController : GET\n/api/configurations/project/{projectId}
+                        activate ConfigurationController
+                            LogCollectorFeignClient <-- ConfigurationController : List<LogCollectorConfiguration>
+                        deactivate ConfigurationController
+                    LogCollectorRepository <-- LogCollectorFeignClient : List<LogCollectorConfiguration>
+                    deactivate LogCollectorFeignClient
+
+                    ExecutorServiceImpl <-- LogCollectorRepository : List<LogCollectorConfiguration>
+            deactivate LogCollectorRepository
+           ExecutorServiceImpl -> PotSessionServiceImpl: setLogCollectorConfigurations(sessionId, logCollectorConfig)
+           end
+           deactivate ExecutorServiceImpl
+
+            group For each Page on ThreadPoolExecutor
+                ExecutorServiceImpl <--> PageExecutor : new PageExecutor(sessionId, page, potSessionService, displayTypeServiceFactory, logCollectorRepository)
+                ExecutorServiceImpl -> PageExecutor : call()
+                activate ExecutorServiceImpl #Purple
+                    activate PageExecutor #Red
+                        PageExecutor -> PageExecutor : sessionPage = convertPageConfiguration(page)
+                        PageExecutor -> PotSessionServiceImpl : addPageToSession(sessionId, sessionPage)
+                        PageExecutor -> PageExecutor : new CountDownLatch(sessionPage.getParameters().size())
+                        group For each SutParameter under Page on ThreadPoolExecutor
+                            PageExecutor -> PageExecutor : new ParameterExecutionContext(created, sessionId, countDownLatch, environment, executionVariables, isDeferredSearchResult, parameter)
+                            PageExecutor <--> SutParameterExecutor : new SutParameterExecutor(parameterExecutionContext, sessionService, displayTypeServiceFactory, logCollectorRepository))
+                            PageExecutor -> SutParameterExecutor : call()
+                            note left SutParameterExecutor
+                                Get info for parameter
+                                see detail design in 'Get_info_for_parameter_process'
+                            end note
+                            alt IF parameter has synchronously loading
+                                PageExecutor -> PageExecutor : future.get() - Waiting for full loading of parameter info and finished validation process
+                            end
+                        end
+
+                        PageExecutor -> PageExecutor : parametersCdl.await()
+                        note right
+                            Waiting until all of the SUT parameters are loaded
+                        end note
+                        PageExecutor -> PageExecutor : sessionPage.calculateValidationStatus()
+                        PageExecutor -> PotSessionServiceImpl : addValidationStatusForPage(sessionId, page.getName(), sessionPage.getValidationStatus())
+                        group finally
+                            PageExecutor -> PageExecutor : pages under session CountDownLatch().countDown()
+                            PageExecutor -> PageExecutor : ThreadPoolExecutor.shutdown()
+                        end
+
+                        LogCollectorEventKafkaListener -> LogCollectorEventKafkaListener : listen(logCollectorKafkaEvent)
+                        activate LogCollectorEventKafkaListener
+                            LogCollectorEventKafkaListener <--> DeferredSearchServiceImpl : findContextByLogCollectorSearchId(logCollectorKafkaEvent.getId())
+                            alt IF parameter execution context for searchId is present AND logCollectorKafkaEvent has ended status (COMPLETED or TERMINATED or FAILED)
+                                LogCollectorEventKafkaListener -> ApplicationEventPublisher : publishEvent(new ReloadSutParameterEvent(logCollectorKafkaEvent.getId(), parameterContext))
+                            end
+                        deactivate LogCollectorEventKafkaListener
+
+                        SutParameterListener -> SutParameterListener : handleReloadSutParameterEvent(ReloadSutParameterEvent reloadSutParameterEvent)
+                        activate SutParameterListener
+                            SutParameterListener -> SutParameterListener : Set deferred result flag in parameter execution context to false
+                            SutParameterListener <--> SutParameterExecutor : new SutParameterExecutor(parameterExecutionContext, sessionService, displayTypeServiceFactory, logCollectorRepository))
+                            SutParameterListener -> SutParameterExecutor : call()
+                        deactivate SutParameterListener
+                        note left SutParameterExecutor
+                            Get info for parameter
+                            see detail design in 'Get_info_for_parameter_process'
+                        end note
+                    deactivate PageExecutor
+                deactivate ExecutorServiceImpl
+            end
+            group finally
+                ExecutorServiceImpl -> ExecutorServiceImpl : ThreadPoolExecutor.shutdown()
+            end
+        deactivate ExecutorServiceImpl
+        ExecutorServiceImpl -> ExecutorServiceImpl : pageCdl.await()
+        note right
+            Waiting until all of the pages are loaded
+        end note
+        ExecutorServiceImpl -> PotSessionServiceImpl : addValidationStatusForSession(sessionId)
+    deactivate ExecutorServiceImpl
+deactivate ExecutorController
+
+@enduml

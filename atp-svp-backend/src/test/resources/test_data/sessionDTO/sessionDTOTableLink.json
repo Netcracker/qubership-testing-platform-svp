@@ -1,0 +1,59 @@
+{
+  "commonParameters": [ ],
+  "pages": [
+    {
+      "name": "ConfigPageTableLinks",
+      "status": "NONE",
+      "tabs": [
+        {
+          "name": "SimpleTableWithLinks",
+          "status": "NONE",
+          "groups": [
+            {
+              "name": "SimpleTableWithLinks",
+              "sutParameters": [
+                {
+                  "name": "SimpleTableWithLinks",
+                  "status": "NONE",
+                  "groupName": "SimpleTableWithLinks",
+                  "arValues": [
+                    {
+                      "table": {
+                        "type": ".Table",
+                        "name": "Business Solution",
+                        "headers": [
+                          "A",
+                          "B",
+                          "C"
+                        ],
+                        "rows": [
+                          {
+                            "A": "qqq https://stackoverflow.com",
+                            "B": "<a href=\"http://127.0.0.1:8082/dog.html\">testLink1</a>\n",
+                            "C": "<a href=\"http://127.0.0.1:8082/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>\n"
+                          },
+                          {
+                            "A": "rrr https://stackoverflow.com",
+                            "B": "<a href=\"http://127.0.0.1:8082/dog.html\">testLink1</a>\n",
+                            "C": "<a href=\"http://127.0.0.1:8082/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>\n"
+                          }
+                        ]
+                      },
+                      "type": "TableValueObject"
+                    }
+                  ],
+                  "er": null,
+                  "validationInfo": {
+                    "status": "NONE",
+                    "errorDescription": null,
+                    "type": "ValidationInfo"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

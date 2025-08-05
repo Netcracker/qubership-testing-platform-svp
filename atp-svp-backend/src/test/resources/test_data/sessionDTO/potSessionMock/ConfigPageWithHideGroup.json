@@ -1,0 +1,295 @@
+{
+  "sessionId": "55a63c6f-f98c-45c9-8e89-121b53aebb39",
+  "started": null,
+  "executionConfiguration": null,
+  "executionVariables": {},
+  "keyParameters": {},
+  "potSessionPageEntities": [
+    {
+      "id": null,
+      "name": "ConfigPageHideGroup",
+      "validationStatus": "NONE",
+      "potSessionTabs": [
+        {
+          "id": null,
+          "name": "tab1",
+          "validationStatus": "NONE",
+          "potSessionParameterEntities": [
+            {
+              "parameterId": null,
+              "page": "ConfigPageHideGroup",
+              "tab": "tab1",
+              "group": "Group1hide",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [],
+              "validationInfo": {
+                "type": "ValidationInfo",
+                "status": "IN_PROGRESS",
+                "errorDescription": null
+              },
+              "parameterConfig": {
+                "parameterId": null,
+                "name": "param1",
+                "displayType": "PARAM",
+                "source": null,
+                "component": null,
+                "additionalSources": [],
+                "erConfig": null,
+                "groupEntity": null,
+                "lastUpdateDateTime": null,
+                "commonParameterEntity": null,
+                "parameterOrder": 0,
+                "preconfigured": false
+              },
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            },
+            {
+              "parameterId": null,
+              "page": "ConfigPageHideGroup",
+              "tab": "tab1",
+              "group": "Not hide group",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [],
+              "validationInfo": {
+                "type": "ValidationInfo",
+                "status": "IN_PROGRESS",
+                "errorDescription": null
+              },
+              "parameterConfig": {
+                "parameterId": null,
+                "name": "param1",
+                "displayType": "PARAM",
+                "source": null,
+                "component": null,
+                "additionalSources": [],
+                "erConfig": null,
+                "groupEntity": null,
+                "lastUpdateDateTime": null,
+                "commonParameterEntity": null,
+                "parameterOrder": 0,
+                "preconfigured": false
+              },
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            }
+          ],
+          "potSessionPageEntity": null,
+          "synchronousLoading": false,
+          "alreadyValidated": false
+        },
+        {
+          "id": null,
+          "name": "tab2",
+          "validationStatus": "NONE",
+          "potSessionParameterEntities": [
+            {
+              "parameterId": null,
+              "page": "ConfigPageHideGroup",
+              "tab": "tab2",
+              "group": "Group2hide",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [],
+              "validationInfo": {
+                "type": "ValidationInfo",
+                "status": "IN_PROGRESS",
+                "errorDescription": null
+              },
+              "parameterConfig": {
+                "parameterId": null,
+                "name": "param1",
+                "displayType": "PARAM",
+                "source": null,
+                "component": null,
+                "additionalSources": [],
+                "erConfig": null,
+                "groupEntity": null,
+                "lastUpdateDateTime": null,
+                "commonParameterEntity": null,
+                "parameterOrder": 0,
+                "preconfigured": false
+              },
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            },
+            {
+              "parameterId": null,
+              "page": "ConfigPageHideGroup",
+              "tab": "tab2",
+              "group": "Group3hide",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [],
+              "validationInfo": {
+                "type": "ValidationInfo",
+                "status": "IN_PROGRESS",
+                "errorDescription": null
+              },
+              "parameterConfig": {
+                "parameterId": null,
+                "name": "param1",
+                "displayType": "PARAM",
+                "source": null,
+                "component": null,
+                "additionalSources": [],
+                "erConfig": null,
+                "groupEntity": null,
+                "lastUpdateDateTime": null,
+                "commonParameterEntity": null,
+                "parameterOrder": 0,
+                "preconfigured": false
+              },
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            }
+          ],
+          "potSessionPageEntity": null,
+          "synchronousLoading": false,
+          "alreadyValidated": false
+        }
+      ],
+      "potSessionEntity": null,
+      "pageConfiguration": {
+        "pageId": null,
+        "name": "ConfigPageHideGroup",
+        "isSynchronousLoading": false,
+        "folder": null,
+        "lastUpdateDateTime": null,
+        "tabEntities": [
+          {
+            "tabId": null,
+            "name": "tab1",
+            "pageConfiguration": null,
+            "isSynchronousLoading": false,
+            "lastUpdateDateTime": null,
+            "tabOrder": 0,
+            "groupEntities": [
+              {
+                "groupId": null,
+                "name": "Group1hide",
+                "tabEntity": null,
+                "isSynchronousLoading": false,
+                "hide": true,
+                "lastUpdateDateTime": null,
+                "groupOrder": 0,
+                "sutParameterEntities": [
+                  {
+                    "parameterId": null,
+                    "name": "param1",
+                    "displayType": "PARAM",
+                    "source": null,
+                    "component": null,
+                    "additionalSources": [],
+                    "erConfig": null,
+                    "groupEntity": null,
+                    "lastUpdateDateTime": null,
+                    "commonParameterEntity": null,
+                    "parameterOrder": 0,
+                    "preconfigured": false
+                  }
+                ]
+              },
+              {
+                "groupId": null,
+                "name": "Not hide group",
+                "tabEntity": null,
+                "isSynchronousLoading": false,
+                "hide": false,
+                "lastUpdateDateTime": null,
+                "groupOrder": 1,
+                "sutParameterEntities": [
+                  {
+                    "parameterId": null,
+                    "name": "param1",
+                    "displayType": "PARAM",
+                    "source": null,
+                    "component": null,
+                    "additionalSources": [],
+                    "erConfig": null,
+                    "groupEntity": null,
+                    "lastUpdateDateTime": null,
+                    "commonParameterEntity": null,
+                    "parameterOrder": 0,
+                    "preconfigured": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tabId": null,
+            "name": "tab2",
+            "pageConfiguration": null,
+            "isSynchronousLoading": false,
+            "lastUpdateDateTime": null,
+            "tabOrder": 1,
+            "groupEntities": [
+              {
+                "groupId": null,
+                "name": "Group2hide",
+                "tabEntity": null,
+                "isSynchronousLoading": false,
+                "hide": true,
+                "lastUpdateDateTime": null,
+                "groupOrder": 0,
+                "sutParameterEntities": [
+                  {
+                    "parameterId": null,
+                    "name": "param1",
+                    "displayType": "PARAM",
+                    "source": null,
+                    "component": null,
+                    "additionalSources": [],
+                    "erConfig": null,
+                    "groupEntity": null,
+                    "lastUpdateDateTime": null,
+                    "commonParameterEntity": null,
+                    "parameterOrder": 0,
+                    "preconfigured": false
+                  }
+                ]
+              },
+              {
+                "groupId": null,
+                "name": "Group3hide",
+                "tabEntity": null,
+                "isSynchronousLoading": false,
+                "hide": true,
+                "lastUpdateDateTime": null,
+                "groupOrder": 1,
+                "sutParameterEntities": [
+                  {
+                    "parameterId": null,
+                    "name": "param1",
+                    "displayType": "PARAM",
+                    "source": null,
+                    "component": null,
+                    "additionalSources": [],
+                    "erConfig": null,
+                    "groupEntity": null,
+                    "lastUpdateDateTime": null,
+                    "commonParameterEntity": null,
+                    "parameterOrder": 0,
+                    "preconfigured": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "alreadyValidated": false,
+      "tabsLoadingAlreadyStarted": false
+    }
+  ],
+  "commonParameters": [],
+  "alreadyValidated": false,
+  "sessionPagesLoadingAlreadyStarted": false
+}

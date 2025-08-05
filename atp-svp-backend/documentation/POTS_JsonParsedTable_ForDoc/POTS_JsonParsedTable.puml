@@ -1,0 +1,136 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity PotGenerationEngineImpl
+    entity WordDocumentPotGenerator
+    entity PotSession
+end box
+
+activate PotGenerationEngineImpl
+    PotGenerationEngineImpl -> PotSession : getExecutionConfiguration().getIsFullInfoNeededInPot()
+    PotGenerationEngineImpl -> WordDocumentPotGenerator : generatePotFile(session, isFullInfoNeededInPot)
+    activate WordDocumentPotGenerator
+        WordDocumentPotGenerator -> WordDocumentPotGenerator : setDocumentToLandscapeView(XWPFDocument document)
+        WordDocumentPotGenerator -> WordDocumentPotGenerator : printContents(XWPFDocument document)
+        WordDocumentPotGenerator -> WordDocumentPotGenerator : addCustomHeadingStyle(XWPFDocument docxDocument, String strStyleId, int headingLevel)
+        note left
+            for page, tab, group and parameter
+        end note
+        WordDocumentPotGenerator -> PotSession : getExecutionConfiguration().getEnvironment()
+        WordDocumentPotGenerator -> WordDocumentPotGenerator : printKeyParameters(potDocument, session.getKeyParameters())
+        WordDocumentPotGenerator -> WordDocumentPotGenerator : printCommonParameters(potDocument, session.getCommonParameters(), environment)
+        group For each Page
+            WordDocumentPotGenerator -> WordDocumentPotGenerator : printPage(potDocument, page, environment, isFullInfoNeededInPot)
+            activate WordDocumentPotGenerator #LightGreen
+                WordDocumentPotGenerator -> WordDocumentPotGenerator : addPageBreak(potDocument)
+                WordDocumentPotGenerator -> WordDocumentPotGenerator : printLine(potDocument, page.getName(), true, WordStyleConstants.FONT_VERY_LARGE,WordStyleConstants.PAGE_STYLE)
+                group #90ffbc For each tab
+                    WordDocumentPotGenerator -> WordDocumentPotGenerator : printLine(potDocument, tab.getName(), true, WordStyleConstants.FONT_LARGE, WordStyleConstants.TAB_STYLE)
+                    group For each group
+                        group #90ffbc if group isn't hide
+                            WordDocumentPotGenerator -> WordDocumentPotGenerator : printLine(potDocument, group.getName(), true, WordStyleConstants.FONT_NORMAL, WordStyleConstants.GROUP_STYLE)
+                            group For each sutParameter
+                                WordDocumentPotGenerator -> WordDocumentPotGenerator : printParameter(potDocument, page.findParameter(tab.getName(), group.getName(), parameter.getName()).orElseThrow (ParameterNotFoundException::new), environment, isFullInfoNeededInPot);
+                                activate WordDocumentPotGenerator
+                                    WordDocumentPotGenerator -> WordDocumentPotGenerator : printParameterHeader(potDocument, potParameter)
+                                    WordDocumentPotGenerator -> WordDocumentPotGenerator : printExpectedResultErrorIfPresent(potDocument, potParameter)
+                                    group #90ffbc For each arValues
+                                        group if arValue instanceof ErrorValueObject
+                                        WordDocumentPotGenerator -> WordDocumentPotGenerator : printError(potDocument, (ErrorValueObject) arValue)
+                                        else else
+                                            group #90ffbc if arValue.getValueAsFile() != null && isFullInfoNeededInPot
+                                                WordDocumentPotGenerator -> WordDocumentPotGenerator : printLink(potDocument.createParagraph(), WordStyleConstants.FONT_SMALL, new LinkPotValue(linkFile, linkFile), false, true);
+                                                == DisplayType == PARAM, XML, SSH_RESPONSE ==
+                                                alt if DisplayType is PARAM, XML, SSH_RESPONSE
+                                                    WordDocumentPotGenerator -> WordDocumentPotGenerator : printPlainParameter(potDocument, (SimpleValueObject) arValue)
+                                                    activate WordDocumentPotGenerator #LightGreen
+                                                        WordDocumentPotGenerator -> WordDocumentPotGenerator : printLine(document, arValue.getValue(), false)
+                                                    deactivate
+                                                == DisplayType == TABLE ==
+                                                else if DisplayType is TABLE
+                                                    WordDocumentPotGenerator -> WordDocumentPotGenerator : printTable(potDocument, (TableValueObject) arValue, environment)
+                                                    activate WordDocumentPotGenerator #LightGreen
+                                                        WordDocumentPotGenerator -> WordDocumentPotGenerator : setParameterTableStyle(table, WordStyleConstants.LIGHT_GRAY)
+                                                        group #90ffbc for each header
+                                                            WordDocumentPotGenerator -> WordDocumentPotGenerator : createTableHeaderCell(headersRow, header)
+                                                        end
+                                                        alt #90ffbc if arValue instanceof Table
+                                                            WordDocumentPotGenerator -> WordDocumentPotGenerator : printSimpleTable(value, table, environment)
+                                                            activate WordDocumentPotGenerator
+                                                                group for each row in table
+                                                                   WordDocumentPotGenerator -> WordDocumentPotGenerator : extractLinksFromContent(rowValue, environment, false)
+                                                                   WordDocumentPotGenerator -> WordDocumentPotGenerator : setTableCellValue(paragraph, WordStyleConstants.FONT_VERY_SMALL, links, WordStyleConstants.BLACK, false)
+                                                                end
+                                                            deactivate WordDocumentPotGenerator
+                                                        else else
+                                                            WordDocumentPotGenerator -> WordDocumentPotGenerator : printJsonTable(value, table, environment)
+                                                             activate WordDocumentPotGenerator
+                                                                group for each row in table
+                                                                    group #90ffbc if jsonCell instanceof JsonSimpleCell
+                                                                       WordDocumentPotGenerator -> WordDocumentPotGenerator : printSimpleJsonValue(jsonCell, tableRow, environment, columnNumber, row)
+                                                                       activate WordDocumentPotGenerator #LightGreen
+                                                                       WordDocumentPotGenerator -> WordDocumentPotGenerator : setIndentationLeft(tableRow.getNestingDepth(), columnNumber, paragraph)
+                                                                       WordDocumentPotGenerator -> WordDocumentPotGenerator : setTableCellValue(paragraph, WordStyleConstants.FONT_VERY_SMALL, links, WordStyleConstants.BLACK, false)
+                                                                       deactivate WordDocumentPotGenerator
+                                                                    else else
+                                                                      WordDocumentPotGenerator -> WordDocumentPotGenerator : printGroupJsonValue(row, jsonCell, tableRow, columnNumber)
+                                                                      activate WordDocumentPotGenerator #LightGreen
+                                                                      WordDocumentPotGenerator -> WordDocumentPotGenerator : setIndentationLeft(tableRow.getNestingDepth(), columnNumber, paragraph)
+                                                                      WordDocumentPotGenerator -> WordDocumentPotGenerator : setTableGroupJsonCellValue(paragraph, WordStyleConstants.FONT_VERY_SMALL, jsonGroup, WordStyleConstants.BLACK, false)
+                                                                      deactivate WordDocumentPotGenerator
+                                                                    end
+                                                                end
+                                                             deactivate WordDocumentPotGenerator
+                                                        end
+                                                    deactivate
+                                                == DisplayType == JSON ==
+                                                else if DisplayType is JSON
+                                                    alt #90ffbc if ArValue is TableValueObject
+                                                        WordDocumentPotGenerator -> WordDocumentPotGenerator : printTable(potDocument, (TableValueObject) arValue, environment)
+                                                        note right
+                                                            the same methods like on a display type table
+                                                        end note
+                                                    else else
+                                                        WordDocumentPotGenerator -> WordDocumentPotGenerator : printPlainParameter(potDocument, (SimpleValueObject) arValue)
+                                                        activate WordDocumentPotGenerator #LightGreen
+                                                            WordDocumentPotGenerator -> WordDocumentPotGenerator : printLine(document, arValue.getValue(), false)
+                                                        deactivate
+                                                    end
+                                                == DisplayType == LINK ==
+                                                else if DisplayType is LINK
+                                                    WordDocumentPotGenerator -> WordDocumentPotGenerator : extractLinksFromContent(castValueObject.getValue(), environment, true)
+                                                    WordDocumentPotGenerator -> WordDocumentPotGenerator : printLink(potDocument.createParagraph(), WordStyleConstants.FONT_SMALL, link, false, true)
+                                                == DisplayType == INTEGRATION_LOG ==
+                                               else if DisplayType is INTEGRATION_LOG
+                                                    WordDocumentPotGenerator -> WordDocumentPotGenerator : printIntegrationLog(potDocument, (LogCollectorValueObject) arValue)
+                                                    activate WordDocumentPotGenerator #LightGreen
+                                                    alt #90ffbc if GRAYLOG
+                                                        WordDocumentPotGenerator -> WordDocumentPotGenerator : printIntegrationLogGraylogType(document, componentSearchResults)
+                                                    else if FILEBASED
+                                                        WordDocumentPotGenerator -> WordDocumentPotGenerator : printIntegrationLogFilebasedType(document, componentSearchResults)
+                                                    end
+                                                    deactivate WordDocumentPotGenerator
+                                                end
+                                            end
+                                        end
+                                    end
+                                deactivate WordDocumentPotGenerator
+                            end
+                        end
+                    end
+                end
+                WordDocumentPotGenerator -> WordDocumentPotGenerator : XWPFDocument.createParagraph().createRun().addBreak();
+            deactivate WordDocumentPotGenerator
+        end
+    WordDocumentPotGenerator -> PotGenerationEngineImpl : byte[]
+    deactivate WordDocumentPotGenerator
+    alt if isFullInfoNeededInPot
+        PotGenerationEngineImpl -> PotGenerationEngineImpl : getZipPotReport(session, potName, potFile)
+    else else
+        PotGenerationEngineImpl -> PotGenerationEngineImpl : getDocxPotReport(potName, potFile)
+    end
+deactivate PotGenerationEngineImpl
+
+@enduml

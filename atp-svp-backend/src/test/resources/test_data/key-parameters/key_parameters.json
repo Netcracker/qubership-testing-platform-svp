@@ -1,0 +1,16 @@
+[
+  {
+    "id": "7f6e4d22-99ab-4d37-bb10-4b6b17d92f63",
+    "name": "Customer_ID",
+    "order": 0,
+    "sourceId": null,
+    "folderId": "b932058e-4eb7-48f2-b33f-3d0472ec64b6"
+  },
+  {
+    "id": "7f6e4d22-99ab-4d37-bb10-4b6b17d92f63",
+    "name": "Sales_Order_ID",
+    "order": 1,
+    "sourceId": null,
+    "folderId": "b932058e-4eb7-48f2-b33f-3d0472ec64b6"
+  }
+]

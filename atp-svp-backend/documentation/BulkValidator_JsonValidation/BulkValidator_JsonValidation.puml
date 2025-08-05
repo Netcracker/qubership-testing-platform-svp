@@ -1,0 +1,64 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+
+box "BE" #D2F9F6
+
+    entity JsonDisplayTypeServiceImpl
+    entity BulkValidatorDisplayTypeService
+    entity BulkValidatorRepository
+    entity RestRepositoryImpl
+end box
+
+            JsonDisplayTypeServiceImpl -> BulkValidatorDisplayTypeService : validateJsonWithBulkValidator(parameter, bvSettings)
+              activate BulkValidatorDisplayTypeService
+                group For each AR
+                    BulkValidatorDisplayTypeService -> BulkValidatorDisplayTypeService : getListValidationObjects(arValue.getValue(), bvValidation)
+                    BulkValidatorDisplayTypeService -> BulkValidatorRepository : createTestRun(bvUrl, bvProjectId, tcId, validationObjects)
+                        activate BulkValidatorRepository
+                            BulkValidatorRepository -> BulkValidatorRepository : createTestRun(String bvUrl, String query, TestRunCreationRequest request)
+                            activate BulkValidatorRepository
+                                BulkValidatorRepository -> RestRepositoryImpl : sendRequest(bvUrl, HttpMethod.PUT, query, request, TestRunCreationResponse.class)
+                                    activate RestRepositoryImpl
+                                        RestRepositoryImpl -> BulkValidatorRepository :  TestRunCreationResponse
+                                    deactivate
+                            deactivate
+                            BulkValidatorRepository -> BulkValidatorDisplayTypeService : TestRunCreationResponse
+                        deactivate
+                    BulkValidatorDisplayTypeService -> BulkValidatorDisplayTypeService : startTestRun(bvUrl, trId, bvProjectId)
+                        activate BulkValidatorDisplayTypeService
+                            BulkValidatorDisplayTypeService -> BulkValidatorRepository : compare(bvUrl, bvProjectId, trIds)
+                                activate BulkValidatorRepository
+                                        BulkValidatorRepository -> BulkValidatorRepository : compare(String bvUrl, String query, ComparingProcessRequest request)
+                                            activate BulkValidatorRepository
+                                                BulkValidatorRepository -> RestRepositoryImpl : sendRequest(bvUrl, HttpMethod.PUT, query, request, TestRunCreationResponse.class)
+                                                    activate RestRepositoryImpl
+                                                        RestRepositoryImpl -> BulkValidatorRepository :  List<ComparingProcessResponse>
+                                                    deactivate
+                                            deactivate
+                                    BulkValidatorRepository -> BulkValidatorDisplayTypeService : List<ComparingProcessResponse>
+                                deactivate
+                        deactivate
+                    BulkValidatorDisplayTypeService -> BulkValidatorDisplayTypeService : getHighlights(bvValidation, tcId, trId, bvProjectId, bvUrl, testRunCreationResponse);
+                        activate BulkValidatorDisplayTypeService
+                            BulkValidatorDisplayTypeService -> BulkValidatorRepository : getHighlightJson(tcId, trId, objectIds, bvProjectId, bvUrl);
+                                activate BulkValidatorRepository
+                                        BulkValidatorRepository -> BulkValidatorRepository : getHighlightJson(String bvUrl, String query, JsonCompareRequest request)
+                                        activate BulkValidatorRepository
+                                            BulkValidatorRepository -> RestRepositoryImpl : sendRequest(bvUrl, HttpMethod.PUT, query, request, TestRunCreationResponse.class)
+                                                activate RestRepositoryImpl
+                                                RestRepositoryImpl -> BulkValidatorRepository : JsonCompareResponse
+                                                deactivate
+                                        deactivate
+                                    BulkValidatorRepository -> BulkValidatorDisplayTypeService : JsonCompareResponse
+                                deactivate
+                        deactivate
+                    BulkValidatorDisplayTypeService -> BulkValidatorDisplayTypeService :  setAr(arValue, jsonResponse)
+                    BulkValidatorDisplayTypeService -> BulkValidatorDisplayTypeService : setEr(parameter, jsonResponse)
+                    BulkValidatorDisplayTypeService -> BulkValidatorDisplayTypeService : createTestRunInfo(compareResponse, bvUrl, bvProjectId)
+                end
+              BulkValidatorDisplayTypeService -> BulkValidatorDisplayTypeService : setValidationInfo(parameter, validationInfo);
+
+              deactivate
+@enduml

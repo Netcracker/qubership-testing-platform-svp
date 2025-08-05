@@ -1,0 +1,33 @@
+{
+  "name": "Simple Test Page",
+  "tabs": [
+    {
+      "name": "Test Tab",
+      "groups": [
+        {
+          "name": "Test Group",
+          "sutParameters": [
+            {
+              "name": "Test Param",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "any script"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "NONE",
+                "value": null,
+                "columnName": null,
+                "dataSource": null
+              },
+              "additionalSources": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

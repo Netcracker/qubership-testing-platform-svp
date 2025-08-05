@@ -1,0 +1,59 @@
+{
+  "commonParameters": [
+    {
+      "name": "second",
+      "status": "WARNING",
+      "groupName": null,
+      "arValues": [
+        {
+          "errorMessage": "Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]",
+          "sqlMessage": "DB script error",
+          "type": "ErrorValueObject"
+        }
+      ],
+      "er": null,
+      "validationInfo": {
+        "type": "ValidationInfo",
+        "status": "WARNING",
+        "errorDescription": null
+      }
+    },
+    {
+      "name": "third",
+      "status": "WARNING",
+      "groupName": null,
+      "arValues": [
+        {
+          "errorMessage": "Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]",
+          "sqlMessage": "DB script error",
+          "type": "ErrorValueObject"
+        }
+      ],
+      "er": null,
+      "validationInfo": {
+        "type": "ValidationInfo",
+        "status": "WARNING",
+        "errorDescription": null
+      }
+    },
+    {
+      "name": "first",
+      "status": "WARNING",
+      "groupName": null,
+      "arValues": [
+        {
+          "errorMessage": "Could not execute query []\nSQL statement to execute cannot be empty or null \n[Message:SQL statement to execute cannot be empty or null\nCause:null\nStackTrace:oracle.jdbc.driver.PhysicalConnection.prepareStatement(PhysicalConnection.java:3559)]",
+          "sqlMessage": "DB script error",
+          "type": "ErrorValueObject"
+        }
+      ],
+      "er": null,
+      "validationInfo": {
+        "type": "ValidationInfo",
+        "status": "WARNING",
+        "errorDescription": null
+      }
+    }
+  ],
+  "pages": []
+}

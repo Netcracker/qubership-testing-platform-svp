@@ -1,0 +1,95 @@
+{
+  "sessionId": "5af78d15-e078-4c8b-bef3-bbd257adfbca",
+  "started": null,
+    "month": "JULY",
+    "year": 2023,
+    "dayOfMonth": 18,
+    "hour": 17,
+    "minute": 57,
+    "monthValue": 7,
+    "nano": 254000000,
+    "second": 28,
+    "dayOfWeek": "TUESDAY",
+    "dayOfYear": 199,
+  "executionConfiguration": {
+    "environment": {
+      "id": null,
+      "name": null,
+      "description": null,
+      "created": null,
+      "createdBy": null,
+      "modified": null,
+      "modifiedBy": null,
+      "projectId": null,
+      "systems": null,
+      "graylogName": null
+    },
+    "pagesName": [
+      "test"
+    ],
+    "logCollectorSearchPeriod": {
+      "searchType": null,
+      "dateStart": null,
+      "dateEnd": null,
+      "timeRange": 0
+    },
+    "bulkValidatorSettings": null,
+    "logCollectorConfigurations": [
+      "12d0efad-c833-495f-a5a4-3aa67ecfd085"
+    ],
+    "shouldHighlightDiffs": true,
+    "shouldSendSessionResults": true,
+    "isFullInfoNeededInPot": false,
+    "onlyForPreconfiguredParams": false,
+    "isPotGenerationMode": false,
+    "onlyCommonParametersExecuted": false,
+    "forcedLoadingCommonParameters": false,
+    "folder": "1c3be102-a721-404a-a75b-4be45336a8e1"
+  },
+  "executionVariables": {},
+  "keyParameters": {},
+  "potSessionPageEntities": [
+    {
+      "id": null,
+      "name": null,
+      "validationStatus": "IN_PROGRESS",
+      "potSessionTabs": [
+        {
+          "id": null,
+          "name": null,
+          "validationStatus": "IN_PROGRESS",
+          "potSessionParameterEntities": [
+            {
+              "parameterId": null,
+              "page": "page",
+              "tab": "tab",
+              "group": "group",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [],
+              "validationInfo": {
+                "type": "ValidationInfo",
+                "status": "IN_PROGRESS",
+                "errorDescription": null
+              },
+              "parameterConfig": null,
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            }
+          ],
+          "potSessionPageEntity": null,
+          "synchronousLoading": false,
+          "alreadyValidated": false
+        }
+      ],
+      "potSessionEntity": null,
+      "pageConfiguration": null,
+      "alreadyValidated": false,
+      "tabsLoadingAlreadyStarted": false
+    }
+  ],
+  "commonParameters": [],
+  "alreadyValidated": false,
+  "sessionPagesLoadingAlreadyStarted": false
+}

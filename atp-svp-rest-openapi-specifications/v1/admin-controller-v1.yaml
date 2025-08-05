@@ -1,0 +1,137 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.1
+info:
+  title: Api Documentation
+  description: Api Documentation
+  version: '1.0'
+servers:
+  - url: //localhost:8080/
+tags:
+  - name: admin-controller
+    description: Admin Controller
+paths:
+  /api/svp/project/{projectId}/admin/reload-project-repo:
+    put:
+      tags:
+        - admin-controller
+      summary: reloadProjectRepo
+      operationId: reloadProjectRepo
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        201:
+          description: Created
+          content: {}
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+      deprecated: false
+  /api/svp/project/{projectId}/admin/project-configuration:
+    get:
+      tags:
+        - admin-controller
+      summary: getProjectConfig
+      operationId: getProjectConfig
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectConfigResponseModel'
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: projectConfig
+    post:
+      tags:
+        - admin-controller
+      summary: add or update ProjectConfig
+      operationId: updateProjectConfig
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: ProjectConfigResponseModel
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectConfigResponseModel'
+        required: true
+      responses:
+        200:
+          description: OK
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: projectConfig
+components:
+  schemas:
+    ProjectConfigResponseModel:
+      title: ProjectConfigResponseModel
+      type: object
+      properties:
+        type:
+          type:  string
+          enum:
+            - GIT
+            - LOCAL
+        gitUrl:
+          type: string
+        projectName:
+          type: string
+        defaultLogCollectorSearchTimeRange:
+          type: integer
+        isFullInfoNeededInPot:
+          type: boolean

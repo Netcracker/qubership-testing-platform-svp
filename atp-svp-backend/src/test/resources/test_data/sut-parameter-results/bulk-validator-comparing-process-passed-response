@@ -1,0 +1,29 @@
+[
+  {
+    "statusCode": 10000,
+    "tcName": "[OCS] Modify Auto Top-Up",
+    "compareResult": "IDENTICAL",
+    "trDate": "2021-04-22 07:53:47.101",
+    "trId": "9b8fbe19-763d-4bd8-847c-e3d2c02b4e32",
+    "resultLink": "validation?trid=9b8fbe19-763d-4bd8-847c-e3d2c02b4e32",
+    "steps": [{ "stepName": "Status", "compareResult": "IDENTICAL" }]
+  },
+  {
+    "statusCode": 10000,
+    "tcName": "[OCS] Remove Auto Top-Up",
+    "compareResult": "MODIFIED",
+    "trDate": "2021-04-22 07:53:49.937",
+    "trId": "821bc72f-8105-42d0-b3f2-bd96f21f2141",
+    "resultLink": "validation?trid=821bc72f-8105-42d0-b3f2-bd96f21f2141",
+    "steps": [{ "stepName": "Status", "compareResult": "IDENTICAL" }]
+  },
+  {
+    "statusCode": 10000,
+    "tcName": "[OCS] Create Auto Top-Up",
+    "compareResult": "IDENTICAL",
+    "trDate": "2021-04-22 07:53:55.355",
+    "trId": "0d6dda31-6847-4300-bd38-daf1b01dc277",
+    "resultLink": "validation?trid=0d6dda31-6847-4300-bd38-daf1b01dc277",
+    "steps": [{ "stepName": "Status", "compareResult": "IDENTICAL" }]
+  }
+]

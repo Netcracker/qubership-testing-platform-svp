@@ -1,0 +1,79 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity AbstractParameterEventListener
+    entity PotSessionParameterServiceImpl
+    entity PotSessionParameterService
+    entity WebSocketMessagingService
+end box
+
+activate AbstractParameterEventListener
+    AbstractParameterEventListener -> PotSessionParameterServiceImpl : getInfoForParameter(session.getBvSettings(), session.isHighlightDiffs())
+
+
+    activate PotSessionParameterServiceImpl
+        alt  IF session parameter is available for execution
+            PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : getInfoForParameter(session.getBvSettings(), session.isHighlightDiffs())
+            == Getting results ==
+            PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : loadActualResults()
+            activate PotSessionParameterServiceImpl #LightGreen
+                PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : getResultBodyForSource(parameterConfiguration.getDisplayType(), parameterConfiguration.getDataSource())
+                note right PotSessionParameterServiceImpl
+                    Get result body for parameter source
+                    see detail design in 'Get_result_body_for_data_source'
+                end note
+
+                   PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : storeNonDeferredActualResultToContext(arValue, context)
+                   group  For each additionalSource under SUTParameter
+                       PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : getResultBodyForSource(parameterConfiguration.getDisplayType(), parameterConfiguration.getDataSource())
+                       note right PotSessionParameterServiceImpl
+                           Get result body for parameter source
+                           see detail design in 'Get_result_body_for_data_source'
+                       end note
+                       PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : storeNonDeferredActualResultToContext(arValue, context)
+                end
+            deactivate PotSessionParameterServiceImpl
+            alt  If executionConfiguration.getIsPotGenerationMode()
+                PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : processParameterResultsForPotReport(context.getParameter())
+            end
+            alt  If context.getParameter().shouldHaveExpectedResult()
+                PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : loadExpectedResult(context)
+            end
+            PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : setValidationStatusForParameterWithError(context)
+            note right
+                Check on hasError, if true ValidationStatus WARNING
+                if hasError is false check on hasLogCollectorErrors, if true ValidationStatus LC_WARNING
+            end note
+    deactivate PotSessionParameterServiceImpl
+        alt #90ffbc If !executionContext.isDeferredSearchResult()
+                    == Validating results ==
+            AbstractParameterEventListener -> AbstractParameterEventListener : validateOrProcessParameterResults(executionContext)
+            activate AbstractParameterEventListener #LightGreen
+                alt If executionContext.allowsParameterValidation()
+                    AbstractParameterEventListener -> AbstractParameterEventListener : startParameterValidation(executionContext)
+                    activate AbstractParameterEventListener #lightBlue
+                        AbstractParameterEventListener -> AbstractParameterEventListener : <color red> Some Magic
+                        AbstractParameterEventListener -> AbstractParameterEventListener : processParameterResults(executionContext)
+                        activate AbstractParameterEventListener
+                            AbstractParameterEventListener -> PotSessionParameterService : sendParameterResultToSession(executionContext)
+                                activate PotSessionParameterService
+                                    PotSessionParameterService -> WebSocketMessagingService : sendSutParameterResult(context.getSessionId(), parameter);
+                                deactivate PotSessionParameterService
+                        deactivate AbstractParameterEventListener
+            deactivate AbstractParameterEventListener
+        else Else
+            AbstractParameterEventListener -> AbstractParameterEventListener : processParameterResults(executionContext)
+            activate AbstractParameterEventListener #lightBlue
+                AbstractParameterEventListener -> PotSessionParameterService : sendParameterResultToSession(executionContext)
+                activate PotSessionParameterService
+                    PotSessionParameterService -> WebSocketMessagingService : sendSutParameterResult(context.getSessionId(), parameter);
+                deactivate PotSessionParameterService
+            deactivate AbstractParameterEventListener
+        end
+    deactivate AbstractParameterEventListener
+    end
+deactivate AbstractParameterEventListener
+
+@enduml

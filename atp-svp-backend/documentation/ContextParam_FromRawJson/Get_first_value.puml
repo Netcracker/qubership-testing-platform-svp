@@ -1,0 +1,12 @@
+@startuml
+(*) --> "1. User configure validation page, json parse used\unused checkbox and save"
+--> "2. User reload validation page"
+
+if Settins is 'isFirstValueParseHowRaw'?
+--> [true] "3.1. Return first value in array by json path parameter"
+--> "3.2. Display value"
+else
+--> [false] "3. Return array by json path parameter"
+
+--> "3.2. Display value"
+@enduml

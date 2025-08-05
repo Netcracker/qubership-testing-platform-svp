@@ -1,0 +1,410 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+actor User
+
+box "FE"
+    entity ValidationPage
+    entity StompClient
+end box
+
+box "BE" #caeaff
+    entity ExecutorController
+    entity ExecutorServiceImpl
+    entity SessionEventListener
+    entity CommonParametersExecutionEventListener
+    entity CommonParameterExecutionEventListener
+    entity SessionPagesExecutionEventListener
+    entity PageEventListener
+    entity PotSessionPageServiceImpl
+    entity TabsExecutionEventListener
+    entity TabEventListener
+    entity ParameterEventListener
+    entity PotSessionParameterServiceImpl
+    entity LogCollectorEventKafkaListener
+    entity PotGenerationEngine
+
+    entity CommonParametersServiceImpl
+    entity PageServiceImpl
+    entity PotSessionServiceImpl
+    entity DeferredSearchServiceImpl
+
+    entity WebSocketMessagingService
+end box
+
+box "LogCollector service" #E3E3D9
+    entity KafkaSearchFinishConsumer
+end box
+
+User -> ValidationPage : Click on 'Reload' button
+group Start session if not exists\n or get session
+    ValidationPage -> ExecutorController : POST\n/project/{projectId}/executor/start-session\nBody: GetInfoRequest
+    activate ExecutorController
+        ExecutorController -> ExecutorServiceImpl : getOrCreateSession(getInfoRequest)
+        activate ExecutorServiceImpl
+            ExecutorServiceImpl -> PotSessionServiceImpl : startSession(...sessionSettings)
+            activate PotSessionServiceImpl
+                PotSessionServiceImpl -> PotSessionServiceImpl : store session to POT sessions cache
+                PotSessionServiceImpl --> ExecutorServiceImpl : UUID\nsession id
+            deactivate PotSessionServiceImpl
+            ExecutorController <-- ExecutorServiceImpl : UUID\nsession id
+        deactivate ExecutorServiceImpl
+    ValidationPage <-- ExecutorController : UUID\nsession id
+    deactivate ExecutorController
+end
+
+ValidationPage -> ExecutorController : POST\n/project/{projectId}/executor/get-info\nBody: GetInfoRequest
+activate ExecutorController
+    ExecutorController -> ExecutorServiceImpl : getInfoForPage(getInfoRequest, pageName)
+    activate ExecutorServiceImpl
+        ExecutorServiceImpl -> ExecutorServiceImpl : UUID getOrCreateSession(getInfoRequest)\nget session id
+
+        ExecutorServiceImpl -> SessionEventListener : publishEvent(new GetInfoForSessionEvent)
+
+        activate SessionEventListener #yellow
+            ExecutorController <-- ExecutorServiceImpl : 200 (OK)
+            deactivate ExecutorServiceImpl
+            ValidationPage <-- ExecutorController : 200 (OK)
+            deactivate ExecutorController
+
+            alt IF Common Parameters are not empty AND common parameters was not stored to session
+                SessionEventListener -> CommonParametersExecutionEventListener : publishEvent(new GetInfoForCommonParametersEvent)
+                activate CommonParametersExecutionEventListener #yellow
+            else ELSE common parameters already stored to session
+                SessionEventListener -> SessionPagesExecutionEventListener : publishEvent(new GetInfoForSessionPagesEvent)
+                activate SessionPagesExecutionEventListener #yellow
+            end
+        deactivate SessionEventListener
+
+        == Getting info for common parameters ==
+        CommonParametersExecutionEventListener <--> CommonParametersServiceImpl : List<SutParameter> getCommonParameters()\nget common parameters config from local storage/git
+        group For each Common Parameter
+            CommonParametersExecutionEventListener -> ParameterEventListener : publishEvent(new GetInfoForCommonParameterEvent)
+            deactivate CommonParametersExecutionEventListener
+            activate ParameterEventListener #yellow
+                ParameterEventListener -> PotSessionParameterServiceImpl : getInfo(new ParameterExecutionContext)
+            deactivate ParameterEventListener
+
+            activate PotSessionParameterServiceImpl
+                PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : Getting info and validation process
+                PotSessionParameterServiceImpl -> WebSocketMessagingService : sendSutParameterResult(sessionId, potSessionParameter)
+                activate WebSocketMessagingService
+                    WebSocketMessagingService --> StompClient : PotSessionParameter result
+                deactivate WebSocketMessagingService
+                activate StompClient
+                    StompClient --> ValidationPage : Show parameter result due regard the Display Type
+                deactivate StompClient
+
+                PotSessionParameterServiceImpl -> SessionPagesExecutionEventListener : publishEvent(new GetInfoForSessionPagesEvent)
+            deactivate PotSessionParameterServiceImpl
+            activate SessionPagesExecutionEventListener #lightGreen
+        end
+
+        alt <color blue>CONDITION:</color> IF all of common parameters already loaded (via indexed counter)
+            == Getting info for pages ==
+            group For each Page
+                SessionPagesExecutionEventListener -> PageEventListener : publishEvent(new GetInfoForPageEvent)
+                deactivate SessionPagesExecutionEventListener
+                deactivate SessionPagesExecutionEventListener
+
+                activate PageEventListener #yellow
+                    PageEventListener -> PotSessionPageServiceImpl : getInfo(new PageExecutionContext)
+                    deactivate PageEventListener
+
+                    activate PotSessionPageServiceImpl
+                        PotSessionPageServiceImpl <--> PageServiceImpl : PageConfiguration getPageByFileName(pageName)\nget config from disk/git
+                        PotSessionPageServiceImpl -> PotSessionPageServiceImpl : sessionPage = convertPageConfiguration(page)
+                        PotSessionPageServiceImpl -> PotSessionServiceImpl : addPageToSession(sessionId, sessionPage)
+
+                        group #90ffbc For each SUT Parameter under Page with synchronous loading flag
+                            PotSessionPageServiceImpl -> ParameterEventListener : publishEvent(new GetInfoForParameterEvent)
+                            deactivate PotSessionPageServiceImpl
+
+                            activate ParameterEventListener #yellow
+                                ParameterEventListener -> PotSessionParameterServiceImpl : getInfo(new ParameterExecutionContext)
+                                deactivate ParameterEventListener
+
+                                activate PotSessionParameterServiceImpl
+                                    PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : Getting info and validation process
+                                    PotSessionParameterServiceImpl -> WebSocketMessagingService : sendSutParameterResult(sessionId, potSessionParameter)
+                                    activate WebSocketMessagingService
+                                        WebSocketMessagingService --> StompClient : PotSessionParameter result
+                                    deactivate WebSocketMessagingService
+                                    activate StompClient
+                                        StompClient --> ValidationPage : Show parameter result due regard the Display Type
+                                    deactivate StompClient
+
+                                    PotSessionParameterServiceImpl -> TabsExecutionEventListener : publishEvent(new GetInfoForTabsUnderPage)
+                                deactivate PotSessionParameterServiceImpl
+
+                                activate TabsExecutionEventListener #yellow
+                        end
+
+                        alt <color blue>CONDITION:</color> IF all of parameters with synchronous loading already loaded (via indexed counter))
+                            group #90ffbc For each Tab under Page
+                                TabsExecutionEventListener -> TabEventListener : publishEvent(new GetInfoForTabEvent)
+                                deactivate TabsExecutionEventListener
+
+                                activate TabEventListener #yellow
+
+                                group For each SutParameter under Tab
+                                    TabEventListener -> ParameterEventListener : publishEvent(new GetInfoForParameterEvent)
+                                    deactivate TabEventListener
+
+                                    activate ParameterEventListener #yellow
+                                        ParameterEventListener -> PotSessionParameterServiceImpl : getInfo(new ParameterExecutionContext)
+                                        deactivate ParameterEventListener
+
+                                        activate PotSessionParameterServiceImpl
+                                            PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : Getting info and validation process
+
+                                            KafkaSearchFinishConsumer -> LogCollectorEventKafkaListener : listen(logCollectorKafkaEvent)
+                                            activate LogCollectorEventKafkaListener
+                                                LogCollectorEventKafkaListener <--> DeferredSearchServiceImpl : findContextByLogCollectorSearchId(logCollectorKafkaEvent.getId())
+                                                alt #90ffbc IF parameter execution context for searchId is present \nAND logCollectorKafkaEvent has ended status\n(COMPLETED or TERMINATED or FAILED)
+                                                    LogCollectorEventKafkaListener -> LogCollectorEventKafkaListener : Set deferred result flag in parameter execution context to false
+                                                    LogCollectorEventKafkaListener -> ParameterEventListener : publishEvent(new GetInfoForParameterEvent)
+                                                    activate ParameterEventListener #yellow
+                                                end
+                                            deactivate LogCollectorEventKafkaListener
+
+                                            ParameterEventListener -> PotSessionParameterServiceImpl : getInfo(new ParameterExecutionContext)
+                                            deactivate ParameterEventListener
+
+                                            PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : Getting info and validation process
+                                            PotSessionParameterServiceImpl -> WebSocketMessagingService : sendSutParameterResult(sessionId, potSessionParameter)
+                                            activate WebSocketMessagingService
+                                                WebSocketMessagingService --> StompClient : PotSessionParameter result
+                                            deactivate WebSocketMessagingService
+                                            activate StompClient
+                                                StompClient --> ValidationPage : Show parameter result due regard the Display Type
+                                            deactivate StompClient
+
+                                            PotSessionParameterServiceImpl -> TabEventListener : publishEvent(new ValidateTabEvent)
+                                        deactivate PotSessionParameterServiceImpl
+
+                                        activate TabEventListener #yellow
+                                            alt #90ffbc <color blue>CONDITION:</color> IF all of parameters under tab already loaded (via indexed counter))
+                                                TabEventListener -> WebSocketMessagingService : sendValidationStatusForTab(sessionId, pageName, tabName, tabStatus)
+                                                activate WebSocketMessagingService
+                                                    WebSocketMessagingService --> StompClient : Tab validation result
+                                                deactivate WebSocketMessagingService
+                                                activate StompClient
+                                                    StompClient --> ValidationPage : Show tab validation result
+                                                deactivate StompClient
+
+                                                TabEventListener -> PageEventListener : publishEvent(new ValidatePageEvent)
+                                                deactivate TabEventListener
+
+                                                activate PageEventListener #yellow
+                                                alt <color blue>CONDITION:</color> IF all of tabs under page already loaded (via indexed counter))
+                                                    PageEventListener -> WebSocketMessagingService : sendValidationStatusForPage(sessionId, pageName, pageStatus)
+                                                    activate WebSocketMessagingService
+                                                        WebSocketMessagingService --> StompClient : Page validation result
+                                                    deactivate WebSocketMessagingService
+                                                    activate StompClient
+                                                        StompClient --> ValidationPage : Show page validation result
+                                                    deactivate StompClient
+
+                                                    PageEventListener -> SessionEventListener : publishEvent(new ValidateSessionEvent)
+                                                    deactivate PageEventListener
+
+                                                    activate SessionEventListener #yellow
+                                                        alt #90ffbc <color blue>CONDITION:</color> IF all of pages under session already loaded (via indexed counter))
+                                                            SessionEventListener -> WebSocketMessagingService : sendValidationStatusForSession(sessionId, sessionStatus)
+                                                            deactivate SessionEventListener
+
+                                                            activate WebSocketMessagingService
+                                                                WebSocketMessagingService --> StompClient : Session validation result
+                                                            deactivate WebSocketMessagingService
+                                                            activate StompClient
+                                                                StompClient --> ValidationPage : Show session validation result
+                                                                note right ValidationPage
+                                                                    POT report generation is available
+                                                                end note
+                                                            deactivate StompClient
+                                                        end
+                                            end
+                                end
+                            end
+                        end
+            end
+        end
+
+        == Getting POT (Proof of Testing) ==
+        ValidationPage -> ExecutorController : GET\n/project/{projectId}/executor/get-pot\nBody: GetInfoRequest
+        activate ExecutorController
+            ExecutorController -> ExecutorServiceImpl : getPot(GetInfoRequest)
+            activate ExecutorServiceImpl
+                ExecutorServiceImpl -> PotGenerationEngine : generatePot(PotSession)
+                activate PotGenerationEngine
+                    note right PotGenerationEngine
+                        POT generation flow started...
+                    end note
+                    ExecutorServiceImpl <-- PotGenerationEngine : PotFile
+                deactivate PotGenerationEngine
+                ExecutorController <-- ExecutorServiceImpl : PotFile
+            deactivate ExecutorServiceImpl
+            ValidationPage <-- ExecutorController : **PotFile** with header application/octet-stream
+        deactivate ExecutorController
+
+'                activate PageEventListener
+'                    group For each SutParameter under Page
+'                        PageEventListener -> PotSessionPageServiceImpl : publishEvent(new GetInfoForParameterEvent)
+'                        activate PotSessionPageServiceImpl
+'                            note right PotSessionPageServiceImpl
+'                                <color red>**@Async**</color>
+'                                SUT Parameter execution flow started...
+'                            end note
+'                            PotSessionPageServiceImpl -> ParameterEventListener : getInfo(new ParameterExecutionContext)
+'
+'                            alt IF parameter does not contain a deferred result
+'                                activate ParameterEventListener
+'                                    ParameterEventListener -> WebSocketMessagingService : sendSutParameterResult(sessionId, parameterPath, validationStatus)
+'                                deactivate ParameterEventListener
+'
+'                                ValidationPage -> ExecutorController : GET\n/project/{projectId}/executor/get-parameter-result\nBody: GetParameterResultRequest
+'                                activate ExecutorController
+'                                    ExecutorController <--> PotSessionServiceImpl : getParameterResult(request)
+'                                    ValidationPage <-- ExecutorController : new SutParameterResultMessage(request.getSessionId(), parameterResult)
+'                                deactivate ExecutorController
+'                            end
+'                        deactivate PotSessionPageServiceImpl
+'
+'                        KafkaSearchFinishConsumer -> LogCollectorEventKafkaListener : listen(logCollectorKafkaEvent)
+'                        activate LogCollectorEventKafkaListener
+'                            LogCollectorEventKafkaListener <--> DeferredSearchServiceImpl : findContextByLogCollectorSearchId(logCollectorKafkaEvent.getId())
+'                            alt IF parameter execution context for searchId is present \nAND logCollectorKafkaEvent has ended status\n(COMPLETED or TERMINATED or FAILED)
+'                                LogCollectorEventKafkaListener -> LogCollectorEventKafkaListener : Set deferred result flag in parameter execution context to false
+'                                LogCollectorEventKafkaListener -> PotSessionPageServiceImpl : publishEvent(new GetInfoForParameterEvent)
+'                            end
+'                        deactivate LogCollectorEventKafkaListener
+'
+'                        activate PotSessionPageServiceImpl
+'                            note right PotSessionPageServiceImpl
+'                                <color red>**@Async**</color>
+'                                SUT Parameter execution flow started...
+'                            end note
+'                            PotSessionPageServiceImpl -> ParameterEventListener : getInfo(new ParameterExecutionContext)
+'
+'                            alt IF parameter does not contain a deferred result
+'                                activate ParameterEventListener
+'                                    ParameterEventListener -> WebSocketMessagingService : sendSutParameterResult(sessionId, parameterPath, validationStatus)
+'                                deactivate ParameterEventListener
+'
+'                                ValidationPage -> ExecutorController : GET\n/project/{projectId}/executor/get-parameter-result\nBody: GetParameterResultRequest
+'                                activate ExecutorController
+'                                    ExecutorController <--> PotSessionServiceImpl : getParameterResult(request)
+'                                    ValidationPage <-- ExecutorController : new SutParameterResultMessage(request.getSessionId(), parameterResult)
+'                                deactivate ExecutorController
+'                            end
+'                        deactivate PotSessionPageServiceImpl
+'                    end
+'                deactivate PageEventListener
+'                PageExecutionEventListener -> PageExecutionEventListener : sutParametersCountDownLatch.<color red>**await()**</color>
+'            deactivate PageExecutionEventListener
+'        end
+'        SessionEventListener -> SessionEventListener : pagesCountDownLatch.<color red>**await()**</color>
+'
+'        SessionEventListener -> WebSocketMessagingService : sendSessionResults(sessionId, sessionStatus)
+'        note right SessionEventListener
+'            POT report generation is available
+'        end note
+'
+'        == Getting POT (Proof of Testing) ==
+'        ValidationPage -> ExecutorController : GET\n/project/{projectId}/executor/get-pot\nBody: GetInfoRequest
+'        activate ExecutorController
+'            ExecutorController -> ExecutorServiceImpl : getPot(GetInfoRequest)
+'            activate ExecutorServiceImpl
+'                ExecutorServiceImpl -> PotGenerationEngine : generatePot(PotSession)
+'                activate PotGenerationEngine
+'                    note right PotGenerationEngine
+'                        POT generation flow started...
+'                    end note
+'                    ExecutorServiceImpl <-- PotGenerationEngine : PotFile
+'                deactivate PotGenerationEngine
+'                ExecutorController <-- ExecutorServiceImpl : PotFile
+'                ValidationPage <-- ExecutorController : **PotFile** with header application/octet-stream
+'                deactivate ExecutorServiceImpl
+'        deactivate ExecutorController
+
+
+
+
+
+
+
+
+
+
+'//////// OLD /////////
+'        ExecutorServiceImpl -> ExecutorServiceImpl : CountDownLatch getInfo(sessionId, List<PageConfiguration> pages)
+'        ExecutorServiceImpl -> ExecutorServiceImpl : Created new ThreadPoolExecutor
+'        activate ExecutorServiceImpl  #LightGreen
+'            ExecutorServiceImpl -> ExecutorServiceImpl : pageCdl = new CountDownLatch(pages.size())
+'            group For each Page on ThreadPoolExecutor
+'                ExecutorServiceImpl <--> PageExecutor : new PageExecutor(sessionId, page, potSessionService, displayTypeServiceFactory, logCollectorRepository)
+'                ExecutorServiceImpl -> PageExecutor : call()
+'                activate ExecutorServiceImpl #Purple
+'                    activate PageExecutor #Red
+'                        PageExecutor -> PageExecutor : sessionPage = convertPageConfiguration(page)
+'                        PageExecutor -> PotSessionServiceImpl : addPageToSession(sessionId, sessionPage)
+'                        PageExecutor -> PageExecutor : new CountDownLatch(sessionPage.getParameters().size())
+'                        group For each SutParameter under Page on ThreadPoolExecutor
+'                            PageExecutor -> PageExecutor : new ParameterExecutionContext(created, sessionId, countDownLatch, environment, executionVariables, isDeferredSearchResult, parameter)
+'                            PageExecutor <--> SutParameterExecutor : new SutParameterExecutor(parameterExecutionContext, sessionService, displayTypeServiceFactory, logCollectorRepository))
+'                            PageExecutor -> SutParameterExecutor : call()
+'                            note left SutParameterExecutor
+'                                Get info for parameter
+'                                see detail design in 'Get_info_for_parameter_process'
+'                            end note
+'                            alt IF parameter has synchronously loading
+'                                PageExecutor -> PageExecutor : future.get() - Waiting for full loading of parameter info and finished validation process
+'                            end
+'                        end
+'
+'                        PageExecutor -> PageExecutor : parametersCdl.await()
+'                        note right
+'                            Waiting until all of the SUT parameters are loaded
+'                        end note
+'                        PageExecutor -> PageExecutor : sessionPage.calculateValidationStatus()
+'                        PageExecutor -> PotSessionServiceImpl : addValidationStatusForPage(sessionId, page.getName(), sessionPage.getValidationStatus())
+'                        group finally
+'                            PageExecutor -> PageExecutor : pages under session CountDownLatch().countDown()
+'                            PageExecutor -> PageExecutor : ThreadPoolExecutor.shutdown()
+'                        end
+'
+'                        LogCollectorEventKafkaListener -> LogCollectorEventKafkaListener : listen(logCollectorKafkaEvent)
+'                        activate LogCollectorEventKafkaListener
+'                            LogCollectorEventKafkaListener <--> DeferredSearchServiceImpl : findContextByLogCollectorSearchId(logCollectorKafkaEvent.getId())
+'                            alt IF parameter execution context for searchId is present AND logCollectorKafkaEvent has ended status (COMPLETED or TERMINATED or FAILED)
+'                                LogCollectorEventKafkaListener -> ApplicationEventPublisher : publishEvent(new ReloadSutParameterEvent(logCollectorKafkaEvent.getId(), parameterContext))
+'                            end
+'                        deactivate LogCollectorEventKafkaListener
+'
+'                        SutParameterListener -> SutParameterListener : handleReloadSutParameterEvent(ReloadSutParameterEvent reloadSutParameterEvent)
+'                        activate SutParameterListener
+'                            SutParameterListener -> SutParameterListener : Set deferred result flag in parameter execution context to false
+'                            SutParameterListener <--> SutParameterExecutor : new SutParameterExecutor(parameterExecutionContext, sessionService, displayTypeServiceFactory, logCollectorRepository))
+'                            SutParameterListener -> SutParameterExecutor : call()
+'                        deactivate SutParameterListener
+'                        note left SutParameterExecutor
+'                            Get info for parameter
+'                            see detail design in 'Get_info_for_parameter_process'
+'                        end note
+'                    deactivate PageExecutor
+'                deactivate ExecutorServiceImpl
+'            end
+'            group finally
+'                ExecutorServiceImpl -> ExecutorServiceImpl : ThreadPoolExecutor.shutdown()
+'            end
+'        deactivate ExecutorServiceImpl
+'        ExecutorServiceImpl -> ExecutorServiceImpl : pageCdl.await()
+'        note right
+'            Waiting until all of the pages are loaded
+'        end note
+'        ExecutorServiceImpl -> PotSessionServiceImpl : addValidationStatusForSession(sessionId)
+
+
+@enduml

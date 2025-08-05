@@ -1,0 +1,589 @@
+{
+  "sessionId": "380c5405-ec8d-494f-a737-f34173da2c37",
+  "started": null,
+  "executionConfiguration": null,
+  "executionVariables": {},
+  "keyParameters": {},
+  "potSessionPageEntities": [
+    {
+      "id": null,
+      "name": "Integration",
+      "validationStatus": "NONE",
+      "potSessionTabs": [
+        {
+          "id": null,
+          "name": "OCS",
+          "validationStatus": "NONE",
+          "potSessionParameterEntities": [
+            {
+              "parameterId": null,
+              "page": "Integration",
+              "tab": "OCS",
+              "group": "Integration message",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [
+                {
+                  "type": "LogCollectorValueObject",
+                  "searchResult": {
+                    "errorCode": null,
+                    "errorDetails": null,
+                    "logsLink": null,
+                    "searchId": "ef7e2569-d226-411f-b91f-d510721d2f77",
+                    "status": "COMPLETED",
+                    "componentSearchResults": [
+                      {
+                        "componentId": "24d1ea9f-45b3-4256-9a2d-26372ad134b8",
+                        "componentName": "GRAYLOG",
+                        "componentSearchId": "5e9c3944-71fb-4eba-bf5c-c0b66ccab6b6",
+                        "componentType": "GRAYLOG",
+                        "errorCode": null,
+                        "errorDetails": null,
+                        "filterText": "LC_NO_FILTER",
+                        "logsLink": null,
+                        "searchId": "ef7e2569-d226-411f-b91f-d510721d2f77",
+                        "searchPattern": "type: Response",
+                        "searchPatternType": "QUERY",
+                        "searchStrategy": null,
+                        "status": "COMPLETED",
+                        "surroundingLinesQuantity": null,
+                        "systemSearchResults": [
+                          {
+                            "errorCode": null,
+                            "errorDetails": null,
+                            "logsLink": "api/logs/download/Project/GRAYLOG/GRAYLOG_95021744-42df-433f-8e35-15e5eb9ce28b_28-05-21-04-09-12.190.csv",
+                            "searchThreadResult": [
+                              {
+                                "foundInDirectory": null,
+                                "logFileName": "GRAYLOG_95021744-42df-433f-8e35-15e5eb9ce28b_28-05-21-04-09-12.190.csv",
+                                "logsLink": "https://localhost/streams/600933b573bd9f4ddf8a42ca20/search?rangetype=absolute&fields=operation_name,payload,context,integration_scenario,header,type,message&from=2021-05-26T04:09:09.000Z&to=2021-05-28T04:09:09.000Z&q=type:20Response",
+                                "messages": [
+                                  [
+
+                                    "integration log"
+                                  ]
+                                ],
+                                "parameters": {
+                                  "operation_name": "ZDS",
+                                  "payload": "{\n  \"productOrderItem\": [\n    {\n      \"product\": {\n        \"productCharacteristic\": [\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdName\",\n            \"value\": \"AutoTopupRenew\"\n          },\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdValue\",\n            \"value\": \"\"\n          }\n        ]\n      },\n      \"action\": \"replace\",\n      \"id\": \"entitlement\"\n    }\n  ],\n  \"relatedParty\": [\n    {\n      \"id\": \"d8bfd05a-e7d3-4128-ad1e-77122f907f62\"\n    }\n  ],\n  \"orderTotalPrice\": [\n    {\n      \"price\": {\n        \"validFor\": {\n          \"startDateTime\": \"2021-05-26T09:41:47Z\"\n        },\n        \"taxIncludedAmount\": {\n          \"value\": \"3000\"\n        }\n      }\n    }\n  ]\n}\n",
+                                  "context": "/pms/api/backend/translations/v1",
+                                  "integration_scenario": "Get Product Offering Translations",
+                                  "header": "GET http://atp-itf-project.dev.somedomain.com/mockingbird-transport-rest/pms/api/backend/translations/v1\\\\n\\\\nTransfer-Encoding: chunked\\\\nContent-Type: application/json\\\\nTransfer-Encoding: chunked\\\\nDate: Fri, 28 May 2021 00:54:54 GMT\\\\nSet-Cookie: be1211f3e1f5ea043deebdf52d7d5e0b=c9bfa5da71af354c7c4b60c04389d652; path=/; HttpOnly\\\\nCache-control: public",
+                                  "type": "Response"
+                                },
+                                "timestamp": "2021-05-28T00:53:11.776Z",
+                                "messageAsSingleString": "integration log\n"
+                              }
+                            ],
+                            "systemName": "GRAYLOG",
+                            "systemSearchId": "95021744-42df-433f-8e35-15e5eb9ce28b",
+                            "status": "COMPLETED"
+                          }
+                        ],
+                        "templateIds": []
+                      }
+                    ]
+                  }
+                }
+              ],
+              "validationInfo": {
+                "type": "IntegrationLogsValidationInfo",
+                "status": "PASSED",
+                "errorDescription": null,
+                "graylogTableValidations": {
+                  "type": "BulkValidatorTableValidationInfo",
+                  "diffs": [],
+                  "bvTestRunsInfo": {
+                    "0": [
+                      {
+                        "testCaseName": "[E2E-MODIFY-12][OCS] Modify Add-On Subscription - remove auto payment",
+                        "testRunLink": "http://atp-bv:8080/project/323eda51-47b5-414a-951a-27221fa374a2/bvt/validation?trid=662baa55-76e3-4d5a-8270-41f790da99e6",
+                        "validationStatus": "PASSED"
+                      }
+                    ]
+                  }
+                },
+                "fileBasedTableValidations": null
+              },
+              "parameterConfig": {
+                "parameterId": null,
+                "name": "[OCS] Modify Add-On Subscription (Request)",
+                "displayType": "INTEGRATION_LOG",
+                "source": {
+                  "system": "GRAYLOG",
+                  "connection": "HTTP",
+                  "engineType": "LOG_COLLECTOR",
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "LogCollectorSettings",
+                      "configurations": [
+                        "24d1ea9f-45b3-4256-9a2d-26372ad134b8"
+                      ],
+                      "parameters": {
+                        "searchText": "(Test_Sales_Order_ID|Test_Customer_ID)",
+                        "graylogSearchText": "context: Test_Sales_Order_ID AND integration_scenario: \"[OCS] Modify Add-On Subscription\" AND type:Request",
+                        "lines": 0,
+                        "minutes": 0,
+                        "query": null,
+                        "readOnlyMode": false,
+                        "searchPerOneDay": false,
+                        "searchStrategy": "SURROUNDING_LINES",
+                        "previewParameters": [
+                          "operation_name",
+                          "payload",
+                          "integration_scenario",
+                          "header",
+                          "type"
+                        ],
+                        "isLogMessageColumnShowed": false,
+                        "regexp": false
+                      }
+                    }
+                  ]
+                },
+                "component": null,
+                "additionalSources": [],
+                "erConfig": {
+                  "type": "BV_LINK",
+                  "value": null,
+                  "tableValidations": [],
+                  "dataSource": {
+                    "system": "",
+                    "connection": "",
+                    "engineType": null,
+                    "script": "",
+                    "settings": [
+                      {
+                        "className": "LogCollectorSettings",
+                        "configurations": [],
+                        "parameters": {
+                          "searchText": null,
+                          "graylogSearchText": null,
+                          "lines": 0,
+                          "minutes": 0,
+                          "query": null,
+                          "readOnlyMode": false,
+                          "searchPerOneDay": false,
+                          "searchStrategy": null,
+                          "previewParameters": null,
+                          "isLogMessageColumnShowed": true,
+                          "regexp": false
+                        }
+                      }
+                    ]
+                  },
+                  "tableValidationSettings": {
+                    "keyColumns": [],
+                    "groupingColumns": []
+                  },
+                  "bulkValidatorValidation": {
+                    "isManualValidation": false,
+                    "validationItem": [
+                      {
+                        "validationColumn": "payload",
+                        "validationObjectName": "Request"
+                      }
+                    ],
+                    "testCaseIds": [
+                      "fc0f5322-2b17-4dde-a8b3-633ee5fdbd6c"
+                    ]
+                  },
+                  "bulkValidatorJsonValidation": null
+                },
+                "groupEntity": null,
+                "lastUpdateDateTime": null,
+                "commonParameterEntity": null,
+                "parameterOrder": 0,
+                "preconfigured": false
+              },
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            },
+            {
+              "parameterId": null,
+              "page": "Integration",
+              "tab": "OCS",
+              "group": "Integration message",
+              "isSynchronousLoading": false,
+              "er": null,
+              "arValues": [
+                {
+                  "type": "LogCollectorValueObject",
+                  "searchResult": {
+                    "errorCode": null,
+                    "errorDetails": null,
+                    "logsLink": null,
+                    "searchId": "ef7e2569-d226-411f-b91f-d510721d2f78",
+                    "status": "COMPLETED",
+                    "componentSearchResults": [
+                      {
+                        "componentId": "24d1ea9f-45b3-4256-9a2d-26372ad134b9",
+                        "componentName": "GRAYLOG",
+                        "componentSearchId": "5e9c3944-71fb-4eba-bf5c-c0b66ccab6b6",
+                        "componentType": "GRAYLOG",
+                        "errorCode": null,
+                        "errorDetails": null,
+                        "filterText": "LC_NO_FILTER",
+                        "logsLink": null,
+                        "searchId": "ef7e2569-d226-411f-b91f-d510721d2f78",
+                        "searchPattern": "type: Response",
+                        "searchPatternType": "QUERY",
+                        "searchStrategy": null,
+                        "status": "COMPLETED",
+                        "surroundingLinesQuantity": null,
+                        "systemSearchResults": [
+                          {
+                            "errorCode": null,
+                            "errorDetails": null,
+                            "logsLink": "api/logs/download/Project/GRAYLOG/GRAYLOG_95021744-42df-433f-8e35-15e5eb9ce28b_28-05-21-04-09-12.190.csv",
+                            "searchThreadResult": [
+                              {
+                                "foundInDirectory": null,
+                                "logFileName": "GRAYLOG_95021744-42df-433f-8e35-15e5eb9ce28b_28-05-21-04-09-12.190.csv",
+                                "logsLink": "https://localhost/streams/600933b573bd9f4ddf8a42ca20/search?rangetype=absolute&fields=operation_name,payload,context,integration_scenario,header,type,message&from=2021-05-26T04:09:09.000Z&to=2021-05-28T04:09:09.000Z&q=type:20Response",
+                                "messages": [
+                                  [
+                                    "integration log"
+                                  ]
+                                ],
+                                "parameters": {
+                                  "operation_name": "ZDS",
+                                  "payload": "{\n  \"productOrderItem\": [\n    {\n      \"product\": {\n        \"productCharacteristic\": [\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdName\",\n            \"value\": \"AutoTopupRenew\"\n          },\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdValue\",\n            \"value\": \"\"\n          }\n        ]\n      },\n      \"action\": \"replace\",\n      \"id\": \"entitlement\"\n    }\n  ],\n  \"relatedParty\": [\n    {\n      \"id\": \"d8bfd05a-e7d3-4128-ad1e-77122f907f62\"\n    }\n  ],\n  \"orderTotalPrice\": [\n    {\n      \"price\": {\n        \"validFor\": {\n          \"startDateTime\": \"2021-05-26T09:41:47Z\"\n        },\n        \"taxIncludedAmount\": {\n          \"value\": \"3000\"\n        }\n      }\n    }\n  ]\n}\n",
+                                  "context": "/pms/api/backend/translations/v1",
+                                  "integration_scenario": "Get Product Offering Translations",
+                                  "header": "GET http://atp-itf-project.dev.somedomain.com/mockingbird-transport-rest/pms/api/backend/translations/v1\\\\n\\\\nTransfer-Encoding: chunked\\\\nContent-Type: application/json\\\\nTransfer-Encoding: chunked\\\\nDate: Fri, 28 May 2021 00:54:54 GMT\\\\nSet-Cookie: be1211f3e1f5ea043deebdf52d7d5e0b=c9bfa5da71af354c7c4b60c04389d652; path=/; HttpOnly\\\\nCache-control: public",
+                                  "type": "Response"
+                                },
+                                "timestamp": "2021-05-28T00:53:11.776Z",
+                                "messageAsSingleString": "integration log\n"
+                              }
+                            ],
+                            "systemName": "GRAYLOG",
+                            "systemSearchId": "95021744-42df-433f-8e35-15e5eb9ce28b",
+                            "status": "COMPLETED"
+                          }
+                        ],
+                        "templateIds": []
+                      }
+                    ]
+                  }
+                }
+              ],
+              "validationInfo": {
+                "type": "ValidationInfo",
+                "status": "NONE",
+                "errorDescription": null
+              },
+              "parameterConfig": {
+                "parameterId": null,
+                "name": "[OCS] Modify Add-On Subscription (Response)",
+                "displayType": "INTEGRATION_LOG",
+                "source": {
+                  "system": "GRAYLOG",
+                  "connection": "HTTP",
+                  "engineType": "LOG_COLLECTOR",
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "LogCollectorSettings",
+                      "configurations": [
+                        "24d1ea9f-45b3-4256-9a2d-26372ad134b9"
+                      ],
+                      "parameters": {
+                        "searchText": "(Test_Sales_Order_ID|Test_Customer_ID)",
+                        "graylogSearchText": "context: Test_Sales_Order_ID AND integration_scenario: \"[OCS] Modify Add-On Subscription\" AND type:Response",
+                        "lines": 0,
+                        "minutes": 0,
+                        "query": null,
+                        "readOnlyMode": false,
+                        "searchPerOneDay": false,
+                        "searchStrategy": "SURROUNDING_LINES",
+                        "previewParameters": [
+                          "operation_name",
+                          "payload",
+                          "integration_scenario",
+                          "header",
+                          "type"
+                        ],
+                        "isLogMessageColumnShowed": false,
+                        "regexp": false
+                      }
+                    }
+                  ]
+                },
+                "component": null,
+                "additionalSources": [],
+                "erConfig": {
+                  "type": "NONE",
+                  "value": null,
+                  "tableValidations": [],
+                  "dataSource": {
+                    "system": "",
+                    "connection": "",
+                    "engineType": null,
+                    "script": "",
+                    "settings": [
+                      {
+                        "className": "LogCollectorSettings",
+                        "configurations": [],
+                        "parameters": {
+                          "searchText": null,
+                          "graylogSearchText": null,
+                          "lines": 0,
+                          "minutes": 0,
+                          "query": null,
+                          "readOnlyMode": false,
+                          "searchPerOneDay": false,
+                          "searchStrategy": null,
+                          "previewParameters": null,
+                          "isLogMessageColumnShowed": true,
+                          "regexp": false
+                        }
+                      }
+                    ]
+                  },
+                  "tableValidationSettings": {
+                    "keyColumns": [],
+                    "groupingColumns": []
+                  },
+                  "bulkValidatorValidation": {
+                    "isManualValidation": false,
+                    "validationItem": null,
+                    "testCaseIds": []
+                  },
+                  "bulkValidatorJsonValidation": null
+                },
+                "groupEntity": null,
+                "lastUpdateDateTime": null,
+                "commonParameterEntity": null,
+                "parameterOrder": 0,
+                "preconfigured": false
+              },
+              "potSessionTabEntity": null,
+              "potSessionEntity": null,
+              "errors": ""
+            }
+          ],
+          "potSessionPageEntity": null,
+          "synchronousLoading": false,
+          "alreadyValidated": false
+        }
+      ],
+      "potSessionEntity": null,
+      "pageConfiguration": {
+        "pageId": null,
+        "name": "Integration",
+        "isSynchronousLoading": false,
+        "folder": null,
+        "lastUpdateDateTime": null,
+        "tabEntities": [
+          {
+            "tabId": null,
+            "name": "OCS",
+            "pageConfiguration": null,
+            "isSynchronousLoading": false,
+            "lastUpdateDateTime": null,
+            "tabOrder": 0,
+            "groupEntities": [
+              {
+                "groupId": null,
+                "name": "Integration message",
+                "tabEntity": null,
+                "isSynchronousLoading": false,
+                "isHide": false,
+                "lastUpdateDateTime": null,
+                "groupOrder": 0,
+                "sutParameterEntities": [
+                  {
+                    "parameterId": null,
+                    "name": "[OCS] Modify Add-On Subscription (Request)",
+                    "displayType": "INTEGRATION_LOG",
+                    "source": {
+                      "system": "GRAYLOG",
+                      "connection": "HTTP",
+                      "engineType": "LOG_COLLECTOR",
+                      "script": "",
+                      "settings": [
+                        {
+                          "className": "LogCollectorSettings",
+                          "configurations": [
+                            "24d1ea9f-45b3-4256-9a2d-26372ad134b8"
+                          ],
+                          "parameters": {
+                            "searchText": "(${Sales_Order_ID}|${Customer_ID})",
+                            "graylogSearchText": "context: ${Sales_Order_ID} AND integration_scenario: \"[OCS] Modify Add-On Subscription\" AND type:Request",
+                            "lines": 0,
+                            "minutes": 0,
+                            "query": null,
+                            "readOnlyMode": false,
+                            "searchPerOneDay": false,
+                            "searchStrategy": "SURROUNDING_LINES",
+                            "previewParameters": [
+                              "operation_name",
+                              "payload",
+                              "integration_scenario",
+                              "header",
+                              "type"
+                            ],
+                            "isLogMessageColumnShowed": false,
+                            "regexp": false
+                          }
+                        }
+                      ]
+                    },
+                    "component": null,
+                    "additionalSources": [],
+                    "erConfig": {
+                      "type": "BV_LINK",
+                      "value": null,
+                      "tableValidations": [],
+                      "dataSource": {
+                        "system": "",
+                        "connection": "",
+                        "engineType": null,
+                        "script": "",
+                        "settings": [
+                          {
+                            "className": "LogCollectorSettings",
+                            "configurations": [],
+                            "parameters": {
+                              "searchText": null,
+                              "graylogSearchText": null,
+                              "lines": 0,
+                              "minutes": 0,
+                              "query": null,
+                              "readOnlyMode": false,
+                              "searchPerOneDay": false,
+                              "searchStrategy": null,
+                              "previewParameters": null,
+                              "isLogMessageColumnShowed": true,
+                              "regexp": false
+                            }
+                          }
+                        ]
+                      },
+                      "tableValidationSettings": {
+                        "keyColumns": [],
+                        "groupingColumns": []
+                      },
+                      "bulkValidatorValidation": {
+                        "isManualValidation": false,
+                        "validationItem": [
+                          {
+                            "validationColumn": "payload",
+                            "validationObjectName": "Request"
+                          }
+                        ],
+                        "testCaseIds": [
+                          "fc0f5322-2b17-4dde-a8b3-633ee5fdbd6c"
+                        ]
+                      },
+                      "bulkValidatorJsonValidation": null
+                    },
+                    "groupEntity": null,
+                    "lastUpdateDateTime": null,
+                    "commonParameterEntity": null,
+                    "parameterOrder": 0,
+                    "preconfigured": false
+                  },
+                  {
+                    "parameterId": null,
+                    "name": "[OCS] Modify Add-On Subscription (Response)",
+                    "displayType": "INTEGRATION_LOG",
+                    "source": {
+                      "system": "GRAYLOG",
+                      "connection": "HTTP",
+                      "engineType": "LOG_COLLECTOR",
+                      "script": "",
+                      "settings": [
+                        {
+                          "className": "LogCollectorSettings",
+                          "configurations": [
+                            "24d1ea9f-45b3-4256-9a2d-26372ad134b9"
+                          ],
+                          "parameters": {
+                            "searchText": "(${Sales_Order_ID}|${Customer_ID})",
+                            "graylogSearchText": "context: ${Sales_Order_ID} AND integration_scenario: \"[OCS] Modify Add-On Subscription\" AND type:Response",
+                            "lines": 0,
+                            "minutes": 0,
+                            "query": null,
+                            "readOnlyMode": false,
+                            "searchPerOneDay": false,
+                            "searchStrategy": "SURROUNDING_LINES",
+                            "previewParameters": [
+                              "operation_name",
+                              "payload",
+                              "integration_scenario",
+                              "header",
+                              "type"
+                            ],
+                            "isLogMessageColumnShowed": false,
+                            "regexp": false
+                          }
+                        }
+                      ]
+                    },
+                    "component": null,
+                    "additionalSources": [],
+                    "erConfig": {
+                      "type": "NONE",
+                      "value": null,
+                      "tableValidations": [],
+                      "dataSource": {
+                        "system": "",
+                        "connection": "",
+                        "engineType": null,
+                        "script": "",
+                        "settings": [
+                          {
+                            "className": "LogCollectorSettings",
+                            "configurations": [],
+                            "parameters": {
+                              "searchText": null,
+                              "graylogSearchText": null,
+                              "lines": 0,
+                              "minutes": 0,
+                              "query": null,
+                              "readOnlyMode": false,
+                              "searchPerOneDay": false,
+                              "searchStrategy": null,
+                              "previewParameters": null,
+                              "isLogMessageColumnShowed": true,
+                              "regexp": false
+                            }
+                          }
+                        ]
+                      },
+                      "tableValidationSettings": {
+                        "keyColumns": [],
+                        "groupingColumns": []
+                      },
+                      "bulkValidatorValidation": {
+                        "isManualValidation": false,
+                        "validationItem": null,
+                        "testCaseIds": []
+                      },
+                      "bulkValidatorJsonValidation": null
+                    },
+                    "groupEntity": null,
+                    "lastUpdateDateTime": null,
+                    "commonParameterEntity": null,
+                    "parameterOrder": 1,
+                    "preconfigured": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "alreadyValidated": false,
+      "tabsLoadingAlreadyStarted": false
+    }
+  ],
+  "commonParameters": [],
+  "sessionPagesLoadingAlreadyStarted": false,
+  "alreadyValidated": false
+}

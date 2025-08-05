@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="validate_order" author="atp-svp-dev-v4">
+        <comment>Set new order column</comment>
+        <customChange class="org.qubership.atp.svp.migration.v4.ConfigPageEntityMigrationCustomChange">
+        </customChange>
+    </changeSet>
+
+</databaseChangeLog>

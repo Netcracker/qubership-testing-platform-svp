@@ -1,0 +1,307 @@
+[
+  {
+    "commonParameterId": "80debe2b-67b2-4127-b26a-36711b8fb9ec",
+    "sutParameterEntity": {
+      "parameterId": "80debe2b-67b2-4127-b26a-36711b8fb9ec",
+      "name": "Test Completed",
+      "displayType": "LINK",
+      "source": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "select '<a href=/ncobject.jsp?id=657567567>657567567</a>' aa from dual",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": null,
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": null,
+            "headers": {}
+          }
+        ]
+      },
+      "component": null,
+      "additionalSources": [],
+      "erConfig": {
+        "type": "PLAIN",
+        "value": "1",
+        "tableValidations": [],
+        "dataSource": {
+          "system": "",
+          "connection": "",
+          "engineType": null,
+          "script": "",
+          "settings": [
+            {
+              "className": "HttpSettings",
+              "query": null,
+              "queryParams": {},
+              "requestType": "GET",
+              "body": "",
+              "urlEncodedBody": null,
+              "headers": {}
+            }
+          ]
+        },
+        "tableValidationSettings": {
+          "keyColumns": [],
+          "groupingColumns": []
+        },
+        "bulkValidatorValidation": null,
+        "bulkValidatorJsonValidation": null
+      },
+      "groupEntity": null,
+      "lastUpdateDateTime": null,
+      "commonParameterEntity": null,
+      "parameterOrder": 0,
+      "preconfigured": false
+    },
+    "folder": null
+  },
+  {
+    "commonParameterId": "f58a4205-081c-448f-a4ce-fe8cdcd8c132",
+    "sutParameterEntity": {
+      "parameterId": "f58a4205-081c-448f-a4ce-fe8cdcd8c132",
+      "name": "Test Error",
+      "displayType": "PARAM",
+      "source": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "select 1 from dual",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": null,
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": null,
+            "headers": {}
+          }
+        ]
+      },
+      "component": null,
+      "additionalSources": [],
+      "erConfig": {
+        "type": "PLAIN",
+        "value": "2",
+        "tableValidations": [],
+        "dataSource": {
+          "system": "",
+          "connection": "",
+          "engineType": null,
+          "script": "",
+          "settings": [
+            {
+              "className": "HttpSettings",
+              "query": null,
+              "queryParams": {},
+              "requestType": "GET",
+              "body": "",
+              "urlEncodedBody": null,
+              "headers": {}
+            }
+          ]
+        },
+        "tableValidationSettings": {
+          "keyColumns": [],
+          "groupingColumns": []
+        },
+        "bulkValidatorValidation": null,
+        "bulkValidatorJsonValidation": null
+      },
+      "groupEntity": null,
+      "lastUpdateDateTime": null,
+      "commonParameterEntity": null,
+      "parameterOrder": 1,
+      "preconfigured": false
+    },
+    "folder": null
+  },
+  {
+    "commonParameterId": "6a124004-77d5-4197-b064-4f7c94c6781a",
+    "sutParameterEntity": {
+      "parameterId": "6a124004-77d5-4197-b064-4f7c94c6781a",
+      "name": "Test none",
+      "displayType": "PARAM",
+      "source": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "select 1 from dual",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": null,
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": null,
+            "headers": {}
+          }
+        ]
+      },
+      "component": null,
+      "additionalSources": [],
+      "erConfig": {
+        "type": "NONE",
+        "value": "",
+        "tableValidations": [],
+        "dataSource": {
+          "system": "",
+          "connection": "",
+          "engineType": null,
+          "script": "",
+          "settings": [
+            {
+              "className": "HttpSettings",
+              "query": null,
+              "queryParams": {},
+              "requestType": "GET",
+              "body": "",
+              "urlEncodedBody": null,
+              "headers": {}
+            }
+          ]
+        },
+        "tableValidationSettings": {
+          "keyColumns": [],
+          "groupingColumns": []
+        },
+        "bulkValidatorValidation": null,
+        "bulkValidatorJsonValidation": null
+      },
+      "groupEntity": null,
+      "lastUpdateDateTime": null,
+      "commonParameterEntity": null,
+      "parameterOrder": 2,
+      "preconfigured": false
+    },
+    "folder": null
+  },
+  {
+    "commonParameterId": "f01348ad-e9b5-4ce7-888a-ae1968b8a92b",
+    "sutParameterEntity": {
+      "parameterId": "f01348ad-e9b5-4ce7-888a-ae1968b8a92b",
+      "name": "Test additional1",
+      "displayType": "LINK",
+      "source": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "select 345345345 from dual",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": null,
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": null,
+            "headers": null
+          }
+        ]
+      },
+      "component": null,
+      "additionalSources": [],
+      "erConfig": {
+        "type": "NONE",
+        "value": null,
+        "tableValidations": [],
+        "dataSource": {
+          "system": "",
+          "connection": "",
+          "engineType": null,
+          "script": "",
+          "settings": [
+            {
+              "className": "HttpSettings",
+              "query": null,
+              "queryParams": {},
+              "requestType": "GET",
+              "body": "",
+              "urlEncodedBody": null,
+              "headers": null
+            }
+          ]
+        },
+        "tableValidationSettings": {
+          "keyColumns": [],
+          "groupingColumns": []
+        },
+        "bulkValidatorValidation": null,
+        "bulkValidatorJsonValidation": null
+      },
+      "groupEntity": null,
+      "lastUpdateDateTime": null,
+      "commonParameterEntity": null,
+      "parameterOrder": 3,
+      "preconfigured": false
+    },
+    "folder": null
+  },
+  {
+    "commonParameterId": "f7ea9e56-6190-4a54-a58f-746d9359fdce",
+    "sutParameterEntity": {
+      "parameterId": "f7ea9e56-6190-4a54-a58f-746d9359fdce",
+      "name": "Test additional2",
+      "displayType": "PARAM",
+      "source": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "select 345345345 from dualgfhgfrh",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": null,
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": null,
+            "headers": null
+          }
+        ]
+      },
+      "component": null,
+      "additionalSources": [],
+      "erConfig": {
+        "type": "NONE",
+        "value": null,
+        "tableValidations": [],
+        "dataSource": {
+          "system": "",
+          "connection": "",
+          "engineType": null,
+          "script": "",
+          "settings": [
+            {
+              "className": "HttpSettings",
+              "query": null,
+              "queryParams": {},
+              "requestType": "GET",
+              "body": "",
+              "urlEncodedBody": null,
+              "headers": null
+            }
+          ]
+        },
+        "tableValidationSettings": {
+          "keyColumns": [],
+          "groupingColumns": []
+        },
+        "bulkValidatorValidation": null,
+        "bulkValidatorJsonValidation": null
+      },
+      "groupEntity": null,
+      "lastUpdateDateTime": null,
+      "commonParameterEntity": null,
+      "parameterOrder": 4,
+      "preconfigured": false
+    },
+    "folder": null
+  }
+]

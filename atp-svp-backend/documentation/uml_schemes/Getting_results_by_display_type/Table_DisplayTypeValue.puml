@@ -1,0 +1,69 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity TableDisplayTypeServiceImpl
+
+    entity SqlRepository
+    entity CassandraRepository
+    entity ConnectionPool
+end box
+
+box "SQL source" #D2E9C3
+    entity DB
+end box
+
+box "Cassandra source" #D2E9C3
+    entity CassandraDB
+end box
+
+activate TableDisplayTypeServiceImpl
+    TableDisplayTypeServiceImpl -> TableDisplayTypeServiceImpl : Get Server from Environment
+    TableDisplayTypeServiceImpl -> TableDisplayTypeServiceImpl : getScriptWithExecutionVariables(source.getScript(), context.getExecutionVariables())
+
+
+== EngineType == SQL ==
+alt IF EngineType == SQL
+    TableDisplayTypeServiceImpl -> SqlRepository : executeQuery(new DBServer(server), script)
+    activate SqlRepository
+        SqlRepository <--> ConnectionPool : createAndGetConnection(server)
+        SqlRepository -> SqlRepository : create PreparedStatement from connection and query
+        SqlRepository -> SqlRepository : PreparedStatement.executeQuery() on ExecutorService
+        activate SqlRepository #LightGreen
+            SqlRepository <--> DB : get ResultSet
+        deactivate SqlRepository
+        SqlRepository -> SqlRepository : ResultSetMetaData rsmd = rs.getMetaData()
+        SqlRepository -> SqlRepository : get list of table headers from ResultSetMetaData
+        SqlRepository -> SqlRepository : get table rows from ResultSet
+
+        TableDisplayTypeServiceImpl <-- SqlRepository : Table(List<String> headers, List<Map<String, String>> rows)
+    deactivate SqlRepository
+    TableDisplayTypeServiceImpl -> TableDisplayTypeServiceImpl : Table.setName(tableNameFromSettings.isEmpty() ? systemName : tableNameFromSettings)
+    note left
+        If table name not specified in TableSettings
+        then system name will be set as name of the table
+    end note
+    <- TableDisplayTypeServiceImpl : new TableValueObject(Table)
+== EngineType == CASSANDRA ==
+else ELSE EngineType == CASSANDRA
+
+    TableDisplayTypeServiceImpl -> CassandraRepository : executeQuery(new DBServer(server), script)
+    activate CassandraRepository
+        CassandraRepository -> CassandraRepository : createCluster(server)
+        activate CassandraRepository #LightGreen
+            CassandraRepository <--> CassandraDB : execute (get ResultSet)
+        deactivate CassandraRepository
+        CassandraRepository -> CassandraRepository : resultAsTable(resultSet)
+        TableDisplayTypeServiceImpl <-- CassandraRepository : Table(List<String> headers, List<Map<String, String>> rows)
+    deactivate CassandraRepository
+    TableDisplayTypeServiceImpl -> TableDisplayTypeServiceImpl : Table.setName(tableNameFromSettings.isEmpty() ? systemName : tableNameFromSettings)
+        note left
+            If table name not specified in TableSettings
+            then system name will be set as name of the table
+        end note
+    <- TableDisplayTypeServiceImpl : new TableValueObject(Table)
+end
+deactivate TableDisplayTypeServiceImpl
+
+@enduml

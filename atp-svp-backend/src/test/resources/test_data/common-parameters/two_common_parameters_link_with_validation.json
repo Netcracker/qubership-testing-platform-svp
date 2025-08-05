@@ -1,0 +1,132 @@
+[
+  {
+    "name": "testCommon1",
+    "displayType": "PARAM",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select test from dual",
+      "settings": [
+        {
+          "className": "LogCollectorSettings",
+          "configurations": [],
+          "parameters": {
+            "searchText": null,
+            "graylogSearchText": null,
+            "lines": 0,
+            "minutes": 0,
+            "query": null,
+            "readOnlyMode": false,
+            "searchPerOneDay": false,
+            "searchStrategy": null,
+            "previewParameters": null,
+            "isLogMessageColumnShowed": true,
+            "regexp": false
+          }
+        }
+      ]
+    },
+    "logsSource": {
+      "components": [],
+      "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+      "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+    },
+    "er": {
+      "type": "NONE",
+      "value": null,
+      "tableValidations": [],
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": [
+          {
+            "className": "LogCollectorSettings",
+            "configurations": [],
+            "parameters": {
+              "searchText": null,
+              "graylogSearchText": null,
+              "lines": 0,
+              "minutes": 0,
+              "query": null,
+              "readOnlyMode": false,
+              "searchPerOneDay": false,
+              "searchStrategy": null,
+              "previewParameters": null,
+              "isLogMessageColumnShowed": true,
+              "regexp": false
+            }
+          }
+        ]
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "validationColumn": "",
+        "validationObjectName": "",
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": ""
+          }
+        ],
+        "testCaseIds": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false,
+    "component": null
+  },
+  {
+    "name": "testCommon4",
+    "displayType": "LINK",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select test4 from dual",
+      "settings": []
+    },
+    "logsSource": {
+      "components": [],
+      "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+      "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+    },
+    "er": {
+      "type": "CUSTOM",
+      "value": null,
+      "tableValidations": [],
+      "dataSource": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "select test4 from dual",
+        "settings": []
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "validationColumn": "",
+        "validationObjectName": "",
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": ""
+          }
+        ],
+        "testCaseIds": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false,
+    "component": null
+  }
+]

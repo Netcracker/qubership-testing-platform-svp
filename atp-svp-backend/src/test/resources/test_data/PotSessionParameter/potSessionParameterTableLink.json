@@ -1,0 +1,76 @@
+{
+    "arValues": [],
+    "componentName": null,
+    "er": null,
+    "errors": "",
+    "group": "SimpleTableWithLinks",
+    "isSynchronousLoading": false,
+    "name": "SimpleTableWithLinks",
+    "page": "ConfigPageTableLinks",
+    "parameterConfig": {
+        "additionalSources": [
+        ],
+        "component": null,
+        "dataSource": {
+            "connection": "DB",
+            "engineType": "SQL",
+            "script": "",
+            "settings": [
+                {
+                    "className": "TableSettings",
+                    "tableName": ""
+                }
+            ],
+            "system": "Business Solution"
+        },
+        "displayType": "TABLE",
+        "er": {
+            "bulkValidatorJsonValidation": {
+                "testCaseId": "",
+                "validationObjectName": ""
+            },
+            "bulkValidatorValidation": {
+                "isManualValidation": false,
+                "testCaseIds": [
+                ],
+                "validationItem": [
+                    {
+                        "validationColumn": "",
+                        "validationObjectName": ""
+                    }
+                ]
+            },
+            "dataSource": {
+                "connection": "",
+                "engineType": null,
+                "script": "",
+                "settings": [
+                    {
+                        "className": "TableSettings",
+                        "tableName": ""
+                    }
+                ],
+                "system": ""
+            },
+            "tableValidations": [
+            ],
+            "tableValidationSettings": {
+                "groupingColumns": [
+                ],
+                "keyColumns": [
+                ]
+            },
+            "type": "NONE",
+            "value": null
+        },
+        "isPreconfigured": false,
+        "name": "SimpleTableWithLinks"
+    },
+    "path": "ConfigPageTableLinks_SimpleTableWithLinks_SimpleTableWithLinks_SimpleTableWithLinks",
+    "tab": "SimpleTableWithLinks",
+    "validationInfo": {
+        "errorDescription": null,
+        "status": "NONE",
+        "type": "ValidationInfo"
+    }
+}

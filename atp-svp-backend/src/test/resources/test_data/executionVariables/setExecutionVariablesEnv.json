@@ -1,0 +1,2217 @@
+{
+  "ENV.QUOTE-TMF-SERVICE.MODIFIEDBY": {
+    "name": "ENV.QUOTE-TMF-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.CREATEDBY": {
+    "name": "ENV.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.DATEOFCHECKVERSION": {
+    "name": "ENV.K8S.DATEOFCHECKVERSION",
+    "simpleValue": "1644434646251",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.STATUS": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1634020830503",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.EXTERNALID": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.EXTERNALID",
+    "simpleValue": "fcfbe834-6f83-4b26-9153-a51af2eb4ff2",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.SYSTEMID": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.SYSTEMID",
+    "simpleValue": "f99f8475-be06-4daa-b886-6dbf906082b1",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.SERVICES[2].MIA": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.STATUS": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.EXTERNALID": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.EXTERNALID",
+    "simpleValue": "0c2a771e-8cfd-4174-a4fd-b949d78aa8ff",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.VERSION": {
+    "name": "ENV.QUOTE-TMF-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "23add3b4-5fef-4a20-ac17-14e53901ac36",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.MODIFIED": {
+    "name": "ENV.K8S.CONNECTIONS.DB.MODIFIED",
+    "simpleValue": "1643711629496",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1634020830703",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1632315072256",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.NAME": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.NAME",
+    "simpleValue": "DB",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_LOGIN": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_LOGIN",
+    "simpleValue": "qubership-user",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "http://atp-public-gateway:8080",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.GRAYLOGNAME": {
+    "name": "ENV.GRAYLOGNAME",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.MODIFIED": {
+    "name": "ENV.MIA.MODIFIED",
+    "simpleValue": "1632214555793",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CREATEDBY": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852387990",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.MODIFIED": {
+    "name": "ENV.SERVER.MODIFIED",
+    "simpleValue": "1632214637799",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.STATUS": {
+    "name": "ENV.QUOTE-TMF-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.SOURCETEMPLATEID": {
+    "name": "ENV.K8S.CONNECTIONS.DB.SOURCETEMPLATEID",
+    "simpleValue": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.MODIFIEDBY": {
+    "name": "ENV.INSTALL-BASE-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CREATEDBY": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.EXTERNALID": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.EXTERNALID",
+    "simpleValue": "57d6ccda-6fd6-475c-97cb-7ca11ff90d15",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.ID": {
+    "name": "ENV.INSTALL-BASE-SERVICE.ID",
+    "simpleValue": "83702c6f-9e56-4290-976d-ab52ab1c76d8",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.URL": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.URL",
+    "simpleValue": "https://api.project.managed.qubership.cloud:6443",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_HOST": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_HOST",
+    "simpleValue": "ssh.somedomain.com",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.MODIFIED": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.MODIFIED",
+    "simpleValue": "1640852380251",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.NAME": {
+    "name": "ENV.NAME",
+    "simpleValue": "sow401-qa-ci",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.EXTERNALID": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.EXTERNALID",
+    "simpleValue": "82f68610-6a11-4fa5-acd6-c446569b7d31",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "28e16210-7670-454c-a28b-4159b49eede9",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.STATUS": {
+    "name": "ENV.K8S.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_LOGIN": {
+    "name": "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_LOGIN",
+    "simpleValue": "postgres",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CREATEDBY": {
+    "name": "ENV.K8S.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1634020829600",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.ID": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.ID",
+    "simpleValue": "1a893207-c2c8-4587-93a2-a8d0bd7978dc",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.INSTALL-BASE-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852374815",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.K8S.CONNECTIONS.DB.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.NAME": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.NAME",
+    "simpleValue": "integration-service-v1",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.NAME": {
+    "name": "ENV.MBE.NAME",
+    "simpleValue": "MBE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.PASSWORD": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.PASSWORD",
+    "simpleValue": "qubership-password",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_PORT": {
+    "name": "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_PORT",
+    "simpleValue": "31999",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.CREATEDBY": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.CREATEDBY",
+    "simpleValue": "f3d39c89-dd82-4565-b03a-d89d46ff9558",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.EXTERNALID": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.EXTERNALID",
+    "simpleValue": "3ab4ddac-0b36-4ccf-a21e-c7353b44c076",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://quote-service-qa-ci.project.managed.qubership.cloud",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.ID": {
+    "name": "ENV.MBE.ID",
+    "simpleValue": "f99f8475-be06-4daa-b886-6dbf906082b1",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_LOGIN": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_LOGIN",
+    "simpleValue": "db_login",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.MODIFIED": {
+    "name": "ENV.MBE.CONNECTIONS.DB.MODIFIED",
+    "simpleValue": "1632214594735",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.ID",
+    "simpleValue": "142f605c-e54a-416f-a466-1a7bc7711cbd",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.CREATEDBY": {
+    "name": "ENV.MBE.CONNECTIONS.DB.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.LINKTOSYSTEMID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.CREATED": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.CREATED",
+    "simpleValue": "1634020829739",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.QUOTE-TMF-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.SYSTEMCATEGORYID": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[2].MIA": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.ID": {
+    "name": "ENV.FE.ID",
+    "simpleValue": "e93f460a-f085-40fe-9be8-ee91cb774051",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CREATED": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CREATED",
+    "simpleValue": "1632214697512",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.PARAMETERSGETTINGVERSION.PARAMETERS": {
+    "name": "ENV.K8S.PARAMETERSGETTINGVERSION.PARAMETERS",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.SERVICES[3].TDM": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.NAME": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.NAME",
+    "simpleValue": "install-base-service-v1",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.EXTERNALID": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.EXTERNALID",
+    "simpleValue": "e7a57986-5cbe-4b3f-bfe5-ed3310f64d56",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.MERGEBYNAME": {
+    "name": "ENV.INSTALL-BASE-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.ID",
+    "simpleValue": "e73228f6-5675-421d-90f5-cfbabb3c0b2d",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.CREATED": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.CREATED",
+    "simpleValue": "1634020830588",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.NAME": {
+    "name": "ENV.QUOTE-TMF-SERVICE.NAME",
+    "simpleValue": "quote-tmf-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.STATUS": {
+    "name": "ENV.MBE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.ID": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.ID",
+    "simpleValue": "35dd721e-25d2-47d1-95bf-c6282e5ebbbc",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_TYPE": {
+    "name": "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_TYPE",
+    "simpleValue": "oracle",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_HOST": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_HOST",
+    "simpleValue": "project1223",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.ID",
+    "simpleValue": "dfc29f41-76e2-483a-8e25-0ecbe982096d",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.ID": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.ID",
+    "simpleValue": "76cb5471-3b38-4342-bf96-78714fe88e49",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1632214601290",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "35dd721e-25d2-47d1-95bf-c6282e5ebbbc",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.MODIFIED": {
+    "name": "ENV.K8S.MODIFIED",
+    "simpleValue": "1644434646251",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "e714dbdf-1461-45e6-96af-b4f5d900969a",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.ID",
+    "simpleValue": "9fa6bd3b-d6bf-4323-aa41-6c1ad07e2d27",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.VERSION": {
+    "name": "ENV.K8S.VERSION",
+    "simpleValue": "cloud-core-ext.2021-11-30-20-13-56-687\": \"release-9-1-0-ext-20211110.100616-67-RELEASE\ncloud-core.2021-12-22-10-58-16-515\": \"release-6-38-0-20211210.131713-37-RELEASE\ncloud-user-task-manager.2021-11-30-21-04-03-659\": \"release-2021-3-20211117.080840-43\ncloudcs.2021-11-30-20-18-47-438\": \"release-2021-3-20211125.145656-15\ncloud-cpqbe.2021-11-30-20-30-23-605\": \"release-2021-3-20211125.145654-108\ncloud-mcbe.2021-11-30-20-55-45-804\": \"release-2021-3-20211012.150750-3\ncloud-om.2021-12-22-11-17-30-979\": \"release-2021-3-20211026.134402-108\ncloud.2021-12-22-11-01-21-533\": \"release-2021-3-20211214.113335-137\ncloud-poq-app.2021-12-22-11-06-12-027\": \"main-20211208.080354-105\ncloud-qms-app.2021-12-22-11-11-06-737\": \"main-20211209.082353-171\ncloud-shopping-cart.2021-11-30-20-35-24-905\": \"release-2021-3-20211126.093520-5\naaa.2022-01-18-14-00-55-950\": \"release-candidate-2021-4-s2-20211130\norder-tracker.2021-11-30-20-54-25-742\": \"support-2-3-x-20210920.160223-150\nproject-cloud.2021-12-22-11-20-26-350\": \"release-1-5-20211220.171408-5",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.MODIFIEDBY": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CREATEDBY": {
+    "name": "ENV.MIA.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CREATED": {
+    "name": "ENV.FE.CREATED",
+    "simpleValue": "1632214555548",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.VERSION": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://integration-service-v1-qa-ci.project.managed.qubership.cloud",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.MODIFIEDBY": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CREATED": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CREATED",
+    "simpleValue": "1634020830445",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.PARAMETERSGETTINGVERSION.PARAMETERS": {
+    "name": "ENV.MBE.PARAMETERSGETTINGVERSION.PARAMETERS",
+    "simpleValue": "select *\nfrom (\nselect version, datetime_str, case when regexp_instr(datetime_str, '\\d{2}:\\d{2}:\\d{2}') = 1 then to_date(datetime_str, 'HH24:MI:SS MM/DD/YYYY') else to_date(datetime_str, 'HH24:MI MM/DD/YYYY') end datetime\nfrom (select substr(value,1,instr(value,' Date: ')-1) version, substr(value,instr(value,' Date: ')+7,length(value)-instr(value,' Date: ')-7) datetime_str from nc_directory where key='nc.database.version.history')\norder by datetime desc)\nwhere version like '%qubership.be-%'\nand rownum = 1",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.ID": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.ID",
+    "simpleValue": "9b05359e-3fde-4853-ba44-bbc8873c35f2",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.CREATED": {
+    "name": "ENV.MBE.CONNECTIONS.DB.CREATED",
+    "simpleValue": "1632214555704",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CREATED": {
+    "name": "ENV.MBE.CREATED",
+    "simpleValue": "1632214555678",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.VERSION": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.DATEOFCHECKVERSION": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.DATEOFCHECKVERSION",
+    "simpleValue": "1640852380251",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.SYSTEMCATEGORYID": {
+    "name": "ENV.FE.SYSTEMCATEGORYID",
+    "simpleValue": "89252951-b248-4e80-a91d-42eb915ab54a",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.MODIFIEDBY": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.MODIFIEDBY",
+    "simpleValue": "f3d39c89-dd82-4565-b03a-d89d46ff9558",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.MERGEBYNAME": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://gateway.somedomain.com/service-port-1111",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.NAME": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.NAME",
+    "simpleValue": "offering-qualification-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.ID": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.ID",
+    "simpleValue": "db78c887-5aa0-4f99-989d-27f1bdc6ea51",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.QUOTE-TMF-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852395871",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.MBE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CREATED": {
+    "name": "ENV.MIA.CREATED",
+    "simpleValue": "1632214555759",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.CREATEDBY": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.MODIFIEDBY": {
+    "name": "ENV.MBE.CONNECTIONS.DB.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "f99f8475-be06-4daa-b886-6dbf906082b1",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.STATUS": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.SERVICES[2].MIA": {
+    "name": "ENV.MBE.CONNECTIONS.DB.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.SERVICES[2].MIA": {
+    "name": "ENV.K8S.CONNECTIONS.DB.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://install-base-service-qa-ci.project.managed.qubership.cloud",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1632214647242",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SYSTEMID": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.VERSION": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.SYSTEMCATEGORYID": {
+    "name": "ENV.MIA.SYSTEMCATEGORYID",
+    "simpleValue": "71ce56bd-9dbd-4e7d-afcd-3e6f4f6cc949",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_TYPE": {
+    "name": "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_TYPE",
+    "simpleValue": "postgresql",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.TOKEN": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.TOKEN",
+    "simpleValue": "{ENC}{rnxxPcDCiwzIt1cwGcnjAA==}{VmW1VQSsI2f8Qurr4x7vkT171uHXRfAfYcLNeF0/wCPlu4RSBpRSRQQnPJ4rlH/4/wXAD5543K3Fuw/FxGftj3tpGqR1EfJ02czVw7x1K5MRKVdWqUfPPssNkSnemqvtvibTkt4z6pQBDR6S9ng5/CDeGrTWYybF6Sa+w99NHt6aa2HwDJzPBBSBl2OhDJ8O1QqDFZ62WL9Q36UWkpRvNrhq5IIxKgOoEtuW4tIHY/oh8He9wCc/R5MSKDLEm//RYrA4Z7Om7lBJfkFZOQ8dpIZAIUIT7n8RLJL37Ftz3i8BnDaegP13ERdpOFIy/OgtIvufq/dJC9c8Jc0sDRonyBuerorar1xEzz31J2Zwi/l5JrTDQNdkcIS/9QHZB9Pd5OsE5jtnZr77NU2qT4pFyLRaB+3RDuQdlSbHMXXOpYBZM2LgSblzePD1QvReVgV/cHexKInHs7LZKxMMrP7bk+9R93QCz4OOrzXCi9XqSNwQwR5SJVvEv/w0Y8ARt+I6aj408lojz7nJjXk8ZKFAuNlp/njOa2XBOPGPr71731qUDDxdG5Ii2wa22AEcLCs1PMk69gI2UivoNWBAQnI/chqfcC4AW/a0bKycs7L2R733iMTWZvOfJRZofph0UfOEH1gZ0zxvwp5pvoyNudgZ4H9oaiZNJTNDLTg/ZlVguiLfQlckS+lYmJvzRxbnkWAxoX/HlHxX4JB9JZJHCIYpYVzMyE9wGLrvf2+GtVBFOmfulQEKCCVt/gGQ57kleOP7useevE9LqCau315W0zsXslUyz4J9wBd1lttphEtdY4ISYLNypYwuJf06ZifpL2v1FOMvT4kyIUyRw91DU3JDFcCybg9UZTE5l2+clMcv3TJRCNg+Pk9AsOxb/00YIM695mrO921quRWvdzJtwFp7+9mxbLhw46pI/E7iv7yd6Uu3Mhk94IDVFj+JYu+PmuBkxSVnREwfVF8ZhydCMst5bz6ZIILGxPrwJYjWIZBLksNh7HnlWxMMHW+Ur3C+hYEZfu8XvtNi71hT4j/bFQqXWWFQx+WrpNHQFETSuW+y+Fadw3tCfeKtE9CW3s7qqm2ZBJmWpyY6RdKBmq80qNzln67OeMRG9cbWmHI3+894Vv0+vcoJq79FqVhdpzxMxXNGVmBemhNY/Ls+nBtVFa3utjpx4qbAbrKcYR8OdFt/8YXrneQUf7V/2u/QXCGCshXiSXPaLDUhc4Rq1xWgUvSrNw==}",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.MBE.CONNECTIONS.DB.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.ID",
+    "simpleValue": "a8e7eb24-b9b9-406d-ad80-58bdcb72c91a",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.STATUS": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SYSTEMID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SYSTEMID",
+    "simpleValue": "e714dbdf-1461-45e6-96af-b4f5d900969a",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CREATEDBY": {
+    "name": "ENV.MBE.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.ID": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.ID",
+    "simpleValue": "28e16210-7670-454c-a28b-4159b49eede9",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://offering-qualification-service-qa-ci.project.managed.qubership.cloud",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.MODIFIED": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.MODIFIED",
+    "simpleValue": "1640852387990",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.ID": {
+    "name": "ENV.K8S.ID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.EXTERNALID": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.EXTERNALID",
+    "simpleValue": "071bccf8-6246-41a2-a83c-9f08b668b6ce",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.SOURCETEMPLATEID": {
+    "name": "ENV.MBE.CONNECTIONS.DB.SOURCETEMPLATEID",
+    "simpleValue": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "222",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.MIA_URL": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.MIA_URL",
+    "simpleValue": "a03d5c5c-0ad9-4496-a71e-89f2f69f4cf7",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_NAME": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_NAME",
+    "simpleValue": "db_name",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_PORT": {
+    "name": "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_PORT",
+    "simpleValue": "1524",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.NAME": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.NAME",
+    "simpleValue": "submission-handler-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.ID": {
+    "name": "ENV.QUOTE-TMF-SERVICE.ID",
+    "simpleValue": "23add3b4-5fef-4a20-ac17-14e53901ac36",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "e93f460a-f085-40fe-9be8-ee91cb774051",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.PARAMETERSGETTINGVERSION.TYPE": {
+    "name": "ENV.K8S.PARAMETERSGETTINGVERSION.TYPE",
+    "simpleValue": "BY_KUBERNETES_CONFIGMAP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.PARAMETERSGETTINGVERSION.TYPE": {
+    "name": "ENV.MBE.PARAMETERSGETTINGVERSION.TYPE",
+    "simpleValue": "BY_SQL_QUERY",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.MODIFIED": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.MODIFIED",
+    "simpleValue": "1632214620162",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852391994",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_LOGIN": {
+    "name": "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_LOGIN",
+    "simpleValue": "db_login",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.\"LOGIN.TESTDOUBLENAME\"": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.\"LOGIN.TESTDOUBLENAME\"",
+    "simpleValue": "dd",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.MODIFIEDBY": {
+    "name": "ENV.SERVER.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.ID",
+    "simpleValue": "d9a03b26-3400-4d24-8508-1223130b9b22",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1632214637799",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1632214698155",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.ID": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.ID",
+    "simpleValue": "aa923e20-0aaf-41e8-9a4b-c4acc281a772",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1632214697918",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.ID",
+    "simpleValue": "738f2dbd-c095-4ef7-82e4-ea8f82b2a25f",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CREATEDBY": {
+    "name": "ENV.SERVER.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.MERGEBYNAME": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.ID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.ID",
+    "simpleValue": "e714dbdf-1461-45e6-96af-b4f5d900969a",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MODIFIED": {
+    "name": "ENV.MODIFIED",
+    "simpleValue": "1634020830753",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.STATUS": {
+    "name": "ENV.FE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.MODIFIED": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.MODIFIED",
+    "simpleValue": "1640852403280",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.MODIFIEDBY": {
+    "name": "ENV.K8S.CONNECTIONS.DB.MODIFIEDBY",
+    "simpleValue": "be04c193-6277-4a39-a668-43edf186b8b7",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.NAME": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.NAME",
+    "simpleValue": "private-gateway-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.ID",
+    "simpleValue": "3dd24805-af39-44b1-859b-42046b2c0b87",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PROJECTID": {
+    "name": "ENV.PROJECTID",
+    "simpleValue": "a03d5c5c-0ad9-4496-a71e-89f2f69f4cf7",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_PASSWORD": {
+    "name": "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_PASSWORD",
+    "simpleValue": "db_password",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.CREATED": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.CREATED",
+    "simpleValue": "1632214555743",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.CREATEDBY": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://public-gateway-qa-ci.project.managed.qubership.cloud",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852384239",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.CREATEDBY": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.K8S.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "REGEXP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CREATEDBY": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.MERGEBYNAME": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.EXTERNALID": {
+    "name": "ENV.INSTALL-BASE-SERVICE.EXTERNALID",
+    "simpleValue": "19e31f22-3f0f-4381-b612-4ba0720176f2",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.TENANT_ID": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.TENANT_ID",
+    "simpleValue": "795f81ef-576a-4a57-aaf9-e3be202be0b0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CREATEDBY": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "9b05359e-3fde-4853-ba44-bbc8873c35f2",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.MODIFIED": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.MODIFIED",
+    "simpleValue": "1640006954670",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.NAME": {
+    "name": "ENV.K8S.NAME",
+    "simpleValue": "K8S",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1634020830503",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.CREATED": {
+    "name": "ENV.K8S.CONNECTIONS.DB.CREATED",
+    "simpleValue": "1643711629496",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.MODIFIEDBY": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.MODIFIEDBY": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1632315072256",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.EXTERNALID": {
+    "name": "ENV.QUOTE-TMF-SERVICE.EXTERNALID",
+    "simpleValue": "0633ff53-dfba-4a6c-906c-9e20f556b628",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_TYPE": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_TYPE",
+    "simpleValue": "oracle",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SOURCETEMPLATEID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SOURCETEMPLATEID",
+    "simpleValue": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.SYSTEMCATEGORYID": {
+    "name": "ENV.K8S.SYSTEMCATEGORYID",
+    "simpleValue": "774845e8-42e0-4a99-86cb-3aa945c859aa",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.NAME": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.NAME",
+    "simpleValue": "SSH",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.CREATED": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.CREATED",
+    "simpleValue": "1632214555660",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.NAME": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.NAME",
+    "simpleValue": "quotation-engine-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.STATUS": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.NAME": {
+    "name": "ENV.INSTALL-BASE-SERVICE.NAME",
+    "simpleValue": "install-base-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.PARAMETERSGETTINGVERSION.PARSINGVALUE": {
+    "name": "ENV.K8S.PARAMETERSGETTINGVERSION.PARSINGVALUE",
+    "simpleValue": "((cloud-core-ext.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){5}\\w+.(\\w+-){2}\\w+)(?!.*cloud-core-ext))|((cloud-core.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){4}\\w+.(\\w+-){2}\\w+)(?!.*cloud-core))|((cloudcs.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloudcs))|((cloud-cim.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-cim))|((cloud-cpqbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-cpqbe))|((cloud-om.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-om))|((cloud-order-capture.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-order-capture))|((cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud))|((project-cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*project-cloud))|((cloud-user-task-manager.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-user-task-manager))|((project-cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud))|((cloud-poq-app.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*cloud-poq-app))|((cloud-cpqbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){5}\\w+.(\\w+-){2}\\w+)(?!.*cloud-cpqbe))|((cloud-qms-app.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-qms-app))|((cloud-shopping-cart.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-shopping-cart))|((cloud-qms-app.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*cloud-qms-app))|((order-tracker.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){3}(\\w+-)?\\w+.(\\w+-)\\w*)(?!.*order-tracker))|((cloud-mcbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-mcbe))|((project-cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud))|((project-cloud-cpq.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud-cpq))|((project-cloud-om.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud-om))|((project-cloud-ibs.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud-ibs))|((aaa.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){3}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*aaa))",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.MODIFIED": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.MODIFIED",
+    "simpleValue": "1640852384239",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1632214555583",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.MODIFIED": {
+    "name": "ENV.QUOTE-TMF-SERVICE.MODIFIED",
+    "simpleValue": "1640852395871",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.MODIFIEDBY": {
+    "name": "ENV.MBE.MODIFIEDBY",
+    "simpleValue": "16df9e34-cf21-4360-b89c-785a4ed8f57d",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.ID",
+    "simpleValue": "d07e2269-b617-4cf0-9c32-c43d26ef0e4d",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.PASSPHRASE": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.PASSPHRASE",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_HOST": {
+    "name": "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_HOST",
+    "simpleValue": "project1223",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.MODIFIEDBY": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.STATUS": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CREATEDBY": {
+    "name": "ENV.FE.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.INSTALL-BASE-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.PARAMETERS.JDBC_URL": {
+    "name": "ENV.MBE.CONNECTIONS.DB.PARAMETERS.JDBC_URL",
+    "simpleValue": "jdbc:oracle:thin:@project1223:1524/db_name",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.NAME": {
+    "name": "ENV.K8S.CONNECTIONS.DB.NAME",
+    "simpleValue": "DB",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.VERSION": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.MODIFIED": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.MODIFIED",
+    "simpleValue": "1632214609333",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.ID": {
+    "name": "ENV.MBE.CONNECTIONS.DB.ID",
+    "simpleValue": "654ac26d-df67-40ae-9b4e-2b72262bf66f",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.MBE.CONNECTIONS.DB.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.MODIFIEDBY": {
+    "name": "ENV.K8S.MODIFIEDBY",
+    "simpleValue": "16df9e34-cf21-4360-b89c-785a4ed8f57d",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.VERSION": {
+    "name": "ENV.MBE.VERSION",
+    "simpleValue": "qubership.be-2021r8.0.0.172",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.VERSION": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.SYSTEMID": {
+    "name": "ENV.K8S.CONNECTIONS.DB.SYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CREATED": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CREATED",
+    "simpleValue": "1632214698081",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.QUOTE-TMF-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_NAME": {
+    "name": "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_NAME",
+    "simpleValue": "dbaas",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1634020830703",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.MERGEBYNAME": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.CREATEDBY": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.PARAMETERS.JDBC_URL": {
+    "name": "ENV.K8S.CONNECTIONS.DB.PARAMETERS.JDBC_URL",
+    "simpleValue": "jdbc:postgresql://localhost:31999/dbaas",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.SERVICES[3].TDM": {
+    "name": "ENV.K8S.CONNECTIONS.DB.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.SERVICES[3].TDM": {
+    "name": "ENV.MBE.CONNECTIONS.DB.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.NAME": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.NAME",
+    "simpleValue": "public-gateway-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_PASSWORD": {
+    "name": "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_PASSWORD",
+    "simpleValue": "{ENC}{eBs2rGT1bjgcmtUJhoMXaQ==}{UgXnfKTXkMH2uQjtxVHhZA==}",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CREATED": {
+    "name": "ENV.K8S.CREATED",
+    "simpleValue": "1632214555621",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_PASSWORD": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_PASSWORD",
+    "simpleValue": "db_password",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.ID": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.ID",
+    "simpleValue": "05497ec4-cd98-4806-9921-d05bf7f22b3e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[2].MIA": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.SYSTEMID": {
+    "name": "ENV.MBE.CONNECTIONS.DB.SYSTEMID",
+    "simpleValue": "f99f8475-be06-4daa-b886-6dbf906082b1",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_KEY": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_KEY",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.VERSION": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.MODIFIEDBY": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1632214555793",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.DATEOFCHECKVERSION": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.DATEOFCHECKVERSION",
+    "simpleValue": "1640852376581",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1632214697918",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "83702c6f-9e56-4290-976d-ab52ab1c76d8",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.QUOTE-TMF-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.CREATEDBY": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.NAME": {
+    "name": "ENV.SERVER.NAME",
+    "simpleValue": "SERVER",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "9afb8a28-7c02-47b3-8149-d5f995a70ae5",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.VERSION": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[2].MIA",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.MODIFIEDBY": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.VERSION": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[3].TDM": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.MODIFIEDBY": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.MODIFIED": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.MODIFIED",
+    "simpleValue": "1640852378386",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SOURCETEMPLATEID": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SOURCETEMPLATEID",
+    "simpleValue": "657ecd97-b08c-46dd-bd87-6f574429c468",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.NAME": {
+    "name": "ENV.FE.NAME",
+    "simpleValue": "FE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.ID": {
+    "name": "ENV.MIA.ID",
+    "simpleValue": "43f03f2d-0620-4842-a5fa-6334b0e8fa4e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.DATEOFCHECKVERSION": {
+    "name": "ENV.MBE.DATEOFCHECKVERSION",
+    "simpleValue": "1644440462535",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.SYSTEMCATEGORYID": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.CREATEDBY": {
+    "name": "ENV.K8S.CONNECTIONS.DB.CREATEDBY",
+    "simpleValue": "be04c193-6277-4a39-a668-43edf186b8b7",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.SYSTEMCATEGORYID": {
+    "name": "ENV.SERVER.SYSTEMCATEGORYID",
+    "simpleValue": "89252951-b248-4e80-a91d-42eb915ab54a",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CREATEDBY": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1632214555858",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.VERSION": {
+    "name": "ENV.INSTALL-BASE-SERVICE.VERSION",
+    "simpleValue": "Unknown",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.MERGEBYNAME": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.INSTALL-BASE-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.JDBC_URL": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.JDBC_URL",
+    "simpleValue": "jdbc:oracle:thin:@project1223:1524/db_name",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.EXTERNALID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.EXTERNALID",
+    "simpleValue": "5f0ecbfe-a71b-4013-afb2-7b8e53313a94",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[3].TDM": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.SYSTEMCATEGORYID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.SYSTEMCATEGORYID",
+    "simpleValue": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.SERVICES[3].TDM",
+    "simpleValue": "TDM",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.INSTALL-BASE-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MODIFIEDBY": {
+    "name": "ENV.MODIFIEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.CREATED": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.CREATED",
+    "simpleValue": "1640006954670",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1632214555793",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CREATEDBY": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.MERGEBYNAME": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.LOGIN": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.LOGIN",
+    "simpleValue": "qubership-user",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.NAME": {
+    "name": "ENV.MIA.NAME",
+    "simpleValue": "MIA",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.CREATED": {
+    "name": "ENV.CREATED",
+    "simpleValue": "1632214555521",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.CREATED": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.CREATED",
+    "simpleValue": "1634020830538",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.MERGEBYNAME": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.ID": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.ID",
+    "simpleValue": "80481c63-d9c9-477e-9769-48e44ccf7084",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.MODIFIED": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.MODIFIED",
+    "simpleValue": "1640852376581",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_PORT": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.DB.PARAMETERS.DB_PORT",
+    "simpleValue": "1524",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.ID": {
+    "name": "ENV.SERVER.ID",
+    "simpleValue": "9afb8a28-7c02-47b3-8149-d5f995a70ae5",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.STATUS": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.NAME": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.NAME",
+    "simpleValue": "quote-mutation-service",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.MODIFIED": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.MODIFIED",
+    "simpleValue": "1640852391994",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.MODIFIED": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.MODIFIED",
+    "simpleValue": "1640852381276",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.MODIFIED": {
+    "name": "ENV.FE.MODIFIED",
+    "simpleValue": "1632214647242",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.MERGEBYNAME": {
+    "name": "ENV.QUOTE-TMF-SERVICE.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CREATED": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CREATED",
+    "simpleValue": "1634020829538",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.MODIFIED": {
+    "name": "ENV.INSTALL-BASE-SERVICE.MODIFIED",
+    "simpleValue": "1640852374815",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_NAME": {
+    "name": "ENV.MBE.CONNECTIONS.DB.PARAMETERS.DB_NAME",
+    "simpleValue": "db_name",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.STATUS": {
+    "name": "ENV.INSTALL-BASE-SERVICE.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.ID": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.ID",
+    "simpleValue": "1746f342-bdbf-4315-b151-6e7c6327e5b8",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.STATUS": {
+    "name": "ENV.MIA.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.SYSTEMID": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.SYSTEMID",
+    "simpleValue": "43f03f2d-0620-4842-a5fa-6334b0e8fa4e",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.DB.NAME": {
+    "name": "ENV.MBE.CONNECTIONS.DB.NAME",
+    "simpleValue": "DB",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.PARAMETERS.PASSWORD": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.PARAMETERS.PASSWORD",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.MODIFIEDBY": {
+    "name": "ENV.MIA.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.MODIFIED": {
+    "name": "ENV.MBE.MODIFIED",
+    "simpleValue": "1644440462535",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.STATUS": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://gateway.somedomain.com/service-port-2222",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.MODIFIEDBY": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.SOURCETEMPLATEID": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.SOURCETEMPLATEID",
+    "simpleValue": "24136d83-5ffb-487f-9bb4-e73be3a89aa2",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.PUBLIC-GATEWAY-SERVICE.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1632214698155",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.CREATED": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.CREATED",
+    "simpleValue": "1634020830753",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_HOST": {
+    "name": "ENV.K8S.CONNECTIONS.DB.PARAMETERS.DB_HOST",
+    "simpleValue": "localhost",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTATION-ENGINE-SERVICE.CREATEDBY": {
+    "name": "ENV.QUOTATION-ENGINE-SERVICE.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.HTTP.CREATED": {
+    "name": "ENV.MBE.CONNECTIONS.HTTP.CREATED",
+    "simpleValue": "1632214555723",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.CREATED": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.CREATED",
+    "simpleValue": "1632315071211",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.NAME": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.NAME",
+    "simpleValue": "HTTP-KubernetesProject",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.STATUS": {
+    "name": "ENV.SERVER.STATUS",
+    "simpleValue": "NOTHING",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.NAMESPACE": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.PARAMETERS.NAMESPACE",
+    "simpleValue": "sow401-qa-ci",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.SERVER.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "http://project1223.somedomain.com:8080",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.ID": {
+    "name": "ENV.K8S.CONNECTIONS.DB.ID",
+    "simpleValue": "d454b28f-394f-40c8-9875-5b6222aa426c",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CREATED": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CREATED",
+    "simpleValue": "1634020830643",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.LINKTOSYSTEMID": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.SERVICES[1].LOGCOLLECTOR": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.SERVICES[1].LOGCOLLECTOR",
+    "simpleValue": "LogCollector",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SUBMISSION-HANDLER-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.SUBMISSION-HANDLER-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852403280",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.FE.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "ffff",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.FE.MODIFIEDBY": {
+    "name": "ENV.FE.MODIFIEDBY",
+    "simpleValue": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852381276",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.MODIFIEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.ID": {
+    "name": "ENV.K8S.CONNECTIONS.HTTP-KUBERNETESPROJECT.ID",
+    "simpleValue": "96acf7b6-e7fe-4219-a418-880adc112c78",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MIA.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.MIA.CONNECTIONS.HTTP.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.SYSTEMCATEGORYID": {
+    "name": "ENV.MBE.SYSTEMCATEGORYID",
+    "simpleValue": "89252951-b248-4e80-a91d-42eb915ab54a",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.PARAMETERSGETTINGVERSION.PARSINGTYPE": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.PARAMETERSGETTINGVERSION.PARSINGTYPE",
+    "simpleValue": "NONE",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_PASSWORD": {
+    "name": "ENV.MBE.CONNECTIONS.SSH.PARAMETERS.SSH_PASSWORD",
+    "simpleValue": "qubership-password",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.SOURCETEMPLATEID",
+    "simpleValue": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL": {
+    "name": "ENV.PRIVATE-GATEWAY-SERVICE.CONNECTIONS.HTTP.PARAMETERS.URL",
+    "simpleValue": "https://private-gateway-qa-ci.project.managed.qubership.cloud",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN": {
+    "name": "ENV.QUOTE-TMF-SERVICE.CONNECTIONS.HTTP.PARAMETERS.LOGIN",
+    "simpleValue": "",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INTEGRATION-SERVICE-V1.MERGEBYNAME": {
+    "name": "ENV.INTEGRATION-SERVICE-V1.MERGEBYNAME",
+    "simpleValue": "false",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.K8S.CONNECTIONS.DB.SERVICES[0].HEALTHCHECK": {
+    "name": "ENV.K8S.CONNECTIONS.DB.SERVICES[0].HEALTHCHECK",
+    "simpleValue": "HealthCheck",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.SERVER.CREATED": {
+    "name": "ENV.SERVER.CREATED",
+    "simpleValue": "1632214555827",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE-V1.MODIFIEDBY": {
+    "name": "ENV.INSTALL-BASE-SERVICE-V1.MODIFIEDBY",
+    "simpleValue": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.ID": {
+    "name": "ENV.ID",
+    "simpleValue": "d6481187-e17f-4af9-b67d-a97afd439617",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.CREATEDBY": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.CREATEDBY",
+    "simpleValue": "8a18997f-5113-41d7-8769-30082741cc79",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.OFFERING-QUALIFICATION-SERVICE.DATEOFCHECKVERSION": {
+    "name": "ENV.OFFERING-QUALIFICATION-SERVICE.DATEOFCHECKVERSION",
+    "simpleValue": "1640852378386",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.QUOTE-MUTATION-SERVICE.LINKTOSYSTEMID": {
+    "name": "ENV.QUOTE-MUTATION-SERVICE.LINKTOSYSTEMID",
+    "simpleValue": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.MODIFIED": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.MODIFIED",
+    "simpleValue": "1634020829600",
+    "type": "SimpleExecutionVariable"
+  },
+  "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.NAME": {
+    "name": "ENV.INSTALL-BASE-SERVICE.CONNECTIONS.HTTP.NAME",
+    "simpleValue": "HTTP",
+    "type": "SimpleExecutionVariable"
+  }
+}

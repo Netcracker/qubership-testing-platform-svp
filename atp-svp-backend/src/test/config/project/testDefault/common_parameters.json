@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Param",
+    "displayType": "PARAM",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select SUBSTR(status_list.value,INSTR(status_list.value, '$')+1)\nfrom\nnc_references r,\nnc_objects ca\njoin nc_params status on status.attr_id=9135888560413426581 and status.object_id=ca.object_id\njoin nc_list_values status_list on status_list.LIST_VALUE_ID=status.LIST_VALUE_ID\nwhere r.attr_id=9139458719513380099 /* Customer Account */\nand ca.object_id =r.reference\nand r.object_id = ${Sales_Order_ID}",
+      "settings": [
+        {
+          "className": "HttpSettings",
+          "query": null,
+          "queryParams": {},
+          "requestType": "GET",
+          "body": "",
+          "urlEncodedBody": null,
+          "headers": {}
+        },
+        {
+          "className": "LogCollectorSettings",
+          "configurations": [],
+          "parameters": {
+            "searchText": null,
+            "graylogSearchText": null,
+            "lines": 0,
+            "minutes": 0,
+            "query": null,
+            "readOnlyMode": false,
+            "searchPerOneDay": false,
+            "searchStrategy": null,
+            "previewParameters": null,
+            "isLogMessageColumnShowed": true,
+            "regexp": false
+          }
+        }
+      ]
+    },
+    "er": {
+      "type": "NONE",
+      "value": "",
+      "tableValidations": [],
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": null,
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": null,
+            "headers": {}
+          },
+          {
+            "className": "LogCollectorSettings",
+            "configurations": [],
+            "parameters": {
+              "searchText": null,
+              "graylogSearchText": null,
+              "lines": 0,
+              "minutes": 0,
+              "query": null,
+              "readOnlyMode": false,
+              "searchPerOneDay": false,
+              "searchStrategy": null,
+              "previewParameters": null,
+              "isLogMessageColumnShowed": true,
+              "regexp": false
+            }
+          }
+        ]
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": ""
+          }
+        ],
+        "testCaseIds": []
+      },
+      "bulkValidatorJsonValidation": null
+    },
+    "additionalSources": [],
+    "isPreconfigured": true,
+    "component": "CIM"
+  },
+  {
+    "name": "Param",
+    "displayType": "PARAM",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select 'testTestTest' from dual",
+      "settings": [
+        {
+          "className": "HttpSettings",
+          "query": null,
+          "queryParams": {},
+          "requestType": "GET",
+          "body": "",
+          "urlEncodedBody": null,
+          "headers": null
+        },
+        {
+          "className": "LogCollectorSettings",
+          "configurations": [],
+          "parameters": {
+            "searchText": null,
+            "graylogSearchText": null,
+            "lines": 0,
+            "minutes": 0,
+            "query": null,
+            "readOnlyMode": false,
+            "searchPerOneDay": false,
+            "searchStrategy": null,
+            "previewParameters": null,
+            "isLogMessageColumnShowed": true,
+            "regexp": false
+          }
+        }
+      ]
+    },
+    "er": {
+      "type": "CUSTOM",
+      "value": null,
+      "tableValidations": [],
+      "dataSource": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "select 'testTestTest' from dual",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": null,
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": null,
+            "headers": null
+          },
+          {
+            "className": "LogCollectorSettings",
+            "configurations": [],
+            "parameters": {
+              "searchText": null,
+              "graylogSearchText": null,
+              "lines": 0,
+              "minutes": 0,
+              "query": null,
+              "readOnlyMode": false,
+              "searchPerOneDay": false,
+              "searchStrategy": null,
+              "previewParameters": null,
+              "isLogMessageColumnShowed": true,
+              "regexp": false
+            }
+          }
+        ]
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": ""
+          }
+        ],
+        "testCaseIds": []
+      },
+      "bulkValidatorJsonValidation": null
+    },
+    "additionalSources": [],
+    "isPreconfigured": true,
+    "component": null
+  }
+]

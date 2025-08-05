@@ -1,0 +1,59 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity LinkDisplayTypeServiceImpl
+
+    entity SqlRepository
+    entity CassandraRepository
+    entity ConnectionPool
+end box
+
+box "SQL source" #D2E9C3
+    entity DB
+end box
+
+box "Cassandra source" #D2E9C3
+    entity CassandraDB
+end box
+
+activate LinkDisplayTypeServiceImpl
+    LinkDisplayTypeServiceImpl -> LinkDisplayTypeServiceImpl : Get Server from Environment
+    LinkDisplayTypeServiceImpl -> LinkDisplayTypeServiceImpl : getScriptWithExecutionVariables(source.getScript(), context.getExecutionVariables())
+
+    alt IF EngineType == SQL
+        == EngineType == SQL ==
+        LinkDisplayTypeServiceImpl -> SqlRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+        activate SqlRepository
+            SqlRepository <--> ConnectionPool : createAndGetConnection(server)
+            SqlRepository -> SqlRepository : create PreparedStatement from connection and query
+            SqlRepository -> SqlRepository : PreparedStatement.executeQuery() on ExecutorService
+
+            activate SqlRepository #LightGreen
+                SqlRepository <--> DB : get ResultSet
+            deactivate SqlRepository
+            SqlRepository -> SqlRepository : ResultSetMetaData rsmd = rs.getMetaData()
+            SqlRepository -> SqlRepository : get list of table headers from ResultSetMetaData
+            SqlRepository -> SqlRepository : get table rows from ResultSet
+            SqlRepository -> SqlRepository : get first cell from first row value
+
+            LinkDisplayTypeServiceImpl <-- SqlRepository : String (First cell from first row value)
+        deactivate SqlRepository
+         <- LinkDisplayTypeServiceImpl : new SimpleValueObject(firstCellValue)
+    else If EngineType == CASSANDRA
+         == EngineType == CASSANDRA ==
+         LinkDisplayTypeServiceImpl -> CassandraRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+         activate CassandraRepository
+            CassandraRepository -> CassandraRepository : createCluster(server)
+            activate CassandraRepository #LightGreen
+                CassandraRepository <--> CassandraDB : execute (get ResultSet)
+            deactivate CassandraRepository
+            CassandraRepository -> CassandraRepository : get first ROW
+            CassandraRepository -> CassandraRepository : get first column value in first ROW
+            LinkDisplayTypeServiceImpl <-- CassandraRepository : String response (First cell from first row value)
+         deactivate CassandraRepository
+    end
+deactivate LinkDisplayTypeServiceImpl
+
+@enduml

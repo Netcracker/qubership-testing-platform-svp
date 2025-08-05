@@ -1,0 +1,114 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity AtpSvpExportExecutor
+    entity ExportImportStrategiesRegistry
+    entity AtpExportStrategy
+    entity FolderServiceJpa
+    entity ObjectSaverToDiskService
+    entity FolderRepository
+    entity PageConfigurationServiceJpa
+    entity PageConfigurationRepository
+
+end box
+
+box "External source" #E3E3D9
+    entity DB
+end box
+
+
+AtpSvpExportExecutor -> ExportImportStrategiesRegistry : getExportStrategy(ExportFormat)
+activate AtpSvpExportExecutor
+    activate ExportImportStrategiesRegistry
+        ExportImportStrategiesRegistry -> AtpSvpExportExecutor : AtpExportStrategy
+    deactivate ExportImportStrategiesRegistry
+    AtpSvpExportExecutor -> AtpExportStrategy : export(ExportImportData exportData, Path path)
+deactivate AtpSvpExportExecutor
+activate AtpExportStrategy #yellow
+    AtpExportStrategy -> AtpExportStrategy : exportFolders(ExportImportData exportData, Path path)
+    activate AtpExportStrategy
+        AtpExportStrategy -> AtpExportStrategy : exportFolders(Set<UUID> exportFolderIds, Set<UUID> exportPageIds, Path workDir)
+            activate AtpExportStrategy
+                AtpExportStrategy -> FolderServiceJpa : getFolderIdsByPageIds(exportPageIds)
+                activate FolderServiceJpa
+                    FolderServiceJpa -> FolderRepository : getFolderIdsByPageIds(exportPageIds)
+                    activate FolderRepository
+                        FolderRepository -> DB : getFolderIdsByPageIds(exportPageIds)
+                        activate DB
+                            DB -> FolderRepository : Set<String> FoldersId
+                        deactivate DB
+                        FolderRepository -> FolderServiceJpa : Set<UUID> FoldersId
+                    deactivate FolderRepository
+                    FolderServiceJpa -> AtpExportStrategy : Set<UUID> folders
+                deactivate FolderServiceJpa
+         AtpExportStrategy -> FolderServiceJpa : getFoldersByIds(Set<UUID>)
+            activate FolderServiceJpa
+                FolderServiceJpa -> FolderRepository : getFolderEntitiesByFolderIdIn(folderIds)
+                activate FolderRepository
+                   FolderRepository -> DB : getFolderEntitiesByFolderIdIn(folderIds)
+                   activate DB
+                    DB -> FolderRepository : List<FolderEntity>
+                   deactivate DB
+                   FolderRepository -> FolderServiceJpa : List<FolderEntity>
+                deactivate FolderRepository
+                FolderServiceJpa -> AtpExportStrategy : List<FolderEntity> folders
+            deactivate FolderServiceJpa
+         group #90ffbc For each FolderEntity
+            AtpExportStrategy -> AtpExportStrategy : exportFolder(FolderEntity folderToExport, Path workDir)
+            activate AtpExportStrategy
+                AtpExportStrategy -> ObjectSaverToDiskService : exportAtpEntity (folderToExport.getFolderId(), folder, workDir.resolve(EntityType.FOLDER.name()))
+                AtpExportStrategy -> AtpExportStrategy : exportCommonParameters(FolderEntity folderToExport, Path workDir)
+                    group For each CommonParameterEntities
+                        activate AtpExportStrategy
+                            AtpExportStrategy -> ObjectSaverToDiskService : exportAtpEntity (folderToExport.getFolderId(), folder, workDir.resolve(EntityType.FOLDER.name()))
+                        deactivate AtpExportStrategy
+                    end
+                AtpExportStrategy -> AtpExportStrategy : exportKeyParameters(FolderEntity folderToExport, Path workDir)
+                    group For each KeyParameterEntities
+                        activate AtpExportStrategy
+                            AtpExportStrategy -> ObjectSaverToDiskService : exportAtpEntity (folderToExport.getFolderId(), folder, workDir.resolve(EntityType.FOLDER.name()))
+                        deactivate AtpExportStrategy
+                    end
+            deactivate AtpExportStrategy
+         end
+    deactivate AtpExportStrategy
+    deactivate AtpExportStrategy
+
+
+AtpExportStrategy -> AtpExportStrategy : exportPages(ExportImportData exportData, Path path)
+activate AtpExportStrategy
+    AtpExportStrategy -> AtpExportStrategy : exportPages(Set<UUID> exportRequestIds, Path workDir)
+    activate AtpExportStrategy
+        AtpExportStrategy -> PageConfigurationServiceJpa : getAllPagesByIds(exportPageIds)
+        activate PageConfigurationServiceJpa
+            PageConfigurationServiceJpa -> PageConfigurationRepository : getAllPagesByIds(exportPageIds)
+            activate PageConfigurationRepository
+                PageConfigurationRepository -> DB : getPageConfigurationEntityByPageIdIn(exportPageIds)
+                activate DB
+                  DB -> PageConfigurationRepository : List<PageConfigurationEntity>
+                deactivate DB
+                PageConfigurationRepository -> PageConfigurationServiceJpa : List<PageConfigurationEntity>
+            deactivate PageConfigurationRepository
+            PageConfigurationServiceJpa -> AtpExportStrategy : List<PageConfigurationEntity>
+        deactivate PageConfigurationServiceJpa
+        group #90ffbc For each PageConfigurationEntity
+                        AtpExportStrategy -> AtpExportStrategy : exportPage(PageConfigurationEntity page, Path workDir)
+                        activate AtpExportStrategy
+                           AtpExportStrategy ->  ObjectSaverToDiskService : exportAtpEntity(page.getPageId(), new  ExportImportPage(page), workDir.resolve(EntityType.PAGE.name()))
+                        deactivate AtpExportStrategy
+                    end
+deactivate AtpExportStrategy
+
+
+
+
+
+
+
+
+
+
+
+@enduml

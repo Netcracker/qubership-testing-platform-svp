@@ -1,0 +1,82 @@
+{
+  "name": "ConfigPageHideGroup",
+  "tabs": [
+    {
+      "name": "tab1",
+      "groups": [
+        {
+          "name": "Group1hide",
+          "sutParameters": [
+            {
+              "name": "param1",
+              "displayType": "PARAM",
+              "dataSource":null,
+              "er":null,
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            }
+          ],
+          "isSynchronousLoading": false,
+          "isHide": true
+        },
+        {
+          "name": "Not hide group",
+          "sutParameters": [
+            {
+              "name": "param1",
+              "displayType": "PARAM",
+              "dataSource":null,
+              "er":null,
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            }
+          ],
+          "isSynchronousLoading": false,
+          "isHide": false
+        }
+      ],
+      "isSynchronousLoading": false
+    },
+    {
+      "name": "tab2",
+      "groups": [
+        {
+          "name": "Group2hide",
+          "sutParameters": [
+            {
+              "name": "param1",
+              "displayType": "PARAM",
+              "dataSource":null,
+              "er":null,
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            }
+          ],
+          "isSynchronousLoading": false,
+          "isHide": true
+        },
+        {
+          "name": "Group3hide",
+          "sutParameters": [
+            {
+              "name": "param1",
+              "displayType": "PARAM",
+              "dataSource":null,
+              "er":null,
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            }
+          ],
+          "isSynchronousLoading": false,
+          "isHide": true
+        }
+      ],
+      "isSynchronousLoading": false
+    }
+  ],
+  "isSynchronousLoading": false
+}

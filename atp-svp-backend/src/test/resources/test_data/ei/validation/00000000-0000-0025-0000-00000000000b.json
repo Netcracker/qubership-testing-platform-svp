@@ -1,0 +1,86 @@
+{
+  "id" : "00000000-0000-0025-0000-00000000000b",
+  "name" : "Page 1 (folder 1) ConfigPageHideGroup",
+  "sourceId" : null,
+  "folderId" : "00000000-0000-0001-0000-000000000001",
+  "tabs" : [ {
+    "tabId" : null,
+    "name" : "tab1",
+    "groups" : [ {
+      "groupId" : null,
+      "name" : "Group1hide",
+      "sutParameters" : [ {
+        "parameterId" : null,
+        "name" : "param1",
+        "displayType" : "PARAM",
+        "dataSource" : null,
+        "er" : null,
+        "additionalSources" : [ ],
+        "isPreconfigured" : false,
+        "component" : null,
+        "folderId" : null,
+        "sourceId" : null
+      } ],
+      "isSynchronousLoading" : false,
+      "isHide" : true
+    }, {
+      "groupId" : null,
+      "name" : "Not hide group",
+      "sutParameters" : [ {
+        "parameterId" : null,
+        "name" : "param1",
+        "displayType" : "PARAM",
+        "dataSource" : null,
+        "er" : null,
+        "additionalSources" : [ ],
+        "isPreconfigured" : false,
+        "component" : null,
+        "folderId" : null,
+        "sourceId" : null
+      } ],
+      "isSynchronousLoading" : false,
+      "isHide" : false
+    } ],
+    "isSynchronousLoading" : false
+  }, {
+    "tabId" : null,
+    "name" : "tab2",
+    "groups" : [ {
+      "groupId" : null,
+      "name" : "Group2hide",
+      "sutParameters" : [ {
+        "parameterId" : null,
+        "name" : "param1",
+        "displayType" : "PARAM",
+        "dataSource" : null,
+        "er" : null,
+        "additionalSources" : [ ],
+        "isPreconfigured" : false,
+        "component" : null,
+        "folderId" : null,
+        "sourceId" : null
+      } ],
+      "isSynchronousLoading" : false,
+      "isHide" : true
+    }, {
+      "groupId" : null,
+      "name" : "Group3hide",
+      "sutParameters" : [ {
+        "parameterId" : null,
+        "name" : "param1",
+        "displayType" : "PARAM",
+        "dataSource" : null,
+        "er" : null,
+        "additionalSources" : [ ],
+        "isPreconfigured" : false,
+        "component" : null,
+        "folderId" : null,
+        "sourceId" : null
+      } ],
+      "isSynchronousLoading" : false,
+      "isHide" : true
+    } ],
+    "isSynchronousLoading" : false
+  } ],
+  "isSynchronousLoading" : false
+}

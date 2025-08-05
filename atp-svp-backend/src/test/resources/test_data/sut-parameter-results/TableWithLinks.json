@@ -1,0 +1,21 @@
+{
+    "headers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "name": "Business Solution",
+    "rows": [
+      {
+        "A": "qqq https://stackoverflow.com",
+        "B": "eee <a href=\"/dog.html\">testLink1</a>",
+        "C": "rrrrr <a href=\"/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>"
+      },
+      {
+        "A": "rrr https://stackoverflow.com",
+        "B": "tttt <a href=\"/dog.html\">testLink1</a>",
+        "C": "yyyy <a href=\"/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>"
+      }
+    ],
+    "type": ".Table"
+}

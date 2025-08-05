@@ -1,0 +1,448 @@
+{
+  "name": "SalesOrderInformation",
+  "tabs": [
+    {
+      "name": "rest",
+      "groups": [
+        {
+          "name": "test",
+          "sutParameters": [
+            {
+              "name": "param1",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "select 'Mocked_Param_Value_First' from dual ",
+                "settings": [
+                  {
+                    "className": "HttpSettings",
+                    "query": "",
+                    "queryParams": {},
+                    "requestType": "GET",
+                    "body": "",
+                    "urlEncodedBody": {},
+                    "headers": {}
+                  },
+                  {
+                    "className": "JsonParseSettings",
+                    "jsonViewType": "RAW",
+                    "jsonPath": "",
+                    "groupNameDivider": "||",
+                    "mockJsonScript": "",
+                    "columnsData": [
+                      {
+                        "header": "",
+                        "jsonPath": "",
+                        "groupingJsonPaths": []
+                      }
+                    ],
+                    "hierarchyNodeNames": {
+                      "id": "",
+                      "rootId": "",
+                      "parentId": ""
+                    },
+                    "hierarchyTreeObjectNodeNames": []
+                  },
+                  {
+                    "className": "LogCollectorSettings",
+                    "configurations": [],
+                    "parameters": {
+                      "searchText": null,
+                      "graylogSearchText": null,
+                      "lines": 0,
+                      "minutes": 0,
+                      "query": null,
+                      "readOnlyMode": false,
+                      "searchPerOneDay": false,
+                      "searchStrategy": null,
+                      "previewParameters": null,
+                      "isLogMessageColumnShowed": true,
+                      "regexp": false
+                    },
+                    "searchPeriod": null
+                  }
+                ]
+              },
+              "logsSource": {
+                "components": [],
+                "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+                "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+              },
+              "er": {
+                "type": "NONE",
+                "value": null,
+                "tableValidations": [],
+                "dataSource": {
+                  "system": "",
+                  "connection": "",
+                  "engineType": null,
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "HttpSettings",
+                      "query": "",
+                      "queryParams": {},
+                      "requestType": "GET",
+                      "body": "",
+                      "urlEncodedBody": {},
+                      "headers": {}
+                    },
+                    {
+                      "className": "JsonParseSettings",
+                      "jsonViewType": "RAW",
+                      "jsonPath": "",
+                      "groupNameDivider": "||",
+                      "mockJsonScript": "",
+                      "columnsData": [
+                        {
+                          "header": "",
+                          "jsonPath": "",
+                          "groupingJsonPaths": []
+                        }
+                      ],
+                      "hierarchyNodeNames": {
+                        "id": "",
+                        "rootId": "",
+                        "parentId": ""
+                      },
+                      "hierarchyTreeObjectNodeNames": []
+                    },
+                    {
+                      "className": "LogCollectorSettings",
+                      "configurations": [],
+                      "parameters": {
+                        "searchText": null,
+                        "graylogSearchText": null,
+                        "lines": 0,
+                        "minutes": 0,
+                        "query": null,
+                        "readOnlyMode": false,
+                        "searchPerOneDay": false,
+                        "searchStrategy": null,
+                        "previewParameters": null,
+                        "isLogMessageColumnShowed": true,
+                        "regexp": false
+                      },
+                      "searchPeriod": null
+                    }
+                  ]
+                },
+                "tableValidationSettings": {
+                  "keyColumns": [],
+                  "groupingColumns": []
+                },
+                "bulkValidatorValidation": {
+                  "validationColumn": "",
+                  "validationObjectName": "",
+                  "isManualValidation": false,
+                  "validationItem": [
+                    {
+                      "validationColumn": "",
+                      "validationObjectName": ""
+                    }
+                  ],
+                  "testCaseIds": []
+                }
+              },
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            },
+            {
+              "name": "param2",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "select 'Mocked_Param_Value_Second' from dual ",
+                "settings": [
+                  {
+                    "className": "HttpSettings",
+                    "query": "",
+                    "queryParams": {},
+                    "requestType": "GET",
+                    "body": "",
+                    "urlEncodedBody": {},
+                    "headers": {}
+                  },
+                  {
+                    "className": "JsonParseSettings",
+                    "jsonViewType": "RAW",
+                    "jsonPath": "",
+                    "groupNameDivider": "||",
+                    "mockJsonScript": "",
+                    "columnsData": [
+                      {
+                        "header": "",
+                        "jsonPath": "",
+                        "groupingJsonPaths": []
+                      }
+                    ],
+                    "hierarchyNodeNames": {
+                      "id": "",
+                      "rootId": "",
+                      "parentId": ""
+                    },
+                    "hierarchyTreeObjectNodeNames": []
+                  },
+                  {
+                    "className": "LogCollectorSettings",
+                    "configurations": [],
+                    "parameters": {
+                      "searchText": null,
+                      "graylogSearchText": null,
+                      "lines": 0,
+                      "minutes": 0,
+                      "query": null,
+                      "readOnlyMode": false,
+                      "searchPerOneDay": false,
+                      "searchStrategy": null,
+                      "previewParameters": null,
+                      "isLogMessageColumnShowed": true,
+                      "regexp": false
+                    },
+                    "searchPeriod": null
+                  }
+                ]
+              },
+              "logsSource": {
+                "components": [],
+                "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+                "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+              },
+              "er": {
+                "type": "NONE",
+                "value": null,
+                "tableValidations": [],
+                "dataSource": {
+                  "system": "",
+                  "connection": "",
+                  "engineType": null,
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "HttpSettings",
+                      "query": "",
+                      "queryParams": {},
+                      "requestType": "GET",
+                      "body": "",
+                      "urlEncodedBody": {},
+                      "headers": {}
+                    },
+                    {
+                      "className": "JsonParseSettings",
+                      "jsonViewType": "RAW",
+                      "jsonPath": "",
+                      "groupNameDivider": "||",
+                      "mockJsonScript": "",
+                      "columnsData": [
+                        {
+                          "header": "",
+                          "jsonPath": "",
+                          "groupingJsonPaths": []
+                        }
+                      ],
+                      "hierarchyNodeNames": {
+                        "id": "",
+                        "rootId": "",
+                        "parentId": ""
+                      },
+                      "hierarchyTreeObjectNodeNames": []
+                    },
+                    {
+                      "className": "LogCollectorSettings",
+                      "configurations": [],
+                      "parameters": {
+                        "searchText": null,
+                        "graylogSearchText": null,
+                        "lines": 0,
+                        "minutes": 0,
+                        "query": null,
+                        "readOnlyMode": false,
+                        "searchPerOneDay": false,
+                        "searchStrategy": null,
+                        "previewParameters": null,
+                        "isLogMessageColumnShowed": true,
+                        "regexp": false
+                      },
+                      "searchPeriod": null
+                    }
+                  ]
+                },
+                "tableValidationSettings": {
+                  "keyColumns": [],
+                  "groupingColumns": []
+                },
+                "bulkValidatorValidation": {
+                  "validationColumn": "",
+                  "validationObjectName": "",
+                  "isManualValidation": false,
+                  "validationItem": [
+                    {
+                      "validationColumn": "",
+                      "validationObjectName": ""
+                    }
+                  ],
+                  "testCaseIds": []
+                }
+              },
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            },
+            {
+              "name": "param3",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "select 'Mocked_Param_Value_Third' from dual ",
+                "settings": [
+                  {
+                    "className": "HttpSettings",
+                    "query": "",
+                    "queryParams": {},
+                    "requestType": "GET",
+                    "body": "",
+                    "urlEncodedBody": {},
+                    "headers": {}
+                  },
+                  {
+                    "className": "JsonParseSettings",
+                    "jsonViewType": "RAW",
+                    "jsonPath": "",
+                    "groupNameDivider": "||",
+                    "mockJsonScript": "",
+                    "columnsData": [
+                      {
+                        "header": "",
+                        "jsonPath": "",
+                        "groupingJsonPaths": []
+                      }
+                    ],
+                    "hierarchyNodeNames": {
+                      "id": "",
+                      "rootId": "",
+                      "parentId": ""
+                    },
+                    "hierarchyTreeObjectNodeNames": []
+                  },
+                  {
+                    "className": "LogCollectorSettings",
+                    "configurations": [],
+                    "parameters": {
+                      "searchText": null,
+                      "graylogSearchText": null,
+                      "lines": 0,
+                      "minutes": 0,
+                      "query": null,
+                      "readOnlyMode": false,
+                      "searchPerOneDay": false,
+                      "searchStrategy": null,
+                      "previewParameters": null,
+                      "isLogMessageColumnShowed": true,
+                      "regexp": false
+                    },
+                    "searchPeriod": null
+                  }
+                ]
+              },
+              "logsSource": {
+                "components": [],
+                "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+                "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+              },
+              "er": {
+                "type": "NONE",
+                "value": null,
+                "tableValidations": [],
+                "dataSource": {
+                  "system": "",
+                  "connection": "",
+                  "engineType": null,
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "HttpSettings",
+                      "query": "",
+                      "queryParams": {},
+                      "requestType": "GET",
+                      "body": "",
+                      "urlEncodedBody": {},
+                      "headers": {}
+                    },
+                    {
+                      "className": "JsonParseSettings",
+                      "jsonViewType": "RAW",
+                      "jsonPath": "",
+                      "groupNameDivider": "||",
+                      "mockJsonScript": "",
+                      "columnsData": [
+                        {
+                          "header": "",
+                          "jsonPath": "",
+                          "groupingJsonPaths": []
+                        }
+                      ],
+                      "hierarchyNodeNames": {
+                        "id": "",
+                        "rootId": "",
+                        "parentId": ""
+                      },
+                      "hierarchyTreeObjectNodeNames": []
+                    },
+                    {
+                      "className": "LogCollectorSettings",
+                      "configurations": [],
+                      "parameters": {
+                        "searchText": null,
+                        "graylogSearchText": null,
+                        "lines": 0,
+                        "minutes": 0,
+                        "query": null,
+                        "readOnlyMode": false,
+                        "searchPerOneDay": false,
+                        "searchStrategy": null,
+                        "previewParameters": null,
+                        "isLogMessageColumnShowed": true,
+                        "regexp": false
+                      },
+                      "searchPeriod": null
+                    }
+                  ]
+                },
+                "tableValidationSettings": {
+                  "keyColumns": [],
+                  "groupingColumns": []
+                },
+                "bulkValidatorValidation": {
+                  "validationColumn": "",
+                  "validationObjectName": "",
+                  "isManualValidation": false,
+                  "validationItem": [
+                    {
+                      "validationColumn": "",
+                      "validationObjectName": ""
+                    }
+                  ],
+                  "testCaseIds": []
+                }
+              },
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            }
+          ],
+          "isSynchronousLoading": true,
+          "isHide": false
+        }
+      ],
+      "isSynchronousLoading": true
+    }
+  ],
+  "isSynchronousLoading": false
+}

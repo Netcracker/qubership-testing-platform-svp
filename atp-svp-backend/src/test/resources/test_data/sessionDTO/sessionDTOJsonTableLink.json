@@ -1,0 +1,93 @@
+{
+    "commonParameters": [],
+    "pages": [
+        {
+            "name": "ConfigPageJsonTableLinks",
+            "status": "NONE",
+            "tabs": [
+                {
+                    "groups": [
+                        {
+                            "name": "jsonTableLinks",
+                            "sutParameters": [
+                                {
+                                    "arValues": [
+                                        {
+                                            "table": {
+                                                "headers": [
+                                                    "NAME_LINK",
+                                                    "ID"
+                                                ],
+                                                "name": null,
+                                                "rows": [
+                                                    {
+                                                        "cells": [
+                                                            {
+                                                                "columnHeader": "NAME_LINK",
+                                                                "simpleValue": "[Mobile] test https://stackoverflow.com",
+                                                                "type": ".JsonSimpleCell"
+                                                            },
+                                                            {
+                                                                "columnHeader": "ID",
+                                                                "simpleValue": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+                                                                "type": ".JsonSimpleCell"
+                                                            }
+                                                        ],
+                                                        "nestingDepth": 0
+                                                    },
+                                                    {
+                                                        "cells": [
+                                                            {
+                                                                "columnHeader": "NAME_LINK",
+                                                                "simpleValue": "<a href=\"http://127.0.0.1:8082/dog.html\">testLink1</a>\n",
+                                                                "type": ".JsonSimpleCell"
+                                                            },
+                                                            {
+                                                                "columnHeader": "ID",
+                                                                "simpleValue": "002e7609-a21d-4a11-9d6a-83c58a219a00",
+                                                                "type": ".JsonSimpleCell"
+                                                            }
+                                                        ],
+                                                        "nestingDepth": 0
+                                                    },
+                                                    {
+                                                        "cells": [
+                                                            {
+                                                                "columnHeader": "NAME_LINK",
+                                                                "simpleValue": "<a href=\"http://127.0.0.1:8082/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf\">Process</a>\n",
+                                                                "type": ".JsonSimpleCell"
+                                                            },
+                                                            {
+                                                                "columnHeader": "ID",
+                                                                "simpleValue": "09093500-eb1c-46c0-883c-2ed218baafcf",
+                                                                "type": ".JsonSimpleCell"
+                                                            }
+                                                        ],
+                                                        "nestingDepth": 0
+                                                    }
+                                                ],
+                                                "type": ".JsonTable"
+                                            },
+                                            "type": "TableValueObject"
+                                        }
+                                    ],
+                                    "er": null,
+                                    "groupName": "jsonTableLinks",
+                                    "name": "jsonTableLinks",
+                                    "status": "NONE",
+                                    "validationInfo": {
+                                        "errorDescription": null,
+                                        "status": "NONE",
+                                        "type": "ValidationInfo"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "jsonTableLinks",
+                    "status": "NONE"
+                }
+            ]
+        }
+    ]
+}

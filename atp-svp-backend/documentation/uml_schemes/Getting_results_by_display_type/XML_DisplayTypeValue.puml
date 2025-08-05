@@ -1,0 +1,79 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity XmlDisplayTypeServiceImpl
+
+    entity SqlRepository
+    entity CassandraRepository
+    entity ConnectionPool
+
+    entity SoapRepositoryImpl
+end box
+
+box "SQL source" #D2E9C3
+    entity DB
+end box
+
+box "Cassandra source" #D2E9C3
+    entity CassandraDB
+end box
+
+box "SOAP source" #FFFBA8
+    entity SOAPEndpoint
+end box
+
+activate XmlDisplayTypeServiceImpl
+    XmlDisplayTypeServiceImpl -> XmlDisplayTypeServiceImpl : Get Server from Environment
+    XmlDisplayTypeServiceImpl -> XmlDisplayTypeServiceImpl : getScriptWithExecutionVariables(source.getScript(), context.getExecutionVariables())
+
+    alt IF EngineType == SQL
+        == EngineType == SQL ==
+        XmlDisplayTypeServiceImpl -> SqlRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+        activate SqlRepository
+            SqlRepository <--> ConnectionPool : createAndGetConnection(server)
+            SqlRepository -> SqlRepository : create PreparedStatement from connection and query
+            SqlRepository -> SqlRepository : PreparedStatement.executeQuery() on ExecutorService
+
+            activate SqlRepository #LightGreen
+                SqlRepository <--> DB : get ResultSet
+            deactivate SqlRepository
+            SqlRepository -> SqlRepository : ResultSetMetaData rsmd = rs.getMetaData()
+            SqlRepository -> SqlRepository : get list of table headers from ResultSetMetaData
+            SqlRepository -> SqlRepository : get table rows from ResultSet
+            SqlRepository -> SqlRepository : get first cell from first row value
+
+
+            XmlDisplayTypeServiceImpl <-- SqlRepository : String (First cell from first row value)
+        deactivate SqlRepository
+         <- XmlDisplayTypeServiceImpl : new SimpleValueObject(firstCellValue)
+    else ELSE EngineType == CASSANDRA
+        == EngineType == CASSANDRA ==
+              XmlDisplayTypeServiceImpl -> CassandraRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+              activate CassandraRepository
+                  CassandraRepository -> CassandraRepository : createCluster(server)
+                  activate CassandraRepository #LightGreen
+                      CassandraRepository <--> CassabdraDB : execute (get ResultSet)
+                  deactivate CassandraRepository
+                  CassandraRepository -> CassandraRepository : get first ROW
+                  CassandraRepository -> CassandraRepository : get first column value in first ROW
+                  XmlDisplayTypeServiceImpl <-- CassandraRepository : String response (First cell from first row value)
+                  deactivate CassandraRepository
+    else ELSE EngineType == SOAP
+        == EngineType == SOAP ==
+        XmlDisplayTypeServiceImpl -> SoapRepositoryImpl : soapRequest(server, settings)
+        activate SoapRepositoryImpl
+            SoapRepositoryImpl -> SoapRepositoryImpl : new WebClient() with baseUrl from Server and default SOAP headers
+            SoapRepositoryImpl -> SoapRepositoryImpl : set headers from HttpSettings to WebClient
+            SoapRepositoryImpl -> SOAPEndpoint : send POST request with XML formatted body via WebClient
+            activate SOAPEndpoint
+                SoapRepositoryImpl <-- SOAPEndpoint : SOAP response
+            deactivate SOAPEndpoint
+            XmlDisplayTypeServiceImpl <-- SoapRepositoryImpl : SOAP response
+        deactivate SoapRepositoryImpl
+        <- XmlDisplayTypeServiceImpl : new SimpleValueObject(response)
+    end
+deactivate XmlDisplayTypeServiceImpl
+
+@enduml

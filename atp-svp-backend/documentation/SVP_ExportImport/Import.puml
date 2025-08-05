@@ -1,0 +1,255 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity AtpExportImportService
+    entity AtpSvpImportExecutor
+    entity AtpImportStrategy
+    entity ProjectConfigurationServiceJpa
+    entity ProjectConfigsRepository
+    entity FolderServiceJpa
+    entity FolderRepository
+    entity ImportLoader
+    entity ObjectLoaderFromDiskService
+    entity GitPageConfigurationRepository
+    entity FilePageConfigurationRepository
+
+
+end box
+
+box "External source" #E3E3D9
+    entity DB
+    entity GitRepository
+end box
+
+== IMPORT ==
+AtpExportImportService -> AtpSvpImportExecutor : import(importData, path)
+activate AtpSvpImportExecutor
+    AtpSvpImportExecutor -> AtpImportStrategy : svpImport(importData, path)
+deactivate AtpSvpImportExecutor
+activate AtpImportStrategy
+   AtpImportStrategy -> AtpImportStrategy : extractFolders(importData, path)
+   activate AtpImportStrategy #yellow
+    AtpImportStrategy -> ProjectConfigurationServiceJpa : findProjectConfigById(projectId)
+    activate ProjectConfigurationServiceJpa
+        ProjectConfigurationServiceJpa -> ProjectConfigsRepository : findProjectConfigById(projectId)
+        activate ProjectConfigsRepository
+            ProjectConfigsRepository -> DB : findById(projectId)
+            activate DB
+                DB -> ProjectConfigsRepository : ProjectConfigsEntity
+            deactivate DB
+            ProjectConfigsRepository -> ProjectConfigurationServiceJpa : ProjectConfigsEntity
+        deactivate ProjectConfigsRepository
+        ProjectConfigurationServiceJpa -> AtpImportStrategy : ProjectConfigsEntity
+    deactivate ProjectConfigurationServiceJpa
+
+    AtpImportStrategy -> FolderServiceJpa : getFolders(projectId)
+        activate FolderServiceJpa
+            FolderServiceJpa -> FolderRepository : getFolders(projectId)
+            activate FolderRepository
+                FolderRepository -> DB : getFolders(projectId)
+                activate DB
+                    DB -> FolderRepository : List<String> folderNames
+                deactivate DB
+                FolderRepository -> FolderServiceJpa : List<String> folderNames
+            deactivate FolderRepository
+            FolderServiceJpa -> AtpImportStrategy : List<String> folderNames
+        deactivate FolderServiceJpa
+
+    AtpImportStrategy -> AtpImportStrategy : getImportLoaders(entityType)
+    activate AtpImportStrategy
+        AtpImportStrategy -> AtpImportStrategy : ImportLoader
+    deactivate AtpImportStrategy
+    AtpImportStrategy -> ImportLoader : loadConfiguration(importData, path)
+    activate ImportLoader
+        ImportLoader -> ObjectLoaderFromDiskService : getListOfObjects(workDir, clazz)
+        activate ObjectLoaderFromDiskService
+            ObjectLoaderFromDiskService -> ImportLoader : Map<UUID, Path> entityFiles
+        deactivate ObjectLoaderFromDiskService
+        group #90ffbc For each ExportImportFolder in list
+            ImportLoader -> ImportLoader : load(filePath, replacementMap, isReplacement)
+            activate ImportLoader
+                ImportLoader -> ObjectLoaderFromDiskService : loadFileAsObjectWithReplacementMap(file, clazz, replacementMap, saveOriginalValue,checkStringForId)
+                activate ObjectLoaderFromDiskService
+                    ObjectLoaderFromDiskService -> ImportLoader : ExportImportFolder
+                deactivate ObjectLoaderFromDiskService
+                ImportLoader -> ImportLoader : ExportImportFolder
+            deactivate ImportLoader
+        end
+        ImportLoader -> AtpImportStrategy : List<ExportImportFolder>
+    deactivate ImportLoader
+
+    group #90ffbc For each ExportImportFolder in ImportData
+        AtpImportStrategy -> AtpImportStrategy : extractFolder(exportFolder, folderNames, isReplacement, projectFolders)
+        activate AtpImportStrategy
+            AtpImportStrategy -> AtpImportStrategy : validateFolder(ExportImportFolder exportFolder, projectFolders)
+        deactivate AtpImportStrategy
+    end
+    AtpImportStrategy -> AtpImportStrategy : List<FolderEntity>
+   deactivate AtpImportStrategy
+
+   AtpImportStrategy -> AtpImportStrategy : extractPages( folders, importData, path)
+   activate AtpImportStrategy #yellow
+
+        AtpImportStrategy -> AtpImportStrategy : getImportLoaders(EntityType entityType)
+        activate AtpImportStrategy
+            AtpImportStrategy -> AtpImportStrategy : ImportLoader
+        deactivate AtpImportStrategy
+        AtpImportStrategy -> ImportLoader : loadConfiguration(ExportImportData importData, Path path)
+        activate ImportLoader
+            ImportLoader -> ObjectLoaderFromDiskService : getListOfObjects(Path workDir, Class clazz)
+            activate ObjectLoaderFromDiskService
+                ObjectLoaderFromDiskService -> ImportLoader : Map<UUID, Path> entityFiles
+            deactivate ObjectLoaderFromDiskService
+            group #90ffbc For each ExportImportPage in list
+                ImportLoader -> ImportLoader : load(filePath, replacementMap,isReplacement)
+                activate ImportLoader
+                    ImportLoader -> ObjectLoaderFromDiskService : loadFileAsObjectWithReplacementMap(file, clazz, replacementMap, saveOriginalValue,checkStringForId)
+                    activate ObjectLoaderFromDiskService
+                        ObjectLoaderFromDiskService -> ImportLoader : ExportImportPage
+                    deactivate ObjectLoaderFromDiskService
+                    ImportLoader -> ImportLoader : ExportImportPage
+                deactivate ImportLoader
+            end
+            ImportLoader -> AtpImportStrategy : List<ExportImportPage>
+        deactivate ImportLoader
+
+    group #90ffbc For each ExportImportPage
+        AtpImportStrategy -> AtpImportStrategy : (pageConfiguration, isReplacement)
+        activate AtpImportStrategy
+            AtpImportStrategy -> AtpImportStrategy : validatePageImportData( pagesInFolder, pageConfigurations)
+            alt #caeaff If need update existing Entity
+            AtpImportStrategy -> AtpImportStrategy : updatePageEntity(importedPage, page)
+            end
+        deactivate AtpImportStrategy
+    end
+   deactivate AtpImportStrategy
+
+   AtpImportStrategy -> AtpImportStrategy : extractKeyParameters(folders, importData, path);
+   activate AtpImportStrategy #yellow
+
+      AtpImportStrategy -> AtpImportStrategy : getImportLoaders(entityType)
+      activate AtpImportStrategy
+          AtpImportStrategy -> AtpImportStrategy : ImportLoader
+      deactivate AtpImportStrategy
+      AtpImportStrategy -> ImportLoader : loadConfiguration(importData, path)
+      activate ImportLoader
+          ImportLoader -> ObjectLoaderFromDiskService : getListOfObjects(workDir, clazz)
+          activate ObjectLoaderFromDiskService
+              ObjectLoaderFromDiskService -> ImportLoader : Map<UUID, Path> entityFiles
+          deactivate ObjectLoaderFromDiskService
+          group #90ffbc For each ExportImportKeyParameter in list
+              ImportLoader -> ImportLoader : load(filePath, replacementMap, isReplacement)
+              activate ImportLoader
+                  ImportLoader -> ObjectLoaderFromDiskService : loadFileAsObjectWithReplacementMap(file, clazz, replacementMap, saveOriginalValue,checkStringForId)
+                  activate ObjectLoaderFromDiskService
+                      ObjectLoaderFromDiskService -> ImportLoader : ExportImportKeyParameter
+                  deactivate ObjectLoaderFromDiskService
+                  ImportLoader -> ImportLoader : ExportImportKeyParameter
+              deactivate ImportLoader
+          end
+          ImportLoader -> AtpImportStrategy : List<ExportImportKeyParameter>
+      deactivate ImportLoader
+
+      group #90ffbc For each ExportImportKeyParameter
+              AtpImportStrategy -> AtpImportStrategy : extractKeyParameter(exportImportKeyParameter, isReplacement)
+              activate AtpImportStrategy
+                  AtpImportStrategy -> AtpImportStrategy :  validateKeyParameterImportData(keyParameterEntities, exportImportKeyParameter)
+              deactivate AtpImportStrategy
+          end
+   deactivate AtpImportStrategy
+
+   AtpImportStrategy -> AtpImportStrategy : extractCommonParameters(folders, importData, path);
+   activate AtpImportStrategy #yellow
+
+      AtpImportStrategy -> AtpImportStrategy : getImportLoaders(entityType)
+      activate AtpImportStrategy
+          AtpImportStrategy -> AtpImportStrategy : ImportLoader
+      deactivate AtpImportStrategy
+      AtpImportStrategy -> ImportLoader : loadConfiguration(importData, path)
+      activate ImportLoader
+          ImportLoader -> ObjectLoaderFromDiskService : getListOfObjects(workDir, clazz)
+          activate ObjectLoaderFromDiskService
+              ObjectLoaderFromDiskService -> ImportLoader : Map<UUID, Path> entityFiles
+          deactivate ObjectLoaderFromDiskService
+          group #90ffbc For each ExportImportCommonParameter in list
+              ImportLoader -> ImportLoader : load(filePath, replacementMap, isReplacement)
+              activate ImportLoader
+                  ImportLoader -> ObjectLoaderFromDiskService : loadFileAsObjectWithReplacementMap(file, clazz, replacementMap, saveOriginalValue,checkStringForId)
+                  activate ObjectLoaderFromDiskService
+                      ObjectLoaderFromDiskService -> ImportLoader : ExportImportCommonParameter
+                  deactivate ObjectLoaderFromDiskService
+                  ImportLoader -> ImportLoader : ExportImportCommonParameter
+              deactivate ImportLoader
+          end
+          ImportLoader -> AtpImportStrategy : List<ExportImportCommonParameter>
+      deactivate ImportLoader
+
+      group #90ffbc For each ExportImportKeyParameter
+          AtpImportStrategy -> AtpImportStrategy : extractCommonParameter(exportImportCommonParameter, isReplacement)
+          activate AtpImportStrategy
+            AtpImportStrategy -> AtpImportStrategy :  validateCommonParameterImportData(commonParameterEntities, importCommonParameter)
+          deactivate AtpImportStrategy
+      end
+
+
+   deactivate AtpImportStrategy
+
+  AtpImportStrategy -> AtpImportStrategy : save(folders)
+  activate AtpImportStrategy
+    AtpImportStrategy -> FolderServiceJpa : saveAll(folders)
+    activate FolderServiceJpa
+        FolderServiceJpa -> FolderRepository : saveAll(folders)
+        deactivate FolderServiceJpa
+        activate FolderRepository
+                FolderRepository -> DB : saveAll(folders)
+            deactivate FolderRepository
+
+    AtpImportStrategy -> GitPageConfigurationRepository : importProject(config, folders)
+    activate GitPageConfigurationRepository
+        alt #90ffbc If GitRepository is true
+            GitPageConfigurationRepository -> GitRepository : gitPull
+            GitPageConfigurationRepository -> FilePageConfigurationRepository : importProject(config, folders)
+            GitPageConfigurationRepository -> GitRepository : gitCommitAndPush(pathToGit, commentMessage)
+        else else
+            AtpImportStrategy -> FilePageConfigurationRepository : importProject(config, folders)
+        end
+    deactivate GitPageConfigurationRepository
+  deactivate AtpImportStrategy
+deactivate AtpImportStrategy
+
+== VALIDATION ==
+
+AtpExportImportService -> AtpSvpImportExecutor : validateData(importData, workDir)
+activate AtpExportImportService
+    activate AtpSvpImportExecutor
+        AtpSvpImportExecutor -> AtpImportStrategy : validateData(importData, path)
+            activate AtpImportStrategy
+                alt if replacement
+                   AtpImportStrategy -> AtpImportStrategy : getObjectIds(Path workDir, Class<T> clazz)
+                   activate AtpImportStrategy
+                       AtpImportStrategy -> ObjectLoaderFromDiskService : getListOfObjects(workDir, clazz)
+                       activate ObjectLoaderFromDiskService
+                           ObjectLoaderFromDiskService -> AtpImportStrategy : Map<UUID, Path>
+                       deactivate ObjectLoaderFromDiskService
+                       AtpImportStrategy -> AtpImportStrategy : List<UUID>
+                   deactivate AtpImportStrategy
+                end
+                AtpImportStrategy -> AtpImportStrategy : extractFolders(importData, workDir)
+                activate AtpImportStrategy
+                   AtpImportStrategy -> AtpImportStrategy : List<FolderEntity>
+                deactivate AtpImportStrategy
+                AtpImportStrategy -> AtpImportStrategy : extractPages(folders, importData, workDir)
+                AtpImportStrategy -> AtpImportStrategy : extractKeyParameters(folders, importData, workDir)
+                AtpImportStrategy -> AtpImportStrategy : extractCommonParameters(folders, importData, workDir)
+                AtpImportStrategy -> AtpSvpImportExecutor : ValidationResult
+            deactivate AtpImportStrategy
+        AtpSvpImportExecutor -> AtpExportImportService : ValidationResult
+    deactivate AtpSvpImportExecutor
+deactivate AtpImportStrategy
+
+
+
+
+@enduml

@@ -1,0 +1,109 @@
+{
+  "name": "jsonTable",
+  "displayType": "JSON",
+  "dataSource": {
+    "system": "Business Solution",
+    "connection": "DB",
+    "engineType": "SQL",
+    "script": "1",
+    "settings": [
+      {
+        "query": "",
+        "queryParams": {},
+        "requestType": "GET",
+        "body": "",
+        "urlEncodedBody": {},
+        "headers": {}
+      },
+      {
+        "className": "JsonParseSettings",
+        "jsonViewType": "%1$s",
+        "jsonPath": "$.quoteItem",
+        "groupNameDivider": "||",
+        "mockJsonScript": null,
+        "isMockJsonSwitcher": true,
+        "columnsData": [
+          {
+            "header": "rootQuoteItemId",
+            "jsonPath": "$.rootQuoteItemId",
+            "groupingJsonPaths": []
+          },
+          {
+            "header": "marketId",
+            "jsonPath": "$.marketId",
+            "groupingJsonPaths": []
+          }
+        ],
+        "hierarchyNodeNames": {
+          "id": "",
+          "rootId": "",
+          "parentId": ""
+        },
+        "hierarchyTreeObjectNodeNames": []
+      }
+    ]
+  },
+  "logsSource": {
+    "components": [],
+    "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+    "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+  },
+  "er": {
+    "type": "%2$s",
+    "value": null,
+    "tableValidations": [],
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "1",
+      "settings": [
+        {
+          "className": "JsonParseSettings",
+          "jsonViewType": "TABLE",
+          "jsonPath": "$.quoteItem",
+          "groupNameDivider": "||",
+          "mockJsonScript": null,
+          "isMockJsonSwitcher": true,
+          "columnsData": [
+            {
+              "header": "rootQuoteItemId",
+              "jsonPath": "$.rootQuoteItemId",
+              "groupingJsonPaths": []
+            },
+            {
+              "header": "marketId",
+              "jsonPath": "$.marketId",
+              "groupingJsonPaths": []
+            }
+          ],
+          "hierarchyNodeNames": {
+            "id": "",
+            "rootId": "",
+            "parentId": ""
+          },
+          "hierarchyTreeObjectNodeNames": []
+        }
+      ]
+    },
+    "tableValidationSettings": {
+      "keyColumns": [],
+      "groupingColumns": []
+    },
+    "bulkValidatorValidation": {
+      "validationColumn": "",
+      "validationObjectName": "",
+      "isManualValidation": false,
+      "validationItem": [
+        {
+          "validationColumn": "",
+          "validationObjectName": ""
+        }
+      ],
+      "testCaseIds": []
+    }
+  },
+  "additionalSources": [],
+  "isPreconfigured": false,
+  "component": null
+}

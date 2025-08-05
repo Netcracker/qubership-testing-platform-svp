@@ -1,0 +1,70 @@
+@startuml
+participant Actor
+Actor -> GenerateLinkDisplayTypeServiceImpl : getValueFromSource
+activate GenerateLinkDisplayTypeServiceImpl
+GenerateLinkDisplayTypeServiceImpl -> Source : getSettingsByType
+activate Source
+Source -> Source : () ->
+activate Source
+Source --> Source
+deactivate Source
+Source -> Source : () ->
+activate Source
+create SourceSettingNotFoundException
+Source -> SourceSettingNotFoundException : new
+activate SourceSettingNotFoundException
+SourceSettingNotFoundException --> Source
+deactivate SourceSettingNotFoundException
+Source --> Source
+deactivate Source
+Source --> GenerateLinkDisplayTypeServiceImpl
+deactivate Source
+GenerateLinkDisplayTypeServiceImpl -> GenerateLinkDisplayTypeServiceImpl : getLink
+activate GenerateLinkDisplayTypeServiceImpl
+GenerateLinkDisplayTypeServiceImpl -> GenerateLinkSettings : getNameLink
+activate GenerateLinkSettings
+GenerateLinkSettings --> GenerateLinkDisplayTypeServiceImpl
+deactivate GenerateLinkSettings
+GenerateLinkDisplayTypeServiceImpl -> GenerateLinkSettings : getUrl
+activate GenerateLinkSettings
+GenerateLinkSettings --> GenerateLinkDisplayTypeServiceImpl
+deactivate GenerateLinkSettings
+GenerateLinkDisplayTypeServiceImpl -> GenerateLinkSettings : getUrl
+activate GenerateLinkSettings
+GenerateLinkSettings --> GenerateLinkDisplayTypeServiceImpl
+deactivate GenerateLinkSettings
+GenerateLinkDisplayTypeServiceImpl --> GenerateLinkDisplayTypeServiceImpl
+deactivate GenerateLinkDisplayTypeServiceImpl
+GenerateLinkDisplayTypeServiceImpl -> AbstractParameterExecutionContext : getExecutionVariables
+activate AbstractParameterExecutionContext
+AbstractParameterExecutionContext --> GenerateLinkDisplayTypeServiceImpl
+deactivate AbstractParameterExecutionContext
+GenerateLinkDisplayTypeServiceImpl -> ExecutionVariablesServiceImpl : getSourceWithExecutionVariables
+activate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl -> ExecutionVariablesServiceImpl : substituteVariable
+activate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl --> ExecutionVariablesServiceImpl
+deactivate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl -> ExecutionVariablesServiceImpl : checkSourceOnVariable
+activate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl --> ExecutionVariablesServiceImpl
+deactivate ExecutionVariablesServiceImpl
+ExecutionVariablesServiceImpl --> GenerateLinkDisplayTypeServiceImpl
+deactivate ExecutionVariablesServiceImpl
+create SimpleValueObject
+GenerateLinkDisplayTypeServiceImpl -> SimpleValueObject : new
+activate SimpleValueObject
+SimpleValueObject --> GenerateLinkDisplayTypeServiceImpl
+deactivate SimpleValueObject
+create GettingValueException
+GenerateLinkDisplayTypeServiceImpl -> GettingValueException : new
+activate GettingValueException
+GettingValueException --> GenerateLinkDisplayTypeServiceImpl
+deactivate GettingValueException
+create GettingValueException
+GenerateLinkDisplayTypeServiceImpl -> GettingValueException : new
+activate GettingValueException
+GettingValueException --> GenerateLinkDisplayTypeServiceImpl
+deactivate GettingValueException
+return
+@enduml

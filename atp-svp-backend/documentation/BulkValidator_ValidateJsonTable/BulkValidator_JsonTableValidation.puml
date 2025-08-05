@@ -1,0 +1,93 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity JsonDisplayTypeServiceImpl
+    entity BulkValidatorValidationService
+    entity JsonDisplayTypeValidationService
+    entity CompareTablesService
+end box
+box "External libraries" #E3E3D9
+    entity JsonComparator
+    entity BuildColoredJson
+    entity PlainTextComparator
+    entity BuildColoredText
+    entity FatTableComparator
+end box
+
+activate JsonDisplayTypeServiceImpl
+JsonDisplayTypeServiceImpl -> JsonDisplayTypeServiceImpl: validateParameter(AbstractParameterExecutionContext context)
+
+
+== BV_LINK ==
+JsonDisplayTypeServiceImpl -> JsonDisplayTypeServiceImpl: context.getSessionConfiguration().getBulkValidatorSettings()
+JsonDisplayTypeServiceImpl -> BulkValidatorValidationService: validateJsonWithBulkValidator(parameter, bvSettings)
+JsonDisplayTypeServiceImpl -> JsonDisplayTypeServiceImpl: validateParameter(AbstractParameterExecutionContext context)
+== CUSTOM ==
+JsonDisplayTypeServiceImpl -> JsonDisplayTypeValidationService: customValidation(parameter, shouldHighlightDiffs)
+activate JsonDisplayTypeValidationService
+    alt if isRawJsonParse(parameter)
+        JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: customValidateJsonRaw(parameter, shouldHighlightDiffs)
+        activate JsonDisplayTypeValidationService #LightGreen
+            group #90ffbc for each arValues
+                JsonDisplayTypeValidationService -> JsonComparator: compare(er.getValue(), ar.getValue(), new Parameters())
+                activate JsonComparator
+                    JsonComparator -> JsonDisplayTypeValidationService: List<DiffMessage> diffs
+                deactivate
+                alt if shouldHighlightDiffs
+                    JsonDisplayTypeValidationService -> BuildColoredJson: highlight(diffs, er.getValue(), ar.getValue())
+                    activate BuildColoredJson
+                        BuildColoredJson -> JsonDisplayTypeValidationService: HighlighterResult highlighterResult
+                    deactivate
+                end
+            end
+            JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: calculateStatusByDiffs(overallDiffs)
+            deactivate
+    else
+        JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: customValidateVerticalJsonTable(parameter, shouldHighlightDiffs)
+        activate JsonDisplayTypeValidationService
+            JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: convertJsonTableToTable(parameter)
+            JsonDisplayTypeValidationService -> CompareTablesService: compareTables(parameter, shouldHighlightDiffs)
+        deactivate
+    end
+deactivate
+
+== PLAIN ==
+JsonDisplayTypeServiceImpl -> JsonDisplayTypeValidationService: plainValidation(parameter, shouldHighlightDiffs)
+activate JsonDisplayTypeValidationService
+    alt if isRawJsonParse(parameter)
+       JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: plainValidateRawJsonParse(parameter, shouldHighlightDiffs)
+       activate JsonDisplayTypeValidationService #LightGreen
+           group #90ffbc for each arValues
+               JsonDisplayTypeValidationService -> PlainTextComparator: compare(er.getValue(), ar.getValue(), new Parameters())
+               activate PlainTextComparator
+                PlainTextComparator -> JsonDisplayTypeValidationService: List<DiffMessage> diffs
+               deactivate
+               alt if shouldHighlightDiffs
+                   JsonDisplayTypeValidationService -> BuildColoredText: highlight(diffs, er.getValue(), ar.getValue())
+                   activate BuildColoredText
+                    BuildColoredText -> JsonDisplayTypeValidationService: HighlighterResult highlighterResult
+                   deactivate
+               end
+           end
+           JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: calculateStatusByDiffs(overallDiffs)
+       deactivate
+    else
+        JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: validateTableByRule(parameter, shouldHighlightDiffs)
+        activate JsonDisplayTypeValidationService #LightGreen
+            group #90ffbc for each arValues
+                JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService: getConvertTable(arJsonTable, jsonTableName)
+                JsonDisplayTypeValidationService -> JsonDisplayTypeValidationService:  checkOnError(arJsonTable, tableValidationList)
+                JsonDisplayTypeValidationService -> FatTableComparator :  tableComparator.compare(empty string, arTable.toString(), rules)
+                activate FatTableComparator
+                    FatTableComparator -> JsonDisplayTypeValidationService: List<DiffMessage> diffs
+                deactivate
+            end
+        deactivate
+    end
+deactivate
+
+deactivate JsonDisplayTypeServiceImpl
+
+@enduml

@@ -1,0 +1,175 @@
+[
+  {
+    "id": "323eda51-47b5-414a-951a-27221fa374a2",
+    "name": "AMX CPQ",
+    "description": "AMX CPQ",
+    "created": 1562925621434,
+    "createdBy": null,
+    "modified": 1596025582094,
+    "modifiedBy": null,
+    "shortName": "AMX CPQ",
+    "environments": [
+      "4167b70f-6e5d-4d7d-91a1-8eac81742934",
+      "558a8ef7-f0d6-4453-92e9-7f939fa2df6c",
+      "7b38bea0-e075-4f73-822e-92464939f14a",
+      "36866e57-b198-45e5-ac7e-f56ddef26c92",
+      "a3773939-720d-4f98-9447-c68103bab1cf",
+      "d2cea336-0ef2-4d2e-a215-a1f1e68440c0",
+      "d030443e-9fa0-48d3-9b76-207a85955d0b",
+      "83e50fff-0de8-46f8-aa4f-2dd39bc6d0eb",
+      "69bb9398-f7ff-403e-8433-993c88102b73"
+    ]
+  },
+  {
+    "id": "01709aba-cbe3-4053-867f-8cd7b31b0b71",
+    "name": "ATP DataMgmTool",
+    "description": "project for testing",
+    "created": 1556615012344,
+    "createdBy": null,
+    "modified": 1611135085815,
+    "modifiedBy": null,
+    "shortName": "ATP DataMgmTool",
+    "environments": [
+      "f5c05e65-67d4-49f3-aa44-68bb60116a92",
+      "78298623-8b5f-4baa-b917-ba79191c5b1f",
+      "c690adb5-9de7-4dc7-86b6-f5c1cab300ee",
+      "9e82b83a-67ef-41a6-88e6-c6aa71bc5d28",
+      "b35c28f3-0bd2-4fd1-89b7-0ff6564787e0",
+      "4f035260-c5a2-4f16-8d60-d520fd7b3fd6",
+      "65f8b8fa-a764-421d-9e02-3552a5dd9e30"
+    ]
+  },
+  {
+    "id": "5a9e4d2f-fe8a-4a03-9a8e-747b74d5e449",
+    "name": "ATP Healthcheck",
+    "description": "Project for testing ATP Healthcheck",
+    "created": 1542786400279,
+    "createdBy": null,
+    "modified": 1612329466176,
+    "modifiedBy": null,
+    "shortName": "ATP Healthcheck",
+    "environments": [
+      "c659b348-6bcb-4a2a-9cac-a4a3fca675d1",
+      "673519a7-f7e3-4364-9bfb-ed233097e0d6"
+    ]
+  },
+  {
+    "id": "cbbdba82-1dfc-4f91-9b23-dda59cd45a1e",
+    "name": "ATP-test",
+    "description": "",
+    "created": 1540821113699,
+    "createdBy": null,
+    "modified": 1607682071386,
+    "modifiedBy": null,
+    "shortName": "ATP-test",
+    "environments": [
+      "fe3d36bb-b93f-4a1f-b79a-fdf86a9410d6",
+      "e75fc067-b6be-47a8-938d-d180b320015e",
+      "b9d87de1-9834-460d-9758-d2fc555c3fba",
+      "2a3ba47d-559d-4b81-a4e3-3876405bd121",
+      "8cb694fe-3216-45cf-bc9d-01289eb1a398",
+      "169cad5a-d56e-41a5-918b-dcc1ebc683fd",
+      "0b324652-570e-4c8b-96ad-a645c4fd9abb"
+    ]
+  },
+  {
+    "id": "58f4c86b-3b1d-4f54-9001-0a561af86ed5",
+    "name": "ATP_Project _QA",
+    "description": "Project for QA ATP",
+    "created": 1548934852619,
+    "createdBy": null,
+    "modified": 1573157525082,
+    "modifiedBy": null,
+    "shortName": "ATP_Project _QA",
+    "environments": [
+      "5e0de13a-4006-4577-9abf-11f3d981ce76",
+      "e4b38032-8887-4738-8d8c-b3dbabe135a9",
+      "372ca3ef-889b-4bd3-91ea-1f409bf45242",
+      "0e6c1f21-b024-4606-b294-593d0c590afd",
+      "aa18b6b6-ccc3-4326-bce0-860fac42564e",
+      "db93d5e5-25b9-456f-af43-a1dca6a1f46a"
+    ]
+  },
+  {
+    "id": "b0b10b47-1b66-4acf-9bb0-afc78b096cd1",
+    "name": "Advance Analytics Platform",
+    "description": "Advance Analytics Platform",
+    "created": 1596456621786,
+    "createdBy": null,
+    "modified": 1596457498082,
+    "modifiedBy": null,
+    "shortName": "Advance Analytics Platform",
+    "environments": [
+      "acfabaa0-2a34-4299-a92d-16db957519e2"
+    ]
+  },
+  {
+    "id": "1d2e69dd-b2bb-41e0-a621-ad783a5bd3b1",
+    "name": "B2B Baseline",
+    "description": "B2B Baseline",
+    "created": 1568635207521,
+    "createdBy": null,
+    "modified": 1568723223635,
+    "modifiedBy": null,
+    "shortName": "B2B Baseline",
+    "environments": [
+      "00bebd04-2f23-466e-80a4-dd9cc548ab3c"
+    ]
+  },
+  {
+    "id": "41e8ced0-0784-4372-86ff-5da2598fa9c4",
+    "name": "Sandbox",
+    "description": "",
+    "created": 1569408960364,
+    "createdBy": null,
+    "modified": 1611213463566,
+    "modifiedBy": null,
+    "shortName": "Sandbox",
+    "environments": [
+      "92791f92-9d4c-49ae-8ed3-2c1174899920",
+      "6456264a-1401-4b69-911f-1186c61fbe8a",
+      "2adb48fc-df10-4bb5-a352-566d98a4e806",
+      "b75d61c3-1ddf-4022-9590-408f6d580af3",
+      "4131bfb2-62b4-4d3e-a753-1af02029dea1",
+      "c6b0e6d3-b5b2-4644-b978-b437adaa1f45",
+      "1b7809db-c134-42ec-9146-3756695ba967",
+      "a9c93b68-f655-44df-98a8-749f7b88947b",
+      "de584227-79b2-4e40-bb47-f56178643df4"
+    ]
+  },
+  {
+    "id": "a5babb79-1fd5-44bb-951d-bf6eaa7f9931",
+    "name": "Bechtle",
+    "description": "",
+    "created": 1564662069518,
+    "createdBy": null,
+    "modified": 1577996337147,
+    "modifiedBy": null,
+    "shortName": "Bechtle",
+    "environments": [
+      "5d23632b-3add-4fc1-b3b8-2f2c1fe6a6da",
+      "d51ace42-c48d-4dbe-be20-6214690aff78"
+    ]
+  },
+  {
+    "id": "1fc0754c-3359-4b92-9da9-4db1eeea4dc2",
+    "name": "CIM",
+    "description": "Cloud",
+    "created": 1539870195266,
+    "createdBy": null,
+    "modified": 1586516721996,
+    "modifiedBy": null,
+    "shortName": "CIM",
+    "environments": [
+      "bd519b13-61a2-448a-a466-cd72cf37083f",
+      "9c87a909-c312-45f8-8892-c6523968f6cf",
+      "46c2a989-a1bd-4239-a54b-97019a415bfc",
+      "cdd1a0e6-1f18-47fa-b3ee-52da2048e9e2",
+      "210c3376-2d98-47f3-afb7-03078db08c95",
+      "6a0ad55b-0454-4777-91c2-7a8c789a0839",
+      "a8f993cf-a039-4904-bbbd-b026b2f3d0e8",
+      "4461b552-4f21-4f2a-b319-02fcf005708f",
+      "3fbe343b-2113-4745-96f0-7f86b854f661"
+    ]
+  }
+]

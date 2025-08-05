@@ -1,0 +1,53 @@
+[
+  {
+    "folderId": "e0c238c1-5da0-490e-a106-f6115ef3383a",
+    "name": "backup",
+    "project": null,
+    "lastUpdateDateTime": null,
+    "pages": [],
+    "keyParameterEntities": null,
+    "commonParameters": null
+  },
+  {
+    "folderId": "8125c2bc-31a6-4bf9-bd33-2eb034be94f7",
+    "name": "Default",
+    "project": null,
+    "lastUpdateDateTime": null,
+    "pages": [
+      {
+        "pageId": "0310408e-e98c-4092-8010-e5ffdbae50d4",
+        "name": "Integration",
+        "synchronousLoading": false,
+        "folder": null,
+        "lastUpdateDateTime": null,
+        "tabEntities": null
+      },
+      {
+        "pageId": "412ce9cb-156e-4832-9d4f-66c164fdce58",
+        "name": "Notifications",
+        "synchronousLoading": true,
+        "folder": null,
+        "lastUpdateDateTime": null,
+        "tabEntities": null
+      },
+      {
+        "pageId": "9714d8b2-6285-4c15-9cb4-c11078bc499d",
+        "name": "Billing_System_Validation",
+        "synchronousLoading": false,
+        "folder": null,
+        "lastUpdateDateTime": null,
+        "tabEntities": null
+      },
+      {
+        "pageId": "59414deb-cb4c-4b7f-b669-b4aefc988884",
+        "name": "Sales_Order_Information",
+        "synchronousLoading": false,
+        "folder": null,
+        "lastUpdateDateTime": null,
+        "tabEntities": null
+      }
+    ],
+    "keyParameterEntities": null,
+    "commonParameters": null
+  }
+]

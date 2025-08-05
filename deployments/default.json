@@ -1,0 +1,7 @@
+{
+  "MEMORY_REQUEST": "512Mi",
+  "MEMORY_LIMIT": "2Gi",
+  "CPU_REQUEST": "0.05",
+  "CPU_LIMIT": "0.5",
+  "MAX_RAM": "2048m"
+}

@@ -1,0 +1,820 @@
+{
+  "id": "d6481187-e17f-4af9-b67d-a97afd439617",
+  "name": "sow401-qa-ci",
+  "description": null,
+  "created": 1632214555521,
+  "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+  "modified": 1634020830753,
+  "modifiedBy": "8a18997f-5113-41d7-8769-30082741cc79",
+  "projectId": "a03d5c5c-0ad9-4496-a71e-89f2f69f4cf7",
+  "graylogName": "",
+  "systems": [
+    {
+      "id": "e93f460a-f085-40fe-9be8-ee91cb774051",
+      "name": "FE",
+      "description": null,
+      "created": 1632214555548,
+      "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "modified": 1632214647242,
+      "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": null,
+      "dateOfCheckVersion": null,
+      "parametersGettingVersion": null,
+      "parentSystemId": null,
+      "mergeByName": null,
+      "linkToSystemId": null,
+      "externalId": null,
+      "connections": [
+        {
+          "id": "e73228f6-5675-421d-90f5-cfbabb3c0b2d",
+          "name": "HTTP",
+          "description": null,
+          "created": 1632214555583,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214647242,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "url": "https://gateway.somedomain.com/service-port-1111",
+            "login.testDoubleName": "dd",
+            "login": "ffff",
+            "password": "222"
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "e93f460a-f085-40fe-9be8-ee91cb774051"
+        }
+      ],
+      "systemCategoryId": "89252951-b248-4e80-a91d-42eb915ab54a",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "name": "K8S",
+      "description": null,
+      "created": 1632214555621,
+      "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "modified": 1644434646251,
+      "modifiedBy": "16df9e34-cf21-4360-b89c-785a4ed8f57d",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "cloud-core-ext.2021-11-30-20-13-56-687\": \"release-9-1-0-ext-20211110.100616-67-RELEASE\ncloud-core.2021-12-22-10-58-16-515\": \"release-6-38-0-20211210.131713-37-RELEASE\ncloud-user-task-manager.2021-11-30-21-04-03-659\": \"release-2021-3-20211117.080840-43\ncloudcs.2021-11-30-20-18-47-438\": \"release-2021-3-20211125.145656-15\ncloud-cpqbe.2021-11-30-20-30-23-605\": \"release-2021-3-20211125.145654-108\ncloud-mcbe.2021-11-30-20-55-45-804\": \"release-2021-3-20211012.150750-3\ncloud-om.2021-12-22-11-17-30-979\": \"release-2021-3-20211026.134402-108\ncloud.2021-12-22-11-01-21-533\": \"release-2021-3-20211214.113335-137\ncloud-poq-app.2021-12-22-11-06-12-027\": \"main-20211208.080354-105\ncloud-qms-app.2021-12-22-11-11-06-737\": \"main-20211209.082353-171\ncloud-shopping-cart.2021-11-30-20-35-24-905\": \"release-2021-3-20211126.093520-5\naaa.2022-01-18-14-00-55-950\": \"release-candidate-2021-4-s2-20211130\norder-tracker.2021-11-30-20-54-25-742\": \"support-2-3-x-20210920.160223-150\nproject-cloud.2021-12-22-11-20-26-350\": \"release-1-5-20211220.171408-5",
+      "dateOfCheckVersion": 1644434646251,
+      "parametersGettingVersion": {
+        "type": "BY_KUBERNETES_CONFIGMAP",
+        "parameters": "",
+        "headers": null,
+        "parsingValue": "((cloud-core-ext.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){5}\\w+.(\\w+-){2}\\w+)(?!.*cloud-core-ext))|((cloud-core.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){4}\\w+.(\\w+-){2}\\w+)(?!.*cloud-core))|((cloudcs.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloudcs))|((cloud-cim.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-cim))|((cloud-cpqbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-cpqbe))|((cloud-om.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-om))|((cloud-order-capture.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-order-capture))|((cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud))|((project-cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*project-cloud))|((cloud-user-task-manager.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-user-task-manager))|((project-cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud))|((cloud-poq-app.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*cloud-poq-app))|((cloud-cpqbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){5}\\w+.(\\w+-){2}\\w+)(?!.*cloud-cpqbe))|((cloud-qms-app.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-qms-app))|((cloud-shopping-cart.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-shopping-cart))|((cloud-qms-app.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*cloud-qms-app))|((order-tracker.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){3}(\\w+-)?\\w+.(\\w+-)\\w*)(?!.*order-tracker))|((cloud-mcbe.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){2}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*cloud-mcbe))|((project-cloud.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud))|((project-cloud-cpq.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud-cpq))|((project-cloud-om.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud-om))|((project-cloud-ibs.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-)(\\w+-)?\\w+.(\\w+-)?\\w*)(?!.*project-cloud-ibs))|((aaa.(\\w+-){6}\\w+(\\.\\w+)?\": \"(\\w+-){3}(\\w+-)?\\w+.(\\w+-)\\w+)(?!.*aaa))",
+        "parsingType": "REGEXP"
+      },
+      "parentSystemId": null,
+      "mergeByName": null,
+      "linkToSystemId": null,
+      "externalId": null,
+      "connections": [
+        {
+          "id": "d454b28f-394f-40c8-9875-5b6222aa426c",
+          "name": "DB",
+          "description": null,
+          "created": 1643711629496,
+          "createdBy": "be04c193-6277-4a39-a668-43edf186b8b7",
+          "modified": 1643711629496,
+          "modifiedBy": "be04c193-6277-4a39-a668-43edf186b8b7",
+          "parameters": {
+            "db_host": "localhost",
+            "db_port": "31999",
+            "db_name": "dbaas",
+            "db_login": "postgres",
+            "db_password": "{ENC}{eBs2rGT1bjgcmtUJhoMXaQ==}{UgXnfKTXkMH2uQjtxVHhZA==}",
+            "db_type": "postgresql",
+            "jdbc_url": "jdbc:postgresql://localhost:31999/dbaas"
+          },
+          "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6"
+        },
+        {
+          "id": "96acf7b6-e7fe-4219-a418-880adc112c78",
+          "name": "HTTP-KubernetesProject",
+          "description": null,
+          "created": 1632214555660,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214620162,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "url": "https://api.project.managed.qubership.cloud:6443",
+            "login": "qubership-user",
+            "password": "qubership-password",
+            "namespace": "sow401-qa-ci",
+            "token": "{ENC}{rnxxPcDCiwzIt1cwGcnjAA==}{VmW1VQSsI2f8Qurr4x7vkT171uHXRfAfYcLNeF0/wCPlu4RSBpRSRQQnPJ4rlH/4/wXAD5543K3Fuw/FxGftj3tpGqR1EfJ02czVw7x1K5MRKVdWqUfPPssNkSnemqvtvibTkt4z6pQBDR6S9ng5/CDeGrTWYybF6Sa+w99NHt6aa2HwDJzPBBSBl2OhDJ8O1QqDFZ62WL9Q36UWkpRvNrhq5IIxKgOoEtuW4tIHY/oh8He9wCc/R5MSKDLEm//RYrA4Z7Om7lBJfkFZOQ8dpIZAIUIT7n8RLJL37Ftz3i8BnDaegP13ERdpOFIy/OgtIvufq/dJC9c8Jc0sDRonyBuerorar1xEzz31J2Zwi/l5JrTDQNdkcIS/9QHZB9Pd5OsE5jtnZr77NU2qT4pFyLRaB+3RDuQdlSbHMXXOpYBZM2LgSblzePD1QvReVgV/cHexKInHs7LZKxMMrP7bk+9R93QCz4OOrzXCi9XqSNwQwR5SJVvEv/w0Y8ARt+I6aj408lojz7nJjXk8ZKFAuNlp/njOa2XBOPGPr71731qUDDxdG5Ii2wa22AEcLCs1PMk69gI2UivoNWBAQnI/chqfcC4AW/a0bKycs7L2R733iMTWZvOfJRZofph0UfOEH1gZ0zxvwp5pvoyNudgZ4H9oaiZNJTNDLTg/ZlVguiLfQlckS+lYmJvzRxbnkWAxoX/HlHxX4JB9JZJHCIYpYVzMyE9wGLrvf2+GtVBFOmfulQEKCCVt/gGQ57kleOP7useevE9LqCau315W0zsXslUyz4J9wBd1lttphEtdY4ISYLNypYwuJf06ZifpL2v1FOMvT4kyIUyRw91DU3JDFcCybg9UZTE5l2+clMcv3TJRCNg+Pk9AsOxb/00YIM695mrO921quRWvdzJtwFp7+9mxbLhw46pI/E7iv7yd6Uu3Mhk94IDVFj+JYu+PmuBkxSVnREwfVF8ZhydCMst5bz6ZIILGxPrwJYjWIZBLksNh7HnlWxMMHW+Ur3C+hYEZfu8XvtNi71hT4j/bFQqXWWFQx+WrpNHQFETSuW+y+Fadw3tCfeKtE9CW3s7qqm2ZBJmWpyY6RdKBmq80qNzln67OeMRG9cbWmHI3+894Vv0+vcoJq79FqVhdpzxMxXNGVmBemhNY/Ls+nBtVFa3utjpx4qbAbrKcYR8OdFt/8YXrneQUf7V/2u/QXCGCshXiSXPaLDUhc4Rq1xWgUvSrNw==}"
+          },
+          "sourceTemplateId": "657ecd97-b08c-46dd-bd87-6f574429c468",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6"
+        }
+      ],
+      "systemCategoryId": "774845e8-42e0-4a99-86cb-3aa945c859aa",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "f99f8475-be06-4daa-b886-6dbf906082b1",
+      "name": "MBE",
+      "description": null,
+      "created": 1632214555678,
+      "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "modified": 1644440462535,
+      "modifiedBy": "16df9e34-cf21-4360-b89c-785a4ed8f57d",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "qubership.be-2021r8.0.0.172",
+      "dateOfCheckVersion": 1644440462535,
+      "parametersGettingVersion": {
+        "type": "BY_SQL_QUERY",
+        "parameters": "select *\nfrom (\nselect version, datetime_str, case when regexp_instr(datetime_str, '\\d{2}:\\d{2}:\\d{2}') = 1 then to_date(datetime_str, 'HH24:MI:SS MM/DD/YYYY') else to_date(datetime_str, 'HH24:MI MM/DD/YYYY') end datetime\nfrom (select substr(value,1,instr(value,' Date: ')-1) version, substr(value,instr(value,' Date: ')+7,length(value)-instr(value,' Date: ')-7) datetime_str from nc_directory where key='nc.database.version.history')\norder by datetime desc)\nwhere version like '%qubership.be-%'\nand rownum = 1",
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": null,
+      "linkToSystemId": null,
+      "externalId": null,
+      "connections": [
+        {
+          "id": "654ac26d-df67-40ae-9b4e-2b72262bf66f",
+          "name": "DB",
+          "description": null,
+          "created": 1632214555704,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214594735,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "db_host": "project1223",
+            "db_port": "1524",
+            "db_name": "db_name",
+            "db_login": "db_login",
+            "db_password": "db_password",
+            "db_type": "oracle",
+            "jdbc_url": "jdbc:oracle:thin:@project1223:1524/db_name"
+          },
+          "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "f99f8475-be06-4daa-b886-6dbf906082b1"
+        },
+        {
+          "id": "05497ec4-cd98-4806-9921-d05bf7f22b3e",
+          "name": "HTTP",
+          "description": null,
+          "created": 1632214555723,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214601290,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "url": "https://gateway.somedomain.com/service-port-2222",
+            "login": "",
+            "password": "",
+            "tenant_id": "795f81ef-576a-4a57-aaf9-e3be202be0b0"
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "f99f8475-be06-4daa-b886-6dbf906082b1"
+        },
+        {
+          "id": "db78c887-5aa0-4f99-989d-27f1bdc6ea51",
+          "name": "SSH",
+          "description": null,
+          "created": 1632214555743,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214609333,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "ssh_host": "ssh.somedomain.com",
+            "ssh_login": "qubership-user",
+            "ssh_password": "qubership-password",
+            "ssh_key": "",
+            "passphrase": ""
+          },
+          "sourceTemplateId": "24136d83-5ffb-487f-9bb4-e73be3a89aa2",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "f99f8475-be06-4daa-b886-6dbf906082b1"
+        }
+      ],
+      "systemCategoryId": "89252951-b248-4e80-a91d-42eb915ab54a",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "43f03f2d-0620-4842-a5fa-6334b0e8fa4e",
+      "name": "MIA",
+      "description": null,
+      "created": 1632214555759,
+      "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "modified": 1632214555793,
+      "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": null,
+      "dateOfCheckVersion": null,
+      "parametersGettingVersion": null,
+      "parentSystemId": null,
+      "mergeByName": null,
+      "linkToSystemId": null,
+      "externalId": null,
+      "connections": [
+        {
+          "id": "dfc29f41-76e2-483a-8e25-0ecbe982096d",
+          "name": "HTTP",
+          "description": null,
+          "created": 1632214555793,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214555793,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "url": "http://atp-public-gateway:8080",
+            "login": "",
+            "password": "",
+            "mia_url": "a03d5c5c-0ad9-4496-a71e-89f2f69f4cf7"
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "43f03f2d-0620-4842-a5fa-6334b0e8fa4e"
+        }
+      ],
+      "systemCategoryId": "71ce56bd-9dbd-4e7d-afcd-3e6f4f6cc949",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "9afb8a28-7c02-47b3-8149-d5f995a70ae5",
+      "name": "SERVER",
+      "description": null,
+      "created": 1632214555827,
+      "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "modified": 1632214637799,
+      "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": null,
+      "dateOfCheckVersion": null,
+      "parametersGettingVersion": null,
+      "parentSystemId": null,
+      "mergeByName": null,
+      "linkToSystemId": null,
+      "externalId": null,
+      "connections": [
+        {
+          "id": "142f605c-e54a-416f-a466-1a7bc7711cbd",
+          "name": "HTTP",
+          "description": null,
+          "created": 1632214555858,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214637799,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "url": "http://project1223.somedomain.com:8080",
+            "login": "",
+            "password": ""
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "9afb8a28-7c02-47b3-8149-d5f995a70ae5"
+        }
+      ],
+      "systemCategoryId": "89252951-b248-4e80-a91d-42eb915ab54a",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "83702c6f-9e56-4290-976d-ab52ab1c76d8",
+      "name": "install-base-service",
+      "description": null,
+      "created": 1634020829538,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852374815,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852374815,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "19e31f22-3f0f-4381-b612-4ba0720176f2",
+      "connections": [
+        {
+          "id": "9fa6bd3b-d6bf-4323-aa41-6c1ad07e2d27",
+          "name": "HTTP",
+          "description": null,
+          "created": 1634020829600,
+          "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "modified": 1634020829600,
+          "modifiedBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "parameters": {
+            "url": "https://install-base-service-qa-ci.project.managed.qubership.cloud",
+            "login": "",
+            "password": ""
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "83702c6f-9e56-4290-976d-ab52ab1c76d8"
+        }
+      ],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "1746f342-bdbf-4315-b151-6e7c6327e5b8",
+      "name": "install-base-service-v1",
+      "description": null,
+      "created": 1634020829739,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852376581,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852376581,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "82f68610-6a11-4fa5-acd6-c446569b7d31",
+      "connections": [],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "28e16210-7670-454c-a28b-4159b49eede9",
+      "name": "offering-qualification-service",
+      "description": null,
+      "created": 1634020830445,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852378386,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852378386,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "57d6ccda-6fd6-475c-97cb-7ca11ff90d15",
+      "connections": [
+        {
+          "id": "738f2dbd-c095-4ef7-82e4-ea8f82b2a25f",
+          "name": "HTTP",
+          "description": null,
+          "created": 1634020830503,
+          "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "modified": 1634020830503,
+          "modifiedBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "parameters": {
+            "url": "https://offering-qualification-service-qa-ci.project.managed.qubership.cloud",
+            "login": "",
+            "password": ""
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "28e16210-7670-454c-a28b-4159b49eede9"
+        }
+      ],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "e714dbdf-1461-45e6-96af-b4f5d900969a",
+      "name": "integration-service-v1",
+      "description": null,
+      "created": 1632315071211,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852380251,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852380251,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "5f0ecbfe-a71b-4013-afb2-7b8e53313a94",
+      "connections": [
+        {
+          "id": "80481c63-d9c9-477e-9769-48e44ccf7084",
+          "name": "DB",
+          "description": null,
+          "created": 1640006954670,
+          "createdBy": "f3d39c89-dd82-4565-b03a-d89d46ff9558",
+          "modified": 1640006954670,
+          "modifiedBy": "f3d39c89-dd82-4565-b03a-d89d46ff9558",
+          "parameters": {
+            "db_host": "project1223",
+            "db_port": "1524",
+            "db_name": "db_name",
+            "db_login": "db_login",
+            "db_password": "db_password",
+            "db_type": "oracle",
+            "jdbc_url": "jdbc:oracle:thin:@project1223:1524/db_name"
+          },
+          "sourceTemplateId": "46ca25d6-058e-471a-9b5e-c13e4b481227",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "e714dbdf-1461-45e6-96af-b4f5d900969a"
+        },
+        {
+          "id": "3dd24805-af39-44b1-859b-42046b2c0b87",
+          "name": "HTTP",
+          "description": null,
+          "created": 1632315072256,
+          "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "modified": 1632315072256,
+          "modifiedBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "parameters": {
+            "url": "https://integration-service-v1-qa-ci.project.managed.qubership.cloud",
+            "login": "",
+            "password": ""
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "e714dbdf-1461-45e6-96af-b4f5d900969a"
+        }
+      ],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "9b05359e-3fde-4853-ba44-bbc8873c35f2",
+      "name": "private-gateway-service",
+      "description": null,
+      "created": 1632214697512,
+      "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "modified": 1640852381276,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852381276,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "fcfbe834-6f83-4b26-9153-a51af2eb4ff2",
+      "connections": [
+        {
+          "id": "d9a03b26-3400-4d24-8508-1223130b9b22",
+          "name": "HTTP",
+          "description": null,
+          "created": 1632214697918,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214697918,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "url": "https://private-gateway-qa-ci.project.managed.qubership.cloud",
+            "login": "",
+            "password": ""
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "9b05359e-3fde-4853-ba44-bbc8873c35f2"
+        }
+      ],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "35dd721e-25d2-47d1-95bf-c6282e5ebbbc",
+      "name": "public-gateway-service",
+      "description": null,
+      "created": 1632214698081,
+      "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+      "modified": 1640852384239,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852384239,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "3ab4ddac-0b36-4ccf-a21e-c7353b44c076",
+      "connections": [
+        {
+          "id": "d07e2269-b617-4cf0-9c32-c43d26ef0e4d",
+          "name": "HTTP",
+          "description": null,
+          "created": 1632214698155,
+          "createdBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "modified": 1632214698155,
+          "modifiedBy": "8e9a99cf-fe0c-435d-8dec-13221e7fe2d0",
+          "parameters": {
+            "url": "https://public-gateway-qa-ci.project.managed.qubership.cloud",
+            "login": "",
+            "password": ""
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "35dd721e-25d2-47d1-95bf-c6282e5ebbbc"
+        }
+      ],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "76cb5471-3b38-4342-bf96-78714fe88e49",
+      "name": "quotation-engine-service",
+      "description": null,
+      "created": 1634020830538,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852387990,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852387990,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "0c2a771e-8cfd-4174-a4fd-b949d78aa8ff",
+      "connections": [],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "1a893207-c2c8-4587-93a2-a8d0bd7978dc",
+      "name": "quote-mutation-service",
+      "description": null,
+      "created": 1634020830588,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852391994,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852391994,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "e7a57986-5cbe-4b3f-bfe5-ed3310f64d56",
+      "connections": [],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "23add3b4-5fef-4a20-ac17-14e53901ac36",
+      "name": "quote-tmf-service",
+      "description": null,
+      "created": 1634020830643,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852395871,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852395871,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "0633ff53-dfba-4a6c-906c-9e20f556b628",
+      "connections": [
+        {
+          "id": "a8e7eb24-b9b9-406d-ad80-58bdcb72c91a",
+          "name": "HTTP",
+          "description": null,
+          "created": 1634020830703,
+          "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "modified": 1634020830703,
+          "modifiedBy": "8a18997f-5113-41d7-8769-30082741cc79",
+          "parameters": {
+            "url": "https://quote-service-qa-ci.project.managed.qubership.cloud",
+            "login": "",
+            "password": ""
+          },
+          "sourceTemplateId": "2a0eab16-0fe7-4a12-8155-78c0c151abdf",
+          "connectionType": null,
+          "services": [
+            "HealthCheck",
+            "LogCollector",
+            "MIA",
+            "TDM"
+          ],
+          "systemId": "23add3b4-5fef-4a20-ac17-14e53901ac36"
+        }
+      ],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    },
+    {
+      "id": "aa923e20-0aaf-41e8-9a4b-c4acc281a772",
+      "name": "submission-handler-service",
+      "description": null,
+      "created": 1634020830753,
+      "createdBy": "8a18997f-5113-41d7-8769-30082741cc79",
+      "modified": 1640852403280,
+      "modifiedBy": "cf05948e-1e66-4cf0-b314-b7ab57a9d384",
+      "status": "NOTHING",
+      "dateOfLastCheck": null,
+      "version": "Unknown",
+      "dateOfCheckVersion": 1640852403280,
+      "parametersGettingVersion": {
+        "type": null,
+        "parameters": null,
+        "headers": null,
+        "parsingValue": null,
+        "parsingType": "NONE"
+      },
+      "parentSystemId": null,
+      "mergeByName": false,
+      "linkToSystemId": "a32c70c8-3a5f-4258-9d8d-a86a1b6ddfa6",
+      "externalId": "071bccf8-6246-41a2-a83c-9f08b668b6ce",
+      "connections": [],
+      "systemCategoryId": "efda918d-80aa-4ca7-99b8-d6864e7ce03e",
+      "environmentIds": [
+        "d6481187-e17f-4af9-b67d-a97afd439617"
+      ],
+      "serverITF": null
+    }
+  ]
+}

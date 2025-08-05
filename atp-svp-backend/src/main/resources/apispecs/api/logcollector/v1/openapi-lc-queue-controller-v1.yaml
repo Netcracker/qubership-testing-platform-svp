@@ -1,0 +1,281 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.1
+info:
+    title: Log Collector API
+    description: Log Collector API
+    version: '1.1'
+servers:
+    - url: /
+tags:
+    - name: queue-controller
+      description: Queue Controller
+paths:
+    /api/queue/getSize:
+        get:
+            tags:
+                - queue-controller
+            summary: getQueueSizeAllOverThePods
+            operationId: getQueueSizeAllOverThePods
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: integer
+                                format: int32
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/queue/getActiveTasks:
+        get:
+            tags:
+                - queue-controller
+            summary: getActiveTasks
+            operationId: getActiveTasks
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/ThreadPool'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/countByStatus/{status}/search:
+        get:
+            tags:
+                - queue-controller
+            summary: getSearchesCountByStatus
+            operationId: getSearchesCountByStatus
+            parameters:
+                -   name: status
+                    in: path
+                    description: status
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: integer
+                                format: int32
+                401:
+                    description: Unauthorized
+                    content: { }
+                403:
+                    description: Forbidden
+                    content: { }
+                404:
+                    description: Not Found
+                    content: { }
+            deprecated: false
+    /api/countByStatus/{status}/componentSearch:
+        get:
+            tags:
+                - queue-controller
+            summary: getComponentSearchesCountByStatus
+            operationId: getComponentSearchesCountByStatus
+            parameters:
+                -   name: status
+                    in: path
+                    description: status
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: integer
+                                format: int32
+                401:
+                    description: Unauthorized
+                    content: { }
+                403:
+                    description: Forbidden
+                    content: { }
+                404:
+                    description: Not Found
+                    content: { }
+            deprecated: false
+    /api/countByStatus/{status}/systemSearch:
+        get:
+            tags:
+                - queue-controller
+            summary: getSystemSearchesCountByStatus
+            operationId: getSystemSearchesCountByStatus
+            parameters:
+                -   name: status
+                    in: path
+                    description: status
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: integer
+                                format: int32
+                401:
+                    description: Unauthorized
+                    content: { }
+                403:
+                    description: Forbidden
+                    content: { }
+                404:
+                    description: Not Found
+                    content: { }
+            deprecated: false
+    /api/cancelSearches:
+        post:
+            tags:
+                - queue-controller
+            summary: cancelSearches
+            operationId: cancelSearches
+            requestBody:
+                description: cancelSearches
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items:
+                                type: string
+                                format: uuid
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+                                    format: uuid
+                401:
+                    description: Unauthorized
+                    content: { }
+                403:
+                    description: Forbidden
+                    content: { }
+                404:
+                    description: Not Found
+                    content: { }
+            deprecated: false
+            x-codegen-request-body-name: cancelSearches
+    /api/cancelComponentSearches:
+        post:
+            tags:
+                - queue-controller
+            summary: cancelComponentSearches
+            operationId: cancelComponentSearches
+            requestBody:
+                description: cancelComponentSearches
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items:
+                                type: string
+                                format: uuid
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+                                    format: uuid
+                401:
+                    description: Unauthorized
+                    content: { }
+                403:
+                    description: Forbidden
+                    content: { }
+                404:
+                    description: Not Found
+                    content: { }
+            deprecated: false
+            x-codegen-request-body-name: cancelComponentSearches
+    /api/cancelSystemSearches:
+        post:
+            tags:
+                - queue-controller
+            summary: cancelSystemSearches
+            operationId: cancelSystemSearches
+            requestBody:
+                description: cancelSystemSearches
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items:
+                                type: string
+                                format: uuid
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+                                    format: uuid
+                201:
+                    description: Created
+                    content: { }
+                401:
+                    description: Unauthorized
+                    content: { }
+                403:
+                    description: Forbidden
+                    content: { }
+                404:
+                    description: Not Found
+                    content: { }
+            deprecated: false
+            x-codegen-request-body-name: cancelSystemSearches

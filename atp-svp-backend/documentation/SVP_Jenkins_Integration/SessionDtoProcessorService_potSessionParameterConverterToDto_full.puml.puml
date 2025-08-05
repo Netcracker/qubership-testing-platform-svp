@@ -1,0 +1,479 @@
+@startuml
+participant Actor
+Actor -> SessionDtoProcessorService : potSessionParameterConverterToDto
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : convertParameterFactory
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : handleAbstractTableParseLinkValues
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : replaceValuesTableToLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> AbstractTable : containsRows
+activate AbstractTable
+AbstractTable -> Table : containsRows
+activate Table
+Table --> AbstractTable
+deactivate Table
+AbstractTable --> SessionDtoProcessorService
+deactivate AbstractTable
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : extractLinksFromContent
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : extractLinksFromContent
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : replaceValuesTableToLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> AbstractTable : containsRows
+activate AbstractTable
+AbstractTable -> Table : containsRows
+activate Table
+Table --> AbstractTable
+deactivate Table
+AbstractTable --> SessionDtoProcessorService
+deactivate AbstractTable
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : extractLinksFromContent
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> Environment : isExistSystem
+activate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> Environment : getSystem
+activate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> System : getServer
+activate System
+System --> SessionDtoProcessorService
+deactivate System
+SessionDtoProcessorService -> SessionDtoProcessorService : getListHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : extractLinksFromContent
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> Environment : isExistSystem
+activate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> Environment : getSystem
+activate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> System : getServer
+activate System
+System --> SessionDtoProcessorService
+deactivate System
+SessionDtoProcessorService -> SessionDtoProcessorService : getListHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : extractLinksFromContent
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> Environment : isExistSystem
+activate Environment
+Environment -> Environment : () ->
+activate Environment
+Environment --> Environment
+deactivate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> Environment : getSystem
+activate Environment
+Environment -> Environment : () ->
+activate Environment
+Environment --> Environment
+deactivate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> System : getServer
+activate System
+System -> System : () ->
+activate System
+System --> System
+deactivate System
+System -> System : () ->
+activate System
+System --> System
+deactivate System
+create Server
+System -> Server : new
+activate Server
+Server --> System
+deactivate Server
+System --> SessionDtoProcessorService
+deactivate System
+SessionDtoProcessorService -> SessionDtoProcessorService : getListHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : makeHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : handleLinkValues
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : setLinkToValue
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : extractLinksFromContent
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> Environment : isExistSystem
+activate Environment
+Environment -> Environment : () ->
+activate Environment
+Environment --> Environment
+deactivate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> Environment : getSystem
+activate Environment
+Environment -> Environment : () ->
+activate Environment
+Environment --> Environment
+deactivate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> System : getServer
+activate System
+System -> System : () ->
+activate System
+System --> System
+deactivate System
+System -> System : () ->
+activate System
+System --> System
+deactivate System
+create Server
+System -> Server : new
+activate Server
+Server --> System
+deactivate Server
+System --> SessionDtoProcessorService
+deactivate System
+SessionDtoProcessorService -> SessionDtoProcessorService : getListHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : makeHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : setLinkToValue
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : extractLinksFromContent
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> Environment : isExistSystem
+activate Environment
+Environment -> Environment : () ->
+activate Environment
+Environment --> Environment
+deactivate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> Environment : getSystem
+activate Environment
+Environment -> Environment : () ->
+activate Environment
+Environment --> Environment
+deactivate Environment
+Environment --> SessionDtoProcessorService
+deactivate Environment
+SessionDtoProcessorService -> System : getServer
+activate System
+System -> System : () ->
+activate System
+System --> System
+deactivate System
+System -> System : () ->
+activate System
+System --> System
+deactivate System
+create Server
+System -> Server : new
+activate Server
+Server --> System
+deactivate Server
+System --> SessionDtoProcessorService
+deactivate System
+SessionDtoProcessorService -> SessionDtoProcessorService : getListHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : makeHttpLink
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : handleLogCollectorValues
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> Source : getSettingsByType
+activate Source
+Source -> Source : () ->
+activate Source
+Source --> Source
+deactivate Source
+Source -> Source : () ->
+activate Source
+create SourceSettingNotFoundException
+Source -> SourceSettingNotFoundException : new
+activate SourceSettingNotFoundException
+SourceSettingNotFoundException --> Source
+deactivate SourceSettingNotFoundException
+Source --> Source
+deactivate Source
+Source --> SessionDtoProcessorService
+deactivate Source
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+create Table
+SessionDtoProcessorService -> Table : new
+activate Table
+Table --> SessionDtoProcessorService
+deactivate Table
+SessionDtoProcessorService -> SessionDtoProcessorService : prepareTableHeader
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : handleResponseLcErrors
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SearchResult : hasError
+activate SearchResult
+SearchResult --> SessionDtoProcessorService
+deactivate SearchResult
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> ComponentSearchResults : hasError
+activate ComponentSearchResults
+ComponentSearchResults --> SessionDtoProcessorService
+deactivate ComponentSearchResults
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SystemSearchResults : hasError
+activate SystemSearchResults
+SystemSearchResults --> SessionDtoProcessorService
+deactivate SystemSearchResults
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+create ErrorValueObject
+SessionDtoProcessorService -> ErrorValueObject : new
+activate ErrorValueObject
+ErrorValueObject --> SessionDtoProcessorService
+deactivate ErrorValueObject
+SessionDtoProcessorService -> SessionDtoProcessorService : buildLcTable
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService -> SessionDtoProcessorService : () ->
+activate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+create SimpleValueObject
+SessionDtoProcessorService -> SimpleValueObject : new
+activate SimpleValueObject
+SimpleValueObject --> SessionDtoProcessorService
+deactivate SimpleValueObject
+create TableValueObject
+SessionDtoProcessorService -> TableValueObject : new
+activate TableValueObject
+TableValueObject --> SessionDtoProcessorService
+deactivate TableValueObject
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+SessionDtoProcessorService --> SessionDtoProcessorService
+deactivate SessionDtoProcessorService
+create SessionDto
+SessionDtoProcessorService -> SessionDto : new
+activate SessionDto
+create PageDto
+SessionDto -> PageDto : new
+activate PageDto
+PageDto -> PageDto : createTabsDto
+activate PageDto
+PageDto -> PageDto : () ->
+activate PageDto
+PageDto -> PageDto : () ->
+activate PageDto
+PageDto --> PageDto
+deactivate PageDto
+PageDto -> PageDto : () ->
+activate PageDto
+PageDto --> PageDto
+deactivate PageDto
+PageDto --> PageDto
+deactivate PageDto
+PageDto -> PageDto : () ->
+activate PageDto
+create TabDto
+PageDto -> TabDto : new
+activate TabDto
+TabDto -> TabDto : creatGroupsDto
+activate TabDto
+TabDto -> TabDto : () ->
+activate TabDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto -> TabDto : () ->
+activate TabDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto -> TabDto : () ->
+activate TabDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto -> TabDto : () ->
+activate TabDto
+create GroupDto
+TabDto -> GroupDto : new
+activate GroupDto
+GroupDto --> TabDto
+deactivate GroupDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto -> TabDto : fillGroups
+activate TabDto
+TabDto -> TabDto : () ->
+activate TabDto
+TabDto -> TabDto : () ->
+activate TabDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto -> GroupDto : addSutParameter
+activate GroupDto
+create SutParameterDto
+GroupDto -> SutParameterDto : new
+activate SutParameterDto
+SutParameterDto --> GroupDto
+deactivate SutParameterDto
+GroupDto --> TabDto
+deactivate GroupDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto --> TabDto
+deactivate TabDto
+TabDto --> PageDto
+deactivate TabDto
+PageDto --> PageDto
+deactivate PageDto
+PageDto --> PageDto
+deactivate PageDto
+PageDto --> SessionDto
+deactivate PageDto
+SessionDto --> SessionDtoProcessorService
+deactivate SessionDto
+return
+@enduml

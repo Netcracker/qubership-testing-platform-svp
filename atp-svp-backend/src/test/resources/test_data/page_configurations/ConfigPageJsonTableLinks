@@ -1,0 +1,134 @@
+{
+  "name": "ConfigPageJsonTableLinks",
+  "tabs": [
+    {
+      "name": "jsonTableLinks",
+      "groups": [
+        {
+          "name": "jsonTableLinks",
+          "sutParameters": [
+            {
+              "name": "jsonTableLinks",
+              "displayType": "JSON",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "",
+                "settings": [
+                  {
+                    "className": "HttpSettings",
+                    "query": "",
+                    "queryParams": {},
+                    "requestType": "GET",
+                    "body": "",
+                    "urlEncodedBody": {},
+                    "headers": {}
+                  },
+                  {
+                    "className": "JsonParseSettings",
+                    "jsonViewType": "TABLE",
+                    "jsonPath": "$.product.characteristic",
+                    "groupNameDivider": "||",
+                    "mockJsonScript": "{\n    \"product\": {\n        \"characteristic\": [\n            {\n                \"id\": \"ea85a755-2432-4b77-9d6f-da1dc57d0289\",\n\t\t\"name\": \"[Mobile] test https://stackoverflow.com\",\n                \"visible\": true\n            },\n            {\n                \"id\": \"002e7609-a21d-4a11-9d6a-83c58a219a00\",\n                \"name\": \"[Mobile] Carry Over <a href=/dog.html>testLink1</a>\",\n                \"visible\": true\n            },\n            {\n                \"id\": \"09093500-eb1c-46c0-883c-2ed218baafcf\",\n                \"name\": \"[Mobile] SMS Allowance Subtype <a href=/ncobject.jsp?id=09093500-eb1c-46c0-883c-2ed218baafcf>Process</a>\",\n                \"visible\": true\n            },\n            {\n                \"id\": \"b8d82181-d933-47eb-9e2a-0e23e3a246fe\",\n                \"name\": \"[Mobile] Validity\",\n                \"visible\": true\n            }\n        ],\n        \"name\": \"5 GB Data #1\"\n    }\n}",
+                    "isMockJsonSwitcher": true,
+                    "columnsData": [
+                      {
+                        "header": "name_Link",
+                        "jsonPath": "$.name",
+                        "groupingJsonPaths": []
+                      },
+                      {
+                        "header": "id",
+                        "jsonPath": "$.id",
+                        "groupingJsonPaths": []
+                      }
+                    ],
+                    "hierarchyNodeNames": {
+                      "id": "",
+                      "rootId": "",
+                      "parentId": ""
+                    },
+                    "hierarchyTreeObjectNodeNames": [],
+                    "isJoinConditionSwitcher": false,
+                    "jsonJoinConditionSettings": null
+                  }
+                ]
+              },
+              "er": {
+                "type": "NONE",
+                "value": null,
+                "tableValidations": [],
+                "dataSource": {
+                  "system": "",
+                  "connection": "",
+                  "engineType": null,
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "HttpSettings",
+                      "query": "",
+                      "queryParams": {},
+                      "requestType": "GET",
+                      "body": "",
+                      "urlEncodedBody": {},
+                      "headers": {}
+                    },
+                    {
+                      "className": "JsonParseSettings",
+                      "jsonViewType": "RAW",
+                      "jsonPath": "",
+                      "groupNameDivider": "||",
+                      "mockJsonScript": "",
+                      "isMockJsonSwitcher": false,
+                      "columnsData": [
+                        {
+                          "header": "",
+                          "jsonPath": "",
+                          "groupingJsonPaths": []
+                        }
+                      ],
+                      "hierarchyNodeNames": {
+                        "id": "",
+                        "rootId": "",
+                        "parentId": ""
+                      },
+                      "hierarchyTreeObjectNodeNames": [],
+                      "isJoinConditionSwitcher": false,
+                      "jsonJoinConditionSettings": []
+                    }
+                  ]
+                },
+                "tableValidationSettings": {
+                  "keyColumns": [],
+                  "groupingColumns": []
+                },
+                "bulkValidatorValidation": {
+                  "isManualValidation": false,
+                  "validationItem": [
+                    {
+                      "validationColumn": "",
+                      "validationObjectName": ""
+                    }
+                  ],
+                  "testCaseIds": []
+                },
+                "bulkValidatorJsonValidation": {
+                  "validationObjectName": "",
+                  "testCaseId": ""
+                }
+              },
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            }
+          ],
+          "isSynchronousLoading": false,
+          "isHide": false
+        }
+      ],
+      "isSynchronousLoading": false
+    }
+  ],
+  "isSynchronousLoading": false
+}

@@ -1,0 +1,114 @@
+{
+  "commonParameters": [
+  ],
+  "pages": [
+    {
+      "name": "Integration",
+      "status": "NONE",
+      "tabs": [
+        {
+          "groups": [
+            {
+              "name": "Integration message",
+              "sutParameters": [
+                {
+                  "arValues": [
+                    {
+                      "table": {
+                        "headers": [
+                          "TIME",
+                          "OPERATION_NAME",
+                          "PAYLOAD",
+                          "INTEGRATION_SCENARIO",
+                          "HEADER",
+                          "TYPE"
+                        ],
+                        "name": null,
+                        "rows": [
+                          {
+                            "HEADER": "GET http://atp-itf-project.dev.somedomain.com/mockingbird-transport-rest/pms/api/backend/translations/v1\\\\n\\\\nTransfer-Encoding: chunked\\\\nContent-Type: application/json\\\\nTransfer-Encoding: chunked\\\\nDate: Fri, 28 May 2021 00:54:54 GMT\\\\nSet-Cookie: be1211f3e1f5ea043deebdf52d7d5e0b=c9bfa5da71af354c7c4b60c04389d652; path=/; HttpOnly\\\\nCache-control: public",
+                            "INTEGRATION_SCENARIO": "Get Product Offering Translations",
+                            "OPERATION_NAME": "ZDS",
+                            "PAYLOAD": "{\n  \"productOrderItem\": [\n    {\n      \"product\": {\n        \"productCharacteristic\": [\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdName\",\n            \"value\": \"AutoTopupRenew\"\n          },\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdValue\",\n            \"value\": \"\"\n          }\n        ]\n      },\n      \"action\": \"replace\",\n      \"id\": \"entitlement\"\n    }\n  ],\n  \"relatedParty\": [\n    {\n      \"id\": \"d8bfd05a-e7d3-4128-ad1e-77122f907f62\"\n    }\n  ],\n  \"orderTotalPrice\": [\n    {\n      \"price\": {\n        \"validFor\": {\n          \"startDateTime\": \"2021-05-26T09:41:47Z\"\n        },\n        \"taxIncludedAmount\": {\n          \"value\": \"3000\"\n        }\n      }\n    }\n  ]\n}\n",
+                            "TIME": "2021-05-28T00:53:11.776Z",
+                            "TYPE": "Response"
+                          }
+                        ],
+                        "type": ".Table"
+                      },
+                      "type": "TableValueObject"
+                    }
+                  ],
+                  "er": null,
+                  "groupName": "Integration message",
+                  "name": "[OCS] Modify Add-On Subscription (Request)",
+                  "status": "PASSED",
+                  "validationInfo": {
+                    "errorDescription": null,
+                    "fileBasedTableValidations": null,
+                    "graylogTableValidations": {
+                      "type": "BulkValidatorTableValidationInfo",
+                      "bvTestRunsInfo": {
+                        "0": [
+                          {
+                            "testCaseName": "[E2E-MODIFY-12][OCS] Modify Add-On Subscription - remove auto payment",
+                            "testRunLink": "http://atp-bv:8080/project/323eda51-47b5-414a-951a-27221fa374a2/bvt/validation?trid=662baa55-76e3-4d5a-8270-41f790da99e6",
+                            "validationStatus": "PASSED"
+                          }
+                        ]
+                      },
+                      "diffs": [
+                      ]
+                    },
+                    "status": "PASSED",
+                    "type": "IntegrationLogsValidationInfo"
+                  }
+                },
+                {
+                  "arValues": [
+                    {
+                      "table": {
+                        "headers": [
+                          "TIME",
+                          "OPERATION_NAME",
+                          "PAYLOAD",
+                          "INTEGRATION_SCENARIO",
+                          "HEADER",
+                          "TYPE"
+                        ],
+                        "name": null,
+                        "rows": [
+                          {
+                            "HEADER": "GET http://atp-itf-project.dev.somedomain.com/mockingbird-transport-rest/pms/api/backend/translations/v1\\\\n\\\\nTransfer-Encoding: chunked\\\\nContent-Type: application/json\\\\nTransfer-Encoding: chunked\\\\nDate: Fri, 28 May 2021 00:54:54 GMT\\\\nSet-Cookie: be1211f3e1f5ea043deebdf52d7d5e0b=c9bfa5da71af354c7c4b60c04389d652; path=/; HttpOnly\\\\nCache-control: public",
+                            "INTEGRATION_SCENARIO": "Get Product Offering Translations",
+                            "OPERATION_NAME": "ZDS",
+                            "PAYLOAD": "{\n  \"productOrderItem\": [\n    {\n      \"product\": {\n        \"productCharacteristic\": [\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdName\",\n            \"value\": \"AutoTopupRenew\"\n          },\n          {\n            \"valueType\": \"string\",\n            \"name\": \"thresholdValue\",\n            \"value\": \"\"\n          }\n        ]\n      },\n      \"action\": \"replace\",\n      \"id\": \"entitlement\"\n    }\n  ],\n  \"relatedParty\": [\n    {\n      \"id\": \"d8bfd05a-e7d3-4128-ad1e-77122f907f62\"\n    }\n  ],\n  \"orderTotalPrice\": [\n    {\n      \"price\": {\n        \"validFor\": {\n          \"startDateTime\": \"2021-05-26T09:41:47Z\"\n        },\n        \"taxIncludedAmount\": {\n          \"value\": \"3000\"\n        }\n      }\n    }\n  ]\n}\n",
+                            "TIME": "2021-05-28T00:53:11.776Z",
+                            "TYPE": "Response"
+                          }
+                        ],
+                        "type": ".Table"
+                      },
+                      "type": "TableValueObject"
+                    }
+                  ],
+                  "er": null,
+                  "groupName": "Integration message",
+                  "name": "[OCS] Modify Add-On Subscription (Response)",
+                  "status": "NONE",
+                  "validationInfo": {
+                    "errorDescription": null,
+                    "status": "NONE",
+                    "type": "ValidationInfo"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "OCS",
+          "status": "NONE"
+        }
+      ]
+    }
+  ]
+}

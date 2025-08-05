@@ -1,0 +1,8 @@
+{
+    "name": "UDT",
+    "keyspace": "quotacache_l",
+    "fieldNames": [
+        "action_id",
+        "not_action_id"
+    ]
+}

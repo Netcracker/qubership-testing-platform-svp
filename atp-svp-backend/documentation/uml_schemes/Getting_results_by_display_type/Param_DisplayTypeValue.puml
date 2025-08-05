@@ -1,0 +1,122 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity ParamDisplayTypeServiceImpl
+
+    entity SqlRepository
+    entity CassandraRepository
+    entity ConnectionPool
+
+    entity LogCollectorBasedDisplayTypeService
+    entity LogCollectorRepository
+    entity LogCollectorFeignClient
+    entity DeferredSearchServiceImpl
+end box
+
+box "SQL source" #D2E9C3
+    entity DB
+end box
+
+box "Cassandra source" #D2E9C3
+    entity CassandraDB
+end box
+
+box "LogCollector service" #E3E3D9
+    entity ConfigurationController
+    entity ApiSearchLogsController
+end box
+
+activate ParamDisplayTypeServiceImpl
+    ParamDisplayTypeServiceImpl -> ParamDisplayTypeServiceImpl : Get Server from Environment
+    ParamDisplayTypeServiceImpl -> ParamDisplayTypeServiceImpl : getScriptWithExecutionVariables(source.getScript(), context.getExecutionVariables())
+group #90ffbc SWITCH getting result by displayType
+    alt IF EngineType == SQL
+        == EngineType == SQL ==
+        ParamDisplayTypeServiceImpl -> SqlRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+        activate SqlRepository
+            SqlRepository <--> ConnectionPool : createAndGetConnection(server)
+            SqlRepository -> SqlRepository : create PreparedStatement from connection and query
+            SqlRepository -> SqlRepository : PreparedStatement.executeQuery() on ExecutorService
+
+            activate SqlRepository #LightGreen
+                SqlRepository <--> DB : get ResultSet
+            deactivate SqlRepository
+            SqlRepository -> SqlRepository : ResultSetMetaData rsmd = rs.getMetaData()
+            SqlRepository -> SqlRepository : get list of table headers from ResultSetMetaData
+            SqlRepository -> SqlRepository : get table rows from ResultSet
+            SqlRepository -> SqlRepository : get first cell from first row value
+
+
+            ParamDisplayTypeServiceImpl <-- SqlRepository : String (First cell from first row value)
+        deactivate SqlRepository
+         <- ParamDisplayTypeServiceImpl : new SimpleValueObject(firstCellValue)
+   else ELSE EngineType == CASSANDRA
+           == EngineType == CASSANDRA ==
+           ParamDisplayTypeServiceImpl -> CassandraRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+           activate CassandraRepository
+               CassandraRepository -> CassandraRepository : createCluster(server)
+               activate CassandraRepository #LightGreen
+                   CassandraRepository <--> CassandraDB : execute (get ResultSet)
+               deactivate CassandraRepository
+               CassandraRepository -> CassandraRepository : get first ROW
+               CassandraRepository -> CassandraRepository : get first column value in first ROW
+               ParamDisplayTypeServiceImpl <-- CassandraRepository : String response (First cell from first row value)
+               deactivate CassandraRepository
+    else ELSE EngineType == LOG_COLLECTOR
+        == EngineType == LOG_COLLECTOR ==
+        ParamDisplayTypeServiceImpl -> LogCollectorBasedDisplayTypeService : getLogCollectorValueObject(logCollectorRepository, deferredSearchService, context, source)
+        activate LogCollectorBasedDisplayTypeService
+            LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : prepareLogCollectorSettings(source, context.getExecutionVariables)
+            alt IF context.isDeferredSearchResult()
+                 == Start search from LogCollector ==
+                            LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : getLogCollectorValueObjectRegisterSearch(logCollectorRepository, deferredSearchService, context, settings)
+                            activate LogCollectorBasedDisplayTypeService #lightGreen
+                                LogCollectorBasedDisplayTypeService -> DeferredSearchServiceImpl : storeContextByLogCollectorSearchId(lcValue.getSearchId(), context)
+                                LogCollectorBasedDisplayTypeService -> LogCollectorRepository : startSearch(projectId, environmentId, settings, List<LogCollectorConfiguration>)
+                                activate LogCollectorRepository
+                                    LogCollectorRepository -> LogCollectorRepository : getLogCollectorConfigurationIds(logCollectorConfig, settings)
+                                    LogCollectorRepository -> LogCollectorRepository : registerSearchInLogCollector(LogCollectorSearchRequest request)
+                                    activate LogCollectorRepository #lightGreen
+                                        LogCollectorRepository -> LogCollectorFeignClient : registerSearch(LogCollectorSearchRequest)
+                                        activate LogCollectorFeignClient
+                                            LogCollectorFeignClient -> ApiSearchLogsController : POST\n/api/logs/registerSearch
+                                            activate ApiSearchLogsController
+                                                LogCollectorFeignClient <-- ApiSearchLogsController : SearchResult
+                                            deactivate ApiSearchLogsController
+                                            LogCollectorRepository <-- LogCollectorFeignClient : SearchResult
+                                        deactivate LogCollectorFeignClient
+                                        LogCollectorBasedDisplayTypeService <-- LogCollectorRepository : new LogCollectorValueObject(searchResult)
+                                    deactivate LogCollectorRepository
+                                deactivate LogCollectorRepository
+                                LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : checkErrorRegisterSearchResponse(deferredSearch, context, UUID requestSearchId, lcValue)
+                            deactivate LogCollectorBasedDisplayTypeService
+            else ELSE - !context.isDeferredSearchResult()
+              == Get search results from LogCollector ==
+                        LogCollectorBasedDisplayTypeService -> LogCollectorBasedDisplayTypeService : getLogCollectorValueObjectForSearch(logCollectorRepository, context)
+                        activate LogCollectorBasedDisplayTypeService #lightGreen
+                            LogCollectorBasedDisplayTypeService -> LogCollectorRepository : getLogCollectorValueObjectFromSearchResult(responseSearchId)
+                            activate LogCollectorRepository
+                                LogCollectorRepository -> LogCollectorRepository : getSearchResultsFromLogCollector(responseSearchId)
+                                activate LogCollectorRepository #lightGreen
+                                    LogCollectorRepository -> LogCollectorFeignClient : getSearchResults(responseSearchId)
+                                    activate LogCollectorFeignClient
+                                        LogCollectorFeignClient -> ApiSearchLogsController : GET\n/api/logs/getSearchResults/{searchId}/fastResponse
+                                        activate ApiSearchLogsController
+                                            LogCollectorFeignClient <-- ApiSearchLogsController : SearchResult
+                                        deactivate ApiSearchLogsController
+                                        LogCollectorRepository <-- LogCollectorFeignClient : SearchResult
+                                    deactivate LogCollectorFeignClient
+                                LogCollectorBasedDisplayTypeService <-- LogCollectorRepository : new LogCollectorValueObject(searchResult)
+                                deactivate LogCollectorRepository
+                            deactivate LogCollectorRepository
+                        deactivate LogCollectorBasedDisplayTypeService
+            LogCollectorBasedDisplayTypeService -> ParamDisplayTypeServiceImpl : new LogCollectorValueObject(searchResult)
+           ParamDisplayTypeServiceImpl -> ParamDisplayTypeServiceImpl: LogCollectorValueObject.findFirstLogResult()
+        <- ParamDisplayTypeServiceImpl : SimpleValueObject(firstSearchResult)
+    end
+deactivate ParamDisplayTypeServiceImpl
+end
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity SutParameterExecutor
+
+    entity DisplayTypeService
+    entity DisplayTypeServiceFactory
+
+    entity PotSessionServiceImpl
+end box
+
+activate SutParameterExecutor
+    SutParameterExecutor <--> DisplayTypeServiceFactory : displayTypeService = getServiceForType(displayType)
+    SutParameterExecutor <--> DisplayTypeService : arValue = getValueFromSource(source, executionContext)
+
+    group #90ffbc SWITCH getting result by displayType
+        alt displayType == PARAM
+             note left DisplayTypeService
+                Supported engine types: **SQL, CASSANDRA, LOG_COLLECTOR**
+                See detail design in 'Get_value_for_Param_display_type'
+             end note
+        end
+        alt displayType == TABLE
+             note left DisplayTypeService
+                Supported engine types: **SQL, CASSANDRA**
+                See detail design in 'Get_value_for_Table_display_type'
+             end note
+        end
+        alt displayType == LINK
+             note left DisplayTypeService
+                Supported engine types: **SQL, CASSANDRA**
+                See detail design in 'Get_value_for_Link_display_type'
+             end note
+        end
+        alt displayType == XML
+             note left DisplayTypeService
+                Supported engine types: **SQL, CASSANDRA, SOAP**
+                See detail design in 'Get_value_for_XML_display_type'
+             end note
+        end
+        alt displayType == JSON
+             note left DisplayTypeService
+                Supported engine types: **SQL, CASSANDRA, REST**
+                See detail design in 'Get_value_for_JSON_display_type'
+             end note
+        end
+        alt displayType == INTEGRATION_LOG
+             note left DisplayTypeService
+                Supported engine types: **LOG_COLLECTOR**
+                See detail design in 'Get_value_for_IntegrationLog_display_type'
+             end note
+        end
+        alt displayType == SSH_RESPONSE
+             note left DisplayTypeService
+                **SSH functionality not implemented yet**
+             end note
+        end
+    end
+deactivate SutParameterExecutor
+
+@enduml

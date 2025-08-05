@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Test none",
+    "displayType": "PARAM",
+    "dataSource": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "select 1 from dual",
+      "settings": {
+        "className": "HttpSettings",
+        "requestType": "GET",
+        "body": "",
+        "headers": {}
+      }
+    },
+    "logsSource": {
+      "component": "",
+      "searchText": ""
+    },
+    "er": {
+      "type": "NONE",
+      "value": "",
+      "columnName": "",
+      "condition": "EQUALS",
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": {
+          "className": "HttpSettings",
+          "requestType": "GET",
+          "body": "",
+          "headers": {}
+        }
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      }
+    },
+    "additionalSources": [],
+    "isPreconfigured": false
+  }
+]

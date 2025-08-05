@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <include relativeToChangelogFile="true" file="createTables.sql"/>
+
+    <include relativeToChangelogFile="true" file="projectConfigurationMigrationCustomChangeV2.xml"/>
+
+    <include relativeToChangelogFile="true" file="project-git-files-migration.xml"/>
+
+    <include relativeToChangelogFile="true" file="createTableShedlock.sql"/>
+
+    <include relativeToChangelogFile="true" file="CreatePotSessionTables.sql"/>
+
+</databaseChangeLog>

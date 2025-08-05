@@ -1,0 +1,87 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box #D2F9F6
+    entity PotSessionParameterServiceImpl
+    entity DisplayTypeService
+    entity SqlRepository
+    entity CassandraRepository
+    entity ConnectionPool
+    entity Cluster
+    entity Session
+    entity ExecutorService
+    entity ExecutionVariablesService
+end box
+
+
+
+
+activate PotSessionParameterServiceImpl
+
+PotSessionParameterServiceImpl -> DisplayTypeService : getValueFromSource(source, context);
+
+activate DisplayTypeService
+
+== Variable error case ==
+DisplayTypeService -> ExecutionVariablesService : getSourceWithExecutionVariables(script, executionVariables)
+activate ExecutionVariablesService
+ExecutionVariablesService -> DisplayTypeService : VariableException
+deactivate ExecutionVariablesService
+DisplayTypeService -> PotSessionParameterServiceImpl : GettingValueException (VariableException message)
+
+== DB connection error case ==
+DisplayTypeService -> SqlRepository : executeQuery(new DBServer(server), script)
+activate SqlRepository
+SqlRepository -> ConnectionPool : createAndGetConnection(server)
+activate ConnectionPool
+ConnectionPool -> SqlRepository : ConnectionDbException
+deactivate ConnectionPool
+SqlRepository -> DisplayTypeService : ConnectionDbException
+deactivate SqlRepository
+DisplayTypeService -> PotSessionParameterServiceImpl : GettingValueException (ConnectionDbException message)
+
+== Script error case ==
+DisplayTypeService -> SqlRepository : executeQuery(new DBServer(server), script)
+activate SqlRepository
+SqlRepository -> ConnectionPool : createAndGetConnection(server)
+activate ConnectionPool
+ConnectionPool -> SqlRepository : DiffServerConnection
+deactivate ConnectionPool
+SqlRepository -> ExecutorService : submit(executeQuery)
+activate ExecutorService
+ExecutorService -> SqlRepository : Exception
+deactivate ExecutorService
+SqlRepository -> DisplayTypeService : SqlScriptExecuteException
+deactivate SqlRepository
+DisplayTypeService -> PotSessionParameterServiceImpl : GettingValueException (SqlScriptExecuteException message)
+
+== DB connection Cassandra error case ==
+DisplayTypeService -> CassandraRepository : executeQuery(new DBServer(server), script)
+activate CassandraRepository
+CassandraRepository -> Cluster : createAndGetConnection(server)
+activate Cluster
+Cluster -> CassandraRepository : ConnectionDbException
+deactivate Cluster
+CassandraRepository -> DisplayTypeService : SqlScriptExecuteException
+deactivate CassandraRepository
+DisplayTypeService -> PotSessionParameterServiceImpl : GettingValueException (ConnectionDbException message)
+
+== Cassandra Script error case ==
+DisplayTypeService -> CassandraRepository : executeQuery(new DBServer(server), script)
+activate CassandraRepository
+CassandraRepository -> Cluster : createAndGetConnection(server)
+activate Cluster
+Cluster -> CassandraRepository : Session
+deactivate Cluster
+CassandraRepository -> Session : session.executeAsync(query)
+activate Session
+Session -> CassandraRepository : Exception
+deactivate Session
+CassandraRepository -> DisplayTypeService : SqlScriptExecuteException
+deactivate CassandraRepository
+DisplayTypeService -> PotSessionParameterServiceImpl : GettingValueException (SqlScriptExecuteException message)
+deactivate DisplayTypeService
+deactivate PotSessionParameterServiceImpl
+
+@enduml

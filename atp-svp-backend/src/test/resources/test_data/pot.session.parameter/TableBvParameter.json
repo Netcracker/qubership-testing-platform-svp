@@ -1,0 +1,72 @@
+{
+  "parameterId": null,
+  "page": null,
+  "tab": null,
+  "group": null,
+  "isSynchronousLoading": false,
+  "er": null,
+  "arValues": [
+    {
+      "type": "TableValueObject",
+      "table": {
+        "type": ".Table",
+        "name": null,
+        "headers": [
+          "PRODUCT_ORDER_NAME",
+          "STATUS"
+        ],
+        "rows": [
+          {
+            "STATUS": "Completed",
+            "PRODUCT_ORDER_NAME": "Test-name"
+          }
+        ]
+      }
+    }
+  ],
+  "validationInfo": {
+    "type": "ValidationInfo",
+    "status": null,
+    "errorDescription": null
+  },
+  "parameterConfig": {
+    "parameterId": null,
+    "name": null,
+    "displayType": null,
+    "source": null,
+    "component": null,
+    "additionalSources": null,
+    "erConfig": {
+      "type": "BV_LINK",
+      "value": null,
+      "tableValidations": [],
+      "dataSource": null,
+      "tableValidationSettings": null,
+      "bulkValidatorValidation": {
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "STATUS",
+            "validationObjectName": "STATUS"
+          },
+          {
+            "validationColumn": "PRODUCT_ORDER_NAME",
+            "validationObjectName": "PRODUCT_ORDER_NAME"
+          }
+        ],
+        "testCaseIds": [
+          "%1$s"
+        ]
+      },
+      "bulkValidatorJsonValidation": null
+    },
+    "groupEntity": null,
+    "lastUpdateDateTime": null,
+    "commonParameterEntity": null,
+    "parameterOrder": 0,
+    "preconfigured": false
+  },
+  "potSessionTabEntity": null,
+  "potSessionEntity": null,
+  "errors": ""
+}

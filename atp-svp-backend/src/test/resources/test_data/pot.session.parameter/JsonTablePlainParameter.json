@@ -1,0 +1,204 @@
+{
+  "parameterId": null,
+  "page": "page",
+  "tab": "tab",
+  "group": "group",
+  "isSynchronousLoading": false,
+  "er": null,
+  "arValues": [
+    {
+      "type": "TableValueObject",
+      "table": {
+        "type": ".JsonTable",
+        "name": null,
+        "headers": [
+          "secondColumn",
+          "groupColumnName",
+          "ID"
+        ],
+        "rows": [
+          {
+            "nestingDepth": 0,
+            "cells": [
+              {
+                "type": ".JsonSimpleCell",
+                "columnHeader": "secondColumn",
+                "simpleValue": "fb5bdb66"
+              },
+              {
+                "type": ".JsonSimpleCell",
+                "columnHeader": "ID",
+                "simpleValue": "%1$s"
+              },
+              {
+                "type": ".JsonGroupedCell",
+                "columnHeader": "groupColumnName",
+                "groupedValue": {
+                  "KEY": "VALUE"
+                }
+              }
+            ]
+          },
+          {
+            "nestingDepth": 0,
+            "cells": [
+              {
+                "type": ".JsonSimpleCell",
+                "columnHeader": "secondColumn",
+                "simpleValue": "fb5bdb66"
+              },
+              {
+                "type": ".JsonSimpleCell",
+                "columnHeader": "ID",
+                "simpleValue": "passed"
+              },
+              {
+                "type": ".JsonGroupedCell",
+                "columnHeader": "groupColumnName",
+                "groupedValue": {
+                  "KEY": "VALUE"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "validationInfo": {
+    "type": "ValidationInfo",
+    "status": "IN_PROGRESS",
+    "errorDescription": null
+  },
+  "parameterConfig": {
+    "parameterId": null,
+    "name": "jsonTable",
+    "displayType": "JSON",
+    "source": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "1",
+      "settings": [
+        {
+          "className": "HttpSettings",
+          "query": "",
+          "queryParams": {},
+          "requestType": "GET",
+          "body": "",
+          "urlEncodedBody": {},
+          "headers": {}
+        },
+        {
+          "className": "JsonParseSettings",
+          "jsonViewType": "TABLE",
+          "jsonPath": "$.quoteItem",
+          "groupNameDivider": "||",
+          "mockJsonScript": null,
+          "isMockJsonSwitcher": false,
+          "columnsData": [
+            {
+              "header": "rootQuoteItemId",
+              "jsonPath": "$.rootQuoteItemId",
+              "groupingJsonPaths": []
+            },
+            {
+              "header": "marketId",
+              "jsonPath": "$.marketId",
+              "groupingJsonPaths": []
+            }
+          ],
+          "hierarchyNodeNames": {
+            "id": "",
+            "rootId": "",
+            "parentId": ""
+          },
+          "hierarchyTreeObjectNodeNames": [],
+          "isJoinConditionSwitcher": false,
+          "jsonJoinConditionSettings": null
+        }
+      ]
+    },
+    "component": null,
+    "additionalSources": [],
+    "erConfig": {
+      "type": "PLAIN",
+      "value": null,
+      "tableValidations": [
+        {
+          "value": "%2$s",
+          "columnName": "%3$s",
+          "condition": "EQUALS"
+        }
+      ],
+      "dataSource": {
+        "system": "Business Solution",
+        "connection": "DB",
+        "engineType": "SQL",
+        "script": "1",
+        "settings": [
+          {
+            "className": "JsonParseSettings",
+            "jsonViewType": "TABLE",
+            "jsonPath": "$.quoteItem",
+            "groupNameDivider": "||",
+            "mockJsonScript": null,
+            "isMockJsonSwitcher": false,
+            "columnsData": [
+              {
+                "header": "rootQuoteItemId",
+                "jsonPath": "$.rootQuoteItemId",
+                "groupingJsonPaths": []
+              },
+              {
+                "header": "marketId",
+                "jsonPath": "$.marketId",
+                "groupingJsonPaths": []
+              }
+            ],
+            "hierarchyNodeNames": {
+              "id": "",
+              "rootId": "",
+              "parentId": ""
+            },
+            "hierarchyTreeObjectNodeNames": [],
+            "isJoinConditionSwitcher": false,
+            "jsonJoinConditionSettings": null
+          }
+        ]
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": ""
+          }
+        ],
+        "testCaseIds": []
+      },
+      "bulkValidatorJsonValidation": null
+    },
+    "groupEntity": {
+      "groupId": null,
+      "name": null,
+      "tabEntity": null,
+      "isSynchronousLoading": false,
+      "isHide": false,
+      "lastUpdateDateTime": null,
+      "groupOrder": 0,
+      "sutParameterEntities": null
+    },
+    "lastUpdateDateTime": null,
+    "commonParameterEntity": null,
+    "parameterOrder": 0,
+    "preconfigured": false
+  },
+  "potSessionTabEntity": null,
+  "potSessionEntity": null,
+  "errors": ""
+}

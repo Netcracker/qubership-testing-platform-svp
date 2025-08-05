@@ -1,0 +1,201 @@
+{
+  "name": "Integration",
+  "tabs": [
+    {
+      "name": "OCS",
+      "groups": [
+        {
+          "name": "Integration message",
+          "sutParameters": [
+            {
+              "name": "[OCS] Modify Add-On Subscription (Request)",
+              "displayType": "INTEGRATION_LOG",
+              "dataSource": {
+                "system": "GRAYLOG",
+                "connection": "HTTP",
+                "engineType": "LOG_COLLECTOR",
+                "script": "",
+                "settings": [
+                  {
+                    "className": "LogCollectorSettings",
+                    "configurations": [
+                      "24d1ea9f-45b3-4256-9a2d-26372ad134b8"
+                    ],
+                    "parameters": {
+                      "searchText": "(${Sales_Order_ID}|${Customer_ID})",
+                      "graylogSearchText": "context: ${Sales_Order_ID} AND integration_scenario: \"[OCS] Modify Add-On Subscription\" AND type:Request",
+                      "lines": 0,
+                      "minutes": 0,
+                      "query": null,
+                      "readOnlyMode": false,
+                      "searchPerOneDay": false,
+                      "searchStrategy": "SURROUNDING_LINES",
+                      "previewParameters": [
+                        "operation_name",
+                        "payload",
+                        "integration_scenario",
+                        "header",
+                        "type"
+                      ],
+                      "isLogMessageColumnShowed": false,
+                      "regexp": false
+                    },
+                    "searchPeriod": null
+                  }
+                ]
+              },
+              "logsSource": {
+                "components": null,
+                "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+                "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+              },
+              "er": {
+                "type": "BV_LINK",
+                "value": null,
+                "tableValidations": [],
+                "dataSource": {
+                  "system": "",
+                  "connection": "",
+                  "engineType": null,
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "LogCollectorSettings",
+                      "configurations": [],
+                      "parameters": {
+                        "searchText": null,
+                        "graylogSearchText": null,
+                        "lines": 0,
+                        "minutes": 0,
+                        "query": null,
+                        "readOnlyMode": false,
+                        "searchPerOneDay": false,
+                        "searchStrategy": null,
+                        "previewParameters": null,
+                        "isLogMessageColumnShowed": true,
+                        "regexp": false
+                      },
+                      "searchPeriod": null
+                    }
+                  ]
+                },
+                "tableValidationSettings": {
+                  "keyColumns": [],
+                  "groupingColumns": []
+                },
+                "bulkValidatorValidation": {
+                  "validationColumn": "",
+                  "validationObjectName": "",
+                  "isManualValidation": false,
+                  "validationItem": [
+                    {
+                      "validationColumn": "payload",
+                      "validationObjectName": "Request"
+                    }
+                  ],
+                  "testCaseIds": [
+                    "fc0f5322-2b17-4dde-a8b3-633ee5fdbd6c"
+                  ]
+                }
+              },
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            },
+            {
+              "name": "[OCS] Modify Add-On Subscription (Response)",
+              "displayType": "INTEGRATION_LOG",
+              "dataSource": {
+                "system": "GRAYLOG",
+                "connection": "HTTP",
+                "engineType": "LOG_COLLECTOR",
+                "script": "",
+                "settings": [
+                  {
+                    "className": "LogCollectorSettings",
+                    "configurations": [
+                      "24d1ea9f-45b3-4256-9a2d-26372ad134b9"
+                    ],
+                    "parameters": {
+                      "searchText": "(${Sales_Order_ID}|${Customer_ID})",
+                      "graylogSearchText": "context: ${Sales_Order_ID} AND integration_scenario: \"[OCS] Modify Add-On Subscription\" AND type:Response",
+                      "lines": 0,
+                      "minutes": 0,
+                      "query": null,
+                      "readOnlyMode": false,
+                      "searchPerOneDay": false,
+                      "searchStrategy": "SURROUNDING_LINES",
+                      "previewParameters": [
+                        "operation_name",
+                        "payload",
+                        "integration_scenario",
+                        "header",
+                        "type"
+                      ],
+                      "isLogMessageColumnShowed": false,
+                      "regexp": false
+                    },
+                    "searchPeriod": null
+                  }
+                ]
+              },
+              "logsSource": {
+                "components": null,
+                "graylogSearchText": "context: ( ${Sales_Order_ID} OR ${Customer_ID} )",
+                "fileBasedSearchText": "(${Sales_Order_ID}|${Customer_ID})"
+              },
+              "er": {
+                "type": "NONE",
+                "value": null,
+                "tableValidations": [],
+                "dataSource": {
+                  "system": "",
+                  "connection": "",
+                  "engineType": null,
+                  "script": "",
+                  "settings": [
+                    {
+                      "className": "LogCollectorSettings",
+                      "configurations": [],
+                      "parameters": {
+                        "searchText": null,
+                        "graylogSearchText": null,
+                        "lines": 0,
+                        "minutes": 0,
+                        "query": null,
+                        "readOnlyMode": false,
+                        "searchPerOneDay": false,
+                        "searchStrategy": null,
+                        "previewParameters": null,
+                        "isLogMessageColumnShowed": true,
+                        "regexp": false
+                      },
+                      "searchPeriod": null
+                    }
+                  ]
+                },
+                "tableValidationSettings": {
+                  "keyColumns": [],
+                  "groupingColumns": []
+                },
+                "bulkValidatorValidation": {
+                  "validationColumn": "",
+                  "validationObjectName": "",
+                  "isManualValidation": false,
+                  "bulkValidatorValidationItem": null,
+                  "testCaseIds": []
+                }
+              },
+              "additionalSources": [],
+              "isPreconfigured": false,
+              "component": null
+            }
+          ],
+          "isSynchronousLoading": false
+        }
+      ],
+      "isSynchronousLoading": false
+    }
+  ],
+  "isSynchronousLoading": false
+}

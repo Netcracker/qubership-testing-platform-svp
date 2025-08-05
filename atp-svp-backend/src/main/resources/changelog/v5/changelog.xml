@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <include relativeToChangelogFile="true" file="addSourceIdToTablesConfigs.sql"/>
+
+    <changeSet id="clearDbBeforeMigration" author="atp-svp-dev-v5">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT CASE WHEN COUNT(*) >= 1 THEN 1 ELSE 0 END
+                FROM DATABASECHANGELOG
+                WHERE id = 'Truncate_potSession_tables' or id = 'Remove_cascade_delete_from_potSession_tables' or id = 'Remove_configs_before_migrates'
+            </sqlCheck>
+        </preConditions>
+        <sqlFile path="clear-db-before-migration.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <include relativeToChangelogFile="true" file="create_sessions_table.sql"/>
+
+    <changeSet id="addCascadeRemovePotSession" author="atp-svp-dev-v5">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT CASE WHEN COUNT(*) >= 1 THEN 1 ELSE 0 END
+                FROM DATABASECHANGELOG
+                WHERE id = 'add_cascade_remove_for_pot_session'
+            </sqlCheck>
+        </preConditions>
+        <sqlFile path="AddCascadeRemovePotSession.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="deferredConstraintConfigsTables" author="atp-svp-dev-v5">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT CASE WHEN COUNT(*) >= 1 THEN 1 ELSE 0 END
+                FROM DATABASECHANGELOG
+                WHERE id = 'Deferred_constraint_for_config_tables'
+            </sqlCheck>
+        </preConditions>
+        <sqlFile path="deferredConstraintConfigsTables.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>

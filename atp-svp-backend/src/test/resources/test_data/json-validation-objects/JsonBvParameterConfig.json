@@ -1,0 +1,108 @@
+{
+  "name": "test_Json",
+  "displayType": "JSON",
+  "dataSource": {
+    "system": "Business Solution",
+    "connection": "DB",
+    "engineType": "SQL",
+    "script": "",
+    "settings": [
+      {
+        "className": "HttpSettings",
+        "query": "",
+        "queryParams": {},
+        "requestType": "GET",
+        "body": "",
+        "urlEncodedBody": {},
+        "headers": {}
+      },
+      {
+        "className": "JsonParseSettings",
+        "jsonViewType": "RAW",
+        "jsonPath": "$",
+        "groupNameDivider": "||",
+        "mockJsonScript": "",
+        "isMockJsonSwitcher": false,
+        "columnsData": [
+          {
+            "header": "",
+            "jsonPath": "",
+            "groupingJsonPaths": []
+          }
+        ],
+        "hierarchyNodeNames": {
+          "id": "",
+          "rootId": "",
+          "parentId": ""
+        },
+        "hierarchyTreeObjectNodeNames": []
+      }
+    ]
+  },
+  "er": {
+    "type": "BV_LINK",
+    "value": null,
+    "tableValidations": [],
+    "dataSource": {
+      "system": "",
+      "connection": "",
+      "engineType": null,
+      "script": "",
+      "settings": [
+        {
+          "className": "HttpSettings",
+          "query": "",
+          "queryParams": {},
+          "requestType": "GET",
+          "body": "",
+          "urlEncodedBody": {},
+          "headers": {}
+        },
+        {
+          "className": "JsonParseSettings",
+          "jsonViewType": "RAW",
+          "jsonPath": "",
+          "groupNameDivider": "||",
+          "mockJsonScript": "",
+          "isMockJsonSwitcher": false,
+          "columnsData": [
+            {
+              "header": "",
+              "jsonPath": "",
+              "groupingJsonPaths": []
+            }
+          ],
+          "hierarchyNodeNames": {
+            "id": "",
+            "rootId": "",
+            "parentId": ""
+          },
+          "hierarchyTreeObjectNodeNames": []
+        }
+      ]
+    },
+    "tableValidationSettings": {
+      "keyColumns": [],
+      "groupingColumns": []
+    },
+    "bulkValidatorValidation": {
+      "isManualValidation": false,
+      "validationItem": [
+        {
+          "validationColumn": "",
+          "validationObjectName": "json message"
+        }
+      ],
+      "testCaseIds": [
+        "61abd5ac-efbe-49cc-b7f5-925a7f543481"
+      ]
+    },
+    "bulkValidatorJsonValidation": {
+      "validationObjectName": "%1$s",
+      "testCaseId": "%2$s"
+    }
+  },
+  "additionalSources": [],
+  "isPreconfigured": false,
+  "component": null
+}

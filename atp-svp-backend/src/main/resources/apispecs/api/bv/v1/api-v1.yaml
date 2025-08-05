@@ -1,0 +1,536 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.3
+info:
+  title: Api Documentation
+  description: Api Documentation
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+    description: Inferred Url
+tags:
+  - name: api-resource
+    description: Api Resource
+paths:
+  '/api/bvtool/project/{projectId}/api/v1/actions':
+    get:
+      tags:
+        - api-resource
+      summary: getActions
+      operationId: getActions
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DefinitionEntry'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/compare':
+    put:
+      tags:
+        - api-resource
+      summary: compare
+      operationId: compare
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/executeStep':
+    put:
+      tags:
+        - api-resource
+      summary: executeStep
+      operationId: executeStep
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/ping':
+    get:
+      tags:
+        - api-resource
+      summary: ping
+      operationId: ping
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/read':
+    put:
+      tags:
+        - api-resource
+      summary: read
+      operationId: read
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/readAndCompare':
+    put:
+      tags:
+        - api-resource
+      summary: readAndCompare
+      operationId: readAndCompare
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/readArByGroup':
+    put:
+      tags:
+        - api-resource
+      summary: readArByGroup
+      operationId: readArByGroup
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/readArByHierarchy':
+    put:
+      tags:
+        - api-resource
+      summary: readArByHierarchy
+      operationId: readArByHierarchy
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/readArByLabel':
+    put:
+      tags:
+        - api-resource
+      summary: readArByLabel
+      operationId: readArByLabel
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/readErByGroup':
+    put:
+      tags:
+        - api-resource
+      summary: readErByGroup
+      operationId: readErByGroup
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/readErByHierarchy':
+    put:
+      tags:
+        - api-resource
+      summary: readErByHierarchy
+      operationId: readErByHierarchy
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/readErByLabel':
+    put:
+      tags:
+        - api-resource
+      summary: readErByLabel
+      operationId: readErByLabel
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/api/bvtool/project/{projectId}/api/v1/updateParameterGlobalValue':
+    put:
+      tags:
+        - api-resource
+      summary: updateParameterGlobalValue
+      operationId: updateParameterGlobalValue
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    AdvancedValue:
+      title: AdvancedValue
+      type: object
+      properties:
+        id:
+          type: string
+        value:
+          type: string
+      xml:
+        name: AdvancedValue
+        attribute: false
+        wrapped: false
+    ArgumentValue:
+      title: ArgumentValue
+      type: object
+      properties:
+        advValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdvancedValue'
+        argumentNumber:
+          type: integer
+          format: int32
+        backUrl:
+          type: string
+        canBeCustom:
+          type: boolean
+        values:
+          type: array
+          items:
+            type: string
+    DefinitionEntry:
+      title: DefinitionEntry
+      type: object
+      properties:
+        availableValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/ArgumentValue'
+        deprecated:
+          type: boolean
+        description:
+          type: string
+        id:
+          type: string
+        labels:
+          type: array
+          items:
+            type: string
+        mask:
+          type: string
+        supportedSystems:
+          type: array
+          items:
+            type: string
+            enum:
+              - ICOMS
+              - MANO
+              - Billing System
+              - Business Solution
+      xml:
+        name: DefinitionEntry
+        attribute: false
+        wrapped: false

@@ -1,0 +1,39 @@
+{
+  "parameterId": null,
+  "page": "page",
+  "tab": "tab",
+  "group": "group",
+  "isSynchronousLoading": false,
+  "er": null,
+  "arValues": [],
+  "validationInfo": {
+    "type": "ValidationInfo",
+    "status": "IN_PROGRESS",
+    "errorDescription": null
+  },
+  "parameterConfig": {
+    "parameterId": null,
+    "name": "nameSutParameter",
+    "displayType": null,
+    "source": null,
+    "component": null,
+    "additionalSources": [],
+    "erConfig": {
+      "type": "PLAIN",
+      "value": "NotXML",
+      "tableValidations": [],
+      "dataSource": null,
+      "tableValidationSettings": null,
+      "bulkValidatorValidation": null,
+      "bulkValidatorJsonValidation": null
+    },
+    "groupEntity": null,
+    "lastUpdateDateTime": null,
+    "commonParameterEntity": null,
+    "parameterOrder": 0,
+    "preconfigured": false
+  },
+  "potSessionTabEntity": null,
+  "potSessionEntity": null,
+  "errors": ""
+}

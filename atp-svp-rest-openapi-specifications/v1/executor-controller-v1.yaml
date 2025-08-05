@@ -1,0 +1,649 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.1
+info:
+  title: Api Documentation
+  description: Api Documentation
+  version: '1.0'
+servers:
+  - url: //localhost:8080/
+tags:
+  - name: executor-controller
+    description: Executor Controller
+paths:
+  /api/svp/project/{projectId}/executor/get-common-parameters:
+    post:
+      tags:
+        - executor-controller
+      summary: getCommonParameters
+      operationId: getCommonParameters
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInfoRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+  /api/svp/project/{projectId}/executor/get-info:
+    post:
+      tags:
+        - executor-controller
+      summary: getInfoForSelectedPages
+      operationId: getInfoForSelectedPages
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInfoRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+  /api/svp/project/{projectId}/executor/get-info/{pageName}:
+    post:
+      tags:
+        - executor-controller
+      summary: getInfoForPage
+      operationId: getInfoForPage
+      parameters:
+        - name: pageName
+          in: path
+          description: pageName
+          required: true
+          schema:
+            type: string
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInfoRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+  /api/svp/project/{projectId}/executor/get-parameter-result:
+    put:
+      tags:
+        - executor-controller
+      summary: getParameterResult
+      operationId: getParameterResult
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetParameterResultRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SutParameterResultMessage'
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+  /api/svp/project/{projectId}/executor/get-pot:
+    post:
+      tags:
+        - executor-controller
+      summary: getInfoForAllPages
+      operationId: getInfoForAllPages
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInfoRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+  /api/svp/project/{projectId}/executor/get-info-ram:
+    post:
+      tags:
+        - executor-controller
+      summary: getInfoForSelectPagesForRam
+      operationId: getInfoForSelectPages
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInfoRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+  /api/svp/project/{projectId}/executor/get-validations:
+    post:
+      tags:
+        - executor-controller
+      summary: getValidations
+      operationId: getValidations
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInfoRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreconfiguredValidation'
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+  /api/svp/project/{projectId}/executor/start-session:
+    post:
+      tags:
+        - executor-controller
+      summary: startNewSession
+      operationId: startNewSession
+      parameters:
+        - name: projectId
+          in: path
+          description: projectId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetInfoRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                format: uuid
+        201:
+          description: Created
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      deprecated: false
+      x-codegen-request-body-name: request
+components:
+  schemas:
+    AbstractValueObject:
+      title: AbstractValueObject
+      type: object
+    BulkValidatorValidation:
+      title: BulkValidatorValidation
+      type: object
+      properties:
+        isManualValidation:
+          type: boolean
+        testCaseIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+        validationColumn:
+          type: string
+        validationItem:
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkValidatorValidationItem'
+        validationObjectName:
+          type: string
+    BulkValidatorValidationItem:
+      title: BulkValidatorValidationItem
+      type: object
+      properties:
+        validationColumn:
+          type: string
+        validationObjectName:
+          type: string
+    Component:
+      title: Component
+      type: object
+      properties:
+        name:
+          type: string
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParameterResult'
+    ErConfig:
+      title: ErConfig
+      type: object
+      properties:
+        bulkValidatorValidation:
+          $ref: '#/components/schemas/BulkValidatorValidation'
+        dataSource:
+          $ref: '#/components/schemas/Source'
+        tableValidationSettings:
+          $ref: '#/components/schemas/TableValidationSettings'
+        tableValidations:
+          type: array
+          items:
+            $ref: '#/components/schemas/TableValidation'
+        type:
+          type: string
+          enum:
+            - PLAIN
+            - BV_LINK
+            - CUSTOM
+            - NONE
+        value:
+          type: string
+    File:
+      title: File
+      type: object
+      properties:
+        absolute:
+          type: boolean
+        absoluteFile:
+          $ref: '#/components/schemas/File'
+        absolutePath:
+          type: string
+        canonicalFile:
+          $ref: '#/components/schemas/File'
+        canonicalPath:
+          type: string
+        directory:
+          type: boolean
+        file:
+          type: boolean
+        freeSpace:
+          type: integer
+          format: int64
+        hidden:
+          type: boolean
+        name:
+          type: string
+        parent:
+          type: string
+        parentFile:
+          $ref: '#/components/schemas/File'
+        path:
+          type: string
+        totalSpace:
+          type: integer
+          format: int64
+        usableSpace:
+          type: integer
+          format: int64
+    GetInfoRequest:
+      title: GetInfoRequest
+      type: object
+      properties:
+        environmentId:
+          type: string
+        highlightDiffs:
+          type: boolean
+        keyParameters:
+          type: object
+          additionalProperties:
+            type: string
+        logCollectorSearchPeriod:
+          $ref: '#/components/schemas/LogCollectorSearchPeriod'
+        onlyPreconfiguredParams:
+          type: boolean
+        pagesName:
+          type: array
+          items:
+            type: string
+        sendSessionResults:
+          type: boolean
+        sessionId:
+          type: string
+          format: uuid
+    GetParameterResultRequest:
+      title: GetParameterResultRequest
+      type: object
+      properties:
+        common:
+          type: boolean
+        group:
+          type: string
+        name:
+          type: string
+        page:
+          type: string
+        sessionId:
+          type: string
+          format: uuid
+        tab:
+          type: string
+    LogCollectorSearchPeriod:
+      title: LogCollectorSearchPeriod
+      type: object
+      properties:
+        dateEnd:
+          type: string
+        dateStart:
+          type: string
+        searchType:
+          type: string
+        timeRange:
+          type: integer
+          format: int32
+    LogsSource:
+      title: LogsSource
+      type: object
+      properties:
+        components:
+          type: array
+          items:
+            type: string
+            format: uuid
+        fileBasedSearchText:
+          type: string
+        graylogSearchText:
+          type: string
+    ParameterResult:
+      title: ParameterResult
+      type: object
+      properties:
+        ar:
+          type: object
+          properties: {}
+        er:
+          type: object
+          properties: {}
+        name:
+          type: string
+        result:
+          type: string
+    PotSessionParameter:
+      title: PotSessionParameter
+      type: object
+      properties:
+        arValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractValueObject'
+        componentName:
+          type: string
+        er:
+          $ref: '#/components/schemas/AbstractValueObject'
+        errors:
+          type: string
+        group:
+          type: string
+        isSynchronousLoading:
+          type: boolean
+        logsLink:
+          type: string
+        name:
+          type: string
+        page:
+          type: string
+        parameterConfig:
+          $ref: '#/components/schemas/SutParameter'
+        path:
+          type: string
+        tab:
+          type: string
+        validationInfo:
+          $ref: '#/components/schemas/ValidationInfo'
+    PreconfiguredValidation:
+      title: PreconfiguredValidation
+      type: object
+      properties:
+        components:
+          type: array
+          items:
+            $ref: '#/components/schemas/Component'
+    Source:
+      title: Source
+      type: object
+      properties:
+        connection:
+          type: string
+        engineType:
+          type: string
+          enum:
+            - SQL
+            - CASSANDRA
+            - REST
+            - SOAP
+            - SSH
+            - LOG_COLLECTOR
+        script:
+          type: string
+        settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/SourceSettings'
+        system:
+          type: string
+    SourceSettings:
+      title: SourceSettings
+      type: object
+      discriminator:
+        propertyName: className
+    SutParameter:
+      title: SutParameter
+      type: object
+      properties:
+        additionalSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Source'
+        component:
+          type: string
+        dataSource:
+          $ref: '#/components/schemas/Source'
+        displayType:
+          type: string
+          enum:
+            - PARAM
+            - TABLE
+            - LINK
+            - XML
+            - JSON
+            - SSH_RESPONSE
+            - INTEGRATION_LOG
+        er:
+          $ref: '#/components/schemas/ErConfig'
+        isPreconfigured:
+          type: boolean
+        logsSource:
+          $ref: '#/components/schemas/LogsSource'
+        name:
+          type: string
+    SutParameterResultMessage:
+      title: SutParameterResultMessage
+      type: object
+      properties:
+        parameter:
+          $ref: '#/components/schemas/PotSessionParameter'
+        sessionId:
+          type: string
+          format: uuid
+    TableValidation:
+      title: TableValidation
+      type: object
+      properties:
+        columnName:
+          type: string
+        condition:
+          type: string
+          enum:
+            - EQUALS
+            - NOT_EQUALS
+        value:
+          type: string
+    TableValidationSettings:
+      title: TableValidationSettings
+      type: object
+      properties:
+        groupingColumns:
+          type: array
+          items:
+            type: string
+        keyColumns:
+          type: array
+          items:
+            type: string
+    ValidationInfo:
+      title: ValidationInfo
+      type: object
+      properties:
+        errorDescription:
+          type: string
+        status:
+          type: string
+          enum:
+            - NONE
+            - IN_PROGRESS
+            - WARNING
+            - PASSED
+            - FAILED
+            - MANUAL

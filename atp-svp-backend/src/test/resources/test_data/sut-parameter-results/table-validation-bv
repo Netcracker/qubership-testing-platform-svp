@@ -1,0 +1,14 @@
+{
+  "type": ".Table",
+  "name": null,
+  "headers": [
+    "PRODUCT_ORDER_NAME",
+    "STATUS"
+  ],
+  "rows": [
+    {
+      "STATUS": "Completed",
+      "PRODUCT_ORDER_NAME": "Test-name"
+    }
+  ]
+}

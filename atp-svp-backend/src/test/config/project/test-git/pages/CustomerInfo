@@ -1,0 +1,212 @@
+{
+  "name": "Customer Info",
+  "tabs": [
+    {
+      "name": "Sales Order",
+      "groups": [
+        {
+          "name": "SO",
+          "sutParameters": [
+            {
+              "name": "Sales Order",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "SELECT nc_objects.object_id object_id,\n                    nc_objects.name customer_name,\n                    customer_category.name customer_category,\n                    a.value customer_account_number,\n                    nc_list_values.value status,\n                    (SELECT listagg (locations, chr(13 /* Interface */)) within GROUP (\n                        ORDER BY locations)\n                     FROM\n                         (SELECT '<a href=/ncobject.jsp?id='||r.reference||'>'||\n                                 (SELECT o.name\n                                  FROM nc_objects o\n                                  WHERE o.object_id = r.reference)||'</a>' AS locations\n                          FROM nc_references r\n                          WHERE r.object_id = ${Sales_Order_ID} /* Sales Order */\n                            AND r.attr_id = 9143009818513421531 /* Locations */)) LOCATION\n             FROM nc_objects\n                      JOIN nc_references ON nc_objects.object_id = nc_references.object_id\n                      JOIN nc_objects customer_category ON customer_category.object_id = nc_references.reference\n                      JOIN nc_params ON nc_params.object_id = nc_objects.object_id\n                      JOIN nc_params a ON a.object_id = nc_objects.object_id\n                      JOIN nc_list_values ON nc_list_values.list_value_id = nc_params.list_value_id\n                      LEFT JOIN nc_params tax_exempt ON tax_exempt.object_id = nc_objects.object_id\n                 AND tax_exempt.attr_id = 9143844095213286433\n                      LEFT JOIN nc_list_values val ON val.list_value_id = tax_exempt.list_value_id\n             WHERE nc_references.object_id =\n                   (SELECT reference\n                    FROM nc_references\n                    WHERE object_id = ${Sales_Order_ID} /* Sales Order */\n                      AND attr_id = 9139458719513380099 /* Customer Account */)\n               AND nc_references.attr_id IN (7030151465013152898 /* Customer Category */)\n               AND nc_params.attr_id = 9135888560413426581 /* Status */\n               AND a.attr_id = 2091641841013994123"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "PLAIN",
+                "value": "9158075759713577069",
+                "columnName": null,
+                "dataSource": null
+              },
+              "additionalSources": []
+            },
+            {
+              "name": "Sales Order Link",
+              "displayType": "LINK",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "SELECT nc_objects.object_id object_id,\n                    nc_objects.name customer_name,\n                    customer_category.name customer_category,\n                    a.value customer_account_number,\n                    nc_list_values.value status,\n                    (SELECT listagg (locations, chr(13 /* Interface */)) within GROUP (\n                        ORDER BY locations)\n                     FROM\n                         (SELECT '<a href=/ncobject.jsp?id='||r.reference||'>'||\n                                 (SELECT o.name\n                                  FROM nc_objects o\n                                  WHERE o.object_id = r.reference)||'</a>' AS locations\n                          FROM nc_references r\n                          WHERE r.object_id = ${Sales_Order_ID} /* Sales Order */\n                            AND r.attr_id = 9143009818513421531 /* Locations */)) LOCATION\n             FROM nc_objects\n                      JOIN nc_references ON nc_objects.object_id = nc_references.object_id\n                      JOIN nc_objects customer_category ON customer_category.object_id = nc_references.reference\n                      JOIN nc_params ON nc_params.object_id = nc_objects.object_id\n                      JOIN nc_params a ON a.object_id = nc_objects.object_id\n                      JOIN nc_list_values ON nc_list_values.list_value_id = nc_params.list_value_id\n                      LEFT JOIN nc_params tax_exempt ON tax_exempt.object_id = nc_objects.object_id\n                 AND tax_exempt.attr_id = 9143844095213286433\n                      LEFT JOIN nc_list_values val ON val.list_value_id = tax_exempt.list_value_id\n             WHERE nc_references.object_id =\n                   (SELECT reference\n                    FROM nc_references\n                    WHERE object_id = ${Sales_Order_ID} /* Sales Order */\n                      AND attr_id = 9139458719513380099 /* Customer Account */)\n               AND nc_references.attr_id IN (7030151465013152898 /* Customer Category */)\n               AND nc_params.attr_id = 9135888560413426581 /* Status */\n               AND a.attr_id = 2091641841013994123"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "PLAIN",
+                "value": "9158075759713577069",
+                "columnName": null,
+                "dataSource": null
+              },
+              "additionalSources": []
+            },
+            {
+              "name": "CA Status",
+              "displayType": "TABLE",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "SELECT nc_objects.object_id object_id,\n                    nc_objects.name customer_name,\n                    customer_category.name customer_category,\n                    a.value customer_account_number,\n                    nc_list_values.value status,\n                    (SELECT listagg (locations, chr(13 /* Interface */)) within GROUP (\n                        ORDER BY locations)\n                     FROM\n                         (SELECT '<a href=/ncobject.jsp?id='||r.reference||'>'||\n                                 (SELECT o.name\n                                  FROM nc_objects o\n                                  WHERE o.object_id = r.reference)||'</a>' AS locations\n                          FROM nc_references r\n                          WHERE r.object_id = ${Sales_Order_ID} /* Sales Order */\n                            AND r.attr_id = 9143009818513421531 /* Locations */)) LOCATION\n             FROM nc_objects\n                      JOIN nc_references ON nc_objects.object_id = nc_references.object_id\n                      JOIN nc_objects customer_category ON customer_category.object_id = nc_references.reference\n                      JOIN nc_params ON nc_params.object_id = nc_objects.object_id\n                      JOIN nc_params a ON a.object_id = nc_objects.object_id\n                      JOIN nc_list_values ON nc_list_values.list_value_id = nc_params.list_value_id\n                      LEFT JOIN nc_params tax_exempt ON tax_exempt.object_id = nc_objects.object_id\n                 AND tax_exempt.attr_id = 9143844095213286433\n                      LEFT JOIN nc_list_values val ON val.list_value_id = tax_exempt.list_value_id\n             WHERE nc_references.object_id =\n                   (SELECT reference\n                    FROM nc_references\n                    WHERE object_id = ${Sales_Order_ID} /* Sales Order */\n                      AND attr_id = 9139458719513380099 /* Customer Account */)\n               AND nc_references.attr_id IN (7030151465013152898 /* Customer Category */)\n               AND nc_params.attr_id = 9135888560413426581 /* Status */\n               AND a.attr_id = 2091641841013994123"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "CUSTOM",
+                "value": null,
+                "columnName": null,
+                "dataSource": {
+                  "system": "Billing System",
+                  "connection": "DB",
+                  "engineType": "SQL",
+                  "script": "SELECT nc_objects.object_id object_id,\n       nc_objects.name customer_name,\n       customer_category.name customer_category,\n       a.value customer_account_number,\n       nc_list_values.value status,\n       (SELECT listagg (locations, chr(13 /* Interface */)) within GROUP (\n           ORDER BY locations)\n        FROM\n            (SELECT '<a href=/ncobject.jsp?id='||r.reference||'>'||\n                    (SELECT o.name\n                     FROM nc_objects o\n                     WHERE o.object_id = r.reference)||'</a>' AS locations\n             FROM nc_references r\n             WHERE r.object_id = 9157894245613241335 /* Sales Order */\n               AND r.attr_id = 9143009818513421531 /* Locations */)) LOCATION\nFROM nc_objects\n         JOIN nc_references ON nc_objects.object_id = nc_references.object_id\n         JOIN nc_objects customer_category ON customer_category.object_id = nc_references.reference\n         JOIN nc_params ON nc_params.object_id = nc_objects.object_id\n         JOIN nc_params a ON a.object_id = nc_objects.object_id\n         JOIN nc_list_values ON nc_list_values.list_value_id = nc_params.list_value_id\n         LEFT JOIN nc_params tax_exempt ON tax_exempt.object_id = nc_objects.object_id\n    AND tax_exempt.attr_id = 9143844095213286433\n         LEFT JOIN nc_list_values val ON val.list_value_id = tax_exempt.list_value_id\nWHERE nc_references.object_id =\n      (SELECT reference\n       FROM nc_references\n       WHERE object_id = 9157894245613241335 /* Sales Order */\n         AND attr_id = 9139458719513380099 /* Customer Account */)\n  AND nc_references.attr_id IN (7030151465013152898 /* Customer Category */)\n  AND nc_params.attr_id = 9135888560413426581 /* Status */\n  AND a.attr_id = 2091641841013994123 /* Customer Account Number */\n"
+                }
+              },
+              "additionalSources": []
+            },
+            {
+              "name": "CA Status2",
+              "displayType": "TABLE",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "select '1234567890' from dual"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "CUSTOM",
+                "value": null,
+                "columnName": null,
+                "dataSource": {
+                  "system": "Billing System",
+                  "connection": "DB",
+                  "engineType": "SQL",
+                  "script": "select '1234567890' from dual"
+                }
+              },
+              "additionalSources": []
+            }
+          ]
+        },
+        {
+          "name": "Validation",
+          "sutParameters": [
+            {
+              "name": "Error Validation Example",
+              "displayType": "TABLE",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "hgfhfgh"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "CUSTOM",
+                "value": null,
+                "columnName": null,
+                "dataSource": {
+                  "system": "Billing System",
+                  "connection": "DB",
+                  "engineType": "SQL",
+                  "script": "select '123456789' from dual"
+                }
+              },
+              "additionalSources": []
+            },
+            {
+              "name": "Failed Validation Example",
+              "displayType": "TABLE",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "select '1234567890' from dual"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "CUSTOM",
+                "value": null,
+                "columnName": null,
+                "dataSource": {
+                  "system": "Billing System",
+                  "connection": "DB",
+                  "engineType": "SQL",
+                  "script": "select '123456789' from dual"
+                }
+              },
+              "additionalSources": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JSON/XML",
+      "groups": [
+        {
+          "name": "JSON/XML",
+          "sutParameters": [
+            {
+              "name": "JSON",
+              "displayType": "JSON",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "HTTP",
+                "engineType": "REST",
+                "script": "solutions/vfhu/services/cbm/paymentinstrument/9158126356113193198"
+              },
+              "logsSource": null,
+              "er": {
+                "type": "PLAIN",
+                "value": "9157894233513241164",
+                "columnName": null,
+                "dataSource": null
+              },
+              "additionalSources": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Real Data",
+      "groups": [
+        {
+          "name": "SO_ID",
+          "sutParameters": [
+            {
+              "name": "Something",
+              "displayType": "PARAM",
+              "dataSource": {
+                "system": "Business Solution",
+                "connection": "DB",
+                "engineType": "SQL",
+                "script": "SELECT nc_objects.object_id object_id,\n       nc_objects.name customer_name,\n       customer_category.name customer_category,\n       a.value customer_account_number,\n       nc_list_values.value status,\n       (SELECT listagg (locations, chr(13 /* Interface */)) within GROUP (\n           ORDER BY locations)\n        FROM\n            (SELECT '<a href=/ncobject.jsp?id='||r.reference||'>'||\n                    (SELECT o.name\n                     FROM nc_objects o\n                     WHERE o.object_id = r.reference)||'</a>' AS locations\n             FROM nc_references r\n             WHERE r.object_id = ${Sales_Order_ID} /* Sales Order */\n               AND r.attr_id = 9143009818513421531 /* Locations */)) LOCATION\nFROM nc_objects\n         JOIN nc_references ON nc_objects.object_id = nc_references.object_id\n         JOIN nc_objects customer_category ON customer_category.object_id = nc_references.reference\n         JOIN nc_params ON nc_params.object_id = nc_objects.object_id\n         JOIN nc_params a ON a.object_id = nc_objects.object_id\n         JOIN nc_list_values ON nc_list_values.list_value_id = nc_params.list_value_id\n         LEFT JOIN nc_params tax_exempt ON tax_exempt.object_id = nc_objects.object_id\n    AND tax_exempt.attr_id = 9143844095213286433\n         LEFT JOIN nc_list_values val ON val.list_value_id = tax_exempt.list_value_id\nWHERE nc_references.object_id =\n      (SELECT reference\n       FROM nc_references\n       WHERE object_id = ${Sales_Order_ID} /* Sales Order */\n         AND attr_id = 9139458719513380099 /* Customer Account */)\n  AND nc_references.attr_id IN (7030151465013152898 /* Customer Category */)\n  AND nc_params.attr_id = 9135888560413426581 /* Status */\n  AND a.attr_id = 2091641841013994123"
+              },
+              "logsSource": {
+                "component": "",
+                "searchText": ""
+              },
+              "er": {
+                "type": "PLAIN",
+                "value": "9158075759713577069",
+                "columnName": null,
+                "dataSource": {
+                  "system": "",
+                  "connection": "",
+                  "engineType": null,
+                  "script": ""
+                }
+              },
+              "additionalSources": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

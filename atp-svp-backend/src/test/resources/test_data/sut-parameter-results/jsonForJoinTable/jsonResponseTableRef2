@@ -1,0 +1,2621 @@
+{
+  "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/quote-tmf-service/quoteManagement/quote/6a218e77-e5d0-4087-9ac7-241ebe1259b4",
+  "id": "6a218e77-e5d0-4087-9ac7-241ebe1259b4",
+  "expirationDate": "2021-05-31T14:49:19.937Z",
+  "version": "47",
+  "number": "1398",
+  "description": "",
+  "category": "[Mobile] Consumer",
+  "state": "IN_PROGRESS",
+  "quoteDate": "2021-03-02T14:49:19.937Z",
+  "validFor": {
+    "startDateTime": "2021-03-02T14:49:19.937Z",
+    "endDateTime": "2021-05-31T14:49:19.937Z"
+  },
+  "relatedParty": [
+    {
+      "id": "398887",
+      "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/cim-tmf-service/customerManagement/customer/398887",
+      "role": "Customer",
+      "@type": "Customer"
+    }
+  ],
+  "quoteItem": [
+    {
+      "id": "da207a4c-fe4c-4c00-8c51-3384dc33a896",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "610ed6db-2103-45c7-bb04-748ac6b33b6d",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/610ed6db-2103-45c7-bb04-748ac6b33b6d",
+        "name": "5 GB Data"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "NRC",
+          "name": "One-time Fee",
+          "price": {
+            "taxIncludedAmount": "50.00",
+            "dutyFreeAmount": "50.00",
+            "overridden": false,
+            "priceValueRef": "b1775c74-660e-4641-9d5e-6f53192af676",
+            "valueBasePriceExcludingTax": "50",
+            "valueBasePriceExcludingTaxRounded": "50.00",
+            "valueBasePriceIncludingTax": "50",
+            "valueBasePriceIncludingTaxRounded": "50.00",
+            "valueExcludingTax": "50",
+            "valueExcludingTaxRounded": "50.00",
+            "valueIncludingTax": "50",
+            "valueIncludingTaxRounded": "50.00",
+            "valueSubTotalPriceExcludingTax": "50",
+            "valueSubTotalPriceExcludingTaxRounded": "50.00",
+            "valueSubTotalPriceIncludingTax": "50",
+            "valueSubTotalPriceIncludingTaxRounded": "50.00"
+          },
+          "priceComponentSpecificationRef": "6d6dcac3-0132-41fe-97fe-37f3719f6381",
+          "priceSpecificationType": "One-time Fee",
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "5 GB Data #1",
+        "characteristic": [
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "002e7609-a21d-4a11-9d6a-83c58a219a00",
+            "name": "[Mobile] Carry Over",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "09093500-eb1c-46c0-883c-2ed218baafcf",
+            "name": "[Mobile] SMS Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "6e891eb6-02ac-4e50-b21f-5210c735c5df",
+            "name": "[Mobile] Expiring",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "62e136b2-bee4-4de7-9ce0-14ae6bdd99c5",
+            "name": "[Mobile] Voice Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "5c6bfc62-48db-4b93-bfeb-4252a970a38a",
+            "name": "[Mobile] Voice Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "5120"
+            ],
+            "rawValue": [
+              "5120"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "89e78701-58a4-4328-9d30-80b683db5f4c",
+            "name": "[Mobile] SMS Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "b8d82181-d933-47eb-9e2a-0e23e3a246fe",
+            "name": "[Mobile] Validity",
+            "value": [
+              "30"
+            ],
+            "rawValue": [
+              "30"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "parentQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:51:32.718Z"
+    },
+    {
+      "id": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "name": "$40 2GB Plan"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "overridden": false,
+            "priceValueRef": "c3c581cb-c0b8-4a78-b6ce-451b096bfa81",
+            "valueBasePriceExcludingTax": "40",
+            "valueBasePriceExcludingTaxRounded": "40.00",
+            "valueBasePriceIncludingTax": "40",
+            "valueBasePriceIncludingTaxRounded": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00",
+            "valueSubTotalPriceExcludingTax": "40",
+            "valueSubTotalPriceExcludingTaxRounded": "40.00",
+            "valueSubTotalPriceIncludingTax": "40",
+            "valueSubTotalPriceIncludingTaxRounded": "40.00"
+          },
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total NRC",
+          "name": "Total NRC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "70.00",
+            "dutyFreeAmount": "70.00",
+            "valueExcludingTax": "70",
+            "valueExcludingTaxRounded": "70.00",
+            "valueIncludingTax": "70",
+            "valueIncludingTaxRounded": "70.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Total RC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "$40 2GB Plan #1",
+        "characteristic": [
+          {
+            "id": "33a95547-1a3f-4f35-8c5b-0c7c37a2e109",
+            "name": "[Mobile] New Customer",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "0ea65a22-d180-4bd0-b939-65556a7a3e0a",
+            "name": "[Mobile] ICCID",
+            "value": [
+              "8932079870916739350"
+            ],
+            "rawValue": [
+              "8932079870916739350"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "7984eb4a-f1b7-4f18-bbca-6a0d9bc189b7",
+            "name": "[Mobile] IMSI",
+            "value": [
+              "89810111668210411019"
+            ],
+            "rawValue": [
+              "89810111668210411019"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "e3c99833-28ed-4c59-81d2-7cd8239d144a",
+            "name": "[Mobile] Speed",
+            "value": [
+              "5"
+            ],
+            "rawValue": [
+              "5"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "d576f435-bf3e-4b5b-87cb-f3b51a6747ef",
+            "name": "[Mobile] MSISDN",
+            "value": [
+              "4189233898"
+            ],
+            "rawValue": [
+              "4189233898"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "05cd659f-f268-40c5-bf67-0fbe44fafaca",
+            "name": "[Mobile] Autopay",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "2048"
+            ],
+            "rawValue": [
+              "2048"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:51:06.459Z"
+    },
+    {
+      "id": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "name": "$40 2GB Plan"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "overridden": false,
+            "priceValueRef": "c3c581cb-c0b8-4a78-b6ce-451b096bfa81",
+            "valueBasePriceExcludingTax": "40",
+            "valueBasePriceExcludingTaxRounded": "40.00",
+            "valueBasePriceIncludingTax": "40",
+            "valueBasePriceIncludingTaxRounded": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00",
+            "valueSubTotalPriceExcludingTax": "40",
+            "valueSubTotalPriceExcludingTaxRounded": "40.00",
+            "valueSubTotalPriceIncludingTax": "40",
+            "valueSubTotalPriceIncludingTaxRounded": "40.00"
+          },
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total NRC",
+          "name": "Total NRC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "70.00",
+            "dutyFreeAmount": "70.00",
+            "valueExcludingTax": "70",
+            "valueExcludingTaxRounded": "70.00",
+            "valueIncludingTax": "70",
+            "valueIncludingTaxRounded": "70.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Total RC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "$40 2GB Plan #1",
+        "characteristic": [
+          {
+            "id": "33a95547-1a3f-4f35-8c5b-0c7c37a2e109",
+            "name": "[Mobile] New Customer",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "0ea65a22-d180-4bd0-b939-65556a7a3e0a",
+            "name": "[Mobile] ICCID",
+            "value": [
+              "8932079870916739350"
+            ],
+            "rawValue": [
+              "8932079870916739350"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "7984eb4a-f1b7-4f18-bbca-6a0d9bc189b7",
+            "name": "[Mobile] IMSI",
+            "value": [
+              "89810111668210411019"
+            ],
+            "rawValue": [
+              "89810111668210411019"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "e3c99833-28ed-4c59-81d2-7cd8239d144a",
+            "name": "[Mobile] Speed",
+            "value": [
+              "5"
+            ],
+            "rawValue": [
+              "5"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "d576f435-bf3e-4b5b-87cb-f3b51a6747ef",
+            "name": "[Mobile] MSISDN",
+            "value": [
+              "4189233898"
+            ],
+            "rawValue": [
+              "4189233898"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "05cd659f-f268-40c5-bf67-0fbe44fafaca",
+            "name": "[Mobile] Autopay",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "2048"
+            ],
+            "rawValue": [
+              "2048"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:51:06.459Z"
+    },
+    {
+      "id": "e0628a18-9c5f-44d0-b586-5e8a749eb590",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "85524d58-d542-4f6e-a0aa-316cde875ed9",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/85524d58-d542-4f6e-a0aa-316cde875ed9",
+        "name": "$35 2GB Plan"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "33.00",
+            "dutyFreeAmount": "33.00",
+            "overridden": false,
+            "priceValueRef": "793fbbd3-7cf0-463b-b21d-cf82b3feca62",
+            "valueBasePriceExcludingTax": "35",
+            "valueBasePriceExcludingTaxRounded": "35.00",
+            "valueBasePriceIncludingTax": "35",
+            "valueBasePriceIncludingTaxRounded": "35.00",
+            "valueExcludingTax": "33",
+            "valueExcludingTaxRounded": "33.00",
+            "valueIncludingTax": "33",
+            "valueIncludingTaxRounded": "33.00",
+            "valueSubTotalPriceExcludingTax": "33",
+            "valueSubTotalPriceExcludingTaxRounded": "33.00",
+            "valueSubTotalPriceIncludingTax": "33",
+            "valueSubTotalPriceIncludingTaxRounded": "33.00"
+          },
+          "priceAlteration": [
+            {
+              "id": "c37d5b1e-e31d-4024-b812-0f1e41a1e2e5",
+              "name": "$2 off Base Plan MRC",
+              "priceType": "RC",
+              "recurringChargePeriod": "Month",
+              "applicationDuration": 3,
+              "weight": 0,
+              "validFor": {},
+              "price": {
+                "taxIncludedAmount": "2.00",
+                "dutyFreeAmount": "2.00",
+                "overridden": false,
+                "priceValueRef": "f7ae9eb8-22cd-4f63-b421-be35c64f6d81",
+                "valueBasePriceExcludingTax": "2",
+                "valueBasePriceExcludingTaxRounded": "2.00",
+                "valueBasePriceIncludingTax": "2",
+                "valueBasePriceIncludingTaxRounded": "2.00",
+                "valueExcludingTax": "2",
+                "valueExcludingTaxRounded": "2.00",
+                "valueIncludingTax": "2",
+                "valueIncludingTaxRounded": "2.00",
+                "valueSubTotalPriceExcludingTax": "2",
+                "valueSubTotalPriceExcludingTaxRounded": "2.00",
+                "valueSubTotalPriceIncludingTax": "2",
+                "valueSubTotalPriceIncludingTaxRounded": "2.00"
+              },
+              "productOfferingPrice": {
+                "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOfferingPrice/fe1bb413-dcff-459a-87b2-0a56af5080fd",
+                "id": "fe1bb413-dcff-459a-87b2-0a56af5080fd"
+              },
+              "action": "ADD",
+              "applicationMode": "Automatic",
+              "applied": true,
+              "solo": false
+            }
+          ],
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total NRC",
+          "name": "Total NRC by Quote Item",
+          "price": {}
+        },
+        {
+          "priceType": "Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Total RC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "33.00",
+            "dutyFreeAmount": "33.00",
+            "valueExcludingTax": "33.00",
+            "valueExcludingTaxRounded": "33.00",
+            "valueIncludingTax": "33.00",
+            "valueIncludingTaxRounded": "33.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "$35 2GB Plan #1",
+        "characteristic": [
+          {
+            "id": "62e136b2-bee4-4de7-9ce0-14ae6bdd99c5",
+            "name": "[Mobile] Voice Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "0ea65a22-d180-4bd0-b939-65556a7a3e0a",
+            "name": "ICCID",
+            "value": [
+              "8932079870916739350"
+            ],
+            "rawValue": [
+              "8932079870916739350"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "e3c99833-28ed-4c59-81d2-7cd8239d144a",
+            "name": "[Mobile] Speed",
+            "value": [
+              "3"
+            ],
+            "rawValue": [
+              "3"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "5c6bfc62-48db-4b93-bfeb-4252a970a38a",
+            "name": "[Mobile] Voice Allowance",
+            "value": [
+              "-1"
+            ],
+            "rawValue": [
+              "-1"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "89e78701-58a4-4328-9d30-80b683db5f4c",
+            "name": "[Mobile] SMS Allowance",
+            "value": [
+              "-1"
+            ],
+            "rawValue": [
+              "-1"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "33a95547-1a3f-4f35-8c5b-0c7c37a2e109",
+            "name": "[Mobile] New Customer",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "Unlimited"
+            ],
+            "rawValue": [
+              "Unlimited"
+            ],
+            "valueId": [
+              "Unlimited"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "09093500-eb1c-46c0-883c-2ed218baafcf",
+            "name": "[Mobile] SMS Allowance Subtype",
+            "value": [
+              "LOCAL,INTL_TIER1"
+            ],
+            "rawValue": [
+              "LOCAL,INTL_TIER1"
+            ],
+            "valueId": [
+              "LOCAL,INTL_TIER1"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "7984eb4a-f1b7-4f18-bbca-6a0d9bc189b7",
+            "name": "IMSI",
+            "value": [
+              "89810111668210411019"
+            ],
+            "rawValue": [
+              "89810111668210411019"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "d576f435-bf3e-4b5b-87cb-f3b51a6747ef",
+            "name": "MSISDN",
+            "value": [
+              "4189233898"
+            ],
+            "rawValue": [
+              "4189233898"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "05cd659f-f268-40c5-bf67-0fbe44fafaca",
+            "name": "Autopay",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "2048"
+            ],
+            "rawValue": [
+              "2048"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "e0628a18-9c5f-44d0-b586-5e8a749eb590",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:49:19.973Z"
+    },
+    {
+      "id": "ce247f89-3e73-4844-99b7-9bb87da38011",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "506b825d-9fd1-4dce-8cef-01356ac0f28d",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/506b825d-9fd1-4dce-8cef-01356ac0f28d",
+        "name": "Speed Booster"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "NRC",
+          "name": "One-time Fee",
+          "price": {
+            "taxIncludedAmount": "20.00",
+            "dutyFreeAmount": "20.00",
+            "overridden": false,
+            "priceValueRef": "356216f5-1cfa-4aec-8f84-992a80a189f4",
+            "valueBasePriceExcludingTax": "20",
+            "valueBasePriceExcludingTaxRounded": "20.00",
+            "valueBasePriceIncludingTax": "20",
+            "valueBasePriceIncludingTaxRounded": "20.00",
+            "valueExcludingTax": "20",
+            "valueExcludingTaxRounded": "20.00",
+            "valueIncludingTax": "20",
+            "valueIncludingTaxRounded": "20.00",
+            "valueSubTotalPriceExcludingTax": "20",
+            "valueSubTotalPriceExcludingTaxRounded": "20.00",
+            "valueSubTotalPriceIncludingTax": "20",
+            "valueSubTotalPriceIncludingTaxRounded": "20.00"
+          },
+          "priceComponentSpecificationRef": "6d6dcac3-0132-41fe-97fe-37f3719f6381",
+          "priceSpecificationType": "One-time Fee",
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "Speed Booster #1",
+        "characteristic": [
+          {
+            "id": "002e7609-a21d-4a11-9d6a-83c58a219a00",
+            "name": "[Mobile] Carry Over",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "09093500-eb1c-46c0-883c-2ed218baafcf",
+            "name": "[Mobile] SMS Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "6e891eb6-02ac-4e50-b21f-5210c735c5df",
+            "name": "[Mobile] Expiring",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "62e136b2-bee4-4de7-9ce0-14ae6bdd99c5",
+            "name": "[Mobile] Voice Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "5c6bfc62-48db-4b93-bfeb-4252a970a38a",
+            "name": "[Mobile] Voice Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "89e78701-58a4-4328-9d30-80b683db5f4c",
+            "name": "[Mobile] SMS Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "b8d82181-d933-47eb-9e2a-0e23e3a246fe",
+            "name": "[Mobile] Validity",
+            "value": [
+              "30"
+            ],
+            "rawValue": [
+              "30"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "parentQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:51:32.718Z"
+    },
+    {
+      "id": "68cc75d7-a9ff-43b4-805d-9c8cc24e9597",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "23d7ce47-78d7-4b2d-9c74-5ab9a13b8fbd",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/23d7ce47-78d7-4b2d-9c74-5ab9a13b8fbd",
+        "name": "500 MB bonus Public"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "0.00",
+            "dutyFreeAmount": "0.00",
+            "overridden": false,
+            "priceValueRef": "2b728e67-c290-4c73-8365-cd963e9f57ed",
+            "valueBasePriceExcludingTax": "10",
+            "valueBasePriceExcludingTaxRounded": "10.00",
+            "valueBasePriceIncludingTax": "10",
+            "valueBasePriceIncludingTaxRounded": "10.00",
+            "valueExcludingTax": "0.00",
+            "valueExcludingTaxRounded": "0.00",
+            "valueIncludingTax": "0.00",
+            "valueIncludingTaxRounded": "0.00",
+            "valueSubTotalPriceExcludingTax": "0.00",
+            "valueSubTotalPriceExcludingTaxRounded": "0.00",
+            "valueSubTotalPriceIncludingTax": "0.00",
+            "valueSubTotalPriceIncludingTaxRounded": "0.00"
+          },
+          "priceAlteration": [
+            {
+              "id": "35df6ee8-256d-4590-9813-eec44b676152",
+              "name": "100% off on 500 MB Public",
+              "priceType": "RC",
+              "recurringChargePeriod": "Month",
+              "weight": 0,
+              "validFor": {},
+              "price": {
+                "taxIncludedAmount": "10.00",
+                "dutyFreeAmount": "10.00",
+                "percentage": 100.0,
+                "overridden": false,
+                "priceValueRef": "cee005d5-b8ce-430c-9bda-420c4b1bab7e",
+                "valueBasePriceExcludingTax": "10.00",
+                "valueBasePriceExcludingTaxRounded": "10.00",
+                "valueBasePriceIncludingTax": "10.00",
+                "valueBasePriceIncludingTaxRounded": "10.00",
+                "valueExcludingTax": "10.00",
+                "valueExcludingTaxRounded": "10.00",
+                "valueIncludingTax": "10.00",
+                "valueIncludingTaxRounded": "10.00",
+                "valueSubTotalPriceExcludingTax": "10.00",
+                "valueSubTotalPriceExcludingTaxRounded": "10.00",
+                "valueSubTotalPriceIncludingTax": "10.00",
+                "valueSubTotalPriceIncludingTaxRounded": "10.00"
+              },
+              "productOfferingPrice": {
+                "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOfferingPrice/05e695be-c3da-4083-8838-8a5ef467c53e",
+                "id": "05e695be-c3da-4083-8838-8a5ef467c53e"
+              },
+              "action": "ADD",
+              "applicationMode": "Automatic",
+              "applied": true,
+              "solo": false
+            }
+          ],
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "500 MB bonus Public #1",
+        "characteristic": [
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "Unlimited"
+            ],
+            "rawValue": [
+              "Unlimited"
+            ],
+            "valueId": [
+              "Unlimited"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "002e7609-a21d-4a11-9d6a-83c58a219a00",
+            "name": "[Mobile] Carry Over",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "09093500-eb1c-46c0-883c-2ed218baafcf",
+            "name": "[Mobile] SMS Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "6e891eb6-02ac-4e50-b21f-5210c735c5df",
+            "name": "[Mobile] Expiring",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "62e136b2-bee4-4de7-9ce0-14ae6bdd99c5",
+            "name": "[Mobile] Voice Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "5c6bfc62-48db-4b93-bfeb-4252a970a38a",
+            "name": "[Mobile] Voice Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "512"
+            ],
+            "rawValue": [
+              "512"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "89e78701-58a4-4328-9d30-80b683db5f4c",
+            "name": "[Mobile] SMS Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "b8d82181-d933-47eb-9e2a-0e23e3a246fe",
+            "name": "[Mobile] Validity",
+            "value": [
+              "Non-expiring"
+            ],
+            "rawValue": [
+              "Non-expiring"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "parentQuoteItemId": "e0628a18-9c5f-44d0-b586-5e8a749eb590",
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "e0628a18-9c5f-44d0-b586-5e8a749eb590",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:49:41.994Z"
+    },
+    {
+      "id": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "name": "$40 2GB Plan"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "overridden": false,
+            "priceValueRef": "c3c581cb-c0b8-4a78-b6ce-451b096bfa81",
+            "valueBasePriceExcludingTax": "40",
+            "valueBasePriceExcludingTaxRounded": "40.00",
+            "valueBasePriceIncludingTax": "40",
+            "valueBasePriceIncludingTaxRounded": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00",
+            "valueSubTotalPriceExcludingTax": "40",
+            "valueSubTotalPriceExcludingTaxRounded": "40.00",
+            "valueSubTotalPriceIncludingTax": "40",
+            "valueSubTotalPriceIncludingTaxRounded": "40.00"
+          },
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total NRC",
+          "name": "Total NRC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "70.00",
+            "dutyFreeAmount": "70.00",
+            "valueExcludingTax": "70",
+            "valueExcludingTaxRounded": "70.00",
+            "valueIncludingTax": "70",
+            "valueIncludingTaxRounded": "70.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Total RC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "$40 2GB Plan #1",
+        "characteristic": [
+          {
+            "id": "33a95547-1a3f-4f35-8c5b-0c7c37a2e109",
+            "name": "[Mobile] New Customer",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "0ea65a22-d180-4bd0-b939-65556a7a3e0a",
+            "name": "[Mobile] ICCID",
+            "value": [
+              "8932079870916739350"
+            ],
+            "rawValue": [
+              "8932079870916739350"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "7984eb4a-f1b7-4f18-bbca-6a0d9bc189b7",
+            "name": "[Mobile] IMSI",
+            "value": [
+              "89810111668210411019"
+            ],
+            "rawValue": [
+              "89810111668210411019"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "e3c99833-28ed-4c59-81d2-7cd8239d144a",
+            "name": "[Mobile] Speed",
+            "value": [
+              "5"
+            ],
+            "rawValue": [
+              "5"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "d576f435-bf3e-4b5b-87cb-f3b51a6747ef",
+            "name": "[Mobile] MSISDN",
+            "value": [
+              "4189233898"
+            ],
+            "rawValue": [
+              "4189233898"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "05cd659f-f268-40c5-bf67-0fbe44fafaca",
+            "name": "[Mobile] Autopay",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "2048"
+            ],
+            "rawValue": [
+              "2048"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b--",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:51:06.459Z"
+    },
+    {
+      "id": "fb5bdb66-c1e2-476a-87d5-62aea203007b",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+        "name": "$40 2GB Plan"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "overridden": false,
+            "priceValueRef": "c3c581cb-c0b8-4a78-b6ce-451b096bfa81",
+            "valueBasePriceExcludingTax": "40",
+            "valueBasePriceExcludingTaxRounded": "40.00",
+            "valueBasePriceIncludingTax": "40",
+            "valueBasePriceIncludingTaxRounded": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00",
+            "valueSubTotalPriceExcludingTax": "40",
+            "valueSubTotalPriceExcludingTaxRounded": "40.00",
+            "valueSubTotalPriceIncludingTax": "40",
+            "valueSubTotalPriceIncludingTaxRounded": "40.00"
+          },
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total NRC",
+          "name": "Total NRC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "70.00",
+            "dutyFreeAmount": "70.00",
+            "valueExcludingTax": "70",
+            "valueExcludingTaxRounded": "70.00",
+            "valueIncludingTax": "70",
+            "valueIncludingTaxRounded": "70.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Total RC by Quote Item",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "$40 2GB Plan #1",
+        "characteristic": [
+          {
+            "id": "33a95547-1a3f-4f35-8c5b-0c7c37a2e109",
+            "name": "[Mobile] New Customer",
+            "value": [
+              "Yes"
+            ],
+            "rawValue": [
+              "Yes"
+            ],
+            "valueId": [
+              "Yes"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "0ea65a22-d180-4bd0-b939-65556a7a3e0a",
+            "name": "[Mobile] ICCID",
+            "value": [
+              "8932079870916739350"
+            ],
+            "rawValue": [
+              "8932079870916739350"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "7984eb4a-f1b7-4f18-bbca-6a0d9bc189b7",
+            "name": "[Mobile] IMSI",
+            "value": [
+              "89810111668210411019"
+            ],
+            "rawValue": [
+              "89810111668210411019"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "e3c99833-28ed-4c59-81d2-7cd8239d144a",
+            "name": "[Mobile] Speed",
+            "value": [
+              "5"
+            ],
+            "rawValue": [
+              "5"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "d576f435-bf3e-4b5b-87cb-f3b51a6747ef",
+            "name": "[Mobile] MSISDN",
+            "value": [
+              "4189233898"
+            ],
+            "rawValue": [
+              "4189233898"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "05cd659f-f268-40c5-bf67-0fbe44fafaca",
+            "name": "[Mobile] Autopay",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "2048"
+            ],
+            "rawValue": [
+              "2048"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "fb5bdb66-c1e2-476a-87d5-62aea203007b++",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:51:06.459Z"
+    },
+    {
+      "id": "68cc75d7-a9ff-43b4-805d-9c8cc24e9597111",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "23d7ce47-78d7-4b2d-9c74-5ab9a13b8fbd",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/23d7ce47-78d7-4b2d-9c74-5ab9a13b8fbd",
+        "name": "500 MB bonus Public"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "0.00",
+            "dutyFreeAmount": "0.00",
+            "overridden": false,
+            "priceValueRef": "2b728e67-c290-4c73-8365-cd963e9f57ed",
+            "valueBasePriceExcludingTax": "10",
+            "valueBasePriceExcludingTaxRounded": "10.00",
+            "valueBasePriceIncludingTax": "10",
+            "valueBasePriceIncludingTaxRounded": "10.00",
+            "valueExcludingTax": "0.00",
+            "valueExcludingTaxRounded": "0.00",
+            "valueIncludingTax": "0.00",
+            "valueIncludingTaxRounded": "0.00",
+            "valueSubTotalPriceExcludingTax": "0.00",
+            "valueSubTotalPriceExcludingTaxRounded": "0.00",
+            "valueSubTotalPriceIncludingTax": "0.00",
+            "valueSubTotalPriceIncludingTaxRounded": "0.00"
+          },
+          "priceAlteration": [
+            {
+              "id": "35df6ee8-256d-4590-9813-eec44b676152",
+              "name": "100% off on 500 MB Public",
+              "priceType": "RC",
+              "recurringChargePeriod": "Month",
+              "weight": 0,
+              "validFor": {},
+              "price": {
+                "taxIncludedAmount": "10.00",
+                "dutyFreeAmount": "10.00",
+                "percentage": 100.0,
+                "overridden": false,
+                "priceValueRef": "cee005d5-b8ce-430c-9bda-420c4b1bab7e",
+                "valueBasePriceExcludingTax": "10.00",
+                "valueBasePriceExcludingTaxRounded": "10.00",
+                "valueBasePriceIncludingTax": "10.00",
+                "valueBasePriceIncludingTaxRounded": "10.00",
+                "valueExcludingTax": "10.00",
+                "valueExcludingTaxRounded": "10.00",
+                "valueIncludingTax": "10.00",
+                "valueIncludingTaxRounded": "10.00",
+                "valueSubTotalPriceExcludingTax": "10.00",
+                "valueSubTotalPriceExcludingTaxRounded": "10.00",
+                "valueSubTotalPriceIncludingTax": "10.00",
+                "valueSubTotalPriceIncludingTaxRounded": "10.00"
+              },
+              "productOfferingPrice": {
+                "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOfferingPrice/05e695be-c3da-4083-8838-8a5ef467c53e",
+                "id": "05e695be-c3da-4083-8838-8a5ef467c53e"
+              },
+              "action": "ADD",
+              "applicationMode": "Automatic",
+              "applied": true,
+              "solo": false
+            }
+          ],
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "500 MB bonus Public #1",
+        "characteristic": [
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "Unlimited"
+            ],
+            "rawValue": [
+              "Unlimited"
+            ],
+            "valueId": [
+              "Unlimited"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "002e7609-a21d-4a11-9d6a-83c58a219a00",
+            "name": "[Mobile] Carry Over",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "09093500-eb1c-46c0-883c-2ed218baafcf",
+            "name": "[Mobile] SMS Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "6e891eb6-02ac-4e50-b21f-5210c735c5df",
+            "name": "[Mobile] Expiring",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "62e136b2-bee4-4de7-9ce0-14ae6bdd99c5",
+            "name": "[Mobile] Voice Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "5c6bfc62-48db-4b93-bfeb-4252a970a38a",
+            "name": "[Mobile] Voice Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "512"
+            ],
+            "rawValue": [
+              "512"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "89e78701-58a4-4328-9d30-80b683db5f4c",
+            "name": "[Mobile] SMS Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "b8d82181-d933-47eb-9e2a-0e23e3a246fe",
+            "name": "[Mobile] Validity",
+            "value": [
+              "Non-expiring"
+            ],
+            "rawValue": [
+              "Non-expiring"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "parentQuoteItemId": "e0628a18-9c5f-44d0-b586-5e8a749eb590",
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "e0628a18-9c5f-44d0-b586-5e8a749eb590111",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:49:41.994Z"
+    },
+    {
+      "id": "68cc75d7-a9ff-43b4-805d-9c8cc24e9597111",
+      "state": "QUALIFIED",
+      "quantity": 1,
+      "action": "ADD",
+      "productOffering": {
+        "id": "23d7ce47-78d7-4b2d-9c74-5ab9a13b8fbd",
+        "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOffering/23d7ce47-78d7-4b2d-9c74-5ab9a13b8fbd",
+        "name": "500 MB bonus Public"
+      },
+      "quoteItemPrice": [
+        {
+          "priceType": "RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "0.00",
+            "dutyFreeAmount": "0.00",
+            "overridden": false,
+            "priceValueRef": "2b728e67-c290-4c73-8365-cd963e9f57ed",
+            "valueBasePriceExcludingTax": "10",
+            "valueBasePriceExcludingTaxRounded": "10.00",
+            "valueBasePriceIncludingTax": "10",
+            "valueBasePriceIncludingTaxRounded": "10.00",
+            "valueExcludingTax": "0.00",
+            "valueExcludingTaxRounded": "0.00",
+            "valueIncludingTax": "0.00",
+            "valueIncludingTaxRounded": "0.00",
+            "valueSubTotalPriceExcludingTax": "0.00",
+            "valueSubTotalPriceExcludingTaxRounded": "0.00",
+            "valueSubTotalPriceIncludingTax": "0.00",
+            "valueSubTotalPriceIncludingTaxRounded": "0.00"
+          },
+          "priceAlteration": [
+            {
+              "id": "35df6ee8-256d-4590-9813-eec44b676152",
+              "name": "100% off on 500 MB Public",
+              "priceType": "RC",
+              "recurringChargePeriod": "Month",
+              "weight": 0,
+              "validFor": {},
+              "price": {
+                "taxIncludedAmount": "10.00",
+                "dutyFreeAmount": "10.00",
+                "percentage": 100.0,
+                "overridden": false,
+                "priceValueRef": "cee005d5-b8ce-430c-9bda-420c4b1bab7e",
+                "valueBasePriceExcludingTax": "10.00",
+                "valueBasePriceExcludingTaxRounded": "10.00",
+                "valueBasePriceIncludingTax": "10.00",
+                "valueBasePriceIncludingTaxRounded": "10.00",
+                "valueExcludingTax": "10.00",
+                "valueExcludingTaxRounded": "10.00",
+                "valueIncludingTax": "10.00",
+                "valueIncludingTaxRounded": "10.00",
+                "valueSubTotalPriceExcludingTax": "10.00",
+                "valueSubTotalPriceExcludingTaxRounded": "10.00",
+                "valueSubTotalPriceIncludingTax": "10.00",
+                "valueSubTotalPriceIncludingTaxRounded": "10.00"
+              },
+              "productOfferingPrice": {
+                "href": "https://public-gateway-qa.opencloud-node.openshift.sdntest.somedomain.com/catalog-integration-tmf/catalogManagement/productOfferingPrice/05e695be-c3da-4083-8838-8a5ef467c53e",
+                "id": "05e695be-c3da-4083-8838-8a5ef467c53e"
+              },
+              "action": "ADD",
+              "applicationMode": "Automatic",
+              "applied": true,
+              "solo": false
+            }
+          ],
+          "priceComponentSpecificationRef": "5f417bce-8fd0-4e21-a900-b333dc3c84b0",
+          "priceSpecificationType": "Monthly Fee",
+          "priceCurrency": "CAD"
+        }
+      ],
+      "product": {
+        "name": "500 MB bonus Public #1",
+        "characteristic": [
+          {
+            "id": "ea85a755-2432-4b77-9d6f-da1dc57d0289",
+            "name": "[Mobile] Speed Tier",
+            "value": [
+              "Unlimited"
+            ],
+            "rawValue": [
+              "Unlimited"
+            ],
+            "valueId": [
+              "Unlimited"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "002e7609-a21d-4a11-9d6a-83c58a219a00",
+            "name": "[Mobile] Carry Over",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "09093500-eb1c-46c0-883c-2ed218baafcf",
+            "name": "[Mobile] SMS Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "6e891eb6-02ac-4e50-b21f-5210c735c5df",
+            "name": "[Mobile] Expiring",
+            "value": [
+              "No"
+            ],
+            "rawValue": [
+              "No"
+            ],
+            "valueId": [
+              "No"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "67f1c262-68f4-45f3-b1ef-22d1531b26fd",
+            "name": "[Mobile] Data Allowance Subtype",
+            "value": [
+              "LOCAL"
+            ],
+            "rawValue": [
+              "LOCAL"
+            ],
+            "valueId": [
+              "LOCAL"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "62e136b2-bee4-4de7-9ce0-14ae6bdd99c5",
+            "name": "[Mobile] Voice Allowance Subtype",
+            "value": [
+              "N/A"
+            ],
+            "rawValue": [
+              "N/A"
+            ],
+            "valueId": [
+              "N/A"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "5c6bfc62-48db-4b93-bfeb-4252a970a38a",
+            "name": "[Mobile] Voice Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "206da734-6b06-4516-935f-da24d9f106d4",
+            "name": "[Mobile] Data Allowance",
+            "value": [
+              "512"
+            ],
+            "rawValue": [
+              "512"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "89e78701-58a4-4328-9d30-80b683db5f4c",
+            "name": "[Mobile] SMS Allowance",
+            "value": [
+              "0"
+            ],
+            "rawValue": [
+              "0"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "f0946dac-b2f5-447b-90de-8f07d30e0871",
+            "name": "[Mobile] Tax Code",
+            "value": [
+              "1001"
+            ],
+            "rawValue": [
+              "1001"
+            ],
+            "valueId": [
+              "1001"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          },
+          {
+            "id": "b8d82181-d933-47eb-9e2a-0e23e3a246fe",
+            "name": "[Mobile] Validity",
+            "value": [
+              "Non-expiring"
+            ],
+            "rawValue": [
+              "Non-expiring"
+            ],
+            "visible": true,
+            "@type": "ProductOfferingCharacteristic"
+          }
+        ]
+      },
+      "parentQuoteItemId": "e0628a18-9c5f-44d0-b586-5e8a749eb590",
+      "quoteItemType": "Product offering",
+      "rootQuoteItemId": "e0628a18-9c5f-44d0-b586-5e8a749eb590111",
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+      "approvalLevel": 0,
+      "extendedParameters": {},
+      "creationTime": "2021-03-02T14:49:41.994Z"
+    }
+  ],
+  "quoteTotalPrice": [
+    {
+      "priceType": "Total NRC",
+      "name": "Total NRC by Quote",
+      "price": {
+        "taxIncludedAmount": "70.00",
+        "dutyFreeAmount": "70.00",
+        "valueExcludingTaxRounded": "70.00",
+        "valueIncludingTaxRounded": "70.00"
+      },
+      "priceCurrency": "CAD"
+    },
+    {
+      "priceType": "Total NRC Tax",
+      "name": "Total NRC Tax by Quote",
+      "price": {
+        "taxIncludedAmount": "0.00",
+        "valueIncludingTaxRounded": "0.00"
+      },
+      "priceCurrency": "CAD"
+    },
+    {
+      "priceType": "Total NRC Reduction",
+      "name": "Total NRC Reduction by Quote",
+      "price": {
+        "taxIncludedAmount": "0.00",
+        "dutyFreeAmount": "0.00",
+        "valueExcludingTaxRounded": "0.00",
+        "valueIncludingTaxRounded": "0.00"
+      },
+      "priceCurrency": "CAD"
+    },
+    {
+      "priceType": "Total RC",
+      "recurringChargePeriod": "Month",
+      "name": "Total RC by Quote",
+      "price": {
+        "taxIncludedAmount": "73.00",
+        "dutyFreeAmount": "73.00",
+        "valueExcludingTaxRounded": "73.00",
+        "valueIncludingTaxRounded": "73.00"
+      },
+      "priceCurrency": "CAD"
+    },
+    {
+      "priceType": "Total RC Tax",
+      "recurringChargePeriod": "Month",
+      "name": "Total RC Tax by Quote",
+      "price": {
+        "taxIncludedAmount": "0.00",
+        "valueIncludingTaxRounded": "0.00"
+      },
+      "priceCurrency": "CAD"
+    },
+    {
+      "priceType": "Total RC Reduction",
+      "recurringChargePeriod": "Month",
+      "name": "Total RC Reduction by Quote",
+      "price": {
+        "taxIncludedAmount": "-12.00",
+        "dutyFreeAmount": "-12.00",
+        "valueExcludingTaxRounded": "-12.00",
+        "valueIncludingTaxRounded": "-12.00"
+      },
+      "priceCurrency": "CAD"
+    },
+    {
+      "priceType": "Total Deactivation Fee",
+      "name": "Total Deactivation Fee by Quote",
+      "price": {
+        "taxIncludedAmount": "0.00",
+        "dutyFreeAmount": "0.00",
+        "valueExcludingTaxRounded": "0.00",
+        "valueIncludingTaxRounded": "0.00"
+      }
+    },
+    {
+      "priceType": "Total Deactivation Fee Tax",
+      "name": "Total Deactivation Fee Tax by Quote",
+      "price": {
+        "taxIncludedAmount": "0.00",
+        "valueIncludingTaxRounded": "0.00"
+      }
+    }
+  ],
+  "customerCategory": "c32a687f-f96a-4ffe-b29b-dd6b06cc31d9",
+  "customerId": "398887",
+  "distributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+  "initialDistributionChannelId": "3539095c-6756-4f0b-96d0-11d904bcd782",
+  "newMSA": false,
+  "distributionChannelName": "[Mobile] Online",
+  "name": "Quote #1398",
+  "updatedWhen": "2021-03-02T14:51:32.736Z",
+  "overrideMode": "gross",
+  "approvalLevel": 0,
+  "extendedParameters": {},
+  "productOfferingRefByMarketRefs": [
+    {
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "productOfferingId": "610ed6db-2103-45c7-bb04-748ac6b33b6d",
+      "pricesByOffering": [
+        {
+          "priceType": "Sub-Total NRC",
+          "name": "One-time Fee",
+          "price": {
+            "taxIncludedAmount": "50.00",
+            "dutyFreeAmount": "50.00",
+            "valueBasePriceExcludingTax": "50",
+            "valueBasePriceExcludingTaxRounded": "50.00",
+            "valueBasePriceIncludingTax": "50",
+            "valueBasePriceIncludingTaxRounded": "50.00",
+            "valueExcludingTax": "50",
+            "valueExcludingTaxRounded": "50.00",
+            "valueIncludingTax": "50",
+            "valueIncludingTaxRounded": "50.00",
+            "valueSubTotalPriceExcludingTax": "50",
+            "valueSubTotalPriceExcludingTaxRounded": "50.00",
+            "valueSubTotalPriceIncludingTax": "50",
+            "valueSubTotalPriceIncludingTaxRounded": "50.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Sub-Total RC",
+          "name": "Sub-Total RC by Product",
+          "price": {}
+        }
+      ]
+    },
+    {
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "productOfferingId": "27249f87-d6c5-4bd9-9c92-4ab729ed65f8",
+      "pricesByOffering": [
+        {
+          "priceType": "Sub-Total NRC",
+          "name": "Sub-Total NRC by Product",
+          "price": {}
+        },
+        {
+          "priceType": "Sub-Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "valueBasePriceExcludingTax": "40",
+            "valueBasePriceExcludingTaxRounded": "40.00",
+            "valueBasePriceIncludingTax": "40",
+            "valueBasePriceIncludingTaxRounded": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00",
+            "valueSubTotalPriceExcludingTax": "40",
+            "valueSubTotalPriceExcludingTaxRounded": "40.00",
+            "valueSubTotalPriceIncludingTax": "40",
+            "valueSubTotalPriceIncludingTaxRounded": "40.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total NRC",
+          "name": "Total NRC by Product",
+          "price": {
+            "taxIncludedAmount": "70.00",
+            "dutyFreeAmount": "70.00",
+            "valueExcludingTax": "70",
+            "valueExcludingTaxRounded": "70.00",
+            "valueIncludingTax": "70",
+            "valueIncludingTaxRounded": "70.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Total RC by Product",
+          "price": {
+            "taxIncludedAmount": "40.00",
+            "dutyFreeAmount": "40.00",
+            "valueExcludingTax": "40",
+            "valueExcludingTaxRounded": "40.00",
+            "valueIncludingTax": "40",
+            "valueIncludingTaxRounded": "40.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ]
+    },
+    {
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "productOfferingId": "85524d58-d542-4f6e-a0aa-316cde875ed9",
+      "pricesByOffering": [
+        {
+          "priceType": "Sub-Total NRC",
+          "name": "Sub-Total NRC by Product",
+          "price": {}
+        },
+        {
+          "priceType": "Sub-Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "33.00",
+            "dutyFreeAmount": "33.00",
+            "valueBasePriceExcludingTax": "35",
+            "valueBasePriceExcludingTaxRounded": "35.00",
+            "valueBasePriceIncludingTax": "35",
+            "valueBasePriceIncludingTaxRounded": "35.00",
+            "valueExcludingTax": "33",
+            "valueExcludingTaxRounded": "33.00",
+            "valueIncludingTax": "33",
+            "valueIncludingTaxRounded": "33.00",
+            "valueSubTotalPriceExcludingTax": "33",
+            "valueSubTotalPriceExcludingTaxRounded": "33.00",
+            "valueSubTotalPriceIncludingTax": "33",
+            "valueSubTotalPriceIncludingTaxRounded": "33.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Total NRC",
+          "name": "Total NRC by Product",
+          "price": {}
+        },
+        {
+          "priceType": "Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Total RC by Product",
+          "price": {
+            "taxIncludedAmount": "33.00",
+            "dutyFreeAmount": "33.00",
+            "valueExcludingTax": "33.00",
+            "valueExcludingTaxRounded": "33.00",
+            "valueIncludingTax": "33.00",
+            "valueIncludingTaxRounded": "33.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ]
+    },
+    {
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "productOfferingId": "506b825d-9fd1-4dce-8cef-01356ac0f28d",
+      "pricesByOffering": [
+        {
+          "priceType": "Sub-Total NRC",
+          "name": "One-time Fee",
+          "price": {
+            "taxIncludedAmount": "20.00",
+            "dutyFreeAmount": "20.00",
+            "valueBasePriceExcludingTax": "20",
+            "valueBasePriceExcludingTaxRounded": "20.00",
+            "valueBasePriceIncludingTax": "20",
+            "valueBasePriceIncludingTaxRounded": "20.00",
+            "valueExcludingTax": "20",
+            "valueExcludingTaxRounded": "20.00",
+            "valueIncludingTax": "20",
+            "valueIncludingTaxRounded": "20.00",
+            "valueSubTotalPriceExcludingTax": "20",
+            "valueSubTotalPriceExcludingTaxRounded": "20.00",
+            "valueSubTotalPriceIncludingTax": "20",
+            "valueSubTotalPriceIncludingTaxRounded": "20.00"
+          },
+          "priceCurrency": "CAD"
+        },
+        {
+          "priceType": "Sub-Total RC",
+          "name": "Sub-Total RC by Product",
+          "price": {}
+        }
+      ]
+    },
+    {
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "productOfferingId": "23d7ce47-78d7-4b2d-9c74-5ab9a13b8fbd",
+      "pricesByOffering": [
+        {
+          "priceType": "Sub-Total NRC",
+          "name": "Sub-Total NRC by Product",
+          "price": {}
+        },
+        {
+          "priceType": "Sub-Total RC",
+          "recurringChargePeriod": "Month",
+          "name": "Monthly Fee",
+          "price": {
+            "taxIncludedAmount": "0.00",
+            "dutyFreeAmount": "0.00",
+            "valueBasePriceExcludingTax": "10",
+            "valueBasePriceExcludingTaxRounded": "10.00",
+            "valueBasePriceIncludingTax": "10",
+            "valueBasePriceIncludingTaxRounded": "10.00",
+            "valueExcludingTax": "0.00",
+            "valueExcludingTaxRounded": "0.00",
+            "valueIncludingTax": "0.00",
+            "valueIncludingTaxRounded": "0.00",
+            "valueSubTotalPriceExcludingTax": "0.00",
+            "valueSubTotalPriceExcludingTaxRounded": "0.00",
+            "valueSubTotalPriceIncludingTax": "0.00",
+            "valueSubTotalPriceIncludingTaxRounded": "0.00"
+          },
+          "priceCurrency": "CAD"
+        }
+      ]
+    }
+  ],
+  "marketRefs": [
+    {
+      "marketId": "6f3360b5-ba90-469a-8f38-d8bc2dcbfae5",
+      "marketName": "Alberta"
+    }
+  ],
+  "brandId": "76be5e93-8744-4cde-96c0-6655fc0f8599"
+}

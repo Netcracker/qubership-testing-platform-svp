@@ -1,0 +1,88 @@
+[
+  {
+    "active": false,
+    "parameters": {
+      "fields": [
+        "context",
+        "operation_name",
+        "type",
+        "payload",
+        "integration_scenario",
+        "header"
+      ],
+      "systemNames": [
+        "GRAYLOG"
+      ]
+    },
+    "type": "GRAYLOG",
+    "projectId": "92d1dc48-1490-4b76-9d4b-d66fca5caf86",
+    "id": "24d1ea9f-45b3-4256-9a2d-26372ad134b9",
+    "name": "GRAYLOG",
+    "created": "2020-09-23 10:18:45.355",
+    "modified": "2020-10-16 11:56:26.007"
+  },
+  {
+    "active": false,
+    "parameters": {
+      "surroundingLinesQuantity": 0,
+      "searchStrategy": "SURROUNDING_LINES",
+      "isRegexp": false,
+      "searchPattern": "",
+      "directories": [
+        "/u02/qubership/business_solution/u446_int_6900/logs"
+      ],
+      "surroundingMinutesQuantity": 0,
+      "systemNames": [
+        "Business Solution"
+      ],
+      "fileMasks": [
+        "jbss-cbm_clust*",
+        "baip_billing_system_clust*"
+      ]
+    },
+    "type": "FILEBASED",
+    "projectId": "92d1dc48-1490-4b76-9d4b-d66fca5caf86",
+    "id": "a1f2ac6d-a4ed-4b8f-8132-001d18c370f7",
+    "name": "[CBM]",
+    "created": "2020-10-22 08:56:04.318"
+  },
+  {
+    "active": false,
+    "parameters": {
+      "directories": [
+        "/u02/qubership/server/telecom-business-api/logs"
+      ],
+      "systemNames": [
+        "Business Solution"
+      ],
+      "fileMasks": [
+        "business-api_u02server-business-api.log"
+      ]
+    },
+    "type": "FILEBASED",
+    "projectId": "92d1dc48-1490-4b76-9d4b-d66fca5caf86",
+    "id": "5385b4d7-e408-4ab7-8c20-ff7d9618772b",
+    "name": "[Server]business-api.log",
+    "created": "2020-08-05 06:17:07.928",
+    "modified": "2020-08-05 08:53:36.845"
+  },
+  {
+    "active": false,
+    "parameters": {
+      "directories": [
+        "/u02/qubership/business_solution/u446_int_6900/logs"
+      ],
+      "systemNames": [
+        "Business Solution"
+      ],
+      "fileMasks": [
+        "wl-domain.log*"
+      ]
+    },
+    "type": "FILEBASED",
+    "projectId": "92d1dc48-1490-4b76-9d4b-d66fca5caf86",
+    "id": "e4197353-9f96-4cb4-be7d-95ef2f1756d3",
+    "name": "[Business Solution]wl-domain.log",
+    "created": "2020-08-05 08:52:40.993"
+  }
+]

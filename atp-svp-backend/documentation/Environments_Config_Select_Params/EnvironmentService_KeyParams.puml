@@ -1,0 +1,49 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+box "BE" #caeaff
+
+    participant ExecutorServiceImpl
+    participant PotSessionServiceImpl
+    participant ExecutionVariablesServiceImpl
+    entity ExecutionVariable
+    entity PotSession
+end box
+ExecutorServiceImpl -> PotSessionServiceImpl : startSession()
+    activate PotSessionServiceImpl
+    PotSessionServiceImpl -> ExecutionVariablesServiceImpl : getVariablesFromKeyParameters(keyParameters)
+        activate ExecutionVariablesServiceImpl
+        ExecutionVariablesServiceImpl -> ExecutionVariable : new SimpleExecutionVariable(...)
+        activate ExecutionVariable
+        ExecutionVariablesServiceImpl <-- ExecutionVariable
+        deactivate ExecutionVariable
+    PotSessionServiceImpl <-- ExecutionVariablesServiceImpl : Set<ExecutionVariable> variables
+        group Environment variables
+    PotSessionServiceImpl -> ExecutionVariablesServiceImpl : variables.addAll(getVariablesFromEnvironment(\nsessionExecutionConfiguration.getEnvironment()))
+        group #90ffbc Recursive algorithm for Environment variables
+        activate ExecutionVariablesServiceImpl
+        ExecutionVariablesServiceImpl -> ExecutionVariablesServiceImpl :convertJsonNodeEnvToExVariables
+        activate ExecutionVariablesServiceImpl
+        ExecutionVariablesServiceImpl -> ExecutionVariablesServiceImpl : iteratingObject
+        ExecutionVariablesServiceImpl -> ExecutionVariablesServiceImpl : iteratingArray
+        ExecutionVariablesServiceImpl -> ExecutionVariablesServiceImpl : writeToSetExecutionVariable
+        activate ExecutionVariablesServiceImpl
+        ExecutionVariablesServiceImpl -> ExecutionVariable : executionVariables.add(new SimpleExecutionVariable(...))
+        activate ExecutionVariable
+        ExecutionVariablesServiceImpl <-- ExecutionVariable
+        deactivate ExecutionVariable
+        deactivate ExecutionVariablesServiceImpl
+        deactivate ExecutionVariablesServiceImpl
+        deactivate ExecutionVariablesServiceImpl
+        end
+    PotSessionServiceImpl <-- ExecutionVariablesServiceImpl : Set<ExecutionVariable>
+        end
+    deactivate ExecutionVariablesServiceImpl
+    PotSessionServiceImpl -> PotSession : new PotSession(UUID.randomUUID(), sessionExecutionConfiguration, keyParameters, variables)
+    activate PotSession
+    PotSessionServiceImpl <-- PotSession
+    deactivate PotSession
+    PotSessionServiceImpl -> PotSessionServiceImpl : currentSessions.put(session.getId(), session)
+ExecutorServiceImpl <-- PotSessionServiceImpl : UUID
+deactivate PotSessionServiceImpl
+@enduml

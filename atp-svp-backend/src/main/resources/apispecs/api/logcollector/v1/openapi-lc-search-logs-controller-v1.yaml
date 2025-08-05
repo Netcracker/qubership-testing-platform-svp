@@ -1,0 +1,676 @@
+# Copyright 2024-2025 NetCracker Technology Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is provided "AS IS", without warranties
+# or conditions of any kind, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+openapi: 3.0.1
+info:
+    title: Log Collector API
+    description: Log Collector API
+    version: '1.1'
+servers:
+    - url: /
+tags:
+    - name: api-search-logs-controller
+      description: Api Search Logs Controller
+
+paths:
+    /api/logs/download/{projectName}/{searchId}/{archiveName}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: downloadFullLogArchive
+            operationId: downloadFullLogArchive
+            parameters:
+                - name: projectName
+                  in: path
+                  description: projectName
+                  required: true
+                  schema:
+                      type: string
+                - name: searchId
+                  in: path
+                  description: searchId
+                  required: true
+                  schema:
+                      type: string
+                - name: archiveName
+                  in: path
+                  description: archiveName
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/octet-stream:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/FileResponse'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/download/{projectName}/{searchId}/{threadId}/{archiveName}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: downloadSystemLogArchive
+            operationId: downloadSystemLogArchive
+            parameters:
+                - name: projectName
+                  in: path
+                  description: projectName
+                  required: true
+                  schema:
+                      type: string
+                - name: searchId
+                  in: path
+                  description: searchId
+                  required: true
+                  schema:
+                      type: string
+                - name: threadId
+                  in: path
+                  description: threadId
+                  required: true
+                  schema:
+                      type: string
+                - name: archiveName
+                  in: path
+                  description: archiveName
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/octet-stream:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/FileResponse'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/download/{projectName}/{searchId}/{threadId}/{archiveName}/{fileName}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: downloadFileFromArchive
+            operationId: downloadFileFromArchive
+            parameters:
+                - name: projectName
+                  in: path
+                  description: projectName
+                  required: true
+                  schema:
+                      type: string
+                - name: searchId
+                  in: path
+                  description: searchId
+                  required: true
+                  schema:
+                      type: string
+                - name: threadId
+                  in: path
+                  description: threadId
+                  required: true
+                  schema:
+                      type: string
+                - name: archiveName
+                  in: path
+                  description: archiveName
+                  required: true
+                  schema:
+                      type: string
+                - name: fileName
+                  in: path
+                  description: fileName
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        text/plain:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/FileResponse'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/fields/{environmentId}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: getFields
+            operationId: getFields
+            parameters:
+                - name: environmentId
+                  in: path
+                  description: environmentId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+                - name: systemName
+                  in: query
+                  description: system name
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getFieldTerms:
+        post:
+            tags:
+                - api-search-logs-controller
+            summary: getFieldTerms
+            operationId: getFieldTerms
+            requestBody:
+                description: searchRequest
+                content:
+                    application/json:
+                        schema:
+                              $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/Template'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                      $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/GrayLogFieldTerms'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+            x-codegen-request-body-name: searchRequest
+    /api/logs/getTopValuesOfFields:
+        post:
+            tags:
+                - api-search-logs-controller
+            summary: getTopValuesOfFieldsByConfigurationIdAndDateRange
+            operationId: getTopValuesOfFieldsByConfigurationIdAndDateRange
+            requestBody:
+                description: topValuesOfFieldsRequest
+                content:
+                    application/json:
+                        schema:
+                              $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/TopValuesOfFieldsRequest'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/TopValuesOfFields'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+            x-codegen-request-body-name: topValuesOfFieldsRequest
+    /api/logs/getTopValuesOfFields/{configurationId}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: getTopValuesOfFieldsByConfigurationId
+            operationId: getTopValuesOfFieldsByConfigurationId
+            parameters:
+                - name: configurationId
+                  in: path
+                  description: configurationId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/TopValuesOfFields'
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getPartialSearchResultsByIds:
+        post:
+            tags:
+                - api-search-logs-controller
+            summary: getPartialSearchResultsByIds
+            operationId: getPartialSearchResultsByIds
+            requestBody:
+                description: requestMessage
+                content:
+                    application/json:
+                        schema:
+                              $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/GetPartialSearchResultsByIdsRequestMessage'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                      $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+            x-codegen-request-body-name: requestMessage
+    /api/logs/getSearchResults/{searchId}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: Get results for whole search (wait for status of search completed or
+                terminated)
+            operationId: getSearchResults
+            parameters:
+                - name: searchId
+                  in: path
+                  description: searchId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getSearchResults/{searchId}/fastResponse:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: Get results for whole search (without waiting for end search)
+            operationId: getSearchResultsFast
+            parameters:
+                - name: searchId
+                  in: path
+                  description: searchId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getComponentSearchResults/{componentSearchId}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: Get results for component of search (wait for status of search completed
+                or terminated)
+            operationId: getComponentSearchResults
+            parameters:
+                - name: componentSearchId
+                  in: path
+                  description: componentSearchId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/ComponentSearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getLogLinksForCompletedSearch/{searchId}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: Get log links for completed search
+            operationId: getLogLinksForCompletedSearch
+            parameters:
+                - name: searchId
+                  in: path
+                  description: searchId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getComponentSearchResults/{componentSearchId}/fastResponse:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: Get results for component of search (without waiting for end search)
+            operationId: getComponentSearchResultsFast
+            parameters:
+                - name: componentSearchId
+                  in: path
+                  description: componentSearchId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/ComponentSearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getSystemSearchResults/{systemSearchId}:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: Get results for system of component of search (wait for status of search
+                completed or terminated)
+            operationId: getSystemSearchResults
+            parameters:
+                - name: systemSearchId
+                  in: path
+                  description: systemSearchId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SystemSearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/getSystemSearchResults/{systemSearchId}/fastResponse:
+        get:
+            tags:
+                - api-search-logs-controller
+            summary: Get results for system of component of search (without waiting for
+                end search)
+            operationId: getSystemSearchResultsFast
+            parameters:
+                - name: systemSearchId
+                  in: path
+                  description: systemSearchId
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SystemSearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+    /api/logs/search:
+        post:
+            tags:
+                - api-search-logs-controller
+            summary: Register searches for components and its systems
+            operationId: search
+            requestBody:
+                description: requestMessage
+                content:
+                    application/json:
+                        schema:
+                              $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchRequest'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchResults'
+                201:
+                    description: Created
+                    content: {}
+                401:
+                    description: Unauthorized
+                    content: {}
+                403:
+                    description: Forbidden
+                    content: {}
+                404:
+                    description: Not Found
+                    content: {}
+            deprecated: false
+            x-codegen-request-body-name: requestMessage
+    /api/logs/registerSearch:
+        post:
+            tags:
+                - api-search-logs-controller
+            summary: Register searches for components and its systems
+            operationId: registerSearch
+            requestBody:
+                description: requestMessage
+                content:
+                    application/json; charset=UTF-8:
+                        schema:
+                              $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchRequest'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                  $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchResults'
+            x-codegen-request-body-name: requestMessage
+    /api/logs/getSearchHistory:
+        post:
+            tags:
+                - api-search-logs-controller
+            summary: Get searches history for the searches started in a certain period
+            operationId: getSearchHistory
+            requestBody:
+                description: requestMessage
+                content:
+                    application/json:
+                        schema:
+                            $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchHistoryParameters'
+                required: true
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: 'openapi-lc-dto-model-v1.yaml#/components/schemas/SearchResults'
+                401:
+                    description: Unauthorized
+                    content: { }
+                403:
+                    description: Forbidden
+                    content: { }
+                404:
+                    description: Not Found
+                    content: { }
+            x-codegen-request-body-name: requestMessage
+
+

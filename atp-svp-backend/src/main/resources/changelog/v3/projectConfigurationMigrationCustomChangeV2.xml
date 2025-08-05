@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="Migrate_data_from_project_configs_json_file_V2" author="atp-svp-dev-v3">
+        <comment>Get project configurations json file V2</comment>
+        <customChange class="org.qubership.atp.svp.migration.v3.ProjectConfigurationMigrationCustomChange">
+        </customChange>
+    </changeSet>
+
+</databaseChangeLog>

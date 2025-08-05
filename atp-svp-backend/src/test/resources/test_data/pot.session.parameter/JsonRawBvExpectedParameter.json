@@ -1,0 +1,150 @@
+{
+  "parameterId": "c65cad5c-eae9-4e20-9341-e746b53f9ad9",
+  "page": "page",
+  "tab": "tab",
+  "group": "group",
+  "isSynchronousLoading": false,
+  "er": null,
+  "arValues": [],
+  "validationInfo": {
+    "type": "BulkValidatorJsonValidationInfo",
+    "status": "%1$s",
+    "errorDescription": null,
+    "bvTestRunsInfo": [
+      {
+        "testCaseName": "SVP Quick compare",
+        "testRunLink": "http://atp-bv:8080/project/e75c4d6c-3814-48e7-b5a2-d8636ab91d38/bvt/validation?trid=0d7df690-0a3a-48cc-8c73-5974ba2faee5",
+        "validationStatus": "%1$s"
+      }
+    ]
+  },
+  "parameterConfig": {
+    "parameterId": null,
+    "name": "test_Json",
+    "displayType": "JSON",
+    "source": {
+      "system": "Business Solution",
+      "connection": "DB",
+      "engineType": "SQL",
+      "script": "",
+      "settings": [
+        {
+          "className": "HttpSettings",
+          "query": "",
+          "queryParams": {},
+          "requestType": "GET",
+          "body": "",
+          "urlEncodedBody": {},
+          "headers": {}
+        },
+        {
+          "className": "JsonParseSettings",
+          "jsonViewType": "RAW",
+          "jsonPath": "$",
+          "groupNameDivider": "||",
+          "mockJsonScript": "",
+          "isMockJsonSwitcher": false,
+          "columnsData": [
+            {
+              "header": "",
+              "jsonPath": "",
+              "groupingJsonPaths": []
+            }
+          ],
+          "hierarchyNodeNames": {
+            "id": "",
+            "rootId": "",
+            "parentId": ""
+          },
+          "hierarchyTreeObjectNodeNames": [],
+          "isJoinConditionSwitcher": false,
+          "jsonJoinConditionSettings": null
+        }
+      ]
+    },
+    "component": null,
+    "additionalSources": [],
+    "erConfig": {
+      "type": "BV_LINK",
+      "value": null,
+      "tableValidations": [],
+      "dataSource": {
+        "system": "",
+        "connection": "",
+        "engineType": null,
+        "script": "",
+        "settings": [
+          {
+            "className": "HttpSettings",
+            "query": "",
+            "queryParams": {},
+            "requestType": "GET",
+            "body": "",
+            "urlEncodedBody": {},
+            "headers": {}
+          },
+          {
+            "className": "JsonParseSettings",
+            "jsonViewType": "RAW",
+            "jsonPath": "",
+            "groupNameDivider": "||",
+            "mockJsonScript": "",
+            "isMockJsonSwitcher": false,
+            "columnsData": [
+              {
+                "header": "",
+                "jsonPath": "",
+                "groupingJsonPaths": []
+              }
+            ],
+            "hierarchyNodeNames": {
+              "id": "",
+              "rootId": "",
+              "parentId": ""
+            },
+            "hierarchyTreeObjectNodeNames": [],
+            "isJoinConditionSwitcher": false,
+            "jsonJoinConditionSettings": null
+          }
+        ]
+      },
+      "tableValidationSettings": {
+        "keyColumns": [],
+        "groupingColumns": []
+      },
+      "bulkValidatorValidation": {
+        "isManualValidation": false,
+        "validationItem": [
+          {
+            "validationColumn": "",
+            "validationObjectName": "json message"
+          }
+        ],
+        "testCaseIds": [
+          "61abd5ac-efbe-49cc-b7f5-925a7f543481"
+        ]
+      },
+      "bulkValidatorJsonValidation": {
+        "validationObjectName": "%2$s",
+        "testCaseId": "%3$s"
+      }
+    },
+    "groupEntity": {
+      "groupId": null,
+      "name": null,
+      "tabEntity": null,
+      "isSynchronousLoading": false,
+      "isHide": false,
+      "lastUpdateDateTime": null,
+      "groupOrder": 0,
+      "sutParameterEntities": null
+    },
+    "lastUpdateDateTime": null,
+    "commonParameterEntity": null,
+    "parameterOrder": 0,
+    "preconfigured": false
+  },
+  "potSessionTabEntity": null,
+  "potSessionEntity": null,
+  "errors": ""
+}

@@ -1,0 +1,94 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity JsonDisplayTypeServiceImpl
+
+    entity SqlRepository
+    entity CassandraRepository
+    entity ConnectionPool
+    entity SshRepository
+
+    entity RestRepositoryImpl
+end box
+
+box "SQL source" #D2E9C3
+    entity DB
+end box
+
+box "Cassandra source" #D2E9C3
+    entity CassandraDB
+end box
+
+box "REST source" #FFFBA8
+    entity RESTendpoint
+end box
+
+box "SSH source" #D2E9C3
+    entity SSH_source
+end box
+
+activate JsonDisplayTypeServiceImpl
+    JsonDisplayTypeServiceImpl -> JsonDisplayTypeServiceImpl : Get Server from Environment
+    JsonDisplayTypeServiceImpl -> JsonDisplayTypeServiceImpl : getScriptWithExecutionVariables(source.getScript(), context.getExecutionVariables())
+
+    alt IF EngineType == SQL
+        == EngineType == SQL ==
+        JsonDisplayTypeServiceImpl -> SqlRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+        activate SqlRepository
+            SqlRepository <--> ConnectionPool : createAndGetConnection(server)
+            SqlRepository -> SqlRepository : create PreparedStatement from connection and query
+            SqlRepository -> SqlRepository : PreparedStatement.executeQuery() on ExecutorService
+
+            activate SqlRepository #LightGreen
+                SqlRepository <--> DB : get ResultSet
+            deactivate SqlRepository
+            SqlRepository -> SqlRepository : ResultSetMetaData rsmd = rs.getMetaData()
+            SqlRepository -> SqlRepository : get list of table headers from ResultSetMetaData
+            SqlRepository -> SqlRepository : get table rows from ResultSet
+            SqlRepository -> SqlRepository : get first cell from first row value
+            JsonDisplayTypeServiceImpl <-- SqlRepository : String response (First cell from first row value)
+        deactivate SqlRepository
+    else If EngineType == CASSANDRA
+        == EngineType == CASSANDRA ==
+        JsonDisplayTypeServiceImpl -> CassandraRepository : executeQueryAndGetFirstValue(new DBServer(server), script)
+        activate CassandraRepository
+            CassandraRepository -> CassandraRepository : createCluster(server)
+            activate CassandraRepository #LightGreen
+                CassandraRepository <--> CassandraDB : execute (get ResultSet)
+            deactivate CassandraRepository
+            CassandraRepository -> CassandraRepository : get first ROW
+            CassandraRepository -> CassandraRepository : get first column value in first ROW
+            JsonDisplayTypeServiceImpl <-- CassandraRepository : String response (First cell from first row value)
+            deactivate CassandraRepository
+    else ELSE EngineType == REST
+        == EngineType == REST ==
+        JsonDisplayTypeServiceImpl -> RestRepositoryImpl : executeRequest(baseUrl, httpSettings)
+        activate RestRepositoryImpl
+            RestRepositoryImpl -> RestRepositoryImpl : getWebClientForBaseUrl(baseUrl)
+            RestRepositoryImpl -> RESTendpoint : send request with body and headers via WebClient
+            activate RESTendpoint
+                RestRepositoryImpl <-- RESTendpoint : SOAP response
+            deactivate RESTendpoint
+            JsonDisplayTypeServiceImpl <-- RestRepositoryImpl : REST response
+        deactivate RestRepositoryImpl
+        == EngineType == SSH ==
+        JsonDisplayTypeServiceImpl -> SshRepository : executeCommandSsh(server, script)
+        activate SshRepository
+            SshRepository -> SSH_source : runCommand(session, connectionProperties, command)
+            activate SSH_source
+            SSH_source -> SshRepository : sshCommandResult
+            deactivate
+            SshRepository -> JsonDisplayTypeServiceImpl: sshCommandResult
+        deactivate
+    end
+    JsonDisplayTypeServiceImpl -> JsonDisplayTypeServiceImpl : postProcessingValue(resultAsString, jsonSettings)
+    note right
+       Json parsing process (<color red>**TODO** need to write the same design in UML</color>)
+    end note
+    JsonDisplayTypeServiceImpl -> JsonDisplayTypeServiceImpl : result.setValueAsFile(new PotFile(resultAsString.getBytes(StandardCharsets.UTF_8)));
+    <- JsonDisplayTypeServiceImpl : new AbstractValueObject(response)
+deactivate JsonDisplayTypeServiceImpl
+
+@enduml

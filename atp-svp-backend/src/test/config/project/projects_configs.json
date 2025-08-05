@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1183662d-51ae-438a-92be-0a4bb71620d9",
+    "name": "Telecom Cloud Orchestration",
+    "isFullInfoNeededInPot": false,
+    "defaultLogCollectorSearchTimeRange": 86400,
+    "bulkValidatorSettings": {
+      "url": "https://validator.example.org",
+      "projectId": "1183662d-51ae-438a-92be-0a4bb71620d9"
+    },
+    "repoConfig": {
+      "type": "GIT",
+      "gitUrl": "https://github.com/example-org/telco-orchestration.git",
+      "path": "src/test/config/project/telco-cloud"
+    }
+  },
+  {
+    "id": "71c61b73-cb8f-4e24-b4c7-f80e2f9bcd01",
+    "name": "Smart Utility Integration",
+    "isFullInfoNeededInPot": true,
+    "repoConfig": {
+      "type": "GIT",
+      "gitUrl": "https://github.com/example-org/smart-utilities-configs.git",
+      "path": "src/test/config/project/utility-integration"
+    }
+  },
+  {
+    "id": "e984e5d1-5f89-4113-84a0-b658800e65c4",
+    "name": "Energy Grid Monitoring Templates",
+    "isFullInfoNeededInPot": true,
+    "defaultLogCollectorSearchTimeRange": 172800,
+    "bulkValidatorSettings": {
+      "url": "https://validator.example.org",
+      "projectId": "e984e5d1-5f89-4113-84a0-b658800e65c4"
+    },
+    "repoConfig": {
+      "type": "LOCAL",
+      "path": "src/test/config/project/folder_project"
+    }
+  }
+]

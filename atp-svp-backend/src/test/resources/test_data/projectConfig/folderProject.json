@@ -1,0 +1,12 @@
+{
+  "projectId": "e984e5d1-5f89-4113-84a0-b658800e65c4",
+  "projectName": "Project with folder",
+  "defaultLogCollectorSearchTimeRange": 86400,
+  "pagesSourceType": "LOCAL",
+  "gitUrl": null,
+  "pathFolderLocalProject": "src/test/config/project/folder_project",
+  "lastUpdateUserName": null,
+  "lastUpdateDateTime": null,
+  "folders": null,
+  "fullInfoNeededInPot": true
+}

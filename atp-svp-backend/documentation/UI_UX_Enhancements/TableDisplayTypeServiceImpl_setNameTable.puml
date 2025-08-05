@@ -1,0 +1,59 @@
+@startuml
+participant Actor
+Actor -> TableDisplayTypeServiceImpl : setNameTable
+activate TableDisplayTypeServiceImpl
+TableDisplayTypeServiceImpl -> Source : getSettingsByType
+activate Source
+Source -> Source : () ->
+activate Source
+Source --> Source
+deactivate Source
+Source -> Source : () ->
+activate Source
+create SourceSettingNotFoundException
+Source -> SourceSettingNotFoundException : new
+activate SourceSettingNotFoundException
+SourceSettingNotFoundException --> Source
+deactivate SourceSettingNotFoundException
+Source --> Source
+deactivate Source
+Source --> TableDisplayTypeServiceImpl
+deactivate Source
+TableDisplayTypeServiceImpl -> TableSettings : getTableName
+activate TableSettings
+TableSettings --> TableDisplayTypeServiceImpl
+deactivate TableSettings
+TableDisplayTypeServiceImpl -> AbstractParameterExecutionContext : getParameter
+activate AbstractParameterExecutionContext
+AbstractParameterExecutionContext --> TableDisplayTypeServiceImpl
+deactivate AbstractParameterExecutionContext
+TableDisplayTypeServiceImpl -> PotSessionParameter : getParameterConfig
+activate PotSessionParameter
+PotSessionParameter --> TableDisplayTypeServiceImpl
+deactivate PotSessionParameter
+TableDisplayTypeServiceImpl -> SutParameter : getAdditionalSources
+activate SutParameter
+SutParameter --> TableDisplayTypeServiceImpl
+deactivate SutParameter
+TableDisplayTypeServiceImpl -> SutParameter : getEr
+activate SutParameter
+SutParameter --> TableDisplayTypeServiceImpl
+deactivate SutParameter
+TableDisplayTypeServiceImpl -> ErConfig : getType
+activate ErConfig
+ErConfig --> TableDisplayTypeServiceImpl
+deactivate ErConfig
+TableDisplayTypeServiceImpl -> Source : getSystem
+activate Source
+Source --> TableDisplayTypeServiceImpl
+deactivate Source
+TableDisplayTypeServiceImpl -> AbstractTable : setName
+activate AbstractTable
+AbstractTable --> TableDisplayTypeServiceImpl
+deactivate AbstractTable
+TableDisplayTypeServiceImpl -> AbstractTable : setName
+activate AbstractTable
+AbstractTable --> TableDisplayTypeServiceImpl
+deactivate AbstractTable
+return
+@enduml

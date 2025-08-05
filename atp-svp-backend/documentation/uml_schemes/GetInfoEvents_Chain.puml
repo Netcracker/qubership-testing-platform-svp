@@ -1,0 +1,178 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+
+box "BE" #caeaff
+    entity ExecutorController
+    entity ExecutorServiceImpl
+    entity SessionEventListener
+    entity CommonParametersExecutionEventListener
+    entity SessionPagesExecutionEventListener
+    entity PageEventListener
+    entity PotSessionPageServiceImpl
+    entity TabsExecutionEventListener
+    entity TabEventListener
+    entity ParameterEventListener
+    entity PotSessionParameterServiceImpl
+end box
+
+ExecutorController -> ExecutorServiceImpl : getInfo(getInfoRequest)
+activate ExecutorServiceImpl
+    ExecutorServiceImpl -> ExecutorServiceImpl : UUID getOrCreateSession(getInfoRequest)\nget session id
+    ExecutorServiceImpl -> SessionEventListener : publishEvent(new GetInfoForSessionEvent)
+    activate SessionEventListener
+        ExecutorController <-- ExecutorServiceImpl : 200 (OK)
+        deactivate ExecutorServiceImpl
+
+        note right SessionEventListener
+            <color red>**@Async**</color>
+            Session execution flow started...
+        end note
+
+        alt IF common parameters was not stored to session
+            SessionEventListener -> CommonParametersExecutionEventListener : publishEvent(new GetInfoForCommonParametersEvent)
+            activate CommonParametersExecutionEventListener
+        else ELSE common parameters already stored to session
+            SessionEventListener -> SessionPagesExecutionEventListener : publishEvent(new GetInfoForSessionPagesEvent)
+        end
+
+        deactivate SessionEventListener
+
+            note right CommonParametersExecutionEventListener
+                <color red>**@Async**</color>
+                Common Parameters under session execution flow started...
+            end note
+            group For each Common Parameter
+                CommonParametersExecutionEventListener -> ParameterEventListener : publishEvent(new GetInfoForCommonParameterEvent)
+                deactivate CommonParametersExecutionEventListener
+
+                activate ParameterEventListener
+                    note right ParameterEventListener
+                        <color red>**@Async**</color>
+                        SUT Parameter execution flow started...
+                    end note
+                    ParameterEventListener -> PotSessionParameterServiceImpl : getInfo(new ParameterExecutionContext)
+                deactivate ParameterEventListener
+
+                activate PotSessionParameterServiceImpl
+                    PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : Getting info and validation process
+                    PotSessionParameterServiceImpl -> SessionPagesExecutionEventListener : publishEvent(new GetInfoForSessionPagesEvent)
+                deactivate PotSessionParameterServiceImpl
+
+                activate SessionPagesExecutionEventListener
+            end
+
+            alt <color blue>CONDITION:</color> IF all of common parameters already loaded (via indexed counter)
+                note right SessionPagesExecutionEventListener
+                    <color red>**@Async**</color>
+                    Pages under session execution flow started...
+                end note
+                group #90ffbc For each Page
+                    SessionPagesExecutionEventListener -> PageEventListener : publishEvent(new GetInfoForPageEvent)
+                    deactivate SessionPagesExecutionEventListener
+
+                    activate PageEventListener
+                        note right PageEventListener
+                            <color red>**@Async**</color>
+                            Page execution flow started...
+                        end note
+
+                        PageEventListener -> PotSessionPageServiceImpl : getInfo(new PageExecutionContext)
+                        deactivate PageEventListener
+
+                        activate PotSessionPageServiceImpl
+                            alt IF Page has parameters with synchronous loading flag
+                                group #90ffbc For each SUT Parameter under Page with synchronous loading flag
+                                    PotSessionPageServiceImpl -> ParameterEventListener : publishEvent(new GetInfoForParameterEvent)
+
+                                    activate ParameterEventListener
+                                        note right ParameterEventListener
+                                            <color red>**Synchronously**</color>
+                                            SUT Parameter execution flow started...
+                                        end note
+                                        ParameterEventListener -> PotSessionParameterServiceImpl : getInfo(new ParameterExecutionContext)
+                                        deactivate ParameterEventListener
+
+                                        activate PotSessionParameterServiceImpl
+                                            PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : Getting info and validation process
+                                            PotSessionParameterServiceImpl -> TabsExecutionEventListener : publishEvent(new GetInfoForTabsUnderPage)
+                                        deactivate PotSessionParameterServiceImpl
+                                        activate TabsExecutionEventListener
+                                end
+                            else ELSE Page has no parameters with synchronous loading flag
+                                PotSessionPageServiceImpl -> TabsExecutionEventListener : publishEvent(new GetInfoForTabsUnderPage)
+                                deactivate PotSessionPageServiceImpl
+
+                                activate TabsExecutionEventListener
+                            end
+
+                            alt <color blue>CONDITION:</color> IF all of parameters with synchronous loading already loaded (via indexed counter))
+                                note right TabsExecutionEventListener
+                                    <color red>**@Async**</color>
+                                    Tabs under Page execution flow started...
+                                end note
+
+                                group #90ffbc For each Tab under Page
+                                    TabsExecutionEventListener -> TabEventListener : publishEvent(new GetInfoForTabEvent)
+
+                                    deactivate TabsExecutionEventListener
+                                    deactivate TabsExecutionEventListener
+
+                                    activate TabEventListener
+                                        note right TabEventListener
+                                            <color red>**@Async**</color>
+                                            Tab execution flow started...
+                                        end note
+                                        group For each SutParameter under Tab
+                                            TabEventListener -> ParameterEventListener : publishEvent(new GetInfoForParameterEvent)
+                                            deactivate TabEventListener
+
+                                            activate ParameterEventListener
+                                                note right ParameterEventListener
+                                                    <color red>**@Async**</color>
+                                                    SUT Parameter execution flow started...
+                                                end note
+                                                ParameterEventListener -> PotSessionParameterServiceImpl : getInfo(new ParameterExecutionContext)
+                                                deactivate ParameterEventListener
+
+                                                activate PotSessionParameterServiceImpl
+                                                    PotSessionParameterServiceImpl -> PotSessionParameterServiceImpl : Getting info and validation process
+                                                    PotSessionParameterServiceImpl -> TabEventListener : publishEvent(new ValidateTabEvent)
+                                                deactivate PotSessionParameterServiceImpl
+
+                                                activate TabEventListener
+                                                    alt #90ffbc <color blue>CONDITION:</color> IF all of parameters under tab already loaded (via indexed counter))
+                                                        note right TabEventListener
+                                                            <color red>**@Async**</color>
+                                                            Tab validation process started...
+                                                        end note
+                                                        TabEventListener -> PageEventListener : publishEvent(new ValidatePageEvent)
+                                                        deactivate TabEventListener
+
+                                                        activate PageEventListener
+                                                            alt <color blue>CONDITION:</color> IF all of tabs under page already loaded (via indexed counter))
+                                                                note right PageEventListener
+                                                                    <color red>**@Async**</color>
+                                                                    Page validation process started...
+                                                                end note
+                                                                PageEventListener -> SessionEventListener : publishEvent(new ValidateSessionEvent)
+                                                                deactivate PageEventListener
+
+                                                                activate SessionEventListener
+                                                                    alt #90ffbc <color blue>CONDITION:</color> IF all of pages under session already loaded (via indexed counter))
+                                                                        note right SessionEventListener
+                                                                            <color red>**@Async**</color>
+                                                                            Session validation process started...
+                                                                        end note
+                                                                    end
+                                                                deactivate SessionEventListener
+                                                            end
+                                                    end
+                                        end
+                                end
+                            end
+                end
+            end
+deactivate ExecutorServiceImpl
+
+@enduml
