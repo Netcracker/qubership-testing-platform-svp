@@ -24,9 +24,9 @@
         <atp.auth.spring.boot.starter.version>1.2.60</atp.auth.spring.boot.starter.version>
         <atp.ei.lib.node>0.2.40</atp.ei.lib.node>
         <springdoc.version>1.7.0</springdoc.version>
-        <!--<openclover.version>4.2.0</openclover.version>-->
         <google.guava.version>32.0.1-jre</google.guava.version>
-        <process.comparator.version>2.5.95</process.comparator.version>
+        <!-- Remove SNAPSHOT postfix after releasing process comparator -->
+        <process.comparator.version>2.5.96-SNAPSHOT</process.comparator.version>
         <testcontainers.version>1.15.3</testcontainers.version>
         <liquibase.core.version>4.19.0</liquibase.core.version>
         <ch.qos.logback.version>1.2.13</ch.qos.logback.version>
