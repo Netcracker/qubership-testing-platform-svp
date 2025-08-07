@@ -224,7 +224,7 @@ public class PotSessionParameterEntity {
      * <ul>
      *      <li>{@link EngineType#LOG_COLLECTOR}</li>
      * </ul>
-     * </p>
+     * <p>
      */
     public boolean hasDeferredResults() {
         return parameterConfig.getSource().getEngineType() == EngineType.LOG_COLLECTOR;
@@ -239,7 +239,7 @@ public class PotSessionParameterEntity {
      *      <li>first actual result value has type {@link LogCollectorValueObject}</li>
      *      <li>first actual result contains full results from LogCollector</li>
      * </ul>
-     * </p>
+     * <p>
      */
     public boolean hasCorrectlyLoadedDeferredResults() {
         long arValuesWithResultCount = arValues.stream()

@@ -109,6 +109,30 @@ public class PotSessionEntity {
         this.pageOrder = pageOrder;
     }
 
+    /**
+     * Get session id.
+     * @return session UUID
+     */
+    public UUID getSessionId() {
+        return sessionId;
+    }
+
+    /**
+     * Get Execution Configuration of session.
+     * @return Execution Configuration
+     */
+    public SessionExecutionConfiguration getExecutionConfiguration() {
+        return executionConfiguration;
+    }
+
+    /**
+     * Get map of Execution Variables.
+     * @return map of Execution Variables
+     */
+    public ConcurrentHashMap<String, ExecutionVariable> getExecutionVariables() {
+        return executionVariables;
+    }
+
     public Optional<PotSessionPageEntity> findPageByName(@NotNull String name) {
         return potSessionPageEntities.stream().filter(page -> name.equals(page.getName())).findFirst();
     }

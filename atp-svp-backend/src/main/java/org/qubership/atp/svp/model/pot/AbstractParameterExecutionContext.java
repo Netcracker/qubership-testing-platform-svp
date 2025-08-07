@@ -51,6 +51,14 @@ public abstract class AbstractParameterExecutionContext {
     @Nullable
     private UUID responseSearchId;
 
+    /**
+     * Get map of Execution Variables.
+     * @return map of Execution Variables
+     */
+    public ConcurrentHashMap<String, ExecutionVariable> getExecutionVariables() {
+        return executionVariables;
+    }
+
     public abstract void decrementCountOfUnprocessedParameters();
 
     public abstract void setParameterResultAsVariable(ExecutionVariablesServiceImpl executionVariablesService);

@@ -139,7 +139,7 @@ public class GitRepositoryImpl {
 
     /**
      * Add all files to git.
-     * @Deprecated.
+     * Deprecated.
      */
     @Deprecated
     public void gitAddAllFiles(String pathToGit) {
