@@ -6,7 +6,8 @@
 
     <groupId>org.qubership.atp.svp</groupId>
     <artifactId>atp-svp</artifactId>
-    <version>${atp.service.version}</version>
+    <version>2.3.106-SNAPSHOT</version>
+    <name>atp-svp</name>
 
     <modules>
         <module>atp-svp-parent-java</module>  <!-- Parent must be first -->
@@ -19,7 +20,6 @@
     <packaging>pom</packaging>
 
     <properties>
-        <atp.service.version>1.0.0</atp.service.version>
         <toolBuildStatus>PRODUCTION</toolBuildStatus>
         <java.version>21</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -38,8 +38,121 @@
         <tool.config.keys.prefix>${project.name}</tool.config.keys.prefix>
     </properties>
 
+    <description>Qubership Testing Platform SVP Service</description>
+    <url>https://github.com/Netcracker/qubership-testing-platform-svp</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Netcracker</name>
+            <email>opensourcegroup@netcracker.com</email>
+            <organization>Netcracker Technology</organization>
+            <organizationUrl>https://www.netcracker.com</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https//github.com/Netcracker/qubership-testing-platform-svp.git</connection>
+        <developerConnection>scm:git:https://github.com/Netcracker/qubership-testing-platform-svp.git</developerConnection>
+        <url>scm:git:https://github.com/Netcracker/qubership-testing-platform-svp/tree/main</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <profiles>
+        <profile>
+            <id>central</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.7.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <waitUntil>published</waitUntil>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.7</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.3.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.6.3</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <repository>
+                    <id>central</id>
+                    <name>Central Maven Repository</name>
+                </repository>
+            </distributionManagement>
+        </profile>
+
+
+        <profile>
+            <id>github</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages</name>
+                    <url>https://maven.pkg.github.com/Netcracker/qubership-testing-platform-svp</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
             <plugin>
                 <artifactId>maven-scm-plugin</artifactId>
                 <version>1.9.5</version>
@@ -47,40 +160,11 @@
                     <tag>atp-svp-${project.version}</tag>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.3</version>
-                <executions>
-                    <execution>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                        <configuration>
-                            <basedir>./</basedir>
-                            <includes>
-                                <include>pom.xml</include>
-                                <include>atp-svp-backend/pom.xml</include>
-                                <include>atp-svp-distribution/pom.xml</include>
-                                <include>atp-svp-parent-java/pom.xml</include>
-                                <include>atp-svp-rest-openapi-specifications/pom.xml</include>
-                                <include>atp-svp-contract-test-pacts/pom.xml</include>
-                            </includes>
-                            <replacements>
-                                <replacement>
-                                    <token>\$\{atp.svp.version\}</token>
-                                    <value>${atp.service.version}</value>
-                                </replacement>
-                            </replacements>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <repositories>
+        <!-- Maven Central repository for release versions -->
         <repository>
             <id>oss.sonatype.org</id>
             <url>https://central.sonatype.com</url>
@@ -116,14 +200,6 @@
             </snapshots>
         </repository>
     </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>Maven Central</name>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <pluginRepositories>
         <pluginRepository>
