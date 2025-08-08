@@ -48,7 +48,7 @@ on:
       mvn-args:
         description: 'Additional maven arguments to pass (e.g. -DskipTests=true -Dmaven.javadoc.skip=true)'
         required: false
-        default: '-Pdb-postgresql -Pmigration-on-build-pg -Dstage=release -Dstage=test -Denable-analyzers=true -Dpg.jdbc.Url=jdbc:postgresql://localhost:5432/envconf -Dpg.jdbc.User=envconf -Dpg.jdbc.Password=envconf'
+        default: '-Pmigration-on-build-pg -Dstage=release -Dstage=test -Denable-analyzers=true'
         type: string
       build-docker:
         description: 'Build Docker image'
@@ -63,39 +63,7 @@ permissions:
 jobs:
   dry-run-build:
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: centos/postgresql-96-centos7:9.6
-        ports:
-          - 5432:5432
-        env:
-          POSTGRESQL_USER: envconf
-          POSTGRESQL_PASSWORD: envconf
-          POSTGRESQL_DATABASE: envconf
-          POSTGRESQL_ADMIN_PASSWORD: envconf
-        options: >-
-          --health-cmd="pg_isready -U envconf -d envconf"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=10
-
     steps:
-      - name: Wait for Postgres to be ready
-        run: |
-          for i in {1..30}; do
-            if pg_isready -h localhost -U envconf -d envconf; then
-              echo "Postgres is ready"
-              break
-            fi
-            echo "Waiting for Postgres..."
-            sleep 5
-          done
-
-      - name: Create uuid-ossp extension
-        run: |
-          sudo apt-get update && sudo apt-get install -y postgresql-client
-          PGPASSWORD=envconf psql -h localhost -U postgres -d envconf -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
-
       - name: "Build and Publish current SNAPSHOT (dry run)"
         uses: netcracker/qubership-workflow-hub/actions/maven-release@v1.0.1
         with:
@@ -117,37 +85,7 @@ jobs:
     outputs:
       release-version: ${{ steps.build-and-publish.outputs.release-version }}
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: centos/postgresql-96-centos7:9.6
-        ports:
-          - 5432:5432
-        env:
-          POSTGRESQL_USER: envconf
-          POSTGRESQL_PASSWORD: envconf
-          POSTGRESQL_DATABASE: envconf
-          POSTGRESQL_ADMIN_PASSWORD: envconf
-        options: >-
-          --health-cmd="pg_isready -U envconf -d envconf"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=10
     steps:
-      - name: Wait for Postgres to be ready
-        run: |
-          for i in {1..30}; do
-            if pg_isready -h localhost -U envconf -d envconf; then
-              echo "Postgres is ready"
-              break
-            fi
-            echo "Waiting for Postgres..."
-            sleep 5
-          done
-      - name: Create uuid-ossp extension
-        run: |
-          sudo apt-get update && sudo apt-get install -y postgresql-client
-          PGPASSWORD=envconf psql -h localhost -U postgres -d envconf -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
-
       - name: "Prepare app token"
         uses: actions/create-github-app-token@v1
         id: app-token
