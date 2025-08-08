@@ -25,7 +25,6 @@
         <atp.ei.lib.node>0.2.40</atp.ei.lib.node>
         <springdoc.version>1.7.0</springdoc.version>
         <google.guava.version>32.0.1-jre</google.guava.version>
-        <!-- Remove SNAPSHOT postfix after releasing process comparator -->
         <process.comparator.version>2.5.96</process.comparator.version>
         <testcontainers.version>1.15.3</testcontainers.version>
         <liquibase.core.version>4.19.0</liquibase.core.version>
