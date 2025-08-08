@@ -44,13 +44,15 @@ RUN adduser -D -H -h /atp -s /bin/bash -u 1007 atp && \
     echo "${JAVA_HOME}/bin/java \$@" >/usr/bin/java && \
     chmod a+x /usr/bin/java
 
-RUN unzip /tmp/atp-svp-distribution-*.zip -d $HOME_EX/ && \
+RUN unzip /tmp/*.zip -d $HOME_EX/ && \
+    rm -rf $HOME_EX/lib/*-sources.jar && \
     cp -r dist/atp /atp/ && chmod -R 775 /atp/ && \
     chown -R atp:root $HOME_EX/ && \
     find $HOME_EX -type f -name '*.sh' -exec chmod a+x {} + && \
     find $HOME_EX -type d -exec chmod 777 {} \;
 
-EXPOSE 8080 9000
+EXPOSE 8080 9000 8000
+
 USER atp
 
 CMD ["./run.sh"]
