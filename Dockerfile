@@ -34,8 +34,8 @@ COPY deployments/install deployments/install
 COPY deployments/atp-common-scripts deployments/atp-common-scripts
 COPY build-context/qubership-testing-platform-svp/qubership-testing-platform-svp/atp-svp-distribution/target/ /tmp/
 
-RUN mkdir -p dist/atp deployments/update &&
-RUN cp -r deployments/install/* deployments/update/ &&
+RUN mkdir -p dist/atp deployments/update
+RUN cp -r deployments/install/* deployments/update/
 RUN find deployments -maxdepth 1 -regex '.*/\(install\|update\|atp-common-scripts\)$' -exec mv -t dist/atp {} +
 
 RUN adduser -D -H -h /atp -s /bin/bash -u 1007 atp && \
